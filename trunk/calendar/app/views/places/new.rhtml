@@ -1,0 +1,14 @@
+<%
+@page_title = "Skobee - Add a Place" -%>
+<div id="banner">
+   <h2>Add a New Place</h2>
+</div>
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :place })%>
+<%= start_form_tag :action => 'create' %>
+      <h2 class="settings_header settings_header_alt">Let us know about a new place</h2>
+<%= render_partial 'form' %>
+      <%= end_form_tag %>
+   </div>
+</div>

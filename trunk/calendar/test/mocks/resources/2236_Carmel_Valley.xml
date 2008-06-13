@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?><ResultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:yahoo:maps" xsi:schemaLocation="urn:yahoo:maps http://api.local.yahoo.com/MapsService/V1/GeocodeResponse.xsd"><Result precision="address"><Latitude>32.933896</Latitude><Longitude>-117.254523</Longitude><Address>2236 CARMEL VALLEY RD</Address><City>DEL MAR</City><State>CA</State><Zip>92014-3704</Zip><Country>US</Country></Result></ResultSet>
+<!-- ws01.search.scd.yahoo.com uncompressed/chunked Tue Nov 22 19:54:30 PST 2005 -->

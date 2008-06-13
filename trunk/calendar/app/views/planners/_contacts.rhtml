@@ -1,0 +1,45 @@
+<div id="people-search"<%= ' style="display:none"' if @selected_clipboard_contacts.length >= PlannersController::CONTACT_CLIPBOARD_LIMIT %>>
+   <table cellpadding="0" cellspacing="0" width="100%" summary="Friends Search Box">
+      <tr>
+         <td class="left">
+         </td>
+         <td>
+            <input type="text" onfocus="clearDefaultTxt(this,'Search all contacts');" value="Search all contacts" id="contacts_list" name="contacts[list]"/>
+         </td>
+         <td class="right" onclick="$('contacts_list').value = ''">
+         </td>
+      </tr>
+   </table>
+   <div style="display: none;" class="auto_complete" id="contacts_list_auto_complete"></div>
+</div>
+
+<%= start_form_tag %>
+   <div class="section blue contacts_list">
+      <div id="schnitzel"></div>
+      <h3>
+         View Friends' Plans
+      </h3>
+      <div class="error" id="people-search-limit" <%= 'style="display:none"' if @selected_clipboard_contacts.length < PlannersController::CONTACT_CLIPBOARD_LIMIT %>>
+         Your clipboard is currently full.  The maximum clipboard size is <%=PlannersController::CONTACT_CLIPBOARD_LIMIT%>.
+      </div>
+
+      <div class="error" id="empty_clip" <%if !@selected_clipboard_contacts.empty? %>style="display:none"<%end%>>
+         Search for people above by real name or screen name to display their upcoming plans. <br/><br/>
+         You may only add people with whom you have shared a plan, marked as a friend, or marked as a contact.
+      </div>
+
+      <table cellpadding="0" cellspacing="0" width="100%" summary="Friends List">
+         <tr><td>
+         <div id="contacts-list">
+            <%= render(:partial => "contact", :collection => @selected_clipboard_contacts)%>
+         </div>
+         </td></tr>
+      </table>
+   </div>
+<%= end_form_tag %>
+
+<script type="text/javascript">
+<%= generate_user_autocomplete_arrays(current_user_id, 'clipboard_search_array', @selected_clipboard_contacts) %>
+var autocompleter = new Autocompleter.Skobee('contacts_list','contacts_list_auto_complete', clipboard_search_array, { tokens: new Array(',','\n'), fullSearch: false, partialSearch: true, partialChars: 1, frequency: 0.001, afterUpdateElement: function(element, selectedElement){add_to_clipboard(element.value);return false;}}, '');
+var CONTACT_CLIPBOARD_LIMIT = <%=PlannersController::CONTACT_CLIPBOARD_LIMIT %>;
+</script>

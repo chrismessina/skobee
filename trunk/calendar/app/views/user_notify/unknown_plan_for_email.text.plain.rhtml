@@ -1,0 +1,16 @@
+Skobee could not figure out which plan you wanted to edit.  Click on an URL to edit a plan using the Web:
+
+<%
+@plans.each do | plan |  -%>
+URL: <%= "#{UserSystem::CONFIG[:app_url].to_s}plans/show/#{plan.id}?cal_id=#{@user.planner.id}" %>
+What: <% if !plan.name.nil? && !plan.name.empty? %><%= plan.name %><% else %>This plan doesn't have a name yet<% end %>
+When: <%= plan.english_for_datetime(@user.tz) %>
+Where: <% if !plan.place_name.nil? %><%= plan.place_name %><% else %>This plan doesn't have a place yet<% end %>
+
+<%
+end
+
+if !@original_body.nil? -%>
+<%= @original_body -%>
+<%
+end -%>

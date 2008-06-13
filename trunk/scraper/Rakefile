@@ -1,0 +1,36 @@
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/switchtower.rake, and they will automatically be available to Rake.
+
+require(File.join(File.dirname(__FILE__), 'config', 'boot'))
+
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+
+require 'tasks/rails'
+
+class Rake::Task
+
+  #Run the named Rake tasks in the specified order.  They need not be interdependent, though
+  # dependencies will be respected
+  def self.run_ordered(tasks)
+    tasks.to_a.each do |task|
+      lookup(task).invoke
+    end
+  end
+
+  #MES- Run the specified task the specified number of times
+  def self.run_multiple(num_times, task)
+    num_times.times do | index |
+      puts "Initiating run number #{index}"
+      lookup(task).invoke
+      lookup(task).clear_already_invoked
+    end
+  end
+    
+  #MES- Clear the "already invoked" flag from this task, and all of the prerequisites
+  def clear_already_invoked
+    @already_invoked = false
+    @prerequisites.each { |n| Rake::Task[n].clear_already_invoked }
+  end
+end

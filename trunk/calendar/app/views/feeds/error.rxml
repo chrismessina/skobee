@@ -1,0 +1,17 @@
+xml.instruct!
+#MGS- add a reference to the xsl stylesheet to display the feed more cleanly to a browser
+xml.instruct! "xml-stylesheet", :type => "text/xsl", :href => "/rss_error.xsl", :media => "screen"
+
+#MGS- error feed that will just take the title and description
+# error messages that are passed in
+xml.rss "version" => "2.0" do
+  xml.channel do
+
+    xml.title         @feed_title
+    xml.description   @feed_description
+    #MGS- the link for the error feed should always point you to the feeds index page
+    xml.link          url_for( :controller => 'feeds', :only_path => false )
+    xml.ttl           60
+
+  end
+end

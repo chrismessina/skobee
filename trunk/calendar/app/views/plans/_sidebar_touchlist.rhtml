@@ -1,0 +1,19 @@
+  <h3>All Of My Regulars</h3>
+<% 
+hvr = sidebar_hover_str(@sidebar_number)
+#MES- Note: we don't have to handle an empty touchlist- a user can't get to 
+# this view if they have nobody in their touchlist (unless they go to the
+# URL directly, which is their own problem...)  -%>
+  <ul class="regulars">
+    <%= render(:partial => "regular", :collection => @touchlist)%>
+  </ul>
+<%
+if @show_less -%>
+   <dl class='common'>
+      <dt id='less_regulars_dt' <%= hvr %> onclick="showUrlInfo('sidebar_regulars', 'less_regulars_dt', '<%= url_for(:action => 'sidebar_regulars', :id => @params[:id]) %>'); return false;">
+         Show less
+      </dt>
+      <dd></dd>
+  </dl>
+<%
+end -%>

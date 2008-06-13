@@ -1,0 +1,3 @@
+<?xml version="1.0"?>
+<ResultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:yahoo:maps" xsi:schemaLocation="urn:yahoo:maps http://api.local.yahoo.com/MapsService/V1/GeocodeResponse.xsd"><Result precision="zip"><Latitude>37.7883</Latitude><Longitude>-122.3946</Longitude><Address></Address><City>SAN FRANCISCO</City><State>CA</State><Zip>94105</Zip><Country>US</Country></Result></ResultSet>
+<!-- ws02.search.scd.yahoo.com uncompressed/chunked Fri Mar 24 16:19:19 PST 2006 -->

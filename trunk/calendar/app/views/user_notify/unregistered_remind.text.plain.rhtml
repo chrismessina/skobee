@@ -1,0 +1,31 @@
+Don't forget! Your friends used Skobee to invite you to the plan below.
+
+If you'd like to change your reminder settings or join in on the fun, signup for a Skobee account:
+<%= @register_link %>
+
+Check out the full plan details here:
+<%= @plan_details_link %>
+
+<% if !@plan.name.nil? && !@plan.name.empty? -%>
+What: <%= @plan.name %>
+<% end -%>
+<% if !@plan.description.nil? && !@plan.description.empty? -%>
+<%= @plan.description %>
+<% end -%>
+When: <%= @plan.english_for_datetime(@user.tz) -%>
+<% confirmed_array = @plan.attending_invitees_other_than(@user) %>
+<% if confirmed_array.length > 0 %>Who's Confirmed: <% confirmed_array.each_index {|index| user = confirmed_array[index] -%><%= user.display_name %><% if index < confirmed_array.length - 1 -%>, <% end -%><% } -%><% end -%>
+<% invited_array = @plan.invitees(Plan::STATUS_INVITED, @user) %>
+<% if invited_array.length > 0 %>Who's Invited: <% invited_array.each_index {|index| user = invited_array[index] -%><%= user.display_name -%><% if index < invited_array.length - 1 -%>, <% end -%><% } -%><% end -%>
+<% if !@plan.place.nil? %>
+Where: <% if !@plan.place.name.nil? && !@plan.place.name.empty? %><%= @plan.place.name %>, <% end -%><% if !@plan.place.location.nil? && !@plan.place.location.empty? -%><%= @plan.place.location %> <% if !@gmaps_link.nil? -%>(<%= @gmaps_link %>)<% end -%><% end -%>
+<% end -%>
+
+You can set your RSVP by replying to this email. Simply reply and include the phrase RSVP: I'll Be There or RSVP: I'm Out on a single line in the email body.
+
+You can also suggest a new time, date, or location all without ever leaving your email client. Click here to learn how:
+<%= @email_howto_link %>
+
+________________________________________________________________________________
+If you would like to stop receiving emails from Skobee, please click the link below:
+<%= @disable_notifications_link %>

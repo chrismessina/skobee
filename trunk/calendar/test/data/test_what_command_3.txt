@@ -1,0 +1,39 @@
+X-Gmail-Received: d8ec93d23e6e815196382ac3e9dcb741d3b81834
+Received: by 10.35.91.18 with HTTP; Thu, 13 Apr 2006 14:03:29 -0700 (PDT)
+Message-ID: <5d0d22620604131403k6dbaf4bbt18356f864e2c4624@mail.gmail.com>
+Date: Thu, 13 Apr 2006 14:03:29 -0700
+From: "Kavin Stewart" <kavin620@hotmail.com>
+To: "Kavin Stewart" <kavin620@hotmail.com>
+Subject: to change the subject
+In-Reply-To: <5d0d22620604131401o68ca476xc25852823b7aadd7@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_5105_5571239.1144962209956"
+References: <5d0d22620604131401o68ca476xc25852823b7aadd7@mail.gmail.com>
+Delivered-To: smedberg@gmail.com
+
+------=_Part_5105_5571239.1144962209956
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+On 4/13/06, Michael Smedberg <smedberg@gmail.com> wrote:
+>
+> notwhat: what from the body
+>
+
+------=_Part_5105_5571239.1144962209956
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+<br><br><div><span class=3D"gmail_quote">On 4/13/06, <b class=3D"gmail_send=
+ername">Michael Smedberg</b> &lt;<a href=3D"mailto:smedberg@gmail.com">smed=
+berg@gmail.com</a>&gt; wrote:</span><blockquote class=3D"gmail_quote" style=
+=3D"border-left: 1px solid rgb(204, 204, 204); margin: 0pt 0pt 0pt 0.8ex; p=
+adding-left: 1ex;">
+<div style=3D"direction: ltr;">notwhat: what from the body<br>
+
+</div></blockquote></div><br>
+
+------=_Part_5105_5571239.1144962209956--

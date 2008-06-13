@@ -1,0 +1,39 @@
+X-Original-To: plans@skobee.com
+Received: from host.hostingseries43.net (host.hostingseries43.net [209.59.181.149])
+	by alpha.skobee.com (Postfix) with ESMTP id 34D0B7EC438
+	for <plans@skobee.com>; Sat,  4 Mar 2006 10:11:51 -0800 (PST)
+Received: from host86-136-138-139.range86-136.btcentralplus.com ([86.136.138.139]:50355 helo=HAYLEY-HELHL6HV)
+	by host.hostingseries43.net with esmtp (Exim 4.52)
+	id 1FFbEZ-0003bW-IJ
+	for plans@skobee.com; Sat, 04 Mar 2006 18:11:41 +0000
+From: "Hayley Clare" <hayley@clarewebdesign.co.uk>
+To: <plans@skobee.com>
+Subject: Flash
+Date: Sat, 4 Mar 2006 18:11:45 -0000
+Importance: Normal
+X-MSMail-Priority: Normal
+X-Priority: 3 (Normal)
+MIME-Version: 1.0
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+X-ClamAntiVirus-Scanner: This mail is clean
+X-AntiAbuse: This header was added to track abuse, please include it with any abuse report
+X-AntiAbuse: Primary Hostname - host.hostingseries43.net
+X-AntiAbuse: Original Domain - skobee.com
+X-AntiAbuse: Originator/Caller UID/GID - [47 12] / [47 12]
+X-AntiAbuse: Sender Address Domain - clarewebdesign.co.uk
+X-Source: 
+X-Source-Args: 
+X-Source-Dir: 
+Message-Id: <20060304181151.34D0B7EC438@alpha.skobee.com>
+
+Hi, do you ever outsource flash work/web design/logo design. Please don't h=
+esitate to contact me if you have any work available.  My URL is www.clarew=
+ebdesign.co.uk
+
+I would also like to know if you would consider a reciprocal link?
+
+Kindest regards
+Hayle Clare
+

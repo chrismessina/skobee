@@ -1,0 +1,12 @@
+<%
+pln_info = dashboard_plan_availability
+pln = pln_info.plan
+attendees = pln_info.attendees
+#MGS- availability views don't contain links or hovers, since they are unclickable
+-%>
+<div id="plan-list-<%= pln.id %>" class="plan">
+   <!-- <%= plan_template -%> -->
+   <div class="plan_text float-left">
+   <h3><strong><%=h(pln.english_for_date(current_timezone))%>, <%=h(pln.english_for_time(current_timezone))%></strong> - <span class="invitee"><%=h(attendees.collect{|attendee| attendee.display_name}.join(", "))%></span></h3>
+   </div>
+</div>

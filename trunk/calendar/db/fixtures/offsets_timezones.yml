@@ -1,0 +1,51 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+us_eastern:
+    offset: -5
+    dst: 1
+    time_zone: US/Eastern
+    
+america_caracas:
+    offset: -4
+    dst: 0
+    time_zone: America/Caracas
+
+us_central:
+    offset: -6
+    dst: 1
+    time_zone: US/Central
+
+america_bogota:
+    offset: -5
+    dst: 0
+    time_zone: America/Bogota
+    
+us_mountain:
+    offset: -7
+    dst: 1
+    time_zone: US/Mountain
+    
+us_pacific:
+    offset: -8
+    dst: 1
+    time_zone: US/Pacific
+    
+us_arizona:
+    offset: -7
+    dst: 0
+    time_zone: US/Arizona
+    
+us_hawaii:
+    offset: -10
+    dst: 0
+    time_zone: US/Hawaii
+    
+us_alaska:
+    offset: -9
+    dst: 1
+    time_zone: US/Alaska
+    
+america_adak:
+    offset: -10
+    dst: 1
+    time_zone: America/Adak

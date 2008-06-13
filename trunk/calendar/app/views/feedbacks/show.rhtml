@@ -1,0 +1,24 @@
+<p>
+  <b>URL:</b> <%=h @feedback.url %>
+</p>
+<p>
+  <b>Type:</b> <%=h Feedback::FEEDBACK_TYPE_DESC_MAP[@feedback.feedback_type] %>
+</p>
+<p>
+  <b>Body:</b> <%=h @feedback.body %>
+</p>
+<p>
+  <b>Stage:</b> <%=h Feedback::FEEDBACK_STAGE_DESC_MAP[@feedback.stage] %>
+</p>
+<p>
+  <b>Owner:</b> <%=h @feedback.owner %>
+</p>
+<p>
+  <b>Created at:</b> <%=h @feedback.created_at %>
+</p>
+<p>
+  <b>Updated at:</b> <%=h @feedback.updated_at %>
+</p>
+
+<%= link_to 'Edit', :action => 'edit', :id => @feedback %> |
+<%= link_to 'Back', :action => 'list' %>

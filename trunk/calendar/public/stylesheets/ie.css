@@ -1,0 +1,230 @@
+.float-fix
+{
+  margin-right: -3px !important;
+}
+
+.float-fix-right
+{
+  margin-left: -3px !important;
+}
+
+.inline
+{
+   display: inline;
+}
+
+.log_in
+{
+   display: inline;
+}
+
+.section_heading
+{
+  width: 97%;
+  display: inline;
+}
+
+.property_value_row .details
+{
+   width: 420px;
+}
+
+.past_rejected
+{
+  display: inline;
+}
+
+.plan
+{
+  cursor: hand;
+}
+
+.hand
+{
+  cursor: hand;
+}
+
+.sidebar_dashboard .section
+{
+  display: inline;
+}
+
+.contacts_list
+{
+   position: static;
+}
+
+#contacts-list .remove
+{
+  cursor: hand;
+}
+
+#sidebar dl.common dt
+{
+  cursor: hand;
+}
+
+#sidebar dl.common dd.hover
+{
+  cursor: hand;
+}
+
+.property_value_row, .discuss_row, .comment, .mini_editor, #change-list .mini_editor, .no_results, #footer h4, .plan, .missing_place, .search_results .property_value
+{
+   width: 97% !important;
+}
+
+.property_value_row .edit
+{
+  cursor: hand;
+}
+
+.invite_list li div
+{
+  float: left;
+}
+
+.search_results .property_value td.what
+{
+  width: 160px;
+}
+
+.search_results .property_value .place_where_location
+{
+  width: 160px;
+}
+
+#footer h4
+{
+  display: inline;
+}
+
+.no_results
+{
+   display: inline;
+}
+
+.section li.hover
+{
+  cursor: hand;
+}
+
+.section li.hoverblue, .section li.hoverred
+{
+  cursor: hand;
+}
+
+#sidebar_dashboard, div.hover
+{
+  cursor: hand;
+}
+
+.sidebar_dashboard .container
+{
+   padding: 3px 0 10px 0 !important;
+}
+
+.sidebar_dashboard .comment
+{
+  display: inline;
+  width: 80% !important;
+}
+
+.picture_list
+{
+  width: 90%;
+  display: inline;
+}
+
+#sidebar .picture_list li
+{
+  margin-right: 50px;
+  width: 50px;
+}
+
+.settings input.big_form
+{
+   width: 175px;
+}
+
+.search_results .property_value .place_where_location
+{
+  display: inline;
+}
+
+.missing_place
+{
+   float: none;
+}
+
+.empty_planner ul li
+{
+   float: left;
+   width: 100%;
+}
+
+.empty_planner_alt
+{
+   float: none !important;
+}
+
+.splash ul li
+{
+   float: left;
+   width: 100%;
+}
+
+.splash ul li img
+{
+  float: left;
+  margin: 0 10px 40px 10px;
+}
+
+.splash ul li strong
+{
+   font-size: 185%;
+}
+
+#schnitzel
+{
+   display: none;
+}
+
+#contacts-list td
+{
+  cursor: hand;
+}
+
+.picture_upload
+{
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+.auto_complete
+{
+  top: 20px;
+  left: 0px !important;
+}
+
+#search_by_name_result .text, #search_by_address_result .text
+{
+  width: 320px;
+}
+
+.settings .property_value th
+{
+  text-align: right;
+}
+
+#contacts_list_auto_complete
+{
+   left: 48px !important;
+}
+
+* html #bubble_wrap #request_invite_bubble div.top {background-image: url(/images/bubble_top.gif);}
+* html #bubble_wrap #request_invite_bubble div.bottom {background-image: url(/images/bubble_bottom.gif);}
+* html #bubble_wrap #rsvp_bubble div.top {background-image: url(/images/bubble_top.gif);}
+* html #bubble_wrap #rsvp_bubble div.bottom {background-image: url(/images/bubble_bottom.gif);}
+* html #bubble_wrap #flickr_tag_bubble div.top {background-image: url(/images/bubble_top.gif);}
+* html #bubble_wrap #flickr_tag_bubble div.bottom {background-image: url(/images/bubble_bottom.gif);}

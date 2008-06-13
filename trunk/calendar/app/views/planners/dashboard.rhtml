@@ -1,0 +1,104 @@
+<%
+@page_title = "Welcome to Skobee!"
+@rss_feeds = { "Skobee: #{h(Inflector.possessiveize(current_user.login))} plan changes" => url_for(:controller => 'feeds', :action => 'plan_changes', :id => current_user_id, :only_path => false) }
+-%>
+<div id="banner">
+   <div class="picture">
+      <%= build_user_thumbnail_url(@user) %>
+   </div>
+   <h2>
+      Got any plans, <%=h @user.login%>?
+   </h2>
+   <div class="button">
+      <h3 class="action">
+         <%= link_to("Make Plans", {:controller => 'plans',
+         :action => 'new',
+         :planner_id => @planner}, {:class => 'make-plans'} ) %>
+      </h3>
+   </div>
+</div>
+
+<div id="container" class="dashboard">
+   <div id="content" class="hovered_sections">
+   <%=render(:partial=>"/shared/flash")%>
+
+   <h2 class="section_heading new_invites">
+      New invites
+   </h2>
+   <div class="border new">
+      <%
+      if !@new_plan_infos.empty?
+         #MGS- always show tentative plans with the tentative template
+         plan_template = 'dashboard_plan_tentative' -%>
+         <%= render :partial => plan_template, :collection => @new_plan_infos, :locals => { :plan_template => plan_template } %>
+      <%
+      else -%>
+      <div class="help">
+         Yipes! You have no outstanding invitations. <br/><br/>
+      </div>
+      <%
+      end -%>
+   </div>
+
+
+   <h2 class="section_heading middle upcoming_plans">Your upcoming plans</h2>
+   <div class="border small_plans">
+   <%
+   #MGS- if all of the plan infos are empty, then we should display the help text
+   if !@user_plan_infos.empty? -%>
+      <%
+      plan_template = PlannersController::DASHBOARD_PLAN_TEMPLATES[Planner::USER_VISIBILITY_LEVEL_OWNER]
+      for pln_info in @user_plan_infos -%>
+         <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info, :plan_template => plan_template } %>
+      <%
+      end -%>
+   <%
+   else -%>
+      <div class="help">
+         Yipes! You have no upcoming plans. <br/><br/>
+         <%=link_to("Make plans and invite some friends to hang out.",{ :controller => "plans", :action => "new" }) -%>
+      </div>
+   <%
+   end -%>
+   </div>
+
+   <%
+   #MGS- don't display friends plans header if you dont have any
+   if !@friends_plans_to_display.empty? -%>
+   <h2 class="section_heading middle friends_plans">Friends' upcoming plans</h2>
+   <div class="border small_plans">
+
+      <%
+      for pln_info in @friends_plans_to_display
+         plan_template = PlannersController::DASHBOARD_PLAN_TEMPLATES[pln_info.visibility] -%>
+         <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info , :plan_template => plan_template} %>
+      <%
+      end -%>
+   </div>
+   <%
+   end -%>
+
+   <%
+   #MGS- if all of the plan infos are empty, then we should display the help text
+   if !@all_plans.empty? -%>
+   <h2 class="section_heading middle everyones_plans">Everyone's upcoming plans</h2>
+   <div class="border small_plans">
+      <%
+      for pln_info in @all_plans
+         plan_template = PlannersController::DASHBOARD_PLAN_TEMPLATES[pln_info.visibility] -%>
+         <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info , :plan_template => plan_template} %>
+      <%
+      end -%>
+   </div>
+   <%
+   end -%>
+
+
+   </div>
+</div>
+<div id="sidebar" class="sidebar_dashboard">
+   <%= render_partial 'skobee_snacks'%>
+   <%= render_partial 'changes'%>
+</div>
+
+

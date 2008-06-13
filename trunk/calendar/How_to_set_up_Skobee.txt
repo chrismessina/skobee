@@ -1,0 +1,342 @@
+Install Subversion: 
+  Download "svn-1.2.3-setup.exe" from http://subversion.tigris.org/files/documents/15/25364/svn-1.2.3-setup.exe
+  Run the installer
+  Use all defaults
+
+Get the Skobee source code:
+  Create a directory to hold source code (I chose c:\code)
+  Open a command window and navigate to the directory you created
+  Type "svn checkout --username [YOUR LOGIN] --password [YOUR PASSWORD] http://svn.skobee.com:81/svn/skobee" and hit return
+  
+Read the latest version of this document, which is stored with the source code
+  This file is located at [source directory]\Trunk\calendar\How_to_set_up_Skobee.txt
+
+Install Ruby 1.8.4:
+  Download and run the one click installer from http://rubyforge.org/frs/download.php/9417/ruby184-16_rc1.exe
+  Accept all default options
+
+Update Gems (a system for distributing Ruby projects):
+  Open a command window
+  Type "gem install rubygems-update" and hit return (this may take some time)
+  Update ruby gems by typing "update_rubygems" and hitting return
+  Type "gem install -y -v 1.1.2 rails" and hit return
+  Follow the instructions to install iconv at http://wiki.rubyonrails.com/rails/pages/iconv:
+    Download http://www.dave.burt.id.au/ruby/iconv.zip
+    Extract the zip files to a folder
+    Open a command window and navigate to the folder into which you extracted the ZIP
+    Type "ruby setup.rb"
+    Press "y" when prompted for confirmation
+  Type "gem install -y -v 1.0.2 db_structure" and hit return
+  Type "gem install -v 0.2.1 tzinfo" and hit return
+  Type "gem install -v 1.0.0 flickr" and hit return 
+  Type "gem install -v 1.4.1 watir" and hit return; only install if you want to run watir tests (windows required)
+    Open a command window and type "regsvr32 <ruby_home>\lib\ruby\gems\1.8\gems\watir-1.4.1\watir\AutoItX3.dll" 
+      where <ruby_home> is the root directory of your ruby install (ie c:\ruby)
+  Type "gem install -v 2.0.0 builder"  and hit return; type 'Y' for all dependencies
+  Type "gem install -v 2.7.2006.04.21 mysql" and hit return; type '1' to choose to install
+
+Install MySQL
+  Download the "Windows Essentials" 5.0.16 installer from http://dev.mysql.com/downloads/mysql/5.0.html
+  Run the installer and choose the "typical" option
+  Skip signing up for MySQL.com
+  Launch the configuration wizard from the installer
+  Choose the standard configuration
+  Install as a windows service, and launch MySQL Server automatically
+  IMPORTANT: UNCHECK the Modify Security Settings checkbox
+  OPTIONAL: Download and install MySQL Front from http://www.mysqlfront.de/
+  
+Change minimum fulltext word size
+  Edit the my.ini file in your mysql install directory (should be $MYSQL_HOME/my.cnf instead on Linux)
+  Somewhere under the server section, add the following line:
+    ft_min_word_len=2
+  Save and exit
+
+Create the DBs:
+  Open a command window and navigate to [source directory]\Trunk\calendar
+  Type "rake create_db" and press return
+  NOTE: For Matias, we had to manually create a database called "planner" before this worked- not clear why
+
+Run some tests:
+  Open a command window and navigate to [source directory]\Trunk\calendar
+  Type "rake test_units" and press return
+  Type "rake test_functional" and press return
+  Type "rake run_watir_tests" and press return --only works on windows
+  
+Load some default data:
+  Open a command window and navigate to [source directory]\Trunk\calendar
+  Type "rake load_development_fixtures" and press return
+  
+Try out the web UI:
+  Open a command window and navigate to [source directory]\Trunk\calendar
+  Type "ruby script/server" and press return
+  Open a browser and navigate to http://localhost:3000/user/login
+  Log in using username "michaels" and password "welcome"
+  Navigate to http://localhost:3000/planners/schedule_details/1 to see your schedule details
+  
+OPTIONAL STEPS:
+  Install Tortise SVN (a Windows namespace extension that acts as a Subversion client) from http://tortoisesvn.tigris.org/download.html
+  Install the Eclipse IDE from http://www.eclipse.org/downloads/index.php
+  Install the RDT Ruby plug-in for Eclipse:
+    Open Eclipse
+    Choose the Help\Software Updates\Find and Install... menu item
+    Select "Search for new features to install" and choose Next
+    Click on "New Remote Site"
+    Enter "http://rubyeclipse.sourceforge.net/nightlyBuild/updateSite/" as the URL
+    Enter "Ruby Development Tools" as the name
+    Click finish and install the package
+  Install RMagick, which is used to make thumbnail images of user uploaded pictures:
+    Download and unzip the RMagick package from http://rubyforge.org/frs/download.php/6276/RMagick-1.9.2-IM-6.2.4-6-win32.zip
+    Follow the installation instructions in README.html:
+      Open a command window in the directory to which you unzipped the package
+      Type 'gem install RMagick-win32-1.9.2-mswin32.gem' and press return
+      Type 'ruby postinstall.rb' and press return
+  Get a private version of the email reader working:
+    Create or select a dedicated email address that's available via POP
+      e.g. michaels_server@burnaby.textdrive.com
+    Edit the config/environment.rb file
+      Set RECEIVE_MAIL_SERVER to your mail server (e.g. 'burnaby.textdrive.com')
+      Set RECEIVE_MAIL_USER to your username (e.g. 'michaels_planner')
+      Set RECEIVE_MAIL_PASSWORD to your password
+    Edit the config/environments/user_environment.rb file
+      Set :email_from_user to your receive email address (e.g. 'michaels_planner')
+      Set :email_from_server to your receive email server (e.g. '@burnaby.textdrive.com')
+    Run the email reader daemon
+      Open a command window and navigate to [source directory]\Trunk\calendar
+      Type "ruby script/runner 'Mailman.receive_emails_loop'" and press return
+      Send email to the account you created to create a plan
+      NOTE: Skobee will only respond to emails from known users.  The account from which you send emails MUST be in the emails table in your DB.  Check the fixtures (or your user profile) to make sure it's what you want.
+  Run the "frequent" task that sends reminders and cleans up sessions:
+    Open a command window and navigate to [source directory]\Trunk\calendar
+    Type "ruby script/runner 'User.frequent_tasks'" and press return
+  Run the "nightly" task that updates contacts, updates metros, geocodes, and updates usage and popularity statistics:
+    Open a command window and navigate to [source directory]\Trunk\calendar
+    Type "ruby script/runner 'User.nightly_tasks'" and press return
+    
+    
+
+      
+      
+      
+Notes for Linux:
+  iconv is already installed on RedHat, no need to install it manually
+  Uninstall mysql:
+    su -
+    rpm -e mysql-devel
+    rpm -e perl-DBD-MySQL
+    rpm -e mysql
+  Install mysql:
+    su -
+    wget http://dev.mysql.com/get/Downloads/MySQL-5.0/MySQL-client-standard-5.0.16-0.rhel4.i386.rpm/from/http://mysql.mirrors.pair.com/
+    rpm -Uvh MySQL-client-standard-5.0.16-0.rhel4.i386.rpm
+    wget http://dev.mysql.com/get/Downloads/MySQL-5.0/MySQL-server-standard-5.0.22-0.rhel4.i386.rpm/from/http://mysql.orst.edu/
+    rpm -Uvh MySQL-server-standard-5.0.22-0.rhel4.i386.rpm
+    
+    cp /usr/share/mysql/my-large.cnf /var/lib/mysql/my.cnf
+    Add to the [mysqld] section of my.cnf:
+      #MES- The following settings is specific to Skobee
+      ft_min_word_len = 2
+      ft_stopword_file =
+      #MES- END of Skobee specific settings
+    
+    Start with /usr/bin/mysqld_safe &
+    Stop with /usr/share/mysql/mysql.server stop OR mysqladmin shutdown
+    
+    
+    SELINUX SEEMS TO CAUSE MYSQL STARTUP TO FAIL! DON'T TURN IT BACK ON?!
+    setenforce 1 (turn on selinux)
+  
+    /usr/bin/mysql_explain_log is interesting
+    
+  Create database:
+    mysql -u root
+    create database planner;
+    create database planner_test;
+    
+    
+  Instructions on installing Ruby, etc., are available at http://wiki.rubyonrails.com/rails/pages/Ruby+and+Rails+on+Red+Hat+Enterprise+Linux:
+    su -
+    up2date zlib-devel
+    rpm --import /usr/share/rhn/RPM-GPG-KEY
+    mkdir downloads
+    cd downloads
+    wget ftp://ftp.ruby-lang.org/pub/ruby/ruby-1.8.4.tar.gz
+    tar xvzf ruby-1.8.4.tar.gz
+    cd ruby-1.8.4
+    ./configure
+    make
+    make install
+    wget http://rubyforge.org/frs/download.php/5207/rubygems-0.8.11.tgz
+    tar xvzf rubygems-0.8.11.tgz
+    cd rubygems-0.8.11
+    ruby setup.rb
+    cd
+    gem update
+    gem install rails --version '1.0.0'
+    CUSTOM CRAP: Find mysql_config somewhere and copy it to /usr/bin  I CAN'T FIND THIS!
+    gem install mysql -- --with-mysql-config
+    gem install -y -v 1.0.2 db_structure
+    gem install -v 0.1.0 tzinfo
+    gem install coverage
+    
+  Install svn:
+    cd ~/downloads
+    wget http://summersoft.fay.ar.us/pub/subversion/latest/rhel-4/bin/subversion-1.3.0-1.rhel4.i386.rpm
+    rpm -Uvh subversion-1.3.0-1.rhel4.i386.rpm
+    
+  Install RMagick and related stuff:
+    wget ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v6b.tar.gz
+    gzip -d jpegsrc.v6b.tar.gz
+    tar -x -f jpegsrc.v6b.tar
+    cd jpeg-6b
+    ./configure
+    make
+    make install
+    cd ..
+    wget ftp://ftp.imagemagick.org/pub/ImageMagick/ImageMagick-6.2.6-0.tar.gz
+    gunzip -c ImageMagick-6.2.6-0.tar.gz | tar xvf -
+    cd ImageMagick-6.2.6
+    CPPFLAGS=-I/root/downloads/jpeg-6b
+    export CPPFLAGS
+    LDFLAGS=-L/root/downloads/jpeg-6b
+    export LDFLAGS
+    ./configure
+    make
+    make install
+    cd ..
+    wget http://rubyforge.org/frs/download.php/8171/rmagick-1.10.0.gem
+    gem install rmagick-1.10.0.gem
+
+  Install lighttpd:
+    wget http://www.lighttpd.net/download/lighttpd-1.4.8.tar.gz
+    tar -xvzf lighttpd-1.4.8.tar.gz
+    cd lighttpd-1.4.8
+    yum install pcre-devel
+    yum install zlib-devel
+    ./configure
+    make
+    make install
+    
+  Make the skobee user:
+    useradd skobee
+    passwd skobee
+    
+  Get the source code:
+    su - skobee
+    mkdir code
+    cd code
+    mkdir Trunk
+    cd Trunk
+    svn checkout --username michaels --password 23skobee https://skobee.com/skobee/Trunk/calendar
+    cd calendar
+    rake create_db
+    rake
+    vi config/environments/production.rb:
+      PRODUCTION_HOST_WITH_PORT = "192.168.1.113:3001"
+    
+  Turn off the firewall for port 3000
+    su -
+    run 'lokkit', customize, add 3000 as another port
+    
+  Try WEBrick:
+    su - skobee
+    rake ld
+    ruby script/server
+    
+  For dev server, set up nightly test:
+    su - skobee
+    vi run_nightly_test.sh:
+      #!/bin/sh
+      PATH=/usr/kerberos/bin:/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/home/skobee/bin
+      export PATH
+      cd /home/skobee/code/Trunk/calendar
+      rake update_test_run_unix
+      rake test_coverage
+      rm -r /home/skobee/code/Trunk/calendar/public/coverage
+      cp -r /home/skobee/code/Trunk/calendar/coverage/ /home/skobee/code/Trunk/calendar/public/.
+
+    chmod a+x run_nightly_test.sh
+    su -
+    crontab -u skobee -e
+      00 01 * * * ~/run_nightly_test.sh >> ~/nightly_test.log 2>&1
+    
+    mkdir /home/skobee/code/Trunk/calendar/coverage
+    mkdir /home/skobee/code/Trunk/calendar/public/coverage
+      
+      
+
+  Set up lighttp (from http://trac.lighttpd.net/trac/wiki/TutorialInstallation):
+    su - skobee
+    mkdir lighttpd 
+    mkdir var 
+    mkdir var/run 
+    mkdir var/log 
+    touch var/log/lighttpd.error.log 
+    touch var/log/lighttpd.access.log
+    su -
+    cp /root/downloads/lighttpd-1.4.8/doc/lighttpd.conf ~skobee/lighttpd/lighttpd.conf
+    chown skobee ~skobee/lighttpd/lighttpd.conf
+    exit
+
+    Edit the config file (from http://www.zedshaw.com/projects/scgi_rails/lighttpd.html):
+      vi ~/lighttpd/lighttpd.conf
+      Turn on mod_rewrite, mod_redirect, mod_access, mod_compress, mod_accesslog
+      add mod_scgi
+      server.error-handler-404    = "/dispatch.scgi"
+      server.document-root        = "/home/skobee/code/Trunk/calendar/public/"
+      accesslog.filename          = "/home/skobee/var/log/lighttpd.access.log"
+      server.errorlog             = "/home/skobee/var/log/lighttpd.error.log"
+      server.pid-file            = "/home/skobee/var/run/lighttpd.pid"
+      server.bind                = "192.168.1.113"
+      server.port                = 3001
+      url.rewrite                = ( "^/$" => "index.html", "^([^.]+)$" => "$1.html" )
+      Add:
+        scgi.server = ( "dispatch.scgi" =>
+                (
+                "server1" =>
+                        ( "host" => "127.0.0.1",
+                        "port" => 9999,
+                        "check-local" => "disable"),
+                "server2" =>
+                        ( "host" => "127.0.0.1",
+                        "port" => 10000,
+                        "check-local" => "disable")
+                )
+        )
+        scgi.debug=0
+  
+    su -
+    lokkit
+      add 3001
+    exit
+
+    /usr/local/sbin/lighttpd -f ~/lighttpd/lighttpd.conf
+  
+
+
+  Set up the SCGI to Rails binding, as described at http://www.zedshaw.com/projects/scgi_rails/howto.html:
+    su -
+    cd ~/downloads
+    wget http://www.zedshaw.com/downloads/scgi_rails/scgi_rails-0.4.3.gem
+    gem install highline
+    gem install cmdparse
+    gem install scgi_rails-0.4.3.gem
+    exit
+    cd ~/code/Trunk/calendar/
+    scgi_cluster config -c 2
+    scgi_cluster start
+    
+  Make startup and shutdown scripts:
+    cd
+    vi start_web.sh:
+      #!/bin/sh
+      cd ~/code/Trunk/calendar
+      scgi_cluster start
+      /usr/local/sbin/lighttpd -f ~/lighttpd/lighttpd.conf
+    chmod a+x start_web.sh
+    vi stop_web.sh:
+      #!/bin/sh
+      kill `cat ~/var/run/lighttpd.pid`
+      cd ~/code/Trunk/calendar
+      scgi_cluster stop
+    chmod a+x stop_web.sh
+

@@ -1,0 +1,34 @@
+<%= h @change_owner.display_name %> suggested some new details.<br><br>
+
+<% if !@change_comment.nil? && !@change_comment.empty? %>
+<br/><%= h @change_comment %><br/><br/>
+<% end %>
+
+Check out the full plan details here:<br/>
+<a href="<%= h @plan_details_link %>"><%= h @plan_details_link %></a><br/><br/>
+
+<b>The new plans are:</b><br/>
+<% if !@plan.name.nil? && !@plan.name.empty? %>
+What: <%= h @plan.name %><br/>
+<% end %>
+When: <%= h @new_time %><br>
+<% if !@new_place_name.nil? -%>
+Where: <%= h @new_place_name -%><% if !@new_place_location.blank? %><%= h @new_place_location %> (<a href="<%= h @new_gmap_link %>">view a map</a>)<% end %><br>
+<% end -%>
+<br>
+<b>The old plans were:</b><br>
+<% if !@old_time.nil? -%>
+When: <%= h @old_time -%><br>
+<% end -%>
+<% if !@old_place_name.nil? %>
+Where: <%= h @old_place_name -%><% if !@old_place_location.blank? %><%= h @old_place_location %> (<a href="<%= h @old_gmap_link %>">view a map</a>)<% end %><br>
+<% end -%>
+<% if !@comment.blank? %>
+<br/>
+<b>Comment:</b><br/>
+<%= h @comment %><br/>
+<% end %>
+<br>
+<a href="<%= h @revert_link %>">Click here to switch back to the old plans.</a><br/><br/>
+________________________________________________________________________________<br/>
+<i>Too many emails from Skobee? <a href="<%= h @change_notifications %>">Click here to change your notification settings</a></i>

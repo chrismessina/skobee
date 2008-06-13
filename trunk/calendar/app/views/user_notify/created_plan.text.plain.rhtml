@@ -1,0 +1,31 @@
+Here's a link to your new plan. Share it with your friends:
+<%= @plan_details_link %>
+
+Just to confirm, here are the details that Skobee understood:
+
+<% if !@plan.name.nil? && !@plan.name.empty? %>
+What: <%= @plan.name %>
+<% end %>
+<% if !@plan.description.nil? && !@plan.description.empty? -%>
+<%= @plan.description %>
+<% end -%>
+When: <%= @plan.english_for_datetime(@user.tz) %>
+<% array = @plan.all_invitees_other_than(@user) -%>
+<% if array.length > 0 -%>Who: <% array.each_index {|index| user = array[index] -%><%= user.display_name %><% if index < array.length - 1 -%>, <% end -%><% } -%><% end -%>
+<% if !@plan.place.nil? %>
+Where: <% if !@plan.place.name.nil? && !@plan.place.name.empty? %><%= @plan.place.name %>, <% end -%><% if !@plan.place.location.nil? && !@plan.place.location.empty? -%><%= @plan.place.location %> <% if !@gmaps_link.nil? -%>(<%= @gmaps_link %>)<% end -%><% end -%>
+<% end -%>
+<%
+if !@alternate_places.nil? && 0 < @alternate_places.length -%>
+Skobee was unable to find <%= @plan.place.name %>. Were you looking for one of these places?
+<%
+   @alternate_places.each do | alt_place | -%>
+<%= alt_place.name %> <% if !alt_place.address.nil? && !alt_place.city.nil? -%> - <%= alt_place.address -%>, <%= alt_place.city -%> <% end -%>
+Suggest this place instead: <%= "#{UserSystem::CONFIG[:app_url].to_s}plans/update/#{@plan.id}?place_id=#{alt_place.id}&place_origin=0" %>
+
+<%
+   end
+end -%>
+________________________________________________________________________________
+Click here if you didn't create this plan or would like to stop receiving email from Skobee:
+<%= @did_not_create_link %>

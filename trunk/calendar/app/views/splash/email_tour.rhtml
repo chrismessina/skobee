@@ -1,0 +1,47 @@
+<%
+@page_title = "Skobee - It works via email" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        Use the bestest parts of <br/>
+        Skobee directly from email
+     </h2>
+  </div>
+<%
+#MGS- don't display the signup button if you're logged in
+if !logged_in? -%>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Sign Up Now", {:controller => 'users', :action => 'signup'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+<%
+end -%>
+</div>
+<div id="container" class="no_sidebar tour">
+   <table cellpadding="0" cellspacing="0" class="settings" summary="settings">
+      <tr>
+         <td>
+            <h2><span>cc:</span> plans@skobee.com</h2>
+            <img src="/images/email_tour_new_email.gif" alt="final plan" class="bordered" />
+         </td>
+         <td>
+            <h2><span>include</span> simple plan tags</h2>
+            <img src="/images/email_tour_email_body.gif" alt="final plan" class="bordered" />
+         </td>
+      </tr>
+      <tr>
+         <td>
+            <h2><span>we</span> keep up with the plans</h2>
+            <img src="/images/email_tour_email_chain.gif" alt="final plan"/>
+         </td>
+         <td>
+            <h2><span>we</span> send the final plan</h2>
+            <img src="/images/email_tour_email_plan.gif" alt="final plan" class="bordered"/>
+         </td>
+      </tr>
+   </table>
+   <h3 class="next">
+      <%= link_to("Next: Check out the plan tags", {:controller=>'splash',:action=>'email_howto'}) %>
+   </h3>
+</div>

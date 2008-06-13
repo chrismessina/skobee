@@ -1,0 +1,64 @@
+<%
+#MGS- get the string to display based on the user's status
+relationship_descr = ""
+if current_user.friends.include?(@user)
+  status = User::FRIEND_STATUS_FRIEND
+elsif current_user.friend_contacts.include?(@user)
+  status = User::FRIEND_STATUS_CONTACT
+else
+  status = User::FRIEND_STATUS_NONE
+end
+-%>
+
+<%= start_form_tag({ :controller => "users", :method => 'post', :action => 'change_friend_status' }, { :name => 'change_status_form' })%>
+<div class="section blue">
+   <h3>Contact Status</h3>
+   <span class="link">
+      (<a href="/help/people#3">What's the Difference?</a>)
+   </span>
+   <ul class="status_list friend_list">
+      <li id="status_friend" title="Set as friend" onmouseover="genericHover(this.id, true, 'blue');" onmouseout="genericHover(this.id, false, 'blue');" onclick="window.location.href = '/users/change_friend_status?contact_id=<%=@user.id%>&amp;friend_status=<%=User::FRIEND_STATUS_FRIEND%>'">
+      <%
+      if User::FRIEND_STATUS_FRIEND == status -%>
+         <div class="selected" >Marked as a Friend</div>
+      <%
+      else -%>
+         <div>Add as a Friend instead</div>
+      <%
+      end -%>
+      </li>
+      <li id="status_contact" title="Set as contact" class="<%= (User::FRIEND_STATUS_CONTACT == status ? 'selected' : '') %>" onmouseover="genericHover(this.id, true, 'blue');" onmouseout="genericHover(this.id, false, 'blue');" onclick="window.location.href = '/users/change_friend_status?contact_id=<%=@user.id%>&amp;friend_status=<%=User::FRIEND_STATUS_CONTACT%>'">
+      <%
+      if User::FRIEND_STATUS_CONTACT == status -%>
+         <div class="selected" >Marked as a Contact</div>
+      <%
+      else -%>
+         <div>Add as a Contact instead</div>
+      <%
+      end -%>
+      </li>
+      <li id="status_none" title="Set as no relation" class="<%= (User::FRIEND_STATUS_NONE == status ? 'selected' : '') %>" onmouseover="genericHover(this.id, true, 'blue');" onmouseout="genericHover(this.id, false, 'blue');" onclick="window.location.href = '/users/change_friend_status?contact_id=<%=@user.id%>&amp;friend_status=<%=User::FRIEND_STATUS_NONE%>'">
+      <%
+      if User::FRIEND_STATUS_NONE == status -%>
+         <div class="selected" >No relationship</div>
+      <%
+      else -%>
+         <div>Remove relationship</div>
+      <%
+      end -%>
+      </li>
+   </ul>
+   <br/>
+   <div class="error">
+<%
+case current_user.planner.visibility_level(@user)
+   when Planner::USER_VISIBILITY_LEVEL_AVAILABILITY #availability -%>
+      This user can only see your availability information. <%= link_to "Click here to change these settings.", :controller => 'users', :action => 'edit_privacy'%> 
+   <%
+   when Planner::USER_VISIBILITY_LEVEL_DETAILS #details -%>
+      This user can see all of the details of your plans, including who's invited. <%= link_to "Click here", :controller => 'users', :action => 'edit_privacy'%> to change these settings.
+<%
+end -%>
+   </div>
+</div>
+<%= end_form_tag %>

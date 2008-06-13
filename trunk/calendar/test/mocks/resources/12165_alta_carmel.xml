@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?><ResultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:yahoo:maps" xsi:schemaLocation="urn:yahoo:maps http://api.local.yahoo.com/MapsService/V1/GeocodeResponse.xsd"><Result precision="address"><Latitude>32.993159</Latitude><Longitude>-117.070244</Longitude><Address>12165 ALTA CARMEL CT</Address><City>SAN DIEGO</City><State>CA</State><Zip>92128-3843</Zip><Country>US</Country></Result></ResultSet>
+<!-- ws01.search.scd.yahoo.com uncompressed/chunked Wed Nov 23 11:53:00 PST 2005 -->

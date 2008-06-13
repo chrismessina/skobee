@@ -1,0 +1,10 @@
+X-Gmail-Received: 433b0cb9bbd16bc4cb4185ac2f08585a14111e48
+Received: by 10.36.247.3 with HTTP; Mon, 23 Jan 2006 10:38:23 -0800 (PST)
+Message-ID: <5d0d22620601231038v23d447d5ob2a2dd9eca88aefa@mail.gmail.com>
+Date: Mon, 23 Jan 2006 10:38:23 -0800
+From: Kavin Stewart <kavin620@hotmail.com>
+To: planner <planner@skobee.com>
+Subject: Testing place suggestions
+
+where: Bamboo House
+when: next week

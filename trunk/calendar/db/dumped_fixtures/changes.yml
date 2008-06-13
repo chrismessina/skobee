@@ -1,0 +1,91 @@
+--- 
+changes_001: 
+  updated_at: 2005-12-24 00:33:51
+  raw_items_changed: "BAhbCGkGaQdpCA==
+
+    "
+  raw_final_values: "BAhbCHU6IFRpbWUNg2wagAAAAAR1OwANg2wagAAAAARpAioB
+
+    "
+  raw_initial_values: "BAhbCHU6IFRpbWUNi2wagAAAAAR1OwANi2wagAAAAARpAioB
+
+    "
+  id: "1"
+  owner_id: "3"
+  change_type: "0"
+  created_at: 2005-12-03 12:01:46
+changes_002: 
+  updated_at: 2005-12-24 00:33:51
+  raw_items_changed: "BAhbCGkGaQdpCA==
+
+    "
+  raw_final_values: "BAhbCHU6IFRpbWUNg2wagAAAAAR1OwANg2wagAAAAARpAioB
+
+    "
+  raw_initial_values: "BAhbCHU6IFRpbWUNi2wagAAAAAR1OwANi2wagAAAAARpAioB
+
+    "
+  id: "2"
+  owner_id: "3"
+  change_type: "0"
+  created_at: 2005-12-03 12:02:14
+changes_003: 
+  updated_at: 2005-12-24 00:33:51
+  raw_items_changed: "BAhbCGkGaQdpCA==
+
+    "
+  raw_final_values: "BAhbCHU6IFRpbWUNg2wagAAAAAR1OwANg2wagAAAAARpAioB
+
+    "
+  raw_initial_values: "BAhbCHU6IFRpbWUNi2wagAAAAAR1OwANi2wagAAAAARpAioB
+
+    "
+  id: "3"
+  owner_id: "3"
+  change_type: "0"
+  created_at: 2005-12-03 12:03:56
+changes_004: 
+  updated_at: 2005-12-24 00:33:51
+  raw_items_changed: "BAhbCWkAaQZpB2kI
+
+    "
+  raw_final_values: "BAhbCWk4dToJVGltZQ2UbBqAAAAABHU7AA1UbRqAAAAABGlf
+
+    "
+  raw_initial_values: "BAhbCWkGdTogVGltZQ2kbBqAAAAABHU7AA1UbRqAAAAABGlf
+
+    "
+  id: "4"
+  owner_id: "3"
+  change_type: "0"
+  created_at: 2005-12-03 12:05:57
+changes_005: 
+  updated_at: 2005-12-24 00:33:51
+  raw_items_changed: "BAhbCWkAaQZpB2kI
+
+    "
+  raw_final_values: "BAhbCWkzdTogVGltZQ1IbRqAAAAAAHU7AA1obRqAAAAAAGkCnwU=
+
+    "
+  raw_initial_values: "BAhbCWkGdTogVGltZQ2qbBqAAAAABHU7AA2qbBqAAAAABGkB0g==
+
+    "
+  id: "5"
+  owner_id: "3"
+  change_type: "0"
+  created_at: 2005-12-03 12:07:54
+changes_006: 
+  updated_at: 2005-12-24 00:33:51
+  raw_items_changed: "BAhbCGkGaQdpCA==
+
+    "
+  raw_final_values: "BAhbCHU6IFRpbWUNQ20agAAAAAR1OwANQ20agAAAAARpAioB
+
+    "
+  raw_initial_values: "BAhbCHU6IFRpbWUNS20agAAAAAR1OwANS20agAAAAARpAioB
+
+    "
+  id: "6"
+  owner_id: "2"
+  change_type: "0"
+  created_at: 2005-12-03 14:21:24

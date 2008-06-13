@@ -1,0 +1,22 @@
+<%
+@page_title = "Skobee - Help" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 id="user_heading">
+      International Users
+     </h2>
+  </div>
+</div>
+<div id="container">
+   <div id="content" class="help_page">
+      <h2>ZIP code? I don't have a ZIP code. What should I enter?</h2>
+      <a name="1"></a>
+      <p>If you don't have a ZIP code, simply select the appropriate time zone. If you already entered a ZIP code that you would like to clear, please enter "00000" for your ZIP code.</p>
+      <h2>What gives? Why can't you do an international release right out the door?</h2>
+      <a name="2"></a>
+      <p>There are a number of portions of our site that are localized and we simply don't have the localization data for other parts of the world. To begin with, we'll start supporting international postal codes so that all of you may login. Next we'll add support for international date formats and time zones. The most difficult piece for us to support internationally is the places data. If you know a good resource to purchase or acquire international venues, please let us know.</p>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'help_nav' %>
+</div>

@@ -1,0 +1,7 @@
+<%= start_form_tag :action => 'record_error' %>
+  Problem:
+  <%= text_area_tag 'body', nil, {:rows => 5, :cols => 40} %>
+  <%= hidden_field_tag 'id', @place_id %>
+  <%= hidden_field_tag 'report_url', @report_url %>
+  <%= submit_tag "Record" %>
+<%= end_form_tag %>

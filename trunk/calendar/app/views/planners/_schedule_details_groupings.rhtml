@@ -1,0 +1,29 @@
+<%
+if !@fuzzy_plan_infos.empty? -%>
+<h2 class="section_heading fuzzy float-left">
+  Your <span class="red">fuzzy</span> plans
+</h2>
+   <%
+   for pln_info in @fuzzy_plan_infos
+      plan_template = PlannersController::SCHEDULE_DETAILS_PLAN_TEMPLATES[pln_info.visibility] -%>
+      <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info, :plan_template => plan_template } %>
+   <%
+   end
+end -%>
+
+<%
+if !@solid_plan_infos.empty? -%>
+<h2 class="section_heading firm float-left<%=" middle" if !@fuzzy_plan_infos.empty? %>">
+  Your <span class="red">firm</span> plans
+</h2>
+   <%
+   for pln_info in @solid_plan_infos
+      plan_template = PlannersController::SCHEDULE_DETAILS_PLAN_TEMPLATES[pln_info.visibility] -%>
+      <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info, :plan_template => plan_template } %>
+   <%
+   end
+end -%>
+
+<h2 class="section_heading middle float-left past_rejected">
+   <%= link_to("View Plans History...", {:controller => 'planners',:action => 'plans_history'}) %>
+</h2>

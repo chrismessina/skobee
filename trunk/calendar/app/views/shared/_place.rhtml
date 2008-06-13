@@ -1,0 +1,2 @@
+<dt onmouseover="dlHover(this, event)" onmouseout="dlHover(this, event)" onclick="window.location.href='<%=url_for(:controller => 'places', :action => 'show', :id => place)%>'"><%= h(place.name) %></dt>
+<dd onmouseover="dlHover(this, event)" onmouseout="dlHover(this, event)" onclick="window.location.href='<%=url_for(:controller => 'places', :action => 'show', :id => place)%>'"><% if !place.address.nil? && !place.city.nil? %><%=h(place.address)%>, <%=h(place.city)%><% else %><%=h(place.location)%><% end %></dd>

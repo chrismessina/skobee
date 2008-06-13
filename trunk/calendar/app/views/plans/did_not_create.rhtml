@@ -1,0 +1,69 @@
+<div id="banner">
+   <h2>
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings settings_wide">
+   <%=render(:partial=>"/shared/flash")%>
+   <h2 class="settings_header">Are you sure you did not create the following plan?</h2>
+      <p class="settings_header settings_header_empty">&nbsp;</p>
+      <%= form_tag :action => 'undo_email_plan_creation' %>
+      <div class="property_value_row no_border">
+         <h3 class="property">
+            What:
+         </h3>
+         <div class="value">
+            <% if !@plan.name.nil? && !@plan.name.empty? %><%= h(@plan.name) %><% else %>You haven't entered a name for your plan yet<% end %>
+         </div>
+      </div>
+      <div class="property_value_row">
+         <h3 class="property">
+            When:
+         </h3>
+         <div class="value">
+            <%= @plan.english_for_datetime(@user.tz) %>
+         </div>
+      </div>
+      <div class="property_value_row">
+         <h3 class="property">
+            Where:
+         </h3>
+         <div class="value">
+            <% if !@plan.place_name.nil? %><%= h(@plan.place_name) %><% else %>You haven't picked a place yet<% end %>
+         </div>
+      </div>
+
+
+      <table cellpadding="0" cellspacing="0" width="100%" class="did_not_create" summary="did_not_create">
+         <tr>
+            <td class="check_box">
+               <input type="checkbox" name="delete_plan" id="delete_plan" checked/>
+            </td>
+            <td>
+               <label for="delete_plan">I did not create this plan, please delete it.</label>
+            </td>
+         </tr>
+         <tr>
+            <td class="check_box">
+               <input type="checkbox" name="disallow_plan_creation_via_email" id="disallow_plan_creation_via_email"/>
+            </td>
+            <td>
+               <label for="disallow_plan_creation_via_email">Do not create new plans via email from this email adress.</label>
+            </td>
+         </tr>
+      </table>
+
+      <input type="hidden" name="token" value="<%= @token %>"/>
+      <input type="hidden" name="id" value="<%= @params['id'] %>"/>
+      <input type="hidden" name="user_id" value="<%= @params['user_id'] %>"/>
+
+      <div class="buttons">
+         <div class="secondary">
+            <input type="image" onclick="document.forms[0].submit(); return false;" name="save" src="/images/button_save.gif" alt="Save"/>
+         </div>
+      </div>
+      <%= end_form_tag %>
+
+   </div>
+</div>

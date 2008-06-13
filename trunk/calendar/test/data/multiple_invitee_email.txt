@@ -1,0 +1,29 @@
+X-Gmail-Received: 7514557425adaab28ea90be7960585407583afd4
+Received: by 10.70.75.6 with HTTP; Thu, 22 Dec 2005 12:21:33 -0800 (PST)
+Message-ID: <9d5b5a080512221221k428c82e4i55317814a88b1b26@mail.gmail.com>
+Date: Thu, 22 Dec 2005 12:21:33 -0800
+From: Noam Lovinsky <bob@test.com>
+To: Kavin Stewart <existingbob@test.com>
+Subject: testsdsdasd
+Cc: planner@skobee.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_9297_25351962.1135282893025"
+Delivered-To: bob@test.com
+
+------=_Part_9297_25351962.1135282893025
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+When: next week dinner
+Where: Gary Danko
+
+------=_Part_9297_25351962.1135282893025
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+When: next week dinner<br>Where: Gary Danko<br>
+
+------=_Part_9297_25351962.1135282893025--

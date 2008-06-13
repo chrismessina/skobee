@@ -1,0 +1,9 @@
+--- 
+:control_url: druby://127.0.0.1:9000
+:password: 5jP7mRY/sdoWY
+:host: 127.0.0.1
+:config: config/scgi-1.yaml
+:children: "2"
+:port: 10000
+:env: production
+:logfile: log/scgi.log

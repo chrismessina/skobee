@@ -1,0 +1,29 @@
+<h1>Listing feedbacks</h1>
+
+<table>
+  <tr>
+    <th>type</th>
+    <th>body</th>
+    <th>stage</th>
+    <th>owner</th>
+  </tr>
+  
+<% for feedback in @feedbacks %>
+  <tr>
+    <td><%=h Feedback::FEEDBACK_TYPE_DESC_MAP[feedback.feedback_type] %></td>
+    <td><%=h feedback.body[0, 30] %></td>
+    <td><%=h Feedback::FEEDBACK_STAGE_DESC_MAP[feedback.stage] %></td>
+    <td><%=h feedback.owner %></td>
+    <td><%= link_to 'Show', :action => 'show', :id => feedback %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => feedback %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => feedback }, :confirm => 'Are you sure?' %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @feedback_pages.current.previous } if @feedback_pages.current.previous %>
+<%= link_to 'Next page', { :page => @feedback_pages.current.next } if @feedback_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New feedback', :action => 'new' %>

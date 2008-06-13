@@ -1,0 +1,109 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+san_francisco_1:
+    zip: 94101
+    city: San Francisco
+    state: CA
+    latitude: 37.784827
+    longitude: -122.727802
+    timezone: -8
+    dst: 1
+    
+san_francisco_2:
+    zip: 94102
+    city: San Francisco
+    state: CA
+    latitude: 37.779329
+    longitude: -122.419150
+    timezone: -8
+    dst: 1
+    
+san_francisco_3:
+    zip: 94103
+    city: San Francisco
+    state: CA
+    latitude: 37.772329
+    longitude: -122.410870
+    timezone: -8
+    dst: 1
+    
+san_francisco_4:
+    zip: 94104
+    city: San Francisco
+    state: CA
+    latitude: 37.791728
+    longitude: -122.401900
+    timezone: -8
+    dst: 1
+    
+san_francisco_5:
+    zip: 94105
+    city: San Francisco
+    state: CA
+    latitude: 37.789228
+    longitude: -122.395700
+    timezone: -8
+    dst: 1
+    
+san_francisco_6:
+    zip: 94111
+    city: San Francisco
+    state: CA
+    latitude: 37.798228
+    longitude: -122.400270
+    timezone: -8
+    dst: 1
+    
+new_york_1:
+    zip: 10001
+    city: New York
+    state: NY
+    latitude: 40.750742
+    longitude: -73.996530
+    timezone: -5
+    dst: 1
+    
+new_york_2:
+    zip: 10002
+    city: New York
+    state: NY
+    latitude: 40.717040
+    longitude: -73.987000
+    timezone: -5
+    dst: 1
+    
+new_york_3:
+    zip: 10003
+    city: New York
+    state: NY
+    latitude: 40.732509
+    longitude: -73.989350
+    timezone: -5
+    dst: 1
+    
+new_york_4:
+    zip: 10004
+    city: New York
+    state: NJ
+    latitude: 40.699226
+    longitude: -74.041180
+    timezone: -5
+    dst: 1
+    
+new_york_5:
+    zip: 10005
+    city: New York
+    state: NY
+    latitude: 40.706019
+    longitude: -74.008580
+    timezone: -5
+    dst: 1
+    
+international:
+    zip: 00000
+    city: International
+    state: IN
+    latitude: 0
+    longitude: 0
+    timezone: -8
+    dst: 1

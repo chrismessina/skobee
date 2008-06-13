@@ -1,0 +1,9 @@
+<%= h @modifying_user.display_name %> made a comment on your profile:<br/><br/>
+
+<%= @comment_html_encoded %><br/><br/>
+
+<b>Check out all comments here:</b><br/>
+<a href='<%= h @profile_link %>'><%= h @profile_link %></a>.<br/><br/>
+
+________________________________________________________________________________<br/>
+<i>Too many emails from Skobee? <a href="<%= h @change_notifications %>">Click here to change your notification settings</a></i>

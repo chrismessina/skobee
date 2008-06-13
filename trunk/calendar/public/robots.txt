@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /feedbacks
+Disallow: /pictures
+Disallow: /places
+Disallow: /planners
+Disallow: /plans
+Disallow: /users
+Disallow: /interested_party

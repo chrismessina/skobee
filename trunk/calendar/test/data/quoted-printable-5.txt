@@ -1,0 +1,88 @@
+X-Original-To: plans@skobee.com
+Received: from mailgw2.mh.bbc.co.uk (mailgw2.mh.bbc.co.uk [132.185.144.142])
+	by alpha.skobee.com (Postfix) with ESMTP id BDBDB7EC45C
+	for <plans@skobee.com>; Fri,  3 Mar 2006 23:57:40 -0800 (PST)
+Received: from bbcxues11.national.core.bbc.co.uk (bbcxues11.national.core.bbc.co.uk [10.180.130.25])
+	by mailgw2.mh.bbc.co.uk (8.12.11/8.12.11) with ESMTP id k247vYh6014063
+	for <plans@skobee.com>; Sat, 4 Mar 2006 07:57:34 GMT
+x-mimeole: Produced By Microsoft Exchange V6.5.7226.0
+Content-class: urn:content-classes:message
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----_=_NextPart_001_01C63F61.4F0E43C3"
+Subject: Out of Office AutoReply: Skobee Account
+Date: Sat, 4 Mar 2006 07:57:39 -0000
+Message-ID: <C00575C08AFE584CA3F300149A14783C434A9D@bbcxues11.national.core.bbc.co.uk>
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+Thread-Topic: Skobee Account
+Thread-Index: AcY/YU7gQQ9yMVg+TRii5ErQRN9rAgAAAAvq
+From: "Sally Thompson-NewMedia" <sally.thompson@bbc.co.uk>
+To: "Skobee" <plans@skobee.com>
+
+This is a multi-part message in MIME format.
+
+------_=_NextPart_001_01C63F61.4F0E43C3
+Content-Type: text/plain;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Thanks for your email. I am now out of the office until Monday 6th March =
+so will get back to you then.
+
+If you have an urgent query please call my mobile 0780 372 1413.
+
+Thanks very much
+Sally
+
+http://www.bbc.co.uk/
+
+This e-mail (and any attachments) is confidential and may contain
+personal views which are not the views of the BBC unless specifically
+stated.
+If you have received it in error, please delete it from your system.=20
+Do not use, copy or disclose the information in any way nor act in
+reliance on it and notify the sender immediately. Please note that the
+BBC monitors e-mails sent or received.=20
+Further communication will signify your consent to this.
+
+
+
+------_=_NextPart_001_01C63F61.4F0E43C3
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; charset=3Diso-885=
+9-1">
+<META NAME=3D"Generator" CONTENT=3D"MS Exchange Server version 6.5.7226.0=
+">
+<TITLE>Out of Office AutoReply: Skobee Account</TITLE>
+</HEAD>
+<BODY>
+<!-- Converted from text/plain format -->
+
+<P><FONT SIZE=3D2>Thanks for your email. I am now out of the office until=
+ Monday 6th March so will get back to you then.<BR>
+<BR>
+If you have an urgent query please call my mobile 0780 372 1413.<BR>
+<BR>
+Thanks very much<BR>
+Sally<BR>
+</FONT>
+</P>
+
+<br>http://www.bbc.co.uk/<br><br>This e-mail (and any attachments) is con=
+fidential and may contain<br>personal views which are not the views of th=
+e BBC unless specifically<br>stated.<br>If you have received it in error,=
+ please delete it from your system. <br>Do not use, copy or disclose the =
+information in any way nor act in<br>reliance on it and notify the sender=
+ immediately. Please note that the<br>BBC monitors e-mails sent or receiv=
+ed. <br>Further communication will signify your consent to this.<br><br><=
+/BODY>
+</HTML>=
+
+------_=_NextPart_001_01C63F61.4F0E43C3--

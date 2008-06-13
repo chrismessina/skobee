@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<%
+now_str = Time.now_for_mysql
+50.times do | index | %>
+feedback<%= index %>:
+  <%# MES- Including the ID here causes weird problems- it seems like
+    if you make a new DB and add more than 40 rows to a table with an
+    auto-increment col, you get conflicts %>
+  url: http://a.bogus.url/<%= index %>
+  user_id: 1
+  feedback_type: <%= index % 4 %>
+  body: Some stuff, number <%= index %>
+  stage: <%= index % 3 %>
+  owner: Unassigned
+  created_at: <%= now_str %>
+  updated_at: <%= now_str %>
+<%
+end %>

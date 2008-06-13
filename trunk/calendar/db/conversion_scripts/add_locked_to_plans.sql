@@ -1,0 +1,1 @@
+ALTER TABLE plans ADD COLUMN lock_status int(11) NULL default 0 AFTER security_level;

@@ -1,0 +1,26 @@
+<%= error_messages_for 'feedback' %>
+
+<!--[form:feedback]-->
+<p><label for="feedback_url">Url:</label>
+<%= @feedback.url %></p>
+
+
+<p><label for="feedback_feedback_type">Type:</label>
+<%= select_field 'feedback', 'feedback_type', Feedback::FEEDBACK_TYPE_DESCS %></p>
+
+<p><label for="feedback_body">Body</label><br/>
+<%= text_area 'feedback', 'body'  %></p>
+
+<p><label for="feedback_stage">Stage:</label>
+<%= select_field 'feedback', 'stage', Feedback::FEEDBACK_STAGE_DESCS %></p>
+
+<p><label for="feedback_owner">Owner:</label>
+<%= text_field 'feedback', 'owner'  %></p>
+
+<p><label for="feedback_created_at">Created at:</label>
+<%= @feedback.created_at %></p>
+
+<p><label for="feedback_updated_at">Updated at:</label>
+<%= @feedback.updated_at %></p>
+<!--[eoform:feedback]-->
+

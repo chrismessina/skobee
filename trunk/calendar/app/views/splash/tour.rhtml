@@ -1,0 +1,32 @@
+<%
+@page_title = "Skobee - Fuzzy Scheduling" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        Start general (dinner soon) and <br/>
+        get specific (2/14 @ 6pm) as needed
+     </h2>
+  </div>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Sign Up Now", {:controller => 'users', :action => 'signup'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+</div>
+<div id="container" class="tour">
+   <div id="content">
+      <%=image_tag('/images/tour_create_plan.gif', :alt => 'Create Plan')%>
+      <h3>
+         <%= link_to("Next: What a plan looks like", {:action => 'tour_plans'}) %>
+      </h3>
+   </div>
+</div>
+<div id="sidebar" class="sidebar_tour">
+   <ol>
+      <li><span>Fuzzy scheduling allows you to start general and get specific as time goes by.</span></li>
+      <li><span>Easily add people you hang out with most often to the plan.</span></li>
+      <li><span>With inline search you can quickly add your destination to the new invite.</span></li>
+      <li><span>Not sure where to go yet? We'll show you what's popular in your location based on where everyone is making plans.</span></li>
+   </ol>
+   <h3 class="note"> <%= link_to("You can create a plan via email too. Give it a try, just sign up and cc: plans@skobee.com.", {:action => 'emailhowto'}) %></h3>
+</div>

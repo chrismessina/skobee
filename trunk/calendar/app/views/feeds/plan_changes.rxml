@@ -1,0 +1,96 @@
+xml.instruct!
+#MGS- add a reference to the xsl stylesheet to display the feed more cleanly to a browser
+xml.instruct! "xml-stylesheet", :type => "text/xsl", :href => "/rss.xsl", :media => "screen"
+#MGS- only supporting RSS 2.0 for now
+xml.rss "version" => "2.0" do
+  xml.channel do
+
+    xml.title         @feed_title
+    xml.description   @feed_description
+    xml.link          @feed_url
+    xml.ttl           60
+
+    #MGS- get the timezone from the user
+    tz = @current_user.tz
+
+    @plan_changes.each do |change|
+      xml.item do
+        plan = change.plan
+        plan_name = plan.name
+        change_owner = change.owner
+        change_owner_login = change.owner.login
+
+        #MGS- handle the different types of changes
+        case change.change_type
+          when *PlanChange::CHANGE_TYPES_COMMENTS
+            title = "#{h(change_owner_login)} made a new comment"
+            content_lead = "#{h(change_owner_login)} says:"
+          when PlanChange::CHANGE_TYPE_PLACE
+            #MGS- handle the case where the final place has no name
+            # or if there is no final place
+            final_place_name = (change.final_place.blank? || change.final_place.name.blank?) ? '[no name]' : change.final_place.name
+            title = "#{h(change_owner_login)} suggested #{h(final_place_name)}"
+            content_lead = "#{h(change_owner_login)} suggested a new place: #{h(final_place_name)}"
+          when PlanChange::CHANGE_TYPE_TIME
+            final_start, final_timeperiod, final_fuzzy_start, final_duration = change.final_time
+            title = "#{h(change_owner_login)} suggested #{h(Plan::english_for_specified_datetime(tz, final_start, final_timeperiod, final_fuzzy_start, final_duration))}"
+            content_lead = "#{h(change_owner_login)} suggested a new time: #{h(Plan::english_for_specified_datetime(tz, final_start, final_timeperiod, final_fuzzy_start, final_duration))}"
+          when PlanChange::CHANGE_TYPE_RSVP
+            #MGS- get the appropriate RSVP status message
+            status = change.final_rsvp_status_name
+            #MGS- if the status name is blank, its a status we don't want to show, skip to the next change
+            next if status.blank?
+            title = "#{h(change_owner_login)} RSVPed #{status}"
+            #MGS- set the title and the content_lead line to the same thing for now
+            content_lead = title
+        end
+
+        #MGS- add the plan name to the title string and set it
+        title << " - #{h(plan_name)}" unless plan_name.blank?
+        xml.title title
+
+        #MGS- the content of the feed
+        content = ""
+
+        #MGS- if the comment owner has a thumbnail, display it
+        if !change_owner.thumbnail.nil?
+          content << "<div>#{link_to(image_tag(url_for(:controller => 'pictures', :action => 'show', :only_path => false, :id => "#{change_owner.thumbnail.id}#{change_owner.thumbnail.extension}"), :align=> :left, :style => { 'margin:' => '0 10px 0 0' },:alt => change_owner.display_name), :controller => 'planners', :action => 'show', :only_path => false, :id => change_owner.planner.id)}</div>"
+        end
+
+        #MGS- add the lead in from the three different types of comments above
+        content << "<div><b>#{content_lead}</b> <br/> #{format_rich_text(change.comment)}</div>"
+
+        #MGS- force the html to wrap if displaying a thumbnail image
+        content << "<br CLEAR=LEFT />" if !change_owner.thumbnail.nil?
+
+        content << "<table cellpadding=0 cellspacing=0>"
+        content << "<tr><td valign=\"top\"><b>What:</b></td><td>#{h(plan_name)}</td></tr>" unless plan_name.blank?
+        content << "<tr><td colspan=2>#{h(plan.description)}</td></tr>" unless plan.description.blank?
+        content << "<tr><td valign=\"top\"><b>When:</b></td><td>#{plan.english_for_datetime(tz)}</td></tr>"
+        content << "<tr><td valign=\"top\"><b>Who:&nbsp;</b></td><td>#{h(plan.planners.collect{|planner| planner.owner.display_name}.join(", "))}</td></tr>"
+        #MGS- the place display rules are a bit more complicated now...
+        # if user not on the invite list and this place is private, show filler text (see bug #765)
+        if !plan.place.nil?
+          if plan.planners.include?(@current_user.planner) || Place::PLACE_PUBLIC == plan.place.public
+            content << "<tr><td valign=\"top\"><b>Where:&nbsp;</b></td><td>#{h(plan.place.name)}" unless plan.place.name.blank?
+            content << " #{h(plan.place.location)} (<a href=\"#{google_maps_link(plan.place)}\">view a map</a>)" unless plan.place.location.nil? || plan.place.location.empty?
+            content << "</td></tr>" unless plan.place.name.blank?
+          else
+            content << "<tr><td valign=\"top\"><b>Where:&nbsp;</b></td><td>#{PlansController::PRIVATE_PLACE_DISPLAY_TEXT}</td></tr>"
+          end
+        end
+        content << "</table>"
+
+        #MGS- wrap the description in a cdata as it can be HTML encoded
+        xml.tag!("description") { xml.cdata! content }
+
+        #MGS- set the published time of the change; needs to fit rfc2822 spec
+        xml.pubDate change.updated_at.rfc2822
+        #MGS- set the link
+        xml.link    url_for(:controller => 'plans', :action => 'show', :id => plan.id, :cal_id => change.owner.planner.id, :only_path => false)
+        #MGS- set the guid
+        xml.guid    change.guid, :isPermaLink => false
+      end
+    end
+  end
+end

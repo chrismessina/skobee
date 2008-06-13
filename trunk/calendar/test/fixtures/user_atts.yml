@@ -1,0 +1,254 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+bob_zip:
+  user_id: 1
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+existingbob_zip:
+  user_id: 2
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+longbob_zip:
+  user_id: 3
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+deletebob1_zip:
+  user_id: 4
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+deletebob2_zip:
+  user_id: 5
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+security_token_user_zip:
+  user_id: 6
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+user_with_friends_zip:
+  user_id: 7
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+friend_1_of_user_zip:
+  user_id: 8
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+friend_2_of_user_zip:
+  user_id: 9
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+not_a_friend_zip:
+  user_id: 10
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+treat_as_administrator_zip:
+  user_id: 11
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+user_with_friends_and_friends_cal_zip:
+  user_id: 12
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+user_with_friends_and_private_cal_zip:
+  user_id: 13
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+user_with_contacts_zip:
+  user_id: 14
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+contact_1_of_user_zip:
+  user_id: 15
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+contact_2_of_user_zip:
+  user_id: 16
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+
+x_dummy_user_1_zip:
+  user_id: 17
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+x_dummy_user_2_zip:
+  user_id: 18
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+x_dummy_user_3_zip:
+  user_id: 19
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+x_dummy_user_4_zip:
+  user_id: 20
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+x_dummy_user_5_zip:
+  user_id: 21
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+x_dummy_user_6_zip:
+  user_id: 22
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+x_dummy_user_7_zip:
+  user_id: 23
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+kavin620_at_hotmail_dot_com_zip:
+  user_id: 24
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+unregistered_user_zip:
+  user_id: 25
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+unconfirmed_user_zip:
+  user_id: 26
+  att_id: 2
+  att_value: '94105'
+  group_id: 2
+  
+existingbob_birth_year:
+  user_id: 2
+  att_id: 23
+  att_value: <%= Time.now.year - 26 %>
+  group_id: 4
+  
+existingbob_relationship_status:
+  user_id: 2
+  att_id: 19
+  att_value: 1
+  group_id: 9
+  
+existingbob_gender:
+  user_id: 2
+  att_id: 20
+  att_value: 1
+  group_id: 8
+
+existingbob_reminder_min:
+  user_id: 2
+  att_id: 15
+  att_value: 15
+  
+existingbob_remind_by_email:
+  user_id: 2
+  att_id: 10
+  att_value: 1
+  
+existingbob_confirmed_plan_notification:
+  user_id: 2
+  att_id: 14
+  att_value: 0
+  
+existingbob_invite_notification_option:
+  user_id: 2
+  att_id: 12
+  att_value: 0
+  
+existingbob_plan_update_notification_option:
+  user_id: 2
+  att_id: 13
+  att_value: 0
+  
+longbob_remind_by_email:
+  user_id: 3
+  att_id: 10
+  att_value: 1
+  
+longbob_invite_notification:
+  user_id: 3
+  att_id: 12
+  att_value: 0
+  
+longbob_reminder_min:
+  user_id: 3
+  att_id: 15
+  att_value: 15
+  
+longbob_confirmed_plan_notification:
+  user_id: 3
+  att_id: 14
+  att_value: 0
+  
+longbob_update_notification_option:
+  user_id: 3
+  att_id: 13
+  att_value: 0
+  
+kavin620_at_hotmail_dot_com_remind_by_email:
+  user_id: 24
+  att_id: 10
+  att_value: 1
+  
+kavin620_at_hotmail_dot_com_notification_option:
+  user_id: 24
+  att_id: 13
+  att_value: 0
+  
+unregistered_user_reminder_min:
+  user_id: 25
+  att_id: 15
+  att_value: 15
+  
+unregistered_user_remind_by_email:
+  user_id: 25
+  att_id: 10
+  att_value: 1
+  
+unregistered_user_confirmed_plan_notification:
+  user_id: 25
+  att_id: 14
+  att_value: 0
+  
+unregistered_user_invite_notification_option:
+  user_id: 25
+  att_id: 12
+  att_value: 0

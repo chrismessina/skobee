@@ -1,0 +1,47 @@
+<%
+   num_pages = (Float(@count)/Float(@results_per_page)).ceil.to_i
+   
+   pages = []
+   counter = 0
+   while counter < num_pages
+      counter += 1
+      pages << counter
+   end
+%>
+
+<div>
+<ul>
+<% 
+   counter = 0
+   for place in @search_results
+%>
+   <input class="venue_result" type="hidden" id="<%= @params['result_prefix'] %><%= counter %><%= @params['result_value_suffix'] %>" value="<%= place.id %>"/>
+   <li class="venue_result" id="<%= @params['result_prefix'] %><%= counter %>">
+   <%= h(place.name) %>
+   <%= h(place.address)%><%= ", " if place.address && place.city%><%= h(place.city)%>
+   </li>
+
+<%
+   counter += 1
+   end 
+-%>
+</ul>
+</div>
+
+<div class="paging" id="paging_div">
+<% 
+   if pages.length > 1
+      pages = pages[0..9]
+      pages.each{ | page | 
+-%>
+    <div onclick="result_handler.reloadResults(<%= "#{page}" %>); return false;">
+        <%= link_to(h(page), {}, {:id => "#{@params['pager_prefix']}#{page}"}) %>
+    </div>
+<%    } 
+   end 
+-%>
+</div>
+
+<div id="no_results" style="display: none;">
+no results were found
+</div>

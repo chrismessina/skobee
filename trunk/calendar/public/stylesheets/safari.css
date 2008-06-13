@@ -1,0 +1,66 @@
+#people-search td.left
+{
+  width: 44px;
+  background: url(/images/friend_search_left_mac.gif) top left !important;
+}
+
+#people-search td.right
+{
+  width: 28px;
+  background: url(/images/friend_search_bg.gif) top left repeat-x !important;
+}
+
+#people-search td input
+{
+  width: 162px;
+}
+
+.picture_upload
+{
+  float: right;
+  width: 200px;
+}
+
+#search_by_name_result .text, #search_by_address_result .text
+{
+  width: 342px;
+}
+
+.splash ul li
+{
+   float: left;
+   width: 100%;
+   height: 70px;
+}
+
+.splash ul li img
+{
+  float: left;
+  margin: 0 10px 10px 10px;
+}
+
+.splash ul li strong
+{
+   font-size: 185%;
+}
+
+.take_tour
+{
+	float: left;
+	margin-top: 20px !important
+}
+
+.hour_minute
+{
+  width: 30px;
+}
+
+.date_day, .date_month
+{
+  width: 30px;
+}
+
+.date_year
+{
+  width: 45px;
+}

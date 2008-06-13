@@ -1,0 +1,92 @@
+<h1>Admin Editing place</h1>
+
+<%= start_form_tag :action => 'update_place', :id => @places %>
+<%= error_messages_for 'places' %>
+
+<!--[form:places]-->
+<p><label for="places_name">Name</label><br/>
+<%= text_field 'places', 'name', :size => 70%></p>
+
+<p><label for="places_public">Public (enter 1 to approve as public or 0 to keep private)</label><br/>
+<%= text_field 'places', 'public', :size => 70  %></p>
+
+<p><label for="public_status">Request Status (enter 0 to reject this place)</label><br/>
+<%= text_field 'places', 'public_status', :size => 70  %></p>
+
+<p><label for="places_location">Location</label><br/>
+<%= text_field 'places', 'location', :size => 70  %></p>
+
+<p><label for="places_address">Address</label><br/>
+<%= text_field 'places', 'address', :size => 70 %></p>
+
+<p><label for="places_city">City</label><br/>
+<%= text_field 'places', 'city', :size => 70 %></p>
+
+<p><label for="places_state">State</label><br/>
+<%= text_field 'places', 'state' %></p>
+
+<p><label for="places_zip">Zip</label><br/>
+<%= text_field 'places', 'zip' %></p>
+
+<p><label for="places_url">Url</label><br/>
+<%= text_field 'places', 'url', :size => 80 %></p>
+
+<p><label for="places_phone">Phone</label><br/>
+<%= text_field 'places', 'phone', :size => 30  %></p>
+
+<!--[eoform:places]-->
+
+<%= submit_tag 'Edit' %>
+<%= end_form_tag %>
+
+<%= link_to 'Show', :controller => 'places', :action => 'show', :id => @places %> |
+<%= link_to 'Back', :controller => 'admin', :action => 'approve_places' %>
+
+<br/><br/>
+<h2>Yahoo Local search for "<%=h(@places.name)%>" near <%= h(@yahoo_location_searched)%></h2>
+<table border=1>
+<tr><td>name</td><td>address</td><td>city</td><td>state</td><td>phone</td><td>url</td></tr>
+<%
+if @yahoo_local_search.nil? || @yahoo_local_search.empty? -%>
+   <tr><td colspan=9> -- No Results Returned -- </td></tr>
+<%
+else
+   @yahoo_local_search.each {|place|
+   url = place.url.nil? ? place.yahoo_url : place.url -%>
+      <tr><td><%=h(place.name)%></td><td><%=h(place.address)%></td><td><%=h(place.city)%></td><td><%=h(place.state)%></td><td><%=h(place.phone)%></td><td title="<%=h(url)%>"><a target="_new" href="<%=url%>">view</a></td></tr>
+   <%
+   }
+end -%>
+</table>
+
+<br/><br/>
+<h2>Places like this in Skobee (by location)</h2>
+<table border=1>
+<tr><td>id</td><td>name</td><td>location</td><td></td></tr>
+<%
+if @similar_places_in_skobee_by_location.nil? || @similar_places_in_skobee_by_location.empty? -%>
+   <tr><td colspan="9"> -- No Results Returned -- </td></tr>
+<%
+else
+   @similar_places_in_skobee_by_location.each {|place| %>
+   <tr><td><%=h(place.id)%></td><td><%=h(place.name)%></td><td><%=h(place.location)%></td><td><a target="_new" href="/places/show/<%=place.id%>">view</a></td></tr>
+   <%
+   }
+end -%>
+</table>
+
+<br/><br/>
+<h2>Places like this in Skobee (full text search)</h2>
+<table border=1>
+<tr><td>id</td><td>name</td><td>location</td><td></td></tr>
+<%
+if @similar_places_in_skobee.nil? || @similar_places_in_skobee.empty? -%>
+   <tr><td colspan="9"> -- No Results Returned -- </td></tr>
+<%
+else
+   @similar_places_in_skobee.each {|place| %>
+   <tr><td><%=h(place.id)%></td><td><%=h(place.name)%></td><td><%=h(place.location)%></td><td><a target="_new" href="/places/show/<%=place.id%>">view</a></td></tr>
+   <%
+   }
+end -%>
+</table>

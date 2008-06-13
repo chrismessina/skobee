@@ -1,0 +1,36 @@
+<%= @change_owner.display_name %> suggested some new details.
+
+<% if !@change_comment.nil? && !@change_comment.empty? %>
+<%= @change_comment %>
+<% end %>
+
+Check out the full plan details: 
+<%= @plan_details_link %>
+
+The new plans are:
+<% if !@plan.name.nil? && !@plan.name.empty? %>
+What: <%= @plan.name %>
+<% end %>
+When: <%= @new_time %>
+<% if !@new_place_name.nil? -%>
+Where: <%= @new_place_name -%><% if !@new_place_location.blank? %><%= @new_place_location %> (<%= @new_gmap_link %>)<% end %>
+<% end -%>
+
+The old plans were:
+<% if !@old_time.nil? -%>
+When: <%= @old_time -%>
+<% end -%>
+<% if !@old_place_name.nil? %>
+Where: <%= @old_place_name -%><% if !@old_place_location.blank? %><%= @old_place_location %> (<%= @old_gmap_link %>)<% end %>
+<% end -%>
+<% if !@comment.blank? %>
+
+Comment:
+<%= @comment %>
+<% end %>
+Click here to switch back to the old plans:
+<%= @revert_link %>
+
+________________________________________________________________________________
+Too many emails from Skobee? Click here to change your notification settings:
+<%= @change_notifications %>

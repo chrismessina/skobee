@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%
+now_str = Time.now_for_mysql
+%>
+noaml_anniversary:
+  id: 1
+  plan_id: 5
+  change_type: 1
+  owner_id: 3
+  initial_value: 26
+  final_value: 38
+  comment: I'm OK with Triptych, but how about Julie's?
+  created_at: <%= now_str %>
+  updated_at: <%= now_str %>
+  
+laurenp_anniversary:
+  id: 2
+  plan_id: 5
+  change_type: 0
+  owner_id: 10
+  initial_value:
+  final_value:
+  comment: Sounds good- did you get reservations?
+  created_at: <%= now_str %>
+  updated_at: <%= now_str %>

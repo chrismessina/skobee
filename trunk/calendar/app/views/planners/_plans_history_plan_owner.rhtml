@@ -1,0 +1,22 @@
+<%
+pln_info = plans_history_plan_owner
+pln = pln_info.plan
+-%>
+<div id="plan-list-<%= pln.id %>" class="plan" onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => pln, :cal_id => pln_info.owning_planner)%>'"  onmouseover="rowHover(this.id, event, HOVER_TYPE_PLAN)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PLAN)">
+   <!-- <%= plan_template -%> -->
+   <div class="plan_text float-left">
+<%
+#MGS if the combined plan/place name is nil, then display the time
+plan_place_name = get_plan_place_name(pln, "h3")
+if plan_place_name.nil? -%>
+      <h3><%=h(pln.english_for_date(current_timezone))%>, <%=h(pln.english_for_time(current_timezone))%></h3>
+<%
+else -%>
+      <%=plan_place_name%>
+<%
+end -%>
+      <h4 class="invitees"><%= get_combined_invitee_list(pln)%></h4>
+   </div>
+   <div id="hover_bar_plan-list-<%= pln.id %>" class="hover_bar"></div>
+   <%= link_to "", {:controller => 'plans', :action => 'show', :id => pln, :cal_id => pln_info.owning_planner}, {:id=> "plan-list-#{pln.id}-location"}%>
+</div>

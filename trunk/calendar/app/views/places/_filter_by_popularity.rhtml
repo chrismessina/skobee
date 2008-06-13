@@ -1,0 +1,26 @@
+<div class="section blue filter">
+   <h3>Filter by Popularity</h3>
+   <div class="text">
+      Refine this search based on the behavior of other Skobee users.
+   </div>
+   <h4>Places Popular on This Day</h4>
+   <dl class="common no_desc">
+   <%
+   for day in PlacesController::DAYS_CHOICES -%>
+      <dt <%if @days == day[0] %>class="hover_blue"<%else%> onmouseover="dlHoverBlue(this, event)" onmouseout="dlHoverBlue(this, event)"<%end%> onclick="window.location.href = '<%= h(url_for({:controller => "places", :action => "search", :fulltext => @fulltext, :location => @location, :max_distance => @max_distance, :timeperiod => @timeperiod, :days => day[0] }))%>'">
+         <%= day[1]%>
+      </dt>
+   <%
+   end -%>
+   </dl>
+   <h4>Places Popular at This Time</h4>
+   <dl class="common no_desc">
+   <%
+   for time in PlacesController::TIME_CHOICES -%>
+      <dt <%if @timeperiod.to_i == time[0] %>class="hover_blue"<%else%> onmouseover="dlHoverBlue(this, event)" onmouseout="dlHoverBlue(this, event)"<%end%>  onclick="window.location.href = '<%= h(url_for({:controller => "places", :action => "search", :fulltext => @fulltext, :location => @location, :max_distance => @max_distance, :timeperiod => time[0], :days => @days }))%>'">
+      <%= time[1] %>
+      </dt>
+   <%
+   end -%>
+   </dl>
+</div>

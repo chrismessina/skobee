@@ -1,0 +1,30 @@
+<%
+@page_title = "Skobee - Plans List" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        Check out where friends are going <br/>
+        and what they're doing
+     </h2>
+  </div>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Sign Up Now", {:controller => 'users', :action => 'signup'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+</div>
+<div id="container" class="tour">
+   <div id="content">
+      <%=image_tag('/images/tour_planner.gif', :alt => 'Create Plan')%>
+      <h3>
+         <%= link_to("Next: You, your friends, and everyone", {:controller => 'splash', :action => 'tour_dashboard'}) %>
+      </h3>
+   </div>
+</div>
+<div id="sidebar" class="sidebar_tour">
+   <ol>
+      <li><span>Overlay your friends' plans on top of your own to see what people have going on or when they are free.</span></li>
+      <li><span>Plans start fuzzy and become more solid as everyone narrows down the details.</span></li>
+      <li><span>Looking for new places? We'll show you the places your friends have attended lately.</span></li>
+   </ol>
+</div>

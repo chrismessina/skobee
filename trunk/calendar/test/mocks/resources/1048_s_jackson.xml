@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?><ResultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:yahoo:maps" xsi:schemaLocation="urn:yahoo:maps http://api.local.yahoo.com/MapsService/V1/GeocodeResponse.xsd"><Result precision="address"><Latitude>47.599337</Latitude><Longitude>-122.318914</Longitude><Address>1048 S JACKSON ST</Address><City>SEATTLE</City><State>WA</State><Zip>98104-3016</Zip><Country>US</Country></Result></ResultSet>
+<!-- ws01.search.scd.yahoo.com uncompressed/chunked Wed Nov 23 11:53:00 PST 2005 -->

@@ -1,0 +1,60 @@
+#
+# Table structure for table places
+#
+
+CREATE TABLE `places` (
+  `id` <%= @pk %>,
+  `name` varchar(255) default NULL,
+  `user_id` int(11) default NULL,
+  `public` tinyint default NULL,
+  `location` varchar(512) default NULL,
+  `address` varchar(512) default NULL,
+  `city` varchar(512) default NULL,
+  `state` varchar(512) default NULL,
+  `zip` varchar(10) default NULL,
+  `lat` float default NULL,
+  `long` float default NULL,
+  `geocoded` int default 0,
+  `url` varchar(512) default NULL,
+  `click_url` varchar(512) default NULL,
+  `yahoo_url` varchar(512) default NULL,
+  `yahoo_click_url` varchar(512) default NULL,
+  `phone` varchar(30) default NULL,
+  `normalized_name` varchar(255) default NULL,
+  `meta_info` varchar(255) default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>,
+  `average_rating` int default NULL,
+  `total_ratings` int default 0,
+  `total_reviews` int default 0,
+  `last_review_date` datetime default NULL,
+  `deleted_by_clean` int default NULL,
+  `cleaned_at` datetime default NULL,
+  `origin` tinyint default NULL
+) <%= @options %>;
+
+ALTER TABLE `places` ADD INDEX vanilla_normalized_name_index (normalized_name);
+
+CREATE TABLE `duplicate_trackers` (
+  `id` <%= @pk %>,
+  `place_id` int(10) unsigned NOT NULL,
+  `created_at` <%= @datetime %>
+) <%= @options %>;
+
+CREATE TABLE `scraped_pages` (
+  `id` <%= @pk %>,
+  `zip` int(10) unsigned NOT NULL,
+  `page` int(10) unsigned NOT NULL,
+  `total_pages` int(10) unsigned NOT NULL,
+  `created_at` <%= @datetime %>
+) <%= @options %>;
+
+CREATE TABLE `yahoo_request_trackers` (
+  `id` <%= @pk %>,
+  `place_id` int(10) unsigned NOT NULL,
+  `request_num` int(10) unsigned NOT NULL,
+  `resolution` int(10) unsigned NOT NULL,
+  `duplicate` int(10) unsigned NOT NULL DEFAULT 0,
+  `mod_num` int(10) unsigned DEFAULT NULL,
+  `created_at` <%= @datetime %>
+) <%= @options %>;

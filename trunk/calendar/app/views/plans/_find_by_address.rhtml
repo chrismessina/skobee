@@ -1,0 +1,17 @@
+         <div style="display: none;" id="plan-editor-where" class="float-left">
+              <div class="float-left">
+                      <input type="text" name="search_location" id="search_location" class="" value="<%=h(current_user.get_att_value(UserAttribute::ATT_ZIP))%>"/>
+                      <h5 class="">Search by address</h5>
+              </div>
+              <div class="float-left">
+                  within
+              </div>
+              <div class="float-left">
+                  <input type="text" name="max_distance" id="max_distance" class="" value="<%=PlacesController::DEFAULT_MAX_DISTANCE%>"/>
+                  <h5 class="">Miles</h5>
+              </div>
+
+              <a href="#" id="search-places" onclick="showPlaceResults($F('place_name'),$F('search_location'),'venue_results',$F('max_distance'), 1, 1);return false;" class="">Search</a>
+
+           </div>
+           <div class="float-left" id="venue_results"></div>

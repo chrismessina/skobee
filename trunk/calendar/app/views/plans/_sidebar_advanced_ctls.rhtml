@@ -1,0 +1,105 @@
+<%
+hvr = sidebar_hover_str(@sidebar_number)
+class_str, @sidebar_number = get_sidebar_class(@sidebar_number) -%>
+<div class="<%= class_str %>" id='sidebar_advanced'>
+   <h3>
+      Advanced Options
+   </h3>
+   <dl class="common">
+      <dt <%= hvr %> onclick="changePrivacy();return false;">
+         Make this plan <%= (@plan.security_level == Plan::SECURITY_LEVEL_PUBLIC) ? 'private' : 'public' %>
+      </dt>
+      <dd></dd>
+<%
+#MES- Show the lock/unlock control if the current user is an owner of the plan
+if @show_lock_ctl -%>
+      <dt <%= hvr %> onclick="changeLock(); return false;">
+          <%= (@plan.lock_status == Plan::LOCK_STATUS_UNLOCKED) ? 'Lock' : 'Unlock' %> this plan
+      </dt>
+      <dd></dd>
+<%
+end -%>
+<%
+#MGS- only show the private/cancel options if the plan is not set to be in the past
+if !@plan.occurs_in_past? -%>
+      <dt <%= hvr %> onclick="if (confirm('Are you sure that you want to cancel this plan?\nWhen you cancel a plan, all invitees will be notified, and the plan won\'t appear on their planner.')) {cancelPlan(true); return false;}">
+          Cancel this plan
+      </dt>
+      <dd></dd>
+<%
+end -%>
+   <dt id="set_flickr_tags" <%= hvr %> onclick="<%if !@show_photo_tag_editor%>window.location.href = '<%= url_for({:controller => 'users', :action => 'edit_profile', :set_flickr_tag => 1})%>';<%end%>return false;">
+        Set Flickr tags
+      </dt>
+      <dd></dd>
+   </dl>
+<%
+#MES- If the user has a Flickr ID set, let them set the Flickr tags for the plan
+if @show_photo_tag_editor -%>
+   <div id="bubble_wrap">
+      <div id="flickr_tag_bubble" style="display:none;">
+         <div class="top"></div>
+         <div class="bottom">
+            <form action='/plans/set_flickr_tags/<%= @plan.id %>' name="flickr_tag_form"  id="flickr_tag_form" method="post">
+               <input type="hidden" name="plan_id" value="<%= @plan.id %>" />
+               <table border="0" cellpadding="0" cellspacing="0" summary="flickr tag bubble table">
+                  <tbody>
+                     <tr><td><div>Enter comma delimited Flickr tags:</div></td></tr>
+                     <tr><td><textarea name="flickr_tags" id="flickr_tags" class="big_form" rows="<%= ie? ? 2:1%>" cols="40"><%=h @plan.flickr_tags %></textarea></td></tr>
+                     <tr>
+                        <td>
+                           <div class="buttons">
+                              <div class="secondary">
+                                 <img id="popup_cancel" onclick="FlickrTagBubble.hide(event);" src="/images/cancel_bubble.gif" alt="cancel"/>
+                              </div>
+                              <div class="primary">
+                                 <input type="image" id="popup_save" name="save" src="/images/save_bubble.gif" alt="save"/>
+                              </div>
+                           </div>
+                        </td>
+                     </tr>
+                  </tbody>
+               </table>
+            </form>
+         </div>
+      </div>
+   </div>
+<%
+end -%>
+</div>
+<%
+#MES- If the user has a Flickr ID set, let them set the Flickr tags for the plan
+if @show_photo_tag_editor -%>
+<script type="text/javascript">
+var FlickrTagBubble = {
+   initialize : function() {
+      Event.observe('set_flickr_tags', 'click', FlickrTagBubble.click);
+      Event.observe('flickr_tag_form', 'submit', function(e){ FlickrTagBubble.submit(e) });
+   },
+   submit : function(ev) {
+      flickr_tag_form.submit();
+      FlickrTagBubble.hide(ev);
+      Event.stop(ev);
+   },
+   click : function(ev) {
+      Element.visible('flickr_tag_bubble') ? FlickrTagBubble.hide(ev) : FlickrTagBubble.show();
+      Event.stop(ev);
+      return false;
+   },
+   show : function() {
+      Event.observe('popup_cancel', 'click', function(e){FlickrTagBubble.hide(e)});
+      var bubble = $('flickr_tag_bubble');
+      bubble.style.left = ((Position.cumulativeOffset($('set_flickr_tags'))[0]) - 240) + 'px';
+      Element.show(bubble);
+      $('flickr_tags').focus();
+      Element.scrollTo('set_flickr_tags');
+   },
+   hide : function(e) {
+      Element.hide('flickr_tag_bubble');
+      if (null != e) { Event.stop(e); }
+   }
+};
+Event.observe(window, 'load', FlickrTagBubble.initialize);
+</script>
+<%
+end -%>

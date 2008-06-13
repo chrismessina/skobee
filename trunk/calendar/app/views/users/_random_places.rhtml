@@ -1,0 +1,10 @@
+<%
+if !@random_places.nil? && @random_places.length > 0 -%>
+<div class="section grey">
+   <h3>A Few of My Places</h3>
+   <dl class="common">
+   <%= render(:partial => "shared/place", :collection => @random_places)%>
+   </dl>
+</div>
+<%
+end -%>

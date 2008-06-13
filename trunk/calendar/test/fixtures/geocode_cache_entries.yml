@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 1
+  location: blahbittyblah
+  normalized_location: blahbittyblah
+  lat: 123
+  long: 1234
+another:
+  id: 2
+  location: foo
+  normalized_location: foo
+  lat: 12
+  long: 13

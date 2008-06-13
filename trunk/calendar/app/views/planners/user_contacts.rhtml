@@ -1,0 +1,27 @@
+<%
+@page_title = "Skobee - #{h(Inflector.possessiveize(@user.display_name))} Contacts" -%>
+<div id="banner">
+   <div class="picture">
+      <%= build_user_thumbnail_url(@user) %>
+   </div>
+   <h2><%="#{h(Inflector.possessiveize(@user.display_name))} Contacts"%></h2>
+   <div class="button">
+      <h3 class="action">
+         <%= link_to "Back to Profile", {:action => 'show', :controller => 'planners', :id => @user.planner }, { :class => 'edit-profile' } %>
+      </h3>
+   </div>
+</div>
+
+<div id="container">
+   <div id="content">
+      <%=render(:partial=>"/shared/flash")%>
+      <h2 class="section_heading section_heading_border"><%="#{h(Inflector.possessiveize(@user.display_name))} Contacts"%></h2>
+      <ul id="friends-list" class="picture_list">
+         <%= render(:partial => "/users/contacts", :collection => @combined_contacts)%>
+      </ul>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial '/users/about_me' %>
+   <%= render_partial '/users/random_places' %>
+</div>

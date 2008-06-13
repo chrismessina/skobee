@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?><ResultSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:yahoo:maps" xsi:schemaLocation="urn:yahoo:maps http://api.local.yahoo.com/MapsService/V1/GeocodeResponse.xsd"><Result precision="zip+4"><Latitude>37.8288</Latitude><Longitude>-122.251</Longitude><Address></Address><City>OAKLAND</City><State>CA</State><Zip>94611-4704</Zip><Country>US</Country></Result></ResultSet>
+<!-- ws02.search.scd.yahoo.com uncompressed/chunked Tue Nov 22 19:54:30 PST 2005 -->

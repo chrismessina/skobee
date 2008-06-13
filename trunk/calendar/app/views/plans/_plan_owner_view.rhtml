@@ -1,0 +1,492 @@
+<%
+#MGS- if there are too many users on this plan, display the textual
+# invitee list view
+if PlansController::PLAN_THUMBNAIL_DISPLAY_LIMIT >= @plan.planners.delete_if{|cal| Plan::STATUS_NO_RELATION == cal.cal_pln_status.to_i}.length && !ie?
+   planners = get_sorted_planners(@plan)
+else
+   accepted_list, interested_list, rejected_list, invited_list, cancelled_list = get_invitee_lists(@plan, current_user)
+end
+
+if !flash[:who_field_txt].nil?
+   @onload_handler = @onload_handler.nil? ? "openWho();" : "openWho();" + @onload_handler
+end
+-%>
+<script type="text/javascript">
+   var savePressed = false;
+</script>
+<div id="banner" class="plan_header">
+<%
+
+#MGS- don't show the edit buttons if the plan is cancelled or if you're not logged in
+if !@cancelled && @show_edits
+   if logged_in?
+      #MGS- set the click actions to open the edits since we're logged in
+      click_when = "if(editor_open){return;};rowHover('plan_when_row', true, HOVER_TYPE_PROPERTY);openWhen();"
+      click_who = "if(editor_open){return;};rowHover('plan_who_row', true, HOVER_TYPE_PROPERTY);openWho();"
+      click_where = "if(editor_open){return;};rowHover('plan_where_row', true, HOVER_TYPE_PROPERTY);openWhere();"
+      click_comment = "if(editor_open){return;};rowHover('plan_discuss_row', true, HOVER_TYPE_COMMENT);addComment();"
+   else
+      #MGS- redirect to the login page
+      click_when = click_who = click_where = click_comment = "window.location.href = '/users/login';"
+   end -%>
+
+   <ul>
+      <li onclick="<%= click_when %>" onmouseover="Element.addClassName(this, 'light');" onmouseout="Element.removeClassName(this, 'light');">
+         <img src="/images/banner_time.gif" alt="New Time" /><br />
+         New Time
+      </li>
+      <li onclick="<%= click_who %>" onmouseover="Element.addClassName(this, 'light');" onmouseout="Element.removeClassName(this, 'light');">
+         <img src="/images/banner_people.gif" alt="Invite People" /><br />
+         Invite People
+      </li>
+      <li onclick="<%= click_where %>" onmouseover="Element.addClassName(this, 'light');" onmouseout="Element.removeClassName(this, 'light');">
+         <img src="/images/banner_place.gif" alt="New Place" /><br />
+         New Place
+      </li>
+      <li onclick="<%= click_comment %>" onmouseover="Element.addClassName(this, 'light');" onmouseout="Element.removeClassName(this, 'light');">
+         <img src="/images/banner_comment.gif" alt="New Comment" /><br />
+         New Comment
+      </li>
+   </ul>
+<%
+else
+   #MGS- this will display the cancelled plan header -%>
+   <%= get_plan_header(@plan) %>
+<%
+end -%>
+
+<%
+if !@cancelled -%>
+  <div class="banner_right_link">
+    <h3 class="email_help">
+      <a href="mailto:<%= u(EmailId.email_address_for_plan(@plan)) %>?body=when%3A%0Awhere%3A"><%= EmailId.email_address_for_plan(@plan) %></a> <br/>
+      <%= link_to("What is this?", { :controller => 'splash', :action => 'emailhowto' }, { :id => 'small_email_help' }) %>
+    </h3>
+  </div>
+<%
+end -%>
+</div>
+<div id="container">
+   <div id="content" class="hovered_sections">
+      <%=render(:partial=>"/shared/flash")%>
+      <form name="plan_form" id="plan_form" action="" method="post" onsubmit="if (!savePressed){ return false; }">
+         <input type="hidden" name="id" value="<%=@plan.id%>"/>
+         <div id="plan_what_row" class="property_value_row" <%if @show_edits%>onmouseover="rowHover(this.id, event, HOVER_TYPE_PROPERTY)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PROPERTY)"<%end%>>
+            <h3 class="property">
+               What:
+            </h3>
+            <div id="plan_what" class="value">
+               <table cellpadding="0" cellspacing="0" class="details" summary="What">
+                  <tr>
+                     <td class="text">
+<%
+#MGS- to fix problem where people just enter spaces, strip the plan name
+#see bug #903
+if !@plan.name.nil? && "" != @plan.name.strip
+   display_name = @plan.name
+else
+   display_name = 'We\'ve got plans (no description).'
+end
+-%>
+                        <strong><%= h(display_name) %></strong>
+<%
+#MGS- display the description if there is one
+if !@plan.description.nil? && "" != @plan.description -%>
+                        <div class="description">
+                           <%= format_rich_text(@plan.description) %>
+                        </div>
+<%
+end -%>
+                     </td>
+                     <td class="edit_link">
+                        <%
+                        #MGS- this space needs to be here for FF and Safari, but IE doesn't like it
+                        if !ie? -%>&nbsp;<%end-%>
+                        <%
+                        #MGS- only show the edit link if we've accepted this plan
+                        if @show_edits -%>
+                        <%= anchor_or_login "<a id=\"change-plan_what_row\" class=\"edit edit_what\" style=\"display: none\" onclick=\"openWhat();return false;\">Edit</a>", 'Edit', "id=\"change-plan_what_row\" class=\"edit edit_what\" style=\"display: none\"" %>
+                        <%
+                        end -%>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div id="hover_bar_plan_what_row" class="hover_bar"></div>
+         </div>
+         <div id="plan_what_editor" style="display: none" class="mini_editor">
+            <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="new plan form">
+               <tr>
+                  <td class="property_wide">
+                     New Title:
+                  </td>
+                  <td>
+                     <input type="text" name="plan_name" id="plan_name" value="<%=h(@plan.name)%>" maxlength="255" class="big_form"/>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="property_wide">
+                     Say more:
+                  </td>
+                  <td>
+                     <textarea class="big_form" name="plan_description" id="plan_description"  rows="<%= firefox? ? "2" : "3"%>" cols="40" onkeyup="expandTextArea(this)"><%=h(@plan.description)%></textarea><br/>
+                     <div class="comment_html_help"><%= comment_help_link %></div>
+                  </td>
+               </tr>
+            </table>
+            <div class="buttons">
+               <div class="primary">
+                  <a href="#" onclick="cancelWhat();return false"><img src="/images/button_cancel.gif" alt="Save" /></a>
+               </div>
+               <div class="secondary">
+                  <a href="#" onclick="saveWhat();return false;"><img src="/images/button_save.gif" alt="Save" /></a>
+               </div>
+            </div>
+         </div>
+         <div id="plan_when_row" class="property_value_row" <%if @show_edits%>onmouseover="rowHover(this.id, event, HOVER_TYPE_PROPERTY)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PROPERTY)"<%end%>>
+            <h3 class="property">
+               When:
+            </h3>
+            <div id="plan_when_div" class="value">
+               <table cellpadding="0" cellspacing="0" class="details" summary="When">
+                  <tr>
+                     <td class="text">
+                        <%=h(@plan.english_for_datetime(current_timezone))%>
+                     </td>
+                     <td class="edit_link">
+                        <%
+                        #MGS- this space needs to be here for FF and Safari, but IE doesn't like it
+                        if !ie? -%>&nbsp;<%end-%>
+                        <%
+                        if @show_edits
+                        #MGS- only show the edit link if we've accepted this plan
+                        -%>
+                        <%= anchor_or_login "<a id=\"change-plan_when_row\" class=\"edit edit_when\" style=\"display: none\" onclick=\"openWhen();return false\">Suggest</a>", 'Suggest', "id=\"change-plan_when_row\" class=\"edit edit_when\" style=\"display: none\"" %>
+                        <%
+                        end -%>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div id="hover_bar_plan_when_row" class="hover_bar"></div>
+         </div>
+         <div id="plan_when_editor" style="display: none" class="mini_editor">
+           <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="new plan form">
+             <tr>
+               <td class="property_wide">
+                 Suggest:
+               </td>
+               <%= render(:partial => "when_field") %>
+             </tr>
+             <tr>
+               <td class="property_wide">
+                 Notes:<br />
+                 <span class="note">Optional</span>
+               </td>
+               <td>
+                 <textarea class="big_form" id="comment_tb" name="comment_tb" rows="3" cols="40" onkeyup="expandTextArea(this)"></textarea>
+               </td>
+             </tr>
+           </table>
+           <div class="buttons">
+             <div class="primary">
+               <a href="#" onclick="cancelWhen();return false;" class=""><img src="/images/button_cancel.gif" alt="Cancel" /></a>
+             </div>
+             <div class="secondary">
+               <a href="#" onclick="saveWhen();return false;" class=""><img src="/images/button_save.gif" alt="Save" /></a>
+             </div>
+           </div>
+         </div>
+         <div id="plan_who_row" class="property_value_row" <%if @show_edits%>onmouseover="rowHover(this.id, event, HOVER_TYPE_PROPERTY)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PROPERTY)"<%end%>>
+            <h3 class="property">
+               Who:
+            </h3>
+            <div id="plan_who_list" class="value">
+               <table cellpadding="0" cellspacing="0" class="details"  summary="Who">
+                  <tr>
+                     <td class="text">
+<%
+#MGS- write out the overlayed image stuff
+if PlansController::PLAN_THUMBNAIL_DISPLAY_LIMIT >= @plan.planners.length && !ie? -%>
+                        <ul id="plan_invitees" class="picture_list plan_thumbnail_list">
+                     <%
+                     planners.each do |cal|
+                        #MGS- we need this onclick because the overlayed image on the thumbnail makes the image unclickable -%>
+                        <li onclick="if (!addToRemoveField('<%= h(cal.owner.login) %>')){ return false;}else{window.location.href='<%=url_for(:controller => 'user', :action => cal.owner.login ) %>';}">
+
+                           <div id="invitee_pic_<%=cal.id%>" class="plan_picture_list">
+                              <div>
+                                 <%= build_user_thumbnail_link(cal.owner, cal.owner.display_name)%>
+                              </div>
+                           </div>
+<%
+  #MES- Don't show the overlays if the plan is cancelled
+  if !@cancelled -%>
+                           <div id="overlay_<%=cal.id%>" class="plan_picture_list_overlay plan_picture_list_<%= cal.cal_pln_status %>"></div>
+<%
+  end -%>
+                        </li>
+                     <%
+                     end -%>
+                        </ul>
+<%
+  if !@cancelled -%>
+<script type="text/javascript">
+function positionOverlay(){
+   var pictures = $A(document.getElementsByClassName('plan_picture_list', 'plan_invitees'));
+   pictures.each(
+      function(pic){
+         var width = Element.getDimensions(pic).width;
+         var nextSib = pic.nextSibling;
+         while (nextSib.nodeType != 1)
+            nextSib = nextSib.nextSibling;
+         nextSib.style.left = ((width/2)-24) + 'px';
+      }
+   );
+}
+<% @onload_handler = @onload_handler.nil? ? "positionOverlay();" : "positionOverlay();" + @onload_handler %>
+</script>
+<%
+  end #MES- "if !@cancelled"
+else -%>
+                        <ul class="invite_list">
+                           <%
+                           if !accepted_list.nil? && "" != accepted_list -%>
+                           <li class="accepted">
+                              <div>
+                                 <%= accepted_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !interested_list.nil? && "" != interested_list -%>
+                           <li class="interested">
+                              <div>
+                                 <%= interested_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !rejected_list.nil? && "" != rejected_list  -%>
+                           <li class="rejected">
+                              <div>
+                                 <%= rejected_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !invited_list.nil? && "" != invited_list -%>
+                           <li class="pending">
+                              <div>
+                                 <%= invited_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !cancelled_list.nil? && "" != cancelled_list -%>
+                           <li class="cancelled">
+                              <div id="cancelled">
+                                 <%= cancelled_list %>
+                              </div>
+                           </li>
+                           <%
+                           end -%>
+                        </ul>
+<%
+end -%>
+                     </td>
+                     <td class="edit_link">
+                        <%
+                        #MGS- this space needs to be here for FF and Safari, but IE doesn't like it
+                        if !ie? -%>&nbsp;<%end-%>
+                        <%
+                        if @show_edits
+                        #MGS- only show the edit link if we've accepted this plan
+                        -%>
+                        <%= anchor_or_login "<a id=\"change-plan_who_row\" class=\"edit edit_who\" style=\"display: none\" onclick=\"openWho();return false\">Edit</a>", 'Edit', "id=\"change-plan_who_row\" class=\"edit edit_who\" style=\"display: none\"" %>
+                        <%
+                        end -%>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div id="hover_bar_plan_who_row" class="hover_bar"></div>
+         </div>
+         <div id="plan_who_editor" style="display: none" class="mini_editor relative">
+            <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="plan who editor">
+               <tr id="plan_who_editor_row">
+                  <td class="property_wide">
+                     Invite:
+                  </td>
+                  <td>
+                     <div class="relative">
+                        <textarea class="big_form" id="plan_who" name="plan_who" rows="<%= firefox? ? "2" : "3"%>" cols="54" onkeyup="expandTextArea(this)" ><%=h(flash[:who_field_txt])%></textarea>
+                        <h4 class="help">Enter email addresses, real names, or Skobee IDs.</h4>
+                        <div class="auto_complete" id="plan_who_div"></div>
+                        <script type="text/javascript"><!--
+                        <%= generate_user_autocomplete_arrays(current_user_id, 'search_array') %>
+                        //--></script>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="property_wide" id="remove_who_row_label">Or<br/>Remove:</td>
+                  <td id="remove_who_row_field" class="place remove_user_text"><h3>Click users above to remove them from this plan.</h3></td>
+               </tr>
+            </table>
+            <div class="buttons">
+               <div class="primary">
+                  <a href="#" onclick="cancelWho();return false;"><img src="/images/button_cancel.gif" alt="Cancel" /></a>
+               </div>
+               <div class="secondary">
+                  <a href="#" onclick="saveWho();return false;"><img src="/images/button_save.gif" alt="Save" /></a>
+               </div>
+            </div>
+         </div>
+         <div id="plan_where_row" class="property_value_row" <%if @show_edits%>onmouseover="rowHover(this.id, event, HOVER_TYPE_PROPERTY)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PROPERTY)"<%end%>>
+            <h3 class="property">
+               Where:
+            </h3>
+            <div id="plan_where" class="value">
+               <table cellpadding="0" cellspacing="0" class="details"  summary="Where">
+                  <tr>
+                     <td class="text place">
+                     <%
+                     if !@plan.place.nil?
+                     %>
+                        <h3>
+                           <%= link_to h(@plan.place.name), {:controller => 'places', :action => 'show', :id => @plan.place.id, :plan_id => @plan.id } %>
+                        <%
+                        if @plan.place.public == Place::PLACE_PRIVATE && current_user.id == @plan.place.user_id -%>
+                           <span>
+                              (<%= link_to (@plan.place.has_lat_long? ? 'update place info' : 'add a map'), {:controller => 'places', :action => 'edit', :id => @plan.place.id} %>)
+                           </span>
+                        <%
+                        end -%>
+                        </h3>
+                        <%
+                        if !@plan.place.location.nil? -%>
+                        <address>
+                           <%=h(@plan.place.location)%>
+                        </address>
+                        <%
+                        end
+                        if !@plan.place.phone.blank? -%>
+                        <address>
+                           <%=h(@plan.place.phone_formatted_for_display)%>
+                        </address>
+                        <%
+                        end
+
+                        if !@plan.place.url.nil? -%>
+                        <address class="url">
+                           <a href="<%= @plan.place.url %>" target="_blank"><%= truncate(@plan.place.url, 40) %></a>
+                        </address>
+                        <%
+                        end
+
+                     end -%>
+                     &nbsp;
+                     </td>
+                     <td class="edit_link">
+                        <%
+                        #MGS- this space needs to be here for FF and Safari, but IE doesn't like it
+                        if !ie? -%>&nbsp;<%end-%>
+                        <%
+                        if @show_edits
+                        #MGS- only show the edit link if we've accepted this plan
+                        -%>
+                        <%= anchor_or_login "<a id=\"change-plan_where_row\" class=\"edit edit_where\" style=\"display: none\" onclick=\"openWhere();return false\">Suggest</a>", 'Suggest', "id=\"change-plan_where_row\" class=\"edit edit_where\" style=\"display: none\"" %>
+                        <%
+                        end -%>
+                     </td>
+                  </tr>
+               </table>
+            </div>
+            <div id="hover_bar_plan_where_row" class="hover_bar"></div>
+         </div>
+         <div id="plan_where_editor" style="<%= @flash[:place_validation_error] ? '' : 'display: none' %>" class="mini_editor">
+            <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="plan who editor">
+               <tr>
+                  <td class="property_wide">
+                     Where:
+                  </td>
+                  <%=render(:partial=>"where_field")%>
+               </tr>
+               <tr>
+                  <td class="property_wide">
+                     Notes:<br />
+                     <span class="note">Optional</span>
+                  </td>
+                  <td>
+                     <textarea class="big_form" id="comment_pb" name="comment_pb" rows="3" cols="40" onkeyup="expandTextArea(this)"></textarea>
+                  </td>
+               </tr>
+            </table>
+            <div class="buttons">
+               <div class="primary">
+                  <a href="#" onclick="cancelWhere();return false;"><img src="/images/button_cancel.gif" alt="Cancel" /></a>
+               </div>
+               <div class="secondary">
+                  <a href="#" onclick="savePressed=true;if(validatePlaceNameExists()){saveWhere();}return false;"><img src="/images/button_save.gif" alt="Save" /></a>
+               </div>
+            </div>
+         </div>
+      </form>
+      <div id="change-group">
+      <%= render(:partial => 'changes', :object => @plan.plan_changes.sort) %>
+      </div>
+   </div>
+</div>
+
+<div id="sidebar">
+<%
+@sidebar_number = 0
+#MES- If the plan is today or in the future, we show some sidebar controls
+if !@plan.occurs_in_past?
+   if !@cancelled -%>
+   <%= render(:partial => "plan_status")%>
+<%
+   end -%>
+   <%= render(:partial => "sidebar_place_map", :locals => {:place => @plan.place})%>
+<%
+   #MES- Show the advanced controls if we're showing edits.
+   if @show_edits -%>
+   <%= render(:partial => "sidebar_advanced_ctls")%>
+<%
+   #MES- If we're NOT showing the advanced controls, but the plan is cancelled,
+   #  there needs to be a way to uncancel it, so we'll so the uncancel sidebar
+   elsif @cancelled -%>
+   <%= render(:partial => "sidebar_uncancel") %>
+<%
+   end -%>
+<%
+    #MES- Show the pictures view if there might be pictures
+    if @could_have_photos -%>
+   <%= render(:partial => "sidebar_flickr")%>
+<%
+    end -%>
+   <%= render(:partial => "places/popular_this_week")%>
+<%
+else
+   #MES- This is a past plan, show map and pictures -%>
+   <%= render(:partial => "sidebar_place_map", :locals => {:place => @plan.place})%>
+<%
+   #MGS- Show the advanced controls if we're showing edits; show the advanced controls if plans are in the past,
+   # as the flickr tag editor is in this control;  there's logic in the control partial itself, to show/hide things
+   # if they are in the past.
+   if @show_edits -%>
+      <%= render(:partial => "sidebar_advanced_ctls")%>
+<%
+   end
+    #MES- Show the pictures view if there might be pictures
+    if @could_have_photos -%>
+   <%= render(:partial => "sidebar_flickr")%>
+<%
+    end -%>
+<%
+end -%>
+   <%= render(:partial => "sidebar_users_stub")%>
+</div>
+
+<span id="owner_view"></span>

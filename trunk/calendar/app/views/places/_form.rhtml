@@ -1,0 +1,61 @@
+<% place = @place %>
+<table cellpadding="0" cellspacing="0" width="100%" class="property_value" summary="new plan form">
+   <tr>
+      <th>
+         Name:
+      </th>
+      <td>
+         <%= text_field(:place, :name, {:class=>'big_form', :maxlength=>'255'}) %>
+         <h4 class="help">e.g., Gary Danko, Zuni Cafe, Michael Mina, etc.</h4>
+      </td>
+   </tr>
+   <tr>
+      <th>
+         Address:
+      </th>
+      <td>
+         <%= text_field(:place, :location, {:class=>'big_form'}) %>
+         <h4 class="help">e.g., 604 Mission St., San Francisco, CA 94111</h4>
+      </td>
+   </tr>
+   <tr>
+      <th>
+         Phone:
+      </th>
+      <td>
+         <%= text_field(:place, :phone, {:class=>'big_form', :value => "#{@place.phone_formatted_for_display}"}) %>
+         <h4 class="help">e.g., 555-555-5555</h4>
+      </td>
+   </tr>
+   <tr>
+      <th>
+         URL:
+      </th>
+      <td>
+         <%= text_field(:place, :url, {:class=>'big_form'}) %>
+         <h4 class="help">e.g., http://www.skobee.com</h4>
+      </td>
+   </tr>
+   <tr>
+      <th>
+         <input name="place[public_status]" id="place_public_status" type="checkbox" value="1" <%= Place::PUBLIC_STATUS_REQUESTED == @place.public_status ? 'checked' : '' %> />
+      </th>
+      <td>
+         <label for="place_public_status">Make this place available to <strong>all</strong> users</label>
+      </td>
+   </tr>
+   <tr>
+      <th>
+      </th>
+      <td>
+            <div class="buttons">
+                <div class="secondary">
+                    <%= link_to(image_tag('/images/button_cancel.gif', :alt => 'Cancel'), {:action => 'cancel_and_redirect'})%>
+                </div>
+                <div class="primary">
+                    <input type="image" onclick="document.forms[0].submit(); return false;" name="save" src="/images/button_save.gif" alt="Save"/>
+                </div>
+            </div>
+      </td>
+   </tr>
+</table>

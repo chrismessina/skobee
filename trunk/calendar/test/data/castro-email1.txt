@@ -1,0 +1,36 @@
+X-Gmail-Received: 39a03e0fdbc51e1d95cec663b5880ae7848dda6b
+Delivered-To: kavin620@gmail.com
+Received: by 10.36.222.16 with SMTP id u16cs13309nzg;
+        Mon, 31 Oct 2005 20:56:22 -0800 (PST)
+Received: by 10.70.131.4 with SMTP id e4mr2208841wxd;
+        Mon, 31 Oct 2005 20:56:22 -0800 (PST)
+Return-Path: <kavin620@hotmail.com>
+Received: from hotmail.com (bay16-f21.bay16.hotmail.com [65.54.186.71])
+        by mx.gmail.com with ESMTP id i10si2058725wxd.2005.10.31.20.56.21;
+        Mon, 31 Oct 2005 20:56:22 -0800 (PST)
+Received-SPF: pass (gmail.com: domain of kavin620@hotmail.com designates 65.54.186.71 as permitted sender)
+Received: from mail pickup service by hotmail.com with Microsoft SMTPSVC;
+	 Mon, 31 Oct 2005 20:56:21 -0800
+Message-ID: <BAY16-F212376BCB2AF9E1DAF23C4806F0@phx.gbl>
+Received: from 67.102.229.98 by by16fd.bay16.hotmail.msn.com with HTTP;
+	Tue, 01 Nov 2005 04:56:21 GMT
+X-Originating-IP: [67.102.229.98]
+X-Originating-Email: [kavin620@hotmail.com]
+X-Sender: kavin620@hotmail.com
+From: "Kavin Stewart" <kavin620@hotmail.com>
+To: kavin620@gmail.com, kavin.stewart@gmail.com
+Bcc: 
+Subject: test event1
+Date: Mon, 31 Oct 2005 20:56:21 -0800
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+X-OriginalArrivalTime: 01 Nov 2005 04:56:21.0582 (UTC) FILETIME=[9A5C96E0:01C5DEA0]
+
+what: castro halloween mayhem
+where: castro
+when: next week
+
+_________________________________________________________________
+On the road to retirement? Check out MSN Life Events for advice on how to 
+get there! http://lifeevents.msn.com/category.aspx?cid=Retirement
+

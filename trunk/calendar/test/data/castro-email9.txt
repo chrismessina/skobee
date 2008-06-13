@@ -1,0 +1,131 @@
+X-Gmail-Received: 04656b26a2a946470e3e778aed19d0e10fc4acaf
+Delivered-To: kavin620@gmail.com
+Received: by 10.36.222.56 with SMTP id u56cs2529nzg;
+       Fri, 2 Dec 2005 13:29:11 -0800 (PST)
+Received: by 10.37.12.24 with SMTP id p24mr3067797nzi;
+       Fri, 02 Dec 2005 13:29:11 -0800 (PST)
+X-Forwarded-To: kavin620@gmail.com
+X-Forwarded-For: kavin.stewart@gmail.com kavin620@gmail.com
+X-Gmail-Received: a3238088e3f5f78dcd526ddac2957a71a48b823a
+Delivered-To: kavin.stewart@gmail.com
+Received: by 10.36.71.11 with SMTP id t11cs8321nza;
+       Fri, 2 Dec 2005 13:29:11 -0800 (PST)
+Received: by 10.54.63.18 with SMTP id l18mr938667wra;
+       Fri, 02 Dec 2005 13:29:11 -0800 (PST)
+Return-Path: <kavin620@yahoo.com>
+Received: from web31601.mail.mud.yahoo.com (web31601.mail.mud.yahoo.com [68.142.198.147])
+       by mx.gmail.com with SMTP id d61si3259127wra.2005.12.02.13.29.10;
+       Fri, 02 Dec 2005 13:29:11 -0800 (PST)
+Received-SPF: pass (gmail.com: domain of kavin620@yahoo.com designates
+       68.142.198.147 as permitted sender)
+       DomainKey-Status: good (test mode)
+Received: (qmail 72624 invoked by uid 60001); 2 Dec 2005 21:29:09 -0000
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws;
+ s=s1024; d=yahoo.com;
+ h=Message-ID:Received:Date:From:Subject:To:Cc:In-Reply-To:MIME-Version:Content-Type:Content-Transfer-Encoding;
+ b=bD0KQAmhtjjwoj3UzEp/5DavwOM8Wzyqw/PY7rexigvbBrk2qP7aUPWtdwr5DvbAQHrnZj5niU53wp77XBD6jEk+3WK/8knVyBcP9AHwLXU+XtbJPkB72apyHqb+H5w1lu3WchxLzHbMNSc0GdBO9TbFCVDivK/zBEjBfwggCpY=
+ ;
+Message-ID: <20051202212909.72622.qmail@web31601.mail.mud.yahoo.com>
+Received: from [67.102.229.98] by web31601.mail.mud.yahoo.com via
+       HTTP; Fri, 02 Dec 2005 13:29:09 PST
+Date: Fri, 2 Dec 2005 13:29:09 -0800 (PST)
+From: Kavin Stewart <kavin620@yahoo.com>
+Subject: Re: test event1
+To: kavin stewart <kavin.stewart@gmail.com>,
+ Kavin Stewart <kavin620@gmail.com>
+Cc: Kavin Stewart <kavin620@hotmail.com>, kavin620@yahoo.com
+In-Reply-To: <5e5f2df80512021328t3bf297c2ie82a8f6b9d6871c7@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+
+
+when: 10th February, 2005, 1:30pm
+where: Bamboo House Chinese Rstrnt
+address: 320 N Midway Dr, Escondido, CA
+
+--- kavin stewart <kavin.stewart@gmail.com> wrote:
+
+> On 12/2/05, Kavin Stewart <kavin620@gmail.com>
+> wrote:
+> >
+> > On 11/1/05, Kavin Stewart <kavin620@hotmail.com>
+> wrote:
+> > > where: other kavin's hut
+> > >
+> > >
+> > > >From: Kavin Stewart <kavin620@gmail.com>
+> > > >To: Kavin Stewart <kavin620@hotmail.com>
+> > > >CC: kavin.stewart@gmail.com, joe schmoe
+> <kavin620@yahoo.com>
+> > > >Subject: Re: test event1
+> > > >Date: Tue, 1 Nov 2005 18:16:34 -0800
+> > > >
+> > > >On 10/31/05, Kavin Stewart
+> <kavin620@hotmail.com> wrote:
+> > > > > when: next thursday evening
+> > > > >
+> > > > >
+> > > > > >From: Kavin Stewart <kavin620@gmail.com>
+> > > > > >To: Kavin Stewart <kavin620@hotmail.com>
+> > > > > >CC: kavin.stewart@gmail.com
+> > > > > >Subject: Re: test event1
+> > > > > >Date: Mon, 31 Oct 2005 20:57:40 -0800
+> > > > > >
+> > > > > >where: my place
+> > > > > >when: next thursday
+> > > > > >
+> > > > > >On 10/31/05, Kavin Stewart
+> <kavin620@hotmail.com> wrote:
+> > > > > > > what: castro halloween mayhem
+> > > > > > > where: castro
+> > > > > > > when: next week
+> > > > > > >
+> > > > > > >
+> >
+>
+_________________________________________________________________
+> > > > > > > On the road to retirement? Check out MSN
+> Life Events for advice
+> > on
+> > > >how
+> > > > > >to
+> > > > > > > get there!
+> >
+>
+http://lifeevents.msn.com/category.aspx?cid=Retirement
+> > > > > > >
+> > > > > > >
+> > > > >
+> > > > >
+>
+_________________________________________________________________
+> > > > > Don't just search. Find. Check out the new
+> MSN Search!
+> > > > >
+>
+http://search.msn.click-url.com/go/onm00200636ave/direct/01/
+> > > > >
+> > > > >
+> > >
+> > >
+>
+_________________________________________________________________
+> > > Don't just search. Find. Check out the new MSN
+> Search!
+> > >
+>
+http://search.msn.click-url.com/go/onm00200636ave/direct/01/
+> > >
+> > >
+> >
+>
+
+
+
+
+__________________________________________
+Yahoo! DSL ? Something to write home about.
+Just $16.99/mo. or less.
+dsl.yahoo.com

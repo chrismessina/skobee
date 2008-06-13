@@ -1,0 +1,99 @@
+<%
+@page_title = "Skobee - Invite a Friend" -%>
+<div id="banner">
+   <h2>
+      Invite friends to join Skobee
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings settings_wide">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <h2 class="settings_header settings_header_alt">
+         Enter addresses and we'll send a registration link.
+      </h2>
+      <%= start_form_tag :action => 'invite_new_user' %>
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value top" summary="new plan form">
+         <tr>
+            <th>
+               From:
+            </th>
+            <td>
+               <%= h(current_user.full_name)%> <%=h("<#{current_user.email}>")%>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               To:
+            </th>
+            <td>
+               <textarea class="big_form" name="invite_to" id="invite_to" rows="<%= firefox? ? "2" : "3"%>" cols="40" onkeyup="expandTextArea(this)"><%= @invite_to %></textarea>
+               <h4 class="help">Enter email addresses separated by commas.</h4>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               Subject:
+            </th>
+            <td>
+               <%=h(@subject)%>
+               <%= hidden_field_tag 'invite_subject', h(@subject) %>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               Body:
+            </th>
+            <td>
+               Hey there, <br/><br/>
+               <textarea class="big_form" name="invite_body" id="invite_body" rows="<%= firefox? ? "6" : "7"%>" cols="40" onkeyup="expandTextArea(this)"><%= @body %></textarea>
+               <br/><br/>
+               Signing up only takes a minute.
+               <br/><br/>
+               We should hang out soon...
+               <br/><br/>
+               -<%= h(current_user.full_name)%>
+               <br/><br/>
+            </td>
+         </tr>
+      </table>
+
+
+         <h2 class="settings_header">
+            Would you like to add these people as contacts?
+         </h2>
+         <table cellpadding="0" cellspacing="0" width="100%" class="radio_list" summary="new plan form">
+         <tr>
+            <th>
+               <input type="radio" name="friend_status" id="friend_status_no" value="<%=User::FRIEND_STATUS_NONE %>" <%= "checked=\"checked\"" if User::FRIEND_STATUS_NONE == @friend_status || @friend_status.nil? %>/>
+            </th>
+            <td>
+               <label for="friend_status_no">Not right now</label>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <input type="radio" name="friend_status" id="friend_status_fr" value="<%=User::FRIEND_STATUS_FRIEND%>" <%= "checked=\"checked\"" if User::FRIEND_STATUS_FRIEND == @friend_status %>/>
+            </th>
+            <td>
+               <label for="friend_status_fr">Add as a friend</label>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <input type="radio" name="friend_status" id="friend_status_ct" value="<%=User::FRIEND_STATUS_CONTACT%>" <%= "checked=\"checked\"" if User::FRIEND_STATUS_CONTACT == @friend_status %>/>
+            </th>
+            <td>
+               <label for="friend_status_ct">Add as a contact</label>
+            </td>
+         </tr>
+      </table>
+      <div class="buttons">
+         <div class="primary">
+            <input type="image" id="save-change" name="invite" src="/images/button_invite.gif" alt="Invite" onclick="document.forms[0].submit" />
+         </div>
+      </div>
+      <%= end_form_tag %>
+
+   </div>
+</div>

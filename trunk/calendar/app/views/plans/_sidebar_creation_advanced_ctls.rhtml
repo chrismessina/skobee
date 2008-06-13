@@ -1,0 +1,17 @@
+<% 
+hvr = sidebar_hover_str(@sidebar_number)
+class_str, @sidebar_number = get_sidebar_class(@sidebar_number) -%>
+<div class="<%= class_str %>" id='sidebar_creation_advanced'>
+   <h3>
+      Advanced Options
+   </h3>
+   <dl class="common">
+      <dt <%= hvr %> >
+         <input type='checkbox' name='plan[security_level]' id='plan_security_level' class='sidebar_ctl' value='<%= Plan::SECURITY_LEVEL_PRIVATE %>' /><label for='plan_security_level' class='sidebar_ctl'>Make this plan private</label>
+      </dt>
+      <dd></dd>
+      <dt <%= hvr %> ><input type='checkbox' name='plan[lock_status]' id='plan_lock_status' class='sidebar_ctl' value='<%= Plan::LOCK_STATUS_OWNERS_ONLY %>' /><label for='plan_lock_status' class='sidebar_ctl'>Lock this plan</label>    
+      </dt>
+      <dd></dd>
+   </dl>
+</div>

@@ -1,0 +1,334 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+    planner_id: 1
+    plan_id: 1
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 4
+    place_id_cache: 1
+    user_id_cache: 1
+    plan_security_cache: 0
+
+two:
+    planner_id: 2
+    plan_id: 2
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 3
+    place_id_cache: 1
+    user_id_cache: 2
+    plan_security_cache: 0
+    
+four:
+    planner_id: 1
+    plan_id: 2
+    cal_pln_status: 1
+    planner_visibility_cache: 4
+    place_id_cache: 1
+    user_id_cache: 1
+    plan_security_cache: 0
+    
+five:
+    planner_id: 1
+    plan_id: 3
+    ownership: 1
+    cal_pln_status: 2
+    planner_visibility_cache: 4
+    place_id_cache: 1
+    user_id_cache: 1
+    plan_security_cache: 0
+    
+six:
+    planner_id: 2
+    plan_id: 1
+    cal_pln_status: 1
+    planner_visibility_cache: 3
+    place_id_cache: 1
+    user_id_cache: 2
+    plan_security_cache: 0
+    
+seven:
+    planner_id: 2
+    plan_id: 3
+    cal_pln_status: 2
+    planner_visibility_cache: 3
+    place_id_cache: 1
+    user_id_cache: 2
+    plan_security_cache: 0
+    
+ten:
+    planner_id: 4
+    plan_id: 1
+    cal_pln_status: 1
+    planner_visibility_cache: 0
+    place_id_cache: 1
+    user_id_cache: 4
+    plan_security_cache: 0
+    
+eleven:
+    planner_id: 4
+    plan_id: 2
+    cal_pln_status: 2
+    planner_visibility_cache: 0
+    place_id_cache: 1
+    user_id_cache: 4
+    plan_security_cache: 0
+
+twelve:
+    planner_id: 2
+    plan_id: 4
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 3
+    place_id_cache: 2
+    user_id_cache: 2
+    plan_security_cache: 0
+    
+noam_for_noaml_laurenp_dinner:
+    planner_id: 3
+    plan_id: 5
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache: 38
+    user_id_cache: 3
+    plan_security_cache: 0
+    
+lauren_for_noaml_laurenp_dinner:
+    planner_id: 10
+    plan_id: 5
+    cal_pln_status: 2
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache: 38
+    user_id_cache: 10
+    plan_security_cache: 0
+    
+noam_for_noaml_phils_glennk_drinks:
+    planner_id: 3
+    plan_id: 6
+    cal_pln_status: 2
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache: 12
+    user_id_cache: 3
+    plan_security_cache: 0
+    
+phil_for_noaml_phils_glennk_drinks:
+    planner_id: 7
+    plan_id: 6
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache: 12
+    user_id_cache: 7
+    plan_security_cache: 0
+    
+glenn_for_noaml_phils_glennk_drinks:
+    planner_id: 8
+    plan_id: 6
+    cal_pln_status: 2
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache: 12
+    user_id_cache: 8
+    plan_security_cache: 0
+    
+noam_for_noaml_jays_phils_biking:
+    planner_id: 3
+    plan_id: 7
+    cal_pln_status: 2
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache: 1
+    user_id_cache: 3
+    plan_security_cache: 0
+    
+jay_for_noaml_jays_phils_biking:
+    planner_id: 6
+    plan_id: 7
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache: 1
+    user_id_cache: 6
+    plan_security_cache: 0
+    
+phil_for_noaml_jays_phils_biking:
+    planner_id: 7
+    plan_id: 7
+    cal_pln_status: 2
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache: 1
+    user_id_cache: 7
+    plan_security_cache: 0
+    
+noam_for_reunion_lunch:
+    planner_id: 3
+    plan_id: 8
+    cal_pln_status: 1
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 3
+    plan_security_cache: 0
+    
+alvinc_for_reunion_lunch:
+    planner_id: 22
+    plan_id: 8
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 22
+    plan_security_cache: 0
+    
+bartn_for_reunion_lunch:
+    planner_id: 23
+    plan_id: 8
+    cal_pln_status: 1
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 23
+    plan_security_cache: 0
+    
+cyrill_for_reunion_lunch:
+    planner_id: 24
+    plan_id: 8
+    cal_pln_status: 1
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 24
+    plan_security_cache: 0
+    
+danh_for_reunion_lunch:
+    planner_id: 25
+    plan_id: 8
+    cal_pln_status: 1
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 25
+    plan_security_cache: 0
+    
+ethanr_for_reunion_lunch:
+    planner_id: 26
+    plan_id: 8
+    cal_pln_status: 1
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 26
+    plan_security_cache: 0
+    
+fredp_for_reunion_lunch:
+    planner_id: 27
+    plan_id: 8
+    cal_pln_status: 1
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 27
+    plan_security_cache: 0
+    
+jays_jay_and_glenn_dinner:
+    planner_id: 6
+    plan_id: 9
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 6
+    plan_security_cache: 0
+    
+glennk_jay_and_glenn_dinner:
+    planner_id: 8
+    plan_id: 9
+    cal_pln_status: 1
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 8
+    plan_security_cache: 0
+    
+jays_jay_and_phil_lunch:
+    planner_id: 6
+    plan_id: 10
+    cal_pln_status: 2
+    ownership: 0
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 6
+    plan_security_cache: 0
+    
+phils_jay_and_phil_lunch:
+    planner_id: 7
+    plan_id: 10
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache:
+    user_id_cache: 7
+    plan_security_cache: 0
+    
+glenn_glenn_lunch_at_panchos:
+    planner_id: 8
+    plan_id: 11
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache: 2
+    user_id_cache: 8
+    plan_security_cache: 0
+    
+glenn_glenn_dinner_at_schnitzelhaus:
+    planner_id: 8
+    plan_id: 12
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache: 3
+    user_id_cache: 8
+    plan_security_cache: 0
+    
+noam_past_plan1:
+    planner_id: 3
+    plan_id: 13
+    ownership: 1
+    cal_pln_status: 2
+    planner_visibility_cache: 4
+    place_id_cache: 1
+    user_id_cache: 1
+    plan_security_cache: 0
+    
+noam_past_plan2:
+    planner_id: 1
+    plan_id: 13
+    cal_pln_status: 2
+    planner_visibility_cache: 4
+    place_id_cache: 1
+    user_id_cache: 1
+    plan_security_cache: 0
+    
+noam_past_plan3:
+    planner_id: 2
+    plan_id: 13
+    cal_pln_status: 2
+    planner_visibility_cache: 3
+    place_id_cache: 1
+    user_id_cache: 2
+    plan_security_cache: 0
+    
+kavins_plan_in_future:
+    planner_id: 5
+    plan_id: 14
+    cal_pln_status: 2
+    ownership: 1
+    planner_visibility_cache: 0
+    place_id_cache: 1
+    user_id_cache: 5
+    plan_security_cache: 0

@@ -1,0 +1,48 @@
+<%
+@page_title = "Skobee - Help" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 id="user_heading">
+      Using Skobee via email
+     </h2>
+  </div>
+</div>
+<div id="container">
+   <div id="content" class="help_page">
+      <h2>How do I create a new plan via email?</h2>
+      <a name="1"></a>
+      <p>First, include plans@skobee.com as one of the recipients when sending an email to your friends to make some new plans. Somewhere in the body on a line all on it's own, include some of the plan tags. For example: <br /><br />
+      Hey everyone,<br /><br />
+
+      Let's all get together for a fancy dinner!<br /><br />
+
+      When: Dinner next week<br />
+      Where: Gary Danko<br /><br />
+
+      Let me know if you can make it.<br /><br />
+
+      -me
+      </p>
+      <h2>What are all of the plan tags that I can use?</h2>
+      <a name="2"></a>
+      <p>There are really too many plan tags to list, but your best bet is to look at the values available in the "When:" field. For a more complete list, take a look at this page: <a href="../email_howto">Skobee EmailHowTo</a></p>
+      <h2>The date and time I'm using for the when: tag doesn't work. Help!</h2>
+      <a name="3"></a>
+      <p>Try using dates and time in the following form: Monday @ 8pm, 3/18 @ 10am, or Dinner next week. For a complete list of all of the plan tags available, please take a look at this page: <a href="../email_howto">Skobee EmailHowTo</a></p>
+      <h2>How do I update an existing plan via email?</h2>
+      <a name="4"></a>
+      <p>If you receive an email from a friend where plans@skobee.com is one of the recipients, you may simply reply all to that email and include plan tags to update the existing plan. Furthermore, if you receive a reminder email about a plan or a new plan invite, you can reply directly to the email to confirm or change the plan details.</p>
+      <h2>Oops! I forgot to CC Skobee. Can I still update my plan?</h2>
+      <a name="5"></a>
+      <p>Either include plans@skobee.com on your next reply or forward the email to plans@skobee.com. Skobee will look at the subject, the people invited, and try to match your email to an existing plan. If an existing plan is not found, Skobee will create a new plan and send you a confirmation.</p>
+      <h2>I'm trying to update an existing plan, but Skobee keeps creating a new plan.</h2>
+      <a name="6"></a>
+      <p>That's probably because Skobee was unable to find that existing plan.</p>
+      <h2>Can I reply to emails that Skobee sends to change plans or RSVP?</h2>
+      <a name="7"></a>
+      <p>Of course! Every time Skobee sends you an email about a plan, you can respond back and change any part of that plan using the plan tags.</p>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'help_nav' %>
+</div>

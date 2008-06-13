@@ -1,0 +1,6 @@
+<%
+@hvr = sidebar_hover_str(@sidebar_number)
+class_str, @sidebar_number = get_sidebar_class(@sidebar_number) -%>
+<div class="<%= class_str %>" id='sidebar_regulars'>
+<%= render(:partial => "sidebar_regulars") %>
+</div>

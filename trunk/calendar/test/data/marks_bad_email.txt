@@ -1,0 +1,52 @@
+Return-Path: <smedberg@gmail.com>
+X-Original-To: michaels_planner@burnaby.textdrive.com
+Delivered-To: michaels_planner@burnaby.textdrive.com
+Received: from zproxy.gmail.com (zproxy.gmail.com [64.233.162.203])
+	by burnaby.textdrive.com (Postfix) with ESMTP id 3E5E5A7A4A
+	for <michaels_planner@burnaby.textdrive.com>; Mon, 13 Mar 2006 17:40:37 +0000 (GMT)
+Received: by zproxy.gmail.com with SMTP id 8so1271951nzo
+        for <michaels_planner@burnaby.textdrive.com>; Mon, 13 Mar 2006 09:40:37 -0800 (PST)
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws;
+        s=beta; d=gmail.com;
+        h=received:message-id:date:from:to:subject:mime-version:content-type;
+        b=B25gW12Vh1EM0GTnCcRmX6lqF/bRVIrgrkUDRbC3Adq9GX4VdwHhlT9a2ggFPrSPdebU1KVKyaLo5pLBqtvKz1DIg9BmuGMuJ+xZhs72TAdB5IPM+lt0njV77JZk/YSk0BHjoaOZ0LLqT9fLIxhJC6vwYlAbm5Hh4m58L4Pc1XE=
+Received: by 10.35.36.13 with SMTP id o13mr2147257pyj;
+        Mon, 13 Mar 2006 09:40:37 -0800 (PST)
+Received: by 10.35.90.6 with HTTP; Mon, 13 Mar 2006 09:40:37 -0800 (PST)
+Message-ID: <5d0d22620603130940j8a696b7y2ac11963f9579@mail.gmail.com>
+Date: Mon, 13 Mar 2006 09:40:37 -0800
+From: "Michael Smedberg" <bob@test.com>
+To: "michaels_planner@burnaby.textdrive.com" <michaels_planner@burnaby.textdrive.com>
+Subject: concert (midstates)
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_12232_21639479.1142271637320"
+
+------=_Part_12232_21639479.1142271637320
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+
+ yo-
+
+I know the keyboardist in this band midstates....this was the band I went t=osee after the superbowl....they're good...put on a good show and are playin=ga cool dive bar for cheap...
+
+I'm going to go see them and I think you guys should too....
+
+when: 3/30/06where: Hemlock Tavern
+
+http://www.midstatesmusic.comhttp://www.hemlocktavern.com/prog_guide.php?adate_id=3D3D2006-03-30
+
+mattis- you'll be pumped to know that they're charting on woxy right now...
+------=_Part_12232_21639479.1142271637320Content-Type: text/html; charset=ISO-8859-1Content-Transfer-Encoding: quoted-printableContent-Disposition: inline
+
+yo-<br>
+
+<br>
+I know the keyboardist in this band midstates....this was the band Iwent to see after the superbowl....they're good...put on a good showand are playing a cool dive bar for cheap...<br>
+<br>I'm going to go see them and I think you guys should too....<br>
+
+<br>when: 3/30/06<br>where: Hemlock Tavern<br><br>
+<a href=3D"http://www.midstatesmusic.com/" target=3D"_blank" onclick=3D"ret=urn top.js.OpenExtLink(window,event,this)">http://www.midstatesmusic.com</a=><br>
+<a href=3D"http://www.hemlocktavern.com/prog_guide.php?adate_id=3D3D2006-03=-30" target=3D"_blank" onclick=3D"return top.js.OpenExtLink(window,event,th=is)">http://www.hemlocktavern.com/prog_guide.php?adate_id=3D3D2006-03-30</a=><br><br>mattis- you'll be pumped to know that they're charting on woxy right now...------=_Part_12232_21639479.1142271637320--

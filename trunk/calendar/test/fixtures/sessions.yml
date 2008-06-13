@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+old_session:
+  id: 1
+  sessid: testing-old
+  updated_at: <%= (Time.now.utc-(2*60*60)).fmt_for_mysql %>
+  
+new_session:
+  id: 2
+  sessid: testing-new
+  updated_at: <%= (Time.now.utc-(5*60)).fmt_for_mysql %>

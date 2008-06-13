@@ -1,0 +1,165 @@
+<%
+@page_title = "Skobee - Notification" -%>
+<div id="banner">
+   <h2>
+      Notification Settings
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings settings_wide notifications">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <%= form_tag :action => @controller.action_name %>
+      <h2 class="settings_header settings_header_alt">When should Skobee send you a notification?</h2>
+      <h2>
+         Should we notify you when you are <strong>invited</strong> to a new plan?
+      </h2>
+      <table cellpadding="0" cellspacing="0" width="100%" summary="invite notifications">
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_INVITE_NOTIFICATION_OPTION, UserAttribute::INVITE_NOTIFICATION_ALWAYS, 0 %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("Yes, that'd be great (default)", UserAttribute::ATT_INVITE_NOTIFICATION_OPTION, 0) %>
+            </td>
+         </tr>
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_INVITE_NOTIFICATION_OPTION, UserAttribute::INVITE_NOTIFICATION_NEVER, 1 %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("No, I'll check the site myself", UserAttribute::ATT_INVITE_NOTIFICATION_OPTION, 1) %>
+            </td>
+         </tr>
+      </table>
+
+      <h2>
+         Should we notify you when there's been a <strong>change of plans</strong>? (e.g., location change or time/day switch)
+      </h2>
+      <table cellpadding="0" cellspacing="0" width="100%" summary="plan change notification">
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_PLAN_MODIFIED_NOTIFICATION_OPTION, UserAttribute::PLAN_MODIFIED_ALWAYS, 0 %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("Yes, that'd be great (default)", UserAttribute::ATT_PLAN_MODIFIED_NOTIFICATION_OPTION, 0) %>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               &nbsp;
+            </td>
+            <td>
+               <table>
+                  <tr>
+                     <td class="check_box">
+                        <%= check_box_user_att @user, UserAttribute::ATT_PLAN_COMMENTED_NOTIFICATION_OPTION, UserAttribute::TRUE_USER_ATT_VALUE, :onclick => "form.#{radio_button_user_att_id(UserAttribute::ATT_PLAN_MODIFIED_NOTIFICATION_OPTION, 0)}.checked='checked'" %>
+                     </td>
+                     <td class="subnotification">
+                        <%= label_for_user_att_check("Also notify me of comments made on plans", UserAttribute::ATT_PLAN_COMMENTED_NOTIFICATION_OPTION) %>
+                     </td>
+                 </tr>
+             </table>
+            </td>
+         </tr>
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_PLAN_MODIFIED_NOTIFICATION_OPTION, UserAttribute::PLAN_MODIFIED_NEVER, 1, :onclick => "form.#{check_box_user_att_id(UserAttribute::ATT_PLAN_COMMENTED_NOTIFICATION_OPTION)}.checked=false" %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("No, I'll check the site myself", UserAttribute::ATT_PLAN_MODIFIED_NOTIFICATION_OPTION, 1) %>
+            </td>
+         </tr>
+      </table>
+
+      <h2>
+         Do you want to receive <strong>reminders</strong> for your confirmed plans?
+      </h2>
+      <table cellpadding="0" cellspacing="0" width="100%" summary="reminders">
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_CONFIRMED_PLAN_REMINDER_OPTION, UserAttribute::CONFIRMED_PLAN_REMINDER_ALWAYS, 0, {:onclick => "$('user_atts_#{UserAttribute::ATT_REMINDER_HOURS}').disabled = false;"} %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("Yes, remind me", UserAttribute::ATT_CONFIRMED_PLAN_REMINDER_OPTION, 0) %>&nbsp;<%= text_field_user_att @user, UserAttribute::ATT_REMINDER_HOURS, {:size => '3', :maxlength => '3'} %>&nbsp;<%= label_for_user_att_radio("hours beforehand", UserAttribute::ATT_CONFIRMED_PLAN_REMINDER_OPTION, 0) %>
+            </td>
+         </tr>
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_CONFIRMED_PLAN_REMINDER_OPTION, UserAttribute::CONFIRMED_PLAN_REMINDER_NEVER, 1, {:onclick => "$('user_atts_#{UserAttribute::ATT_REMINDER_HOURS}').disabled = true;"} %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("No, I'll check the site myself", UserAttribute::ATT_CONFIRMED_PLAN_REMINDER_OPTION, 1) %>
+            </td>
+         </tr>
+      </table>
+
+      <h2>
+         Should we notify you when someone adds you as a <strong>contact</strong>?
+      </h2>
+      <table cellpadding="0" cellspacing="0" width="100%" summary="contact notifications">
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_ADDED_AS_FRIEND_NOTIFICATION_OPTION, UserAttribute::ATT_ADDED_AS_FRIEND_NOTIFICATION_ALWAYS, 0 %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("Yes, that'd be great (default)", UserAttribute::ATT_ADDED_AS_FRIEND_NOTIFICATION_OPTION, 0) %>
+            </td>
+         </tr>
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_ADDED_AS_FRIEND_NOTIFICATION_OPTION, UserAttribute::ATT_ADDED_AS_FRIEND_NOTIFICATION_NEVER, 1 %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("No, I'll check the site myself", UserAttribute::ATT_ADDED_AS_FRIEND_NOTIFICATION_OPTION, 1) %>
+            </td>
+         </tr>
+      </table>
+
+      <h2>
+         Should we notify you when someone adds a comment to your profile?
+      </h2>
+      <table cellpadding="0" cellspacing="0" width="100%" summary="invite notifications">
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_USER_COMMENTED_NOTIFICATION_OPTION, UserAttribute::TRUE_USER_ATT_VALUE, 0 %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("Yes, that'd be great (default)", UserAttribute::ATT_USER_COMMENTED_NOTIFICATION_OPTION, 0) %>
+            </td>
+         </tr>
+         <tr>
+            <td class="check_box">
+               <%= radio_button_user_att @user, UserAttribute::ATT_USER_COMMENTED_NOTIFICATION_OPTION, UserAttribute::FALSE_USER_ATT_VALUE, 1 %>
+            </td>
+            <td>
+               <%= label_for_user_att_radio("No, I'll check the site myself", UserAttribute::ATT_USER_COMMENTED_NOTIFICATION_OPTION, 1) %>
+            </td>
+         </tr>
+      </table>
+
+      <div class="buttons">
+         <div class="primary">
+            <a href="#" onclick="restoreNotificationDefaults(); return false;"><img src="/images/restoredefaults_blue.gif" alt="Restore" /></a>
+         </div>
+         <div class="primary">
+            <%= link_to(image_tag('/images/button_cancel.gif', :alt => 'Cancel'), {:controller => 'users', :action => 'settings'}, { :class => 'cancel'} )%>
+         </div>
+         <div class="secondary">
+            <input type="image" onclick="document.forms[0].submit(); return false;" name="save" src="/images/button_save.gif" alt="Save"/>
+         </div>
+      </div>
+      <%= end_form_tag %>
+   </div>
+</div>
+
+<script type="text/javascript">
+   function restoreNotificationDefaults() {
+      document.forms[0].<%= radio_button_user_att_id(UserAttribute::ATT_INVITE_NOTIFICATION_OPTION, 0) %>.checked='checked';
+      document.forms[0].<%= radio_button_user_att_id(UserAttribute::ATT_PLAN_MODIFIED_NOTIFICATION_OPTION, 0) %>.checked='checked';
+      document.forms[0].<%= radio_button_user_att_id(UserAttribute::ATT_CONFIRMED_PLAN_REMINDER_OPTION, 0) %>.checked='checked';
+      $('user_atts_<%= UserAttribute::ATT_REMINDER_HOURS %>').value = <%= UserAttribute::DEFAULT_REMINDER_HOURS %>;
+      document.forms[0].<%= radio_button_user_att_id(UserAttribute::ATT_ADDED_AS_FRIEND_NOTIFICATION_OPTION, 0) %>.checked='checked';
+      document.forms[0].<%= radio_button_user_att_id(UserAttribute::ATT_USER_COMMENTED_NOTIFICATION_OPTION, 0) %>.checked='checked';
+   }
+</script>

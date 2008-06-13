@@ -1,0 +1,110 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%
+now_str = Time.now_for_mysql
+%>
+
+comment_1:
+    id: 1
+    owner_id: 1
+    body: Just a test comment, you know, expressing myself and all
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+comment_2:
+    id: 2
+    owner_id: 2
+    body: Love me some Pancho's!
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+comment_3:
+    id: 3
+    owner_id: 3
+    body: Trying to find something offensive to say
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+
+comment_4:
+    id: 4
+    owner_id: 1
+    body: Another boring, pointless comment
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+comment_5:
+    id: 5
+    owner_id: 2
+    body: Yeah boy
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+comment_6:
+    id: 6
+    owner_id: 3
+    body: Look, I don't HAVE to say anything, and you can't MAKE me say anything.  So leave me alone, OK?
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+schnitzelhaus_1:
+    id: 7
+    owner_id: 1
+    body: A solid German meal and 17 great beers on tap
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+panchos_2:
+    id: 8
+    owner_id: 1
+    body: Fantastic burritos, but stay away from the agua fresca
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+sneaky_tiki_1:
+    id: 9
+    owner_id: 1
+    body: The Coco Loco will put you on the floor
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+sneaky_tiki_2:
+    id: 10
+    owner_id: 3
+    body: Great decor, if you're into camp.  I'm not, and this place is a little too "third world" for me.
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+sneaky_tiki_3:
+    id: 11
+    owner_id: 24
+    body: thumbs up
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+user_comment_1:
+    id: 12
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+user_comment_2:
+    id: 13
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+user_comment_3:
+    id: 14
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+user_comment_4:
+    id: 15
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>

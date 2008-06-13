@@ -1,0 +1,32 @@
+<%
+if @show_photo
+   class_str, @sidebar_number = get_sidebar_class(@sidebar_number)
+  -%>
+<div class="<%= class_str %>" id='sidebar_flickr'>
+  <h3>
+    Photos
+  </h3>
+<%
+  if @could_have_photos -%>
+   <dl class="sidebar_form sidebar_form_margin_override">
+      <dt>
+         Tags: <%= h(@plan.flickr_tags) %>
+      </dt>
+   </dl>
+  <div id="pictures">
+    <dl class="sidebar_form">
+       <dt>
+          Loading...
+       </dt>
+       <dd>
+       </dd>
+     </dl>
+  </div>
+  <script>
+    new Ajax.Updater('pictures', '<%= url_for(:action => 'pictures_cached', :id => @params[:id]) %>', {asynchronous:true, onFailure:handleFail, evalScripts:true});
+  </script>
+<%
+  end -%>
+</div>
+<%
+end -%>

@@ -1,0 +1,42 @@
+#MGS- This file is a template for settings that are specific to each machine.
+# This file needs to be copied to /config/environments/environment_machine.rb which
+# will be automatically loaded.
+#
+# environment_machine.rb should never be checked in!
+
+
+#MGS- settings used for outgoing emails
+# This is a little weird, but since the Rails::Initializer can only
+# be run once...we set the settings into a constant variable and then
+# apply these settings to the Rails::Configuration in environment.rb.
+ACTION_MAILER_CONFIG_SETTINGS = {
+  :address => 'burnaby.textdrive.com',
+  :port => 25,
+  :domain => 'skobee.com',
+  :user_name => 'michaels',
+  :password => '23skobee',
+  :authentication => :login
+}
+
+#MGS- email settings for outgoing emails
+UserSystem::CONFIG[:email_from_user] = 'michaels_planner'
+#UserSystem::CONFIG[:email_from_user] = 'marks_planner'
+#UserSystem::CONFIG[:email_from_user] = 'noaml_planner'
+#UserSystem::CONFIG[:email_from_user] = 'kavins_planner'
+#UserSystem::CONFIG[:email_from_user] = 'matiasc_planner'
+#UserSystem::CONFIG[:email_from_user] = 'michaels_planner'
+UserSystem::CONFIG[:email_from_server] = '@burnaby.textdrive.com'
+UserSystem::CONFIG[:app_url] = 'http://localhost:3000/'
+
+
+#MES- Settings for the Mailman agent (to read emails from a POP server.)
+# NOTE: THIS IS ONLY USED FOR TESTING.  For production, we pull emails
+# from a file queue.
+RECEIVE_MAIL_SERVER = 'burnaby.textdrive.com'
+RECEIVE_MAIL_USER = 'michaels_planner'
+#RECEIVE_MAIL_USER = 'noaml_planner'
+#RECEIVE_MAIL_USER = 'matiasc_planner'
+#RECEIVE_MAIL_USER = 'marks_planner'
+#RECEIVE_MAIL_USER = 'kavins_planner'
+RECEIVE_MAIL_PASSWORD = '23skobee'
+RECEIVE_MAIL_ADDRESS = RECEIVE_MAIL_USER + '@' + RECEIVE_MAIL_SERVER

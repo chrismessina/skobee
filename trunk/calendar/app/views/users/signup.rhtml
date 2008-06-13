@@ -1,0 +1,100 @@
+<%
+@page_title = "Skobee - Sign Up" -%>
+<div id="banner">
+     <h2 class="two_lines">
+        Register for an account.<br/>
+        C'mon, don't you wanna hang out?
+     </h2>
+</div>
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings_medium">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <%= form_tag( {:action => @controller.action_name}, {:name => 'frmSignup'} ) %>
+
+      <table border="0" cellpadding="0" cellspacing="0" summary="signup form" class="property_value signup">
+         <tr>
+            <th class="top">
+               <label>Real Name</label>
+               <span class="description">(optional)</span>
+            </th>
+            <td>
+               <%= text_field 'user', 'real_name', :class => 'big_form' %>
+               <h4 class="help">Real Name makes it easier for friends to add you to plans.</h4>
+            </td>
+         </tr>
+
+         <tr>
+            <th><label>Login ID</label></th>
+            <td><%= text_field 'user', 'login', :class => 'big_form' %>
+<%
+if @current_login -%>
+               <h4 class="help">Skobee currently knows you as <a href = "#" onclick="$('user_login').value = '<%= @current_login %>'; return false;"><%= @current_login %></a>.</h4>
+<%
+end -%>
+            </td>
+         </tr>
+
+         <tr>
+            <th><label>Email</label></th>
+            <td><%= text_field 'user', 'email', :class => 'big_form', :maxlength => "80" %></td>
+         </tr>
+<%
+if @international -%>
+         <tr>
+            <th class="top"><label>Time Zone</label><br/><span class="description"><%= link_to 'United States?', { }, :onclick => "return switch_intl('0');" %></span></th>
+            <td>
+               <%= time_zone_select 'user', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone %>
+            </td>
+         </tr>
+         <input type='hidden' name='intl' value='1'/>
+         <input type='hidden' name='user[zipcode]' id='user_zipcode' value='<%= User::INTL_USER_ZIPCODE_STR %>'/>
+<%
+else -%>
+         <tr>
+            <th class="top"><label>Zip Code</label><br/><span class="description"><%= link_to 'International?', { }, :onclick => "return switch_intl('1');" %></span></th>
+            <td>
+               <%= text_field_tag 'user[zipcode]', ((User::INTL_USER_ZIPCODE_STR == @user.zipcode) ? '' : @user.zipcode), {:id => 'user_zipcode', :maxlength => 5, :size => 5, :class => 'big_form short'} %>
+               <h4 class="help">Used to find places.</h4>
+               <input type='hidden' name='intl' value='0'/>
+            </td>
+         </tr>
+<%
+end -%>
+
+         <tr>
+            <th><label>Password</label></th>
+            <td><%= password_field 'pass', 'password', {:size => 30, :value => '', :class => 'big_form', :maxlength => "40"} %></td>
+         </tr>
+
+         <tr>
+            <th><label>Confirm</label></th>
+            <td><%= password_field 'pass', 'password_confirmation', {:size => 30, :value => '', :class => 'big_form', :maxlength => "40"} %></td>
+         </tr>
+      </table>
+      <div class="sign_up">
+         <input type="image" name="search" src="/images/sign_up.gif" alt="sign up"/>
+      </div>
+      <%= hidden_field_tag 'redraw', '0' %>
+      <%= end_form_tag %>
+   </div>
+</div>
+
+<%
+#MES- If the user is intl and hasn't selected a timezone, try to guess the timezone for the
+# user, and select it in the select element.  Also, if we're redrawing (e.g. switching
+# from US to Intl.), then we also wanna select the appropriate TZ.
+if @international && ('Unknown' == @user.tz.identifier || @redraw) -%>
+      <script type="text/javascript">
+        set_select('user_time_zone', get_tz_name());
+      </script>
+<%
+end -%>
+      <script type="text/javascript">
+          function switch_intl(intl_value)
+          {
+              document.frmSignup.redraw.value = '1';
+              document.frmSignup.intl.value = intl_value;
+              document.frmSignup.submit();
+              return false;
+          }
+      </script>

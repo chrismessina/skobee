@@ -1,0 +1,3 @@
+  <script>
+    new Ajax.Updater('pictures', '<%= url_for(:action => 'pictures_nocache', :id => @params[:id]) %>', {asynchronous:true, onFailure:handleFail});
+  </script>

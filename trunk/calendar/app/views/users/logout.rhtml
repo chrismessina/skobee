@@ -1,0 +1,18 @@
+<%
+@page_title = "Skobee - Login" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        You have logged out of Skobee. <br/>
+        Thanks for hanging out!
+     </h2>
+  </div>
+</div>
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings_medium login">
+      <%=render(:partial=>"/shared/flash")%>
+      <h2 class="settings_header">Wanna come back in where it's warm?</h2>
+      <p class="settings_header settings_header_empty">&nbsp;</p>
+      <%=render(:partial=>"/users/login_form")%>
+    </div>
+</div>

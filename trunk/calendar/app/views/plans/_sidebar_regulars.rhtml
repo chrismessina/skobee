@@ -1,0 +1,21 @@
+  <h3>My Regulars</h3>
+<% 
+if !@regulars.empty? -%>
+  <ul class="regulars">
+    <%= render(:partial => "regular", :collection => @regulars)%>
+  </ul>
+  
+<%
+  if @more_regulars -%>
+   <dl class='common'>
+      <dt id='more_regulars_dt' <%= @hvr %> onclick="showUrlInfo('sidebar_regulars', 'more_regulars_dt', '<%= url_for(:action => 'sidebar_touchlist', :id => @params[:id]) %>'); return false;">
+         Show more
+      </dt>
+      <dd></dd>
+  </dl>
+<%
+  end #MES- @more_regulars
+else -%>
+  <div class="error">We'll show you who you hang out with most often and make it easy for you to invite them again in the future.</div>
+<%
+end -%>

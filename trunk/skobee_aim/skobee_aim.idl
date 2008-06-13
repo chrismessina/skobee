@@ -1,0 +1,36 @@
+// skobee_aim.idl : IDL source for skobee_aim
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (skobee_aim.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(621B9D10-3133-457E-B1A0-772438176944),
+	dual,
+	nonextensible,
+	helpstring("ISkobeeAim Interface"),
+	pointer_default(unique)
+]
+interface ISkobeeAim : IDispatch{
+};
+[
+	uuid(BBD22123-B115-437D-A074-71A146FB4293),
+	version(1.0),
+	helpstring("skobee_aim 1.0 Type Library")
+]
+library skobee_aimLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(6D733148-6A38-5F5A-3372-61494359384B),
+		helpstring("SkobeeAim Class")
+	]
+	coclass SkobeeAim
+	{
+		[default] interface ISkobeeAim;
+	};
+};

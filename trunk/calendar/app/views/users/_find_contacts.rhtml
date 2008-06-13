@@ -1,0 +1,17 @@
+<div id="find_people" class="section blue">
+   <h3>Find People</h3>
+
+   <%= start_form_tag({ :action => 'search', :controller => 'users' }, {:method => 'get'} )%>
+   <dl class="sidebar_form">
+       <dt>
+           Enter email, name or username.
+       </dt>
+      <dd>
+         <input id="q" name="q" value="<%=h(@query)%>" type="text" class="big_form"/>
+      </dd>
+      <dt class="button">
+         <a href="#" class="" onclick="document.forms[0].submit()" id="search_sitebar_link"><img src="/images/searchbutton_blue_small.gif" alt="Search" /></a>
+      </dt>
+   </dl>
+   <%= end_form_tag %>
+</div>

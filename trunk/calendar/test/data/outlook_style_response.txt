@@ -1,0 +1,178 @@
+X-Gmail-Received: 2f990efb92981938a0287167c178af3a896e5d3e
+Delivered-To: smedberg@gmail.com
+Received: by 10.36.247.3 with SMTP id u3cs4701nzh;
+        Wed, 28 Dec 2005 16:23:25 -0800 (PST)
+Received: by 10.54.62.17 with SMTP id k17mr6714203wra;
+        Wed, 28 Dec 2005 16:23:25 -0800 (PST)
+Return-Path: <michaels@skobee.com>
+Received: from burnaby.textdrive.com (burnaby.textdrive.com [207.7.108.243])
+        by mx.gmail.com with ESMTP id 12si17122633wrl.2005.12.28.16.23.24;
+        Wed, 28 Dec 2005 16:23:25 -0800 (PST)
+Received-SPF: neutral (gmail.com: 207.7.108.243 is neither permitted nor denied by best guess record for domain of michaels@skobee.com)
+Received: from michaels (bridalveil.istep.com [67.102.229.98])
+	by burnaby.textdrive.com (Postfix) with ESMTP id 145F9A7573
+	for <smedberg@gmail.com>; Thu, 29 Dec 2005 00:22:53 +0000 (GMT)
+From: "Michael Smedberg" <michaels@skobee.com>
+To: "'Michael Smedberg'" <smedberg@gmail.com>
+Subject: RE: test of replies
+Date: Wed, 28 Dec 2005 16:23:22 -0800
+Message-ID: <000801c60c0e$14391ac0$6701a8c0@michaels>
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_000_0009_01C60BCB.0615DAC0"
+X-Mailer: Microsoft Office Outlook 11
+Thread-Index: AcYMDd5HSxpjUNVFSsutJxgpby3BLQAABrbA
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+In-Reply-To: <5d0d22620512281620l6be9083ew57f769503509b418@mail.gmail.com>
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0009_01C60BCB.0615DAC0
+Content-Type: text/plain;
+	charset="us-ascii"
+Content-Transfer-Encoding: 7bit
+
+test
+when: next thursday
+
+ 
+
+  _____  
+
+From: Michael Smedberg [mailto:smedberg@gmail.com] 
+Sent: Wednesday, December 28, 2005 4:20 PM
+To: michaels@skobee.com
+Subject: test of replies
+
+ 
+
+where: Kubla Kahn's Pleasure Palace 
+
+
+------=_NextPart_000_0009_01C60BCB.0615DAC0
+Content-Type: text/html;
+	charset="us-ascii"
+Content-Transfer-Encoding: quoted-printable
+
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" =
+xmlns:o=3D"urn:schemas-microsoft-com:office:office" =
+xmlns:w=3D"urn:schemas-microsoft-com:office:word" =
+xmlns:st1=3D"urn:schemas-microsoft-com:office:smarttags" =
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<META HTTP-EQUIV=3D"Content-Type" CONTENT=3D"text/html; =
+charset=3Dus-ascii">
+<meta name=3DGenerator content=3D"Microsoft Word 11 (filtered medium)">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><o:SmartTagType
+ namespaceuri=3D"urn:schemas-microsoft-com:office:smarttags" =
+name=3D"PlaceType"/>
+<o:SmartTagType =
+namespaceuri=3D"urn:schemas-microsoft-com:office:smarttags"
+ name=3D"PlaceName"/>
+<o:SmartTagType =
+namespaceuri=3D"urn:schemas-microsoft-com:office:smarttags"
+ name=3D"place"/>
+<!--[if !mso]>
+<style>
+st1\:*{behavior:url(#default#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+span.EmailStyle17
+	{mso-style-type:personal-reply;
+	font-family:Arial;
+	color:navy;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=3DEN-US link=3Dblue vlink=3Dpurple>
+
+<div class=3DSection1>
+
+<p class=3DMsoNormal><font size=3D2 color=3Dnavy face=3DArial><span =
+style=3D'font-size:
+10.0pt;font-family:Arial;color:navy'>when: next =
+thursday<o:p></o:p></span></font></p>
+
+<p class=3DMsoNormal><font size=3D2 color=3Dnavy face=3DArial><span =
+style=3D'font-size:
+10.0pt;font-family:Arial;color:navy'><o:p>&nbsp;</o:p></span></font></p>
+
+<div>
+
+<div class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><font =
+size=3D3
+face=3D"Times New Roman"><span style=3D'font-size:12.0pt'>
+
+<hr size=3D2 width=3D"100%" align=3Dcenter tabindex=3D-1>
+
+</span></font></div>
+
+<p class=3DMsoNormal><b><font size=3D2 face=3DTahoma><span =
+style=3D'font-size:10.0pt;
+font-family:Tahoma;font-weight:bold'>From:</span></font></b><font =
+size=3D2
+face=3DTahoma><span style=3D'font-size:10.0pt;font-family:Tahoma'> =
+Michael Smedberg
+[mailto:smedberg@gmail.com] <br>
+<b><span style=3D'font-weight:bold'>Sent:</span></b> Wednesday, December =
+28, 2005
+4:20 PM<br>
+<b><span style=3D'font-weight:bold'>To:</span></b> =
+michaels@skobee.com<br>
+<b><span style=3D'font-weight:bold'>Subject:</span></b> test of =
+replies</span></font><o:p></o:p></p>
+
+</div>
+
+<p class=3DMsoNormal><font size=3D3 face=3D"Times New Roman"><span =
+style=3D'font-size:
+12.0pt'><o:p>&nbsp;</o:p></span></font></p>
+
+<p class=3DMsoNormal><font size=3D3 face=3D"Times New Roman"><span =
+style=3D'font-size:
+12.0pt'>where: Kubla Kahn's <st1:place w:st=3D"on"><st1:PlaceName =
+w:st=3D"on">Pleasure</st1:PlaceName>
+ <st1:PlaceType w:st=3D"on">Palace</st1:PlaceType></st1:place> =
+<o:p></o:p></span></font></p>
+
+</div>
+
+</body>
+
+</html>
+
+------=_NextPart_000_0009_01C60BCB.0615DAC0--
+

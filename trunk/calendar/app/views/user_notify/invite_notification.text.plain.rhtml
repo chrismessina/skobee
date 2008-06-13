@@ -1,0 +1,31 @@
+Some peeps are getting together and you're invited!
+
+Check out the full details here:
+<%= @plan_details_link %>
+
+<% if !@plan.name.nil? && !@plan.name.empty? %>
+What: <%= @plan.name %>
+<% end -%>
+<% if !@plan.description.nil? && !@plan.description.empty? -%>
+<%= @plan.description %>
+<% end -%>
+When: <%= @plan.english_for_datetime(@user.tz) %>
+<% confirmed_array = @plan.attending_invitees_other_than(@user) -%>
+<% if confirmed_array.length > 0 %>Who's Confirmed: <% confirmed_array.each_index {|index| user = confirmed_array[index] -%><%= user.display_name %><% if index < confirmed_array.length - 1 -%>, <% end -%><% } -%><% end %>
+<% invited_array = @plan.invitees(Plan::STATUS_INVITED, @user) -%>
+<% if invited_array.length > 0 %>Who's Invited: <% invited_array.each_index {|index| user = invited_array[index] -%><%= user.display_name %><% if index < invited_array.length - 1 -%>, <% end -%><% } -%><% end %>
+<% if !@plan.place.nil? %>
+Where: <% if !@plan.place.name.nil? && !@plan.place.name.empty? %><%= @plan.place.name %><% end -%><% if !@plan.place.location.nil? && !@plan.place.location.empty? -%>, <%= @plan.place.location %> <% if !@gmaps_link.nil? -%>(<%= @gmaps_link %>)<% end -%><% end -%>
+<% end -%>
+
+RSVP I'll Be There: <%= @rsvp_im_in_link %>
+
+RSVP I'm Out: <%= @rsvp_im_out_link %>
+
+If you can't make it, suggest a time or place that works better for you. To suggest a change of plans, you can reply directly to this email.
+
+________________________________________________________________________________
+Did you know you can change the plans without leaving your email client? It's a tad ironic, but you'll have to leave your email client to find out how: <%= @email_howto_link %>
+
+Too many emails from Skobee? Click here to change your notification settings:
+<%= @change_notifications %>

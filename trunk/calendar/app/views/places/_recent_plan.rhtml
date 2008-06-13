@@ -1,0 +1,6 @@
+<dt onmouseover="dlHover(this, event)" onmouseout="dlHover(this, event)" title="<%=h(recent_plan.display_name)%>" onclick="window.location.href = '<%= url_for({:controller => 'plans', :action => 'show', :id => recent_plan, :cal_id => recent_plan.planner_id })%>'; return false">
+  <%= h(truncate(recent_plan.display_name,55)) %>
+</dt>
+<dd onmouseover="dlHover(this, event)" onmouseout="dlHover(this, event)">
+  <%=h(recent_plan.english_for_time(current_timezone)) %> - <%=h(recent_plan.english_for_date(current_timezone)) %>
+</dd>

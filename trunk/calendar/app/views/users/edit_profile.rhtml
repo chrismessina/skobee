@@ -1,0 +1,130 @@
+<%
+@page_title = "Skobee - Edit Profile" -%>
+<div id="banner">
+   <h2>
+      Profile Settings
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <%= form_tag({:action => @controller.action_name}) %>
+      <h2 class="settings_header settings_header_alt">Share a little about yourself</h2>
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value edit_profile" summary="edit password">
+         <tr>
+            <th>
+               <label>
+                  Real Name:
+               </label>
+            </th>
+            <td>
+               <%= text_field :user, "real_name", {:class => 'big_form'} %>
+            </td>
+         </tr>
+<%
+#MES- Don't show zip code for international users 
+if !@user.international? -%>
+         <tr>
+            <th>
+               <label>
+                  Zip Code:
+               </label>
+            </th>
+            <td>
+               <%= text_field :user, "zipcode", {:class => 'big_form zip_code', :maxlength => '5'} %>
+            </td>
+         </tr>
+<%
+end -%>
+         <tr>
+            <th>
+               <label>
+                  Gender:
+               </label>
+            </th>
+            <td>
+               <%= select_field_user_att @user, UserAttribute::ATT_GENDER, UserAttribute::GENDER_TYPES, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <label>
+                  Relationship:
+               </label>
+            </th>
+            <td>
+               <%= select_field_user_att @user, UserAttribute::ATT_RELATIONSHIP_STATUS, UserAttribute::RELATIONSHIP_STATUSES, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <label>
+                  Birthday:
+               </label>
+            </th>
+            <td>
+               <%= select_field_user_att @user, UserAttribute::ATT_BIRTH_MONTH, UserAttribute::BIRTH_MONTHS, {:class => 'big_form'} %>
+               <%= select_field_user_att @user, UserAttribute::ATT_BIRTH_DAY, UserAttribute::BIRTH_DAYS, {:class => 'big_form'} %>
+               <%= text_field_user_att @user, UserAttribute::ATT_BIRTH_YEAR, {:maxlength => '4', :class => 'big_form birthday'} %>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <label>
+                  Timezone:
+               </label>
+            </th>
+            <td>
+                <%= time_zone_select 'user', 'time_zone', TZInfo::Timezone.all.sort, :model => TZInfo::Timezone %>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <label>
+                  Description:
+               </label>
+            </th>
+            <td>
+               <%= text_area 'user', 'description', { :rows => '4', :cols => '40', :class => 'big_form' } %>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               <label>
+                  <a href='http://www.flickr.com' target='_flickr'>Flickr</a> integration:
+               </label>
+            </th>
+              <td class="check_box">
+                <input id="flickr_desired" name="flickr_desired" onchange="document.getElementById('flickr_id').disabled = !document.getElementById('flickr_desired').checked;" type="checkbox" value="1"<%= @flickr_desired ? ' checked' : '' %> /><label for='flickr_desired'>Use photos from my Flickr account</label><br/>
+                Flickr ID: <input class="big_form flickr_id" id="flickr_id" name="flickr_id" size="30" type="text" value="<%= @flickr_id %>"<%= @flickr_desired ? '' : ' disabled="disabled"' %> />
+              </td>
+         </tr>
+         <tr>
+            <th>
+            </th>
+            <td>
+               <div class="buttons">
+                  <div class="primary">
+                     <%= link_to(image_tag('/images/button_cancel.gif', :alt => 'Cancel'), {:controller => 'users', :action => 'settings'}, { :class => 'cancel'} )%>
+                  </div>
+                  <div class="secondary">
+                     <input type="image" onclick="document.forms[0].submit(); return false;" name="save" src="/images/button_save.gif" alt="Save"/>
+                  </div>
+               </div>
+            </td>
+         </tr>
+      </table>
+      <%= end_form_tag %>
+   </div>
+</div>
+
+<%
+#MES- If the user hasn't selected a timezone, try to guess the timezone for the
+# user, and select it in the select element.
+if @user.international? && 'Unknown' == @user.tz.identifier -%>
+      <script type="text/javascript">
+        set_select('user_time_zone', get_tz_name());
+      </script>
+<%
+end -%>

@@ -1,0 +1,18 @@
+<%
+pln_info = schedule_details_plan_details
+pln = pln_info.plan
+attendees = pln_info.attendees
+#MES: Details view: The viewer is a friend, and can see details of plans.
+# Specifically, the viewer can see plan invite lists, as well
+# as all other details.  The viewer can invite themselves to plans.
+# Only accepted plans are displayed.
+-%>
+<div id="plan-list-<%= pln.id %>" class="plan friend_plan" onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => pln, :cal_id => pln_info.owning_planner)%>'" onmouseover="rowHover(this.id, event, HOVER_TYPE_PLAN)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PLAN)">
+   <!-- <%= plan_template %> -->
+   <div class="plan_text float-left">
+      <h3><%=h(pln.english_for_date(current_timezone))%>, <%=h(pln.english_for_time(current_timezone))%> - <span class="invitee"><%=h(attendees.collect{|attendee| attendee.display_name}.join(", "))%></span></h3>
+      <%= get_plan_place_invitees(pln, "h4", "h4") -%>
+   </div>
+   <div id="hover_bar_plan-list-<%= pln.id %>" class="hover_bar"></div>
+   <%= link_to "", {:controller => 'plans', :action => 'show', :id => pln, :cal_id => pln_info.owning_planner}, {:id=> "plan-list-#{pln.id}-location"}%>
+</div>

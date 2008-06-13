@@ -1,0 +1,20 @@
+<%
+count = contact_counter
+checked = (User::CLIPBOARD_STATUS_CHECKED == contact.clipboard_status.to_i) ? true : false
+#MGS- the class 'contacts-table-row' is a dummy class name that lets us find these tables more easily in javascript -%>
+<div id="contact_row_<%=contact.id%>" class="contacts-table-row">
+<table cellpadding="0" cellspacing="0" width="100%" summary="contact<%=contact.id%>">
+<tr>
+   <td id="clipboard_contact_<%=contact.id%>" class="show_hide<%= "_checked" if checked%>" onclick="check_contact(<%=contact.id%>)" onmouseover="contactHover('contact_row_<%=contact.id%>', event)" onmouseout="contactHover('contact_row_<%=contact.id%>', event)">&nbsp;</td>
+   <td id="contact_name_<%=contact.id%>" nowrap="nowrap" class="contact_name" onclick="check_contact(<%=contact.id%>)" onmouseover="contactHover('contact_row_<%=contact.id%>', event)" onmouseout="contactHover('contact_row_<%=contact.id%>', event)">
+      <div>
+         <%=truncate(h(contact.full_name),25)%>
+      </div>
+   </td>
+   <td class="remove" id="delete_contact_<%=contact.id%>" onclick="remove_from_clipboard('<%=contact.id%>', '<%= "#{escape_javascript(h(contact.full_name_and_login))}"%>')" onmouseover="contactHover('contact_row_<%=contact.id%>', event)" onmouseout="contactHover('contact_row_<%=contact.id%>', event)">
+      &nbsp;
+      <script type="text/javascript">oClipboardUsers['user<%=contact.id%>']=new UserDescriptor("<%=escape_javascript(h(contact.login))%>","<%=contact.id%>",<%= (User::CLIPBOARD_STATUS_CHECKED == contact.clipboard_status.to_i) ? true : false -%>);</script>
+   </td>
+</tr>
+</table>
+</div>

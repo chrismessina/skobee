@@ -1,0 +1,27 @@
+X-Gmail-Received: 4509a041b64d2b354d6cad0846b1c181c4faf15e
+Received: by 10.35.91.18 with HTTP; Tue, 11 Apr 2006 11:19:58 -0700 (PDT)
+Message-ID: <5d0d22620604111119n589358b1peef6fd148a0c4e8@mail.gmail.com>
+Date: Tue, 11 Apr 2006 11:19:58 -0700
+From: "bob" <bob@test.com>
+To: "existingbob" <existingbob@test.com>
+Subject: Test status change
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_12277_6251091.1144779598702"
+Delivered-To: existingbob@test.com
+
+------=_Part_12277_6251091.1144779598702
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+when: tomorrow
+
+------=_Part_12277_6251091.1144779598702
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+when: tomorrow<br>
+
+------=_Part_12277_6251091.1144779598702--

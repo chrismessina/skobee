@@ -1,0 +1,834 @@
+--- 
+places_044: 
+  city: San Francisco
+  name: La Taqueria
+  updated_at: 2005-12-03 11:45:01
+  normalized_name: la taqueria
+  zip: "94110"
+  url: 
+  id: "36"
+  geocoded: "1"
+  phone: "4152857117"
+  user_id: 
+  lat: "37.7509"
+  address: 2889 Mission Street
+  created_at: 
+  long: "-122.418"
+  state: CA
+  location: "2889 Mission Street, San Francisco, CA, 94110"
+places_033: 
+  city: San Francisco
+  name: Plush Room Cabaret
+  updated_at: 2005-12-03 11:45:00
+  normalized_name: plush room cabaret
+  zip: "94109"
+  url: http://www.plushroom.com
+  id: "49"
+  geocoded: "1"
+  phone: "4158852800"
+  user_id: 
+  lat: "37.7885"
+  address: 940 Sutter Street
+  created_at: 
+  long: "-122.416"
+  state: CA
+  location: "940 Sutter Street, San Francisco, CA, 94109"
+places_022: 
+  city: 
+  name: China Cafe
+  updated_at: 
+  normalized_name: china cafe
+  zip: 
+  url: 
+  id: "10"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "32.7904"
+  address: 
+  created_at: 
+  long: "-117.101"
+  state: 
+  location: "10330 Friars Rd, San Diego, CA"
+places_011: 
+  city: San Francisco
+  name: Gary Danko
+  updated_at: 2005-12-03 11:44:52
+  normalized_name: gary danko
+  zip: "94109"
+  url: http://www.garydanko.com
+  id: "23"
+  geocoded: "1"
+  phone: "4157492060"
+  user_id: 
+  lat: "37.8058"
+  address: 800 N Point Street
+  created_at: 
+  long: "-122.421"
+  state: CA
+  location: "800 N Point Street, San Francisco, CA, 94109"
+places_045: 
+  city: 
+  name: Magic Dragon Chinese Eatery
+  updated_at: 
+  normalized_name: magic dragon chinese eatery
+  zip: 
+  url: 
+  id: "12"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "47.6223"
+  address: 
+  created_at: 
+  long: "-122.321"
+  state: 
+  location: "420 Broadway E, Seattle, WA"
+places_034: 
+  city: San Francisco
+  name: Latin American Club
+  updated_at: 2005-12-03 11:44:37
+  normalized_name: latin american club
+  zip: "94110"
+  url: 
+  id: "53"
+  geocoded: "1"
+  phone: "4156472732"
+  user_id: 
+  lat: "37.7555"
+  address: 3286 22nd Street
+  created_at: 
+  long: "-122.421"
+  state: CA
+  location: "3286 22nd Street, San Francisco, CA, 94110"
+places_023: 
+  city: San Francisco
+  name: Hotel Biron
+  updated_at: 2005-12-03 11:44:46
+  normalized_name: hotel biron
+  zip: "94102"
+  url: http://www.hotelbiron.com
+  id: "46"
+  geocoded: "1"
+  phone: "4157030403"
+  user_id: 
+  lat: "37.7735"
+  address: 45 Rose Street
+  created_at: 
+  long: "-122.422"
+  state: CA
+  location: "45 Rose Street, San Francisco, CA, 94102"
+places_012: 
+  city: San Francisco
+  name: Isa Restaurant
+  updated_at: 2005-12-03 11:45:08
+  normalized_name: isa restaurant
+  zip: "94123"
+  url: http://www.isarestaurant.com
+  id: "26"
+  geocoded: "1"
+  phone: "4155679588"
+  user_id: 
+  lat: "37.7999"
+  address: 3324 Steiner Street
+  created_at: 
+  long: "-122.438"
+  state: CA
+  location: "3324 Steiner Street, San Francisco, CA, 94123"
+places_001: 
+  city: San Francisco
+  name: "Masa's Restaurant"
+  updated_at: 2005-12-03 11:44:31
+  normalized_name: masas restaurant
+  zip: "94108"
+  url: 
+  id: "40"
+  geocoded: "1"
+  phone: "4159897154"
+  user_id: 
+  lat: "37.7901"
+  address: 645 Bush Street
+  created_at: 
+  long: "-122.408"
+  state: CA
+  location: "645 Bush Street, San Francisco, CA, 94108"
+places_046: 
+  city: San Francisco
+  name: Pacific Catch
+  updated_at: 2005-12-03 11:44:23
+  normalized_name: pacific catch
+  zip: "94123"
+  url: http://www.pacificcatch.com
+  id: "38"
+  geocoded: "1"
+  phone: "4154401950"
+  user_id: 
+  lat: "37.8006"
+  address: 2027 Chestnut Street
+  created_at: 
+  long: "-122.437"
+  state: CA
+  location: "2027 Chestnut Street, San Francisco, CA, 94123"
+places_035: 
+  city: San Francisco
+  name: Rosamunde Sausage Grill
+  updated_at: 2005-12-03 11:44:40
+  normalized_name: rosamunde sausage grill
+  zip: "94117"
+  url: 
+  id: "31"
+  geocoded: "1"
+  phone: "4154376851"
+  user_id: 
+  lat: "37.7719"
+  address: 545 Haight Street
+  created_at: 
+  long: "-122.431"
+  state: CA
+  location: "545 Haight Street, San Francisco, CA, 94117"
+places_024: 
+  city: San Francisco
+  name: Golden Era Vegetarian Restaurant
+  updated_at: 2005-12-03 11:45:02
+  normalized_name: golden era vegetarian restaurant
+  zip: "94102"
+  url: http://www.goldeneravegetarian.com
+  id: "25"
+  geocoded: "1"
+  phone: "4156733136"
+  user_id: 
+  lat: "37.7858"
+  address: 572 Ofarrel St.
+  created_at: 
+  long: "-122.414"
+  state: CA
+  location: "572 Ofarrell St., San Francisco, CA, 94102"
+places_013: 
+  city: San Francisco
+  name: Gold Cane Cocktail Lounge
+  updated_at: 2005-12-03 11:44:27
+  normalized_name: gold cane cocktail lounge
+  zip: "94117"
+  url: 
+  id: "52"
+  geocoded: "1"
+  phone: "4156261112"
+  user_id: 
+  lat: "37.7697"
+  address: 1569 Haight Street
+  created_at: 
+  long: "-122.448"
+  state: CA
+  location: "1569 Haight Street, San Francisco, CA, 94117"
+places_002: 
+  city: San Francisco
+  name: Brazen Head
+  updated_at: 2005-12-03 11:44:42
+  normalized_name: brazen head
+  zip: "94123"
+  url: 
+  id: "45"
+  geocoded: "1"
+  phone: "4159217600"
+  user_id: 
+  lat: "37.7992"
+  address: 3166 Buchanan Street
+  created_at: 
+  long: "-122.432"
+  state: CA
+  location: "3166 Buchanan Street, San Francisco, CA, 94123"
+places_047: 
+  city: San Francisco
+  name: Fifth Floor Restaurant
+  updated_at: 2005-12-03 11:44:33
+  normalized_name: fifth floor restaurant
+  zip: "94103"
+  url: http://www.fifthfloorrestaurant.com
+  id: "13"
+  geocoded: "1"
+  phone: "4153481555"
+  user_id: 
+  lat: "37.7855"
+  address: 12 4th Street
+  created_at: 
+  long: "-122.406"
+  state: CA
+  location: "12 4th Street, San Francisco, CA, 94103"
+places_036: 
+  city: San Francisco
+  name: El Metate
+  updated_at: 2005-12-03 11:44:53
+  normalized_name: el metate
+  zip: "94110"
+  url: 
+  id: "17"
+  geocoded: "1"
+  phone: "4156417209"
+  user_id: 
+  lat: "37.7558"
+  address: 2406 Bryant Street
+  created_at: 
+  long: "-122.41"
+  state: CA
+  location: "2406 Bryant Street, San Francisco, CA, 94110"
+places_025: 
+  city: San Francisco
+  name: Zeitgeist
+  updated_at: 2005-12-03 11:44:22
+  normalized_name: zeitgeist
+  zip: "94103"
+  url: 
+  id: "51"
+  geocoded: "1"
+  phone: "4152557505"
+  user_id: 
+  lat: "37.77"
+  address: 199 Valencia Street
+  created_at: 
+  long: "-122.422"
+  state: CA
+  location: "199 Valencia Street, San Francisco, CA, 94103"
+places_014: 
+  city: San Francisco
+  name: Whiskey Thieves
+  updated_at: 2005-12-03 11:44:38
+  normalized_name: whiskey thieves
+  zip: "94101"
+  url: http://www.nihon-sf.com
+  id: "44"
+  geocoded: "1"
+  phone: "4155524400"
+  user_id: 
+  lat: "37.7861"
+  address: 839 Geary Street
+  created_at: 
+  long: "-122.417"
+  state: CA
+  location: "839 Geary Street, San Francisco, CA, 94101"
+places_003: 
+  city: San Francisco
+  name: Kiss Sea Food Japanese Restaurant
+  updated_at: 2005-12-03 11:44:45
+  normalized_name: kiss sea food japanese restaurant
+  zip: "94115"
+  url: 
+  id: "15"
+  geocoded: "1"
+  phone: "4154742866"
+  user_id: 
+  lat: "37.7869"
+  address: 1700 Laguna Street
+  created_at: 
+  long: "-122.428"
+  state: CA
+  location: "1700 Laguna Street, San Francisco, CA, 94115"
+places_048: 
+  city: 
+  name: Bamboo House Chinese Rstrnt
+  updated_at: 
+  normalized_name: bamboo house chinese rstrnt
+  zip: 
+  url: 
+  id: "8"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "33.1367"
+  address: 
+  created_at: 
+  long: "-117.051"
+  state: 
+  location: "320 N Midway Dr, Escondido, CA"
+places_037: 
+  city: San Francisco
+  name: BIX
+  updated_at: 2005-12-03 11:45:09
+  normalized_name: bix
+  zip: "94133"
+  url: http://www.bixrestaurant.com
+  id: "20"
+  geocoded: "1"
+  phone: "4154336300"
+  user_id: 
+  lat: "37.7969"
+  address: 56 Gold Street
+  created_at: 
+  long: "-122.403"
+  state: CA
+  location: "56 Gold Street, San Francisco, CA, 94133"
+places_026: 
+  city: San Francisco
+  name: El Farolito
+  updated_at: 2005-12-03 11:44:32
+  normalized_name: el farolito
+  zip: "94110"
+  url: 
+  id: "29"
+  geocoded: "1"
+  phone: "4158264870"
+  user_id: 
+  lat: "37.7527"
+  address: 2777 Mission Street
+  created_at: 
+  long: "-122.418"
+  state: CA
+  location: "2777 Mission Street, San Francisco, CA, 94110"
+places_015: 
+  city: San Francisco
+  name: "Martuni's"
+  updated_at: 2005-12-03 11:44:50
+  normalized_name: martunis
+  zip: "94103"
+  url: 
+  id: "47"
+  geocoded: "1"
+  phone: "4152410205"
+  user_id: 
+  lat: "37.7723"
+  address: 4 Valencia Street
+  created_at: 
+  long: "-122.423"
+  state: CA
+  location: "4 Valencia Street, San Francisco, CA, 94103"
+places_004: 
+  city: San Francisco
+  name: San Tung Chinese Restaurant No 2
+  updated_at: 2005-12-03 11:44:36
+  normalized_name: san tung chinese restaurant no 2
+  zip: "94122"
+  url: 
+  id: "30"
+  geocoded: "1"
+  phone: "4152420828"
+  user_id: 
+  lat: "37.7638"
+  address: 1031 Irving Street
+  created_at: 
+  long: "-122.469"
+  state: CA
+  location: "1031 Irving Street, San Francisco, CA, 94122"
+places_049: 
+  city: San Francisco
+  name: Primo Patio Cafe
+  updated_at: 2005-12-03 11:44:28
+  normalized_name: primo patio cafe
+  zip: "94133"
+  url: http://www.primopatiocafe.com
+  id: "39"
+  geocoded: "1"
+  phone: "4159571129"
+  user_id: 
+  lat: "37.7787"
+  address: 214 Townsend Street
+  created_at: 
+  long: "-122.393"
+  state: CA
+  location: "214 Townsend Street, San Francisco, CA, 94133"
+places_038: 
+  city: San Francisco
+  name: Chez Spencer
+  updated_at: 2005-12-03 11:44:58
+  normalized_name: chez spencer
+  zip: "94103"
+  url: http://www.chezspencer.com
+  id: "18"
+  geocoded: "1"
+  phone: "4158642191"
+  user_id: 
+  lat: "37.7687"
+  address: 82 14th Street
+  created_at: 
+  long: "-122.415"
+  state: CA
+  location: "82 14th Street, San Francisco, CA, 94103"
+places_027: 
+  city: San Francisco
+  name: Cafe Kati
+  updated_at: 2005-12-03 11:44:44
+  normalized_name: cafe kati
+  zip: "94115"
+  url: http://www.cafekati.com
+  id: "32"
+  geocoded: "1"
+  phone: "4157757313"
+  user_id: 
+  lat: "37.786"
+  address: 1963 Sutter Street
+  created_at: 
+  long: "-122.433"
+  state: CA
+  location: "1963 Sutter Street, San Francisco, CA, 94115"
+places_016: 
+  city: San Francisco
+  name: NIHON Whiskey Lounge
+  updated_at: 2005-12-03 11:45:06
+  normalized_name: nihon whiskey lounge
+  zip: "94101"
+  url: 
+  id: "50"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "37.7688"
+  address: 1779 Folsom Street
+  created_at: 
+  long: "-122.415"
+  state: CA
+  location: "1779 Folsom Street, San Francisco, CA, 94101"
+places_005: 
+  city: San Francisco
+  name: Hana Zen
+  updated_at: 
+  normalized_name: hana zen
+  zip: "94102"
+  url: http://www.hanazen.com
+  id: "6"
+  geocoded: "1"
+  phone: "4154212101"
+  user_id: 
+  lat: "37.7578"
+  address: 115 Cyril Magnin St.
+  created_at: 
+  long: "-122.409"
+  state: CA
+  location: "115 Cyril Magnin St, San Francisco, CA, 94102"
+places_040: 
+  city: San Francisco
+  name: Ristorante Bacco
+  updated_at: 2005-12-03 11:44:51
+  normalized_name: ristorante bacco
+  zip: "94114"
+  url: http://www.baccosf.com
+  id: "34"
+  geocoded: "1"
+  phone: "4152824969"
+  user_id: 
+  lat: "37.7517"
+  address: 737 Diamon Street
+  created_at: 
+  long: "-122.436"
+  state: CA
+  location: "737 Diamond Street, San Francisco, CA, 94114"
+places_039: 
+  city: San Francisco
+  name: "Moki's Sushi & Pacific Grill"
+  updated_at: 2005-12-03 11:44:48
+  normalized_name: mokis sushi  pacific grill
+  zip: "94110"
+  url: http://www.mokisushi.com
+  id: "22"
+  geocoded: "1"
+  phone: "4159709335"
+  user_id: 
+  lat: "37.7388"
+  address: 830 Cortland Aplace
+  created_at: 
+  long: "-122.414"
+  state: CA
+  location: "830 Cortland Aplace, San Francisco, CA, 94110"
+places_028: 
+  city: San Francisco
+  name: Michael Mina Restaurant
+  updated_at: 2005-12-03 11:44:47
+  normalized_name: michael mina restaurant
+  zip: "94102"
+  url: http://michaelminna.net
+  id: "33"
+  geocoded: "1"
+  phone: "4153979222"
+  user_id: 
+  lat: "37.7877"
+  address: 335 Powell Street
+  created_at: 
+  long: "-122.408"
+  state: CA
+  location: "335 Powell Street, San Francisco, CA, 94102"
+places_017: 
+  city: 
+  name: Pho So
+  updated_at: 
+  normalized_name: pho so 1
+  zip: 
+  url: 
+  id: "11"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "47.5992"
+  address: 
+  created_at: 
+  long: "-122.317"
+  state: 
+  location: 1207 S Jackson St
+places_006: 
+  city: Berkeley
+  name: "Vik's Chaat House"
+  updated_at: 2005-12-03 11:44:41
+  normalized_name: viks chaat house
+  zip: "94710"
+  url: 
+  id: "14"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "37.8647"
+  address: 726 Allston Way
+  created_at: 
+  long: "-122.299"
+  state: CA
+  location: "726 Allston Way, Berkeley, CA, 94710"
+places_041: 
+  city: San Francisco
+  name: The House
+  updated_at: 2005-12-03 11:45:07
+  normalized_name: the house
+  zip: "94133"
+  url: 
+  id: "37"
+  geocoded: "1"
+  phone: "4159868612"
+  user_id: 
+  lat: "37.7981"
+  address: 1230 Grant Aplace
+  created_at: 
+  long: "-122.407"
+  state: CA
+  location: "1230 Grant Aplace, San Francisco, CA, 94133"
+places_030: 
+  city: San Francisco
+  name: "Peet's Coffee"
+  updated_at: 2005-12-03 11:44:30
+  normalized_name: peets coffee
+  zip: 
+  url: 
+  id: "2"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "37.7742"
+  address: Embarcadero 2
+  created_at: 
+  long: "-122.417"
+  state: CA
+  location: "Embarcadero 2, San Francisco, CA"
+places_029: 
+  city: San Francisco
+  name: Lucca Ravioli Co.
+  updated_at: 2005-12-03 11:44:29
+  normalized_name: lucca ravioli co
+  zip: "94110"
+  url: 
+  id: "28"
+  geocoded: "1"
+  phone: "4156475581"
+  user_id: 
+  lat: "37.7551"
+  address: 1100 Valencia Street
+  created_at: 
+  long: "-122.421"
+  state: CA
+  location: "1100 Valencia Street, San Francisco, CA, 94110"
+places_018: 
+  city: San Francisco
+  name: Molinari Delicatessen
+  updated_at: 2005-12-03 11:44:35
+  normalized_name: molinari delicatessen
+  zip: "94133"
+  url: 
+  id: "41"
+  geocoded: "1"
+  phone: "4154212337"
+  user_id: 
+  lat: "37.7984"
+  address: 373 Columbus
+  created_at: 
+  long: "-122.408"
+  state: CA
+  location: "373 Columbus Aplace, San Francisco, CA, 94133"
+places_007: 
+  city: San Francisco
+  name: Ha-Ra Club
+  updated_at: 2005-12-03 11:44:55
+  normalized_name: hara club
+  zip: "94109"
+  url: 
+  id: "48"
+  geocoded: "1"
+  phone: "4156733148"
+  user_id: 
+  lat: "37.786"
+  address: 875 Geary Street
+  created_at: 
+  long: "-122.418"
+  state: CA
+  location: "875 Geary Street, San Francisco, CA, 94109"
+places_042: 
+  city: San Francisco
+  name: Canteen
+  updated_at: 2005-12-03 11:44:25
+  normalized_name: canteen
+  zip: "94109"
+  url: 
+  id: "21"
+  geocoded: "1"
+  phone: "4159288870"
+  user_id: 
+  lat: "37.7884"
+  address: 817 Sutter Street
+  created_at: 
+  long: "-122.414"
+  state: CA
+  location: "817 Sutter Street, San Francisco, CA, 94109"
+places_031: 
+  city: 
+  name: China Cafe
+  updated_at: 
+  normalized_name: china cafe
+  zip: 
+  url: 
+  id: "9"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "33.1367"
+  address: 
+  created_at: 
+  long: "-117.051"
+  state: 
+  location: "2236 Carmel Valley Rd, Del Mar, CA"
+places_020: 
+  city: San Francisco
+  name: Aziza
+  updated_at: 2005-12-03 11:45:03
+  normalized_name: aziza
+  zip: "94121"
+  url: http://www.aziza-sf.com
+  id: "19"
+  geocoded: "1"
+  phone: "4157522222"
+  user_id: 
+  lat: "37.7804"
+  address: 5800 Geary Blvd.
+  created_at: 
+  long: "-122.482"
+  state: CA
+  location: "5800 Geary Blvd., San Francisco, CA, 94121"
+places_019: 
+  city: San Francisco
+  name: La Folie
+  updated_at: 2005-12-03 11:44:49
+  normalized_name: la folie
+  zip: "94109"
+  url: http://www.lafolie.com
+  id: "16"
+  geocoded: "1"
+  phone: "4157765577"
+  user_id: 
+  lat: "37.7981"
+  address: 2316 Polk St.
+  created_at: 
+  long: "-122.422"
+  state: CA
+  location: "2316 Polk St., San Francisco, CA, 94109"
+places_008: 
+  city: San Francisco
+  name: Frascati Restaurant
+  updated_at: 2005-12-03 11:44:57
+  normalized_name: frascati restaurant
+  zip: "94109"
+  url: http://www.frascatisf.com
+  id: "24"
+  geocoded: "1"
+  phone: "4159281406"
+  user_id: 
+  lat: "37.7984"
+  address: 1901 Hyde Street
+  created_at: 
+  long: "-122.419"
+  state: CA
+  location: "1901 Hyde Street, San Francisco, CA, 94109"
+places_043: 
+  city: San Francisco
+  name: "Pancho's Mexican"
+  updated_at: 2005-12-03 11:44:26
+  normalized_name: panchos mexican
+  zip: 
+  url: http://www.yelp.com/biz/7qSq-m4LRu3PAfroD-LKJg
+  id: "1"
+  geocoded: "1"
+  phone: "4154742280"
+  user_id: 
+  lat: "37.7919"
+  address: 1639 Polk St.
+  created_at: 
+  long: "-122.421"
+  state: CA
+  location: "1639 Polk St., San Francisco, CA"
+places_032: 
+  city: San Francisco
+  name: Saigon Sandwiches
+  updated_at: 2005-12-03 11:44:56
+  normalized_name: saigon sandwiches
+  zip: "94102"
+  url: 
+  id: "35"
+  geocoded: "1"
+  phone: "4154745698"
+  user_id: 
+  lat: "37.7829"
+  address: 560 Larkin Street
+  created_at: 
+  long: "-122.417"
+  state: CA
+  location: "560 Larkin Street, San Francisco, CA, 94102"
+places_021: 
+  city: Sausalito
+  name: Sushi Ran
+  updated_at: 2005-12-03 11:44:24
+  normalized_name: sushi ran
+  zip: "94965"
+  url: http://www.sushiran.com
+  id: "27"
+  geocoded: "1"
+  phone: "4153323620"
+  user_id: 
+  lat: "37.8586"
+  address: 107 Caledonia Street
+  created_at: 
+  long: "-122.486"
+  state: CA
+  location: "107 Caledonia Street, Sausalito, CA, 94965"
+places_010: 
+  city: San Francisco
+  name: Greens Restaurant
+  updated_at: 2005-12-03 11:44:39
+  normalized_name: greens restaurant
+  zip: "94123"
+  url: 
+  id: "42"
+  geocoded: "1"
+  phone: "4157716222"
+  user_id: 
+  lat: "37.8043"
+  address: Fort Mason Building A
+  created_at: 
+  long: "-122.427"
+  state: CA
+  location: "Fort Mason Building A, San Francisco, CA, 94123"
+places_009: 
+  city: Escondido
+  name: China Bistro Chinese Restaurant
+  updated_at: 
+  normalized_name: china bistro chinese restaurant
+  zip: 
+  url: 
+  id: "7"
+  geocoded: "1"
+  phone: 
+  user_id: 
+  lat: "33.1315"
+  address: 1330 E Valley Parkways
+  created_at: 
+  long: "-117.065"
+  state: CA
+  location: "1330 E Valley Parkway, Escondido, CA"

@@ -1,0 +1,182 @@
+<%
+@page_title = "Skobee - #{h(Inflector.possessiveize(@user.display_name))} Plans" -%>
+<div id="banner">
+   <div class="picture">
+<%
+if @user.thumbnail.nil? %>
+      <%= default_user_thumbnail_url %>
+<%
+else %>
+      <%= link_to build_user_thumbnail_url(@user, {:class => 'active_pic'}), :controller => 'pictures', :action => 'full_display', :user_id => @user.id %>
+<%
+end %>
+   </div>
+   <h2>
+      <%= h Inflector.possessiveize(@user.display_name) %> Plans
+<% if @user == current_user %>
+      <br/><div class="">(<a style="" href="<%=url_for(:controller => 'pictures', :action => 'add_picture')%>">add photos</a>)</div>
+<% elsif !@user.pictures.nil? && @user.pictures.length > 0
+-%>
+      <br/><div class="">(<a style="" href="<%=url_for(:controller => 'pictures', :action => 'full_display', :user_id => @user.id)%>">view my photos</a>)</div>
+<%
+end -%>
+   </h2>
+<%
+if current_user != @user -%>
+   <div class="button">
+      <h3 class="action">
+         <%= link_to("Make Plans", {:controller => 'plans', :action => 'new', :planner_id => @planner, :who => @user.id }, { :class => "make-plans" } ) -%>
+      </h3>
+   </div>
+<%
+else -%>
+   <div class="button">
+      <h3 class="action">
+         <%= link_to "Edit Profile", {:action => 'edit_profile', :controller => 'users'}, { :class => 'edit-profile' } %>
+      </h3>
+   </div>
+<%
+end -%>
+</div>
+
+<div id="container">
+   <div id="content" class="hovered_sections new">
+   <%=render(:partial=>"/shared/flash")%>
+<%
+#MGS- when viewing the profile of an unregistered user, display this note
+if !@user.registered? -%>
+      <div class="help">
+         <%=h(@user.display_name)%> is already using Skobee, but hasn't signed up yet.<br/><br/>
+         <a href="<%=url_for(:controller => 'users', :action => 'invite', :id => @user.id)%>">Invite <%=h(@user.display_name)%> to check out all the sweet features!</a><br/><br/>
+      </div>
+<%
+end
+
+#MGS- if user is looking at their own blank profile display some help text
+if current_user == @user && @plan_infos.empty? && @user.friends.empty? -%>
+      <div class="empty_planner">
+         <h3>Your profile is lookin' a little shabby. Time to add some bling!</h3>
+          <ul>
+             <li>
+                <img src="/images/add_picture.gif" alt="add picture" />
+                <%= link_to "<u>Add a picture</u> so everyone can see your smiling face", {:controller => 'pictures', :action => 'add_picture'} %>
+             </li>
+         </ul>
+         <h3>or</h3>
+         <ul>
+            <li>
+               <img src="/images/plans.gif" alt="make plans" />
+               <%= link_to "<u>Make plans</u> and invite some friends to hang out", {:controller => 'plans', :action => 'new'} %>
+            </li>
+         </ul>
+         <h3>or</h3>
+         <ul>
+            <li>
+               <img src="/images/people_dashboard.gif" alt="make plans" />
+               <%= link_to "<u>Add new contacts</u> and check out what they're up to", {:controller => 'users', :action => 'contacts'} %>
+            </li>
+         </ul>
+      </div>
+<%
+end
+
+#MGS- if all of the plan infos are empty, then we should display the help text
+if !@plan_infos.empty? -%>
+      <div class="section_heading_border section_heading_border_rss float-left">
+         <h2 class="section_heading section_heading_rss float-left">Upcoming Plans</h2>
+         <%= link_to(image_tag('/images/rss2.gif', :alt => 'RSS', :class => 'float-right rss'), :controller => 'feeds', :action => 'user', :id => current_user_id, :planner_id => @planner.id, :only_path => false) -%>
+      </div>
+   <%
+   #MGS- write out the html for all the plans and have a more link
+   # allow for collapsing and expanding
+   for i in 0...@plan_infos.first(PlannersController::PROFILE_MAX_PLANS).length -%>
+      <%= render :partial => @plan_template, :object => @plan_infos[i], :locals => { :plan_template => @plan_template }%>
+   <%
+   end -%>
+   <%
+   #MGS- check to see if there are hidden plans to display
+   if @plan_infos.length > PlannersController::PROFILE_MAX_PLANS -%>
+      <div id="more_plans" style="display:none"><div>
+      <%
+      for i in @plan_infos.first(PlannersController::PROFILE_MAX_PLANS).length...@plan_infos.length -%>
+         <%= render :partial => @plan_template, :object => @plan_infos[i], :locals => { :plan_template => @plan_template }%>
+      <%
+      end -%>
+      </div></div>
+      <h2 class="section_heading float-left past_rejected">
+         <a id="more_plans_link" onclick="$('more_plans_link').innerHTML = (Element.visible('more_plans')) ? 'more...' : 'less...';Effect.toggle('more_plans', 'appear', {duration:0.5,afterFinish:function(){return;$('more_plans_link').innerHTML = (Element.visible('more_plans')) ? 'less...' : 'more...';}});return false;" href="#">more...</a>
+      </h2>
+   <%
+   end
+
+elsif @user != current_user
+   #MGS- don't show the plans at all; even the blank message, if all you can see if the
+   # availability view
+   #MGS- handle looking at a different user with no plans
+   # if you're looking at your own blank plan profile...don't display anything -%>
+      <h2 class="section_heading section_heading_border">Upcoming Plans</h2>
+      <div class="empty_planner empty_planner_alt">
+         <h3>Looks like <%=h Inflector.possessiveize(@user.display_name)%> got no plans and probably feeling a little bored.</h3>
+          <ul>
+             <li>
+                <img src="/images/plans.gif" alt="add picture" />
+                <%= link_to("Why not <u>make plans</u> for dinner, drinks, cycling, bobsledding or whatever tickles your fancy?", {:controller => 'plans', :action => 'new', :planner_id => @planner, :who => @user.id } ) -%>
+             </li>
+         </ul>
+      </div>
+<%
+end -%>
+
+<%
+if !@combined_contacts.empty? -%>
+      <h2 class="section_heading section_heading_border <%if !@plan_infos.empty? || @user!=current_user%>middle<%end%>">Contacts</h2>
+      <ul class="picture_list">
+   <%
+   #MGS- to combat xhtml compliance, write out two different ul's of contacts
+   #this one is visible on page load, the other is not
+   for i in 0...@combined_contacts.first(PlannersController::PROFILE_MAX_CONTACTS).length -%>
+         <%= render(:partial => "/users/contacts", :object => @combined_contacts[i])%>
+   <%
+   end -%>
+      </ul>
+   <%
+   #MGS- check to see if there are hidden contacts to display
+   if @combined_contacts.length > PlannersController::PROFILE_MAX_CONTACTS  -%>
+   <h2 class="section_heading float-left past_rejected">
+      <%=link_to("more...", :action => 'user_contacts', :id => @user)%>
+   </h2>
+   <%
+   end -%>
+<%
+elsif @user != current_user -%>
+      <h2 class="section_heading section_heading_border <%if !@plan_infos.empty? || @user!=current_user%>middle<%end%>">Contacts</h2>
+      <div class="empty_planner empty_planner_alt">
+         <h3>Looks like <%= h(@user.login)%> is a little lonely.</h3>
+          <ul>
+             <li>
+                <img src="/images/people_dashboard.gif" alt="add picture" />
+                <a href="#">Spread the love and add <%= @user.login%> as a friend.</a>
+             </li>
+         </ul>
+      </div>
+<%
+end -%>
+<%
+#MGS- if user doesn't have the ability to add comments AND there are no comments to display
+# don't even render the comments partial
+if !@user.comments.empty? || controller.check_add_comment_access %>
+   <%= render(:partial => 'comments/comments', :object => @user.comments ) %>
+<%
+end -%>
+   </div>
+</div>
+<div id="sidebar">
+<%
+if !current_user.nil? && @user != current_user -%>
+   <%= render_partial 'change_contact_status' %>
+<%
+end -%>
+   <%= render_partial '/users/about_me' %>
+   <%= render_partial '/users/random_places' %>
+</div>
+<span id="<%=h @plan_template %>"></span>

@@ -1,0 +1,159 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first_planner:
+  id: 1
+  name: first_planner
+  user_id: 1
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+existingbob_planner:
+  id: 2
+  name: existingbob_planner
+  user_id: 2
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+planner_for_longbob:
+  id: 3
+  name: planner_for_longbob
+  user_id: 3
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+planner_for_deletebob1:
+  id: 4
+  name: planner_for_deletebob1
+  user_id: 4
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+planner_for_deletebob2:
+  id: 5
+  name: planner_for_deletebob2
+  user_id: 5
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+planner_for_security_token_user:
+  id: 6
+  name: planner_for_security_token_user
+  user_id: 6
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+user_with_friends_planner:
+  id: 7
+  name: user_with_friends_planner
+  user_id: 7
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+friend_1_of_user_planner:
+  id: 8
+  name: friend_1_of_user_planner
+  user_id: 8
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+friend_2_of_user_planner:
+  id: 9
+  name: friend_2_of_user_planner
+  user_id: 9
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+not_a_friend_planner:
+  id: 10
+  name: not_a_friend_planner
+  user_id: 10
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+treat_as_administrator_planner:
+  id: 11
+  name: treat_as_administrator_planner
+  user_id: 11
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+#MES- This is an awkward name, but it's the planner
+# for a user that has friends, and has the planner
+# security set to "friends"
+user_with_friends_and_friends_cal_planner:
+  id: 12
+  name: user_with_friends_and_friends_cal_planner
+  user_id: 12
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_FRIENDS %>
+
+user_with_friends_and_private_cal_planner:
+  id: 13
+  name: user_with_friends_and_private_cal_planner
+  user_id: 13
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PRIVATE %>
+
+user_with_contacts_planner:
+  id: 14
+  name: user_with_contacts_planner
+  user_id: 14
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+contact_1_of_user_planner:
+  id: 15
+  name: contact_1_of_user_planner
+  user_id: 15
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+contact_2_of_user_planner:
+  id: 16
+  name: contact_2_of_user_planner
+  user_id: 16
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+x_dummy_user_1_planner:
+  id: 17
+  name: x_dummy_user_1_planner
+  user_id: 17
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  
+x_dummy_user_2_planner:
+  id: 18
+  name: x_dummy_user_2_planner
+  user_id: 18
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  
+x_dummy_user_3_planner:
+  id: 19
+  name: x_dummy_user_3_planner
+  user_id: 19
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  
+x_dummy_user_4_planner:
+  id: 20
+  name: x_dummy_user_4_planner
+  user_id: 20
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  
+x_dummy_user_5_planner:
+  id: 21
+  name: x_dummy_user_5_planner
+  user_id: 21
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  
+x_dummy_user_6_planner:
+  id: 22
+  name: x_dummy_user_6_planner
+  user_id: 22
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  
+x_dummy_user_7_planner:
+  id: 23
+  name: x_dummy_user_7_planner
+  user_id: 23
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+kavin620_at_hotmail_dot_com_planner:
+  id: 24
+  name: default
+  user_id: 24
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+unregistered_user_planner:
+  id: 25
+  name: default
+  user_id: 25
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+
+unconfirmed_user_planner:
+  id: 26
+  name: default
+  user_id: 26
+  visibility_type: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>

@@ -1,0 +1,98 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+michaels_remind_by_email:
+  user_id: 1
+  att_id: 10
+  att_value: 1
+  
+michaels_reminder_min:
+  user_id: 1
+  att_id: 15
+  att_value: 1
+  
+michaels_zip:
+  user_id: 1
+  att_id: 2
+  att_value: 94103
+  group_id: 2
+  created_at: <%= Time.now.fmt_for_mysql %>
+  updated_at: <%= Time.now.fmt_for_mysql %>
+  
+kavins_remind_by_email:
+  user_id: 5
+  att_id: 10
+  att_value: 1
+  
+kavins_reminder_hours:
+  user_id: 5
+  att_id: 15
+  att_value: 72
+  
+kavins_confirmed_plan_reminder:
+  user_id: 5
+  att_id: 14
+  att_value: 0
+  
+kavins_zip:
+  user_id: 5
+  att_id: 2
+  att_value: 94103
+  group_id: 2
+  created_at: <%= Time.now.fmt_for_mysql %>
+  updated_at: <%= Time.now.fmt_for_mysql %>
+  
+marks_remind_by_email:
+  user_id: 2
+  att_id: 10
+  att_value: 1
+  
+marks_zip:
+  user_id: 2
+  att_id: 2
+  att_value: 94103
+  group_id: 2
+  created_at: <%= Time.now.fmt_for_mysql %>
+  updated_at: <%= Time.now.fmt_for_mysql %>
+  
+noaml_remind_by_email:
+  user_id: 3
+  att_id: 10
+  att_value: 1
+  
+noaml_zip:
+  user_id: 3
+  att_id: 2
+  att_value: 94103
+  group_id: 2
+  created_at: <%= Time.now.fmt_for_mysql %>
+  updated_at: <%= Time.now.fmt_for_mysql %>
+  
+matiasc_remind_by_email:
+  user_id: 4
+  att_id: 10
+  att_value: 1
+  
+matiasc_zip:
+  user_id: 4
+  att_id: 2
+  att_value: 94103
+  group_id: 2
+  created_at: <%= Time.now.fmt_for_mysql %>
+  updated_at: <%= Time.now.fmt_for_mysql %>
+  
+admin_remind_by_email:
+  user_id: 28
+  att_id: 10
+  att_value: 1
+  
+admin_reminder_min:
+  user_id: 28
+  att_id: 15
+  att_value: 1
+  
+admin_zip:
+  user_id: 28
+  att_id: 2
+  att_value: 94103
+  group_id: 2
+  created_at: <%= Time.now.fmt_for_mysql %>
+  updated_at: <%= Time.now.fmt_for_mysql %>

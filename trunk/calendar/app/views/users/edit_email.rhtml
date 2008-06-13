@@ -1,0 +1,73 @@
+<%
+@page_title = "Skobee - Add Email Addresses" -%>
+<div id="banner">
+   <h2>
+      Email Addresses
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <%= form_tag({ :action => :edit_email }, { :method => 'post' }) %>
+      <h2 class="settings_header">Manage email addresses</h2>
+      <p class="settings_header">You can add all of the email addresses your friends may use to invite you to new plans:</p>
+
+      <table cellpadding="0" cellspacing="0" width="100%" class="email_list" summary="find places">
+      <%
+      control_id = 0
+      current_user.emails.each { | email | -%>
+         <tr>
+            <td class="check_box">
+               <input type="radio" name="email_to_operate_on" id="email_to_operate_on_<%= control_id %>" value="<%= h(email.address) %>"/>
+            </td>
+            <td>
+               <label for="email_to_operate_on_<%= control_id %>"><%= h(email.address) %></label>
+            </td>
+            <td class="type">
+               <% if email.primary == Email::PRIMARY -%>
+                  Primary
+               <% else -%>
+                  <% if email.confirmed == Email::CONFIRMED %>
+                     Confirmed
+                  <% else %>
+                     Not Confirmed
+                  <% end %>
+               <% end -%>
+               <%= email.confirmed == Email::CONFIRMED && !email.primary ? 'Confirmed' : '' %>
+               <%= email.confirmed == Email::UNCONFIRMED && !email.primary ? 'Not Confirmed' : '' %>
+            </td>
+         </tr>
+      <%
+        control_id += 1
+      } -%>
+      </table>
+
+      <div class="buttons">
+         <input type="hidden" name="action_type" id="action_type"/>
+         <div class="primary">
+            <%= link_to(image_tag('/images/delete_blue.gif', :alt => 'delete email'), {:controller => 'users', :action => 'edit_email'}, { :class => 'cancel', :onclick => "$('action_type').value = 'delete';document.forms[0].submit(); return false;"} )%>
+         </div>
+         <div class="primary">
+            <%= link_to(image_tag('/images/confirm_orange.gif', :alt => 'resend confirmation email'), {:controller => 'users', :action => 'edit_email'}, { :class => 'cancel', :onclick => "$('action_type').value = 'resend';document.forms[0].submit(); return false;"} )%>
+         </div>
+         <div class="secondary">
+            <%= link_to(image_tag('/images/makeprimary_orange.gif', :alt => 'make primary'), {:controller => 'users', :action => 'edit_email'}, { :class => 'cancel', :onclick => "$('action_type').value = 'primary';document.forms[0].submit(); return false;"} )%>
+         </div>
+      </div>
+      <%= end_form_tag %>
+      <%= form_tag :action => :add_email %>
+      <table cellpadding="0" cellspacing="0" width="100%" class="add_email">
+         <tr>
+            <td>
+               <input type="text" name="new_email" id="new_email" class="big_form"/>
+            </td>
+            <td>
+               <input type="image" name="form_action" src="/images/addemail_orange.gif" alt="add email"/>
+            </td>
+         </tr>
+      </table>
+
+      <%= end_form_tag %>
+   </div>
+</div>

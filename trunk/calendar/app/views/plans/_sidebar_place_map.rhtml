@@ -1,0 +1,42 @@
+<%
+if @show_map
+  class_str, @sidebar_number = get_sidebar_class(@sidebar_number)
+  @onload_handler.nil? ? @onload_handler = "drawGoogleMap(#{place.lat},#{place.long},'map');" : @onload_handler += "drawGoogleMap(#{place.lat},#{place.long},'map');" -%>
+<div class="section <%= class_str %>" id='sidebar_place_map'>
+   <h3>
+      Getting There
+   </h3>
+   <div class="map-container" id="map"></div>
+   <%
+   if place.location_is_physical_address?
+      #MES- TODO: What if we have the geocode, but NOT the address?
+      # It seems like if we open maps.google.com with a geocode, it doesn't put in a marker, etc.?
+      # URLs for geocode maps look like http://maps.google.com/?sll=[LAT]%2C[LONG] -%>
+      <h4 class="view_larger"><a href="http://maps.google.com/maps?q=<%=CGI::escape place.location%>&amp;hl=en" target="_blank">View Larger Map/Directions</a></h4>
+   <%
+   end -%>
+   <%
+   if !place.nil? && place.location_fully_specified
+    #MGS- get the user's home and work address, if it exists
+    user = current_user
+   -%>
+   <%= start_form_tag({:action => "directions_from_loc", :controller => "users"}, { :method => "post", :target => "_blank", :name => "directions_form", :id => "directions_form" }) %>
+   <%= hidden_field_tag :directions_place_id, place.id %>
+      <dl class="sidebar_form">
+         <dt>
+            Enter starting address:
+         </dt>
+         <dd>
+            <input type="text" maxlength="255"  name="location" id="location" class="big_form"/>
+         </dd>
+         <dt class="button">
+            <a href="#" onclick="getDirections();return false;" class=""><img src="/images/get_directions.gif" width="100" height="24" alt="Get Directions" /></a>
+         </dt>
+      </dl>
+   <%=end_form_tag%>
+   <%
+   end -%>
+</div>
+<%
+end -%>
+<%= google_maps_script -%>

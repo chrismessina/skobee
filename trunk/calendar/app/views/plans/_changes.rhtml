@@ -1,0 +1,96 @@
+<div id="change-list">
+   <div id="plan_discuss_row" class="property_value_row discuss_row" <%if PlansController::COMMENT_ACCESS_LEVEL_FULL == @comment_access %>onmouseover="rowHover(this.id, event, HOVER_TYPE_COMMENT)" onmouseout="rowHover(this.id, event, HOVER_TYPE_COMMENT)"<%end%>>
+      <h3 class="property">
+         Discuss the details
+      </h3>
+      <div class="value float-right">
+         <%
+         #MGS- only show the add comment link, if the user has full comment access
+         if PlansController::COMMENT_ACCESS_LEVEL_FULL == @comment_access -%>
+         <div id="change-plan_discuss_row" class=""><%= anchor_or_login "<a href=\"\#\" id=\"add-comment\" class=\"edit edit_discuss\" onclick=\"addComment();return false;\">Add Comment</a>", 'Add Comment', "id=\"add-comment\" class=\"edit edit_discuss\"" %></div>
+         <%
+         end -%>
+      </div>
+      <div id="hover_bar_plan_discuss_row" class="hover_bar"></div>
+   </div>
+   <%
+   #MGS- only render the add comment editor html, if user has full comment access
+   if PlansController::COMMENT_ACCESS_LEVEL_FULL == @comment_access -%>
+   <div id="change-add" style="display: none" class="mini_editor float-left">
+      <form action="" name="change-add-form"  id="change-add-form" method="post" onsubmit="">
+         <input type="hidden" id="plan_id" name="plan_id" value="<%= @plan.id %>" />
+         <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="new plan form">
+            <tr>
+               <td class="property_wide">
+                  About:
+               </td>
+               <td>
+                  <select name="change_type" id="change_type" class="big_form">
+                    <option value="<%=PlanChange::CHANGE_TYPE_COMMENT%>" selected="selected">General</option>
+                    <option value="<%=PlanChange::CHANGE_TYPE_TIME_COMMENT%>">Time/Date</option>
+                    <option value="<%=PlanChange::CHANGE_TYPE_PLACE_COMMENT%>">Place</option>
+                  </select>
+               </td>
+            </tr>
+            <tr>
+               <td class="property_wide">
+                  Comment:
+               </td>
+               <td>
+                  <textarea name="change_tb" id="change_tb" class="big_form" rows="3" cols="40" onkeyup="expandTextArea(this)"></textarea><br/>
+                  <div class="comment_html_help"><%= comment_help_link %></div>
+               </td>
+            </tr>
+         </table>
+         <div class="buttons">
+            <div class="primary">
+               <input type="image" onclick="cancelComment();return false;" name="cancel" src="/images/button_cancel.gif" alt="Cancel"/>
+            </div>
+            <div class="secondary">
+               <input type="image" id="save-change" name="save" src="/images/button_save.gif" alt="Save" onclick="editor_open=false;new Ajax.Updater('change-group', '/plans/add_change_ajax',
+                                                                                                         {method: 'post',
+                                                                                                         asynchronous:true,
+                                                                                                         parameters: Form.serialize(document.forms['change-add-form']),
+                                                                                                         evalScripts:true,
+                                                                                                         onFailure:handleFail,
+                                                                                                         onComplete: function(request){changeCallback(request);}
+                                                                                                         });return false;"/>
+            </div>
+         </div>
+      </form>
+   </div>
+   <%
+   end
+
+#MGS- if this is the first time change or the first place change
+# don't allow reversions; otherwise do
+first_time_change = first_place_change = current_plan = true
+#MES- Render each partial
+changes.each do | change |
+   #MES- Choose the right partial for this type of change
+   partial = nil
+   case change.change_type
+      #MGS- all comment change types should display with the same partial
+      when *PlanChange::CHANGE_TYPES_COMMENTS
+         partial = 'comment_change'
+      when PlanChange::CHANGE_TYPE_PLACE
+         current_plan = first_place_change
+         first_place_change = false
+         partial = 'place_change'
+      when PlanChange::CHANGE_TYPE_TIME
+         partial = 'time_change'
+         current_plan = first_time_change
+         first_time_change = false if !change.final_value.nil?
+      when PlanChange::CHANGE_TYPE_RSVP
+         #MGS- for RSVP changes, display them with the normal
+         # comment partial, but only when there is a comment associated
+         # with the change.
+         partial = 'comment_change' unless change.comment.blank?
+   end
+
+   if !partial.nil? -%>
+<%= render(:partial => partial, :object => change, :locals => { :current_plan => current_plan }) %>
+<%
+   end
+end -%>
+</div>

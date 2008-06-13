@@ -1,0 +1,260 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+michaels_marks:
+    user_id: 1
+    contact_id: 2
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(50)).fmt_for_mysql %>
+
+michaels_noaml:
+    user_id: 1
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+marks_michaels:
+    user_id: 2
+    contact_id: 1
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(48)).fmt_for_mysql %>
+
+marks_noaml:
+    user_id: 2
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+noaml_laurenp:
+    user_id: 3
+    contact_id: 10
+    clipboard_status: 1
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+noaml_phils:
+    user_id: 3
+    contact_id: 7
+    clipboard_status: 1
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+noaml_jays:
+    user_id: 3
+    contact_id: 6
+    clipboard_status: 1
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+noaml_glennk:
+    user_id: 3
+    contact_id: 8
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+noaml_alvinc:
+    user_id: 3
+    contact_id: 22
+    clipboard_status: 0
+    friend_status: 2
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+noaml_bartn:
+    user_id: 3
+    contact_id: 23
+    clipboard_status: 0
+    friend_status: 2
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+noaml_cyrill:
+    user_id: 3
+    contact_id: 24
+    clipboard_status: 0
+    friend_status: 2
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+noaml_ethanr:
+    user_id: 3
+    contact_id: 26
+    clipboard_status: 0
+    friend_status: 2
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+matiasc_noaml:
+    user_id: 4
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+kavins_noaml:
+    user_id: 5
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+jays_noaml:
+    user_id: 6
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+jays_phils:
+    user_id: 6
+    contact_id: 7
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+phils_noaml:
+    user_id: 7
+    contact_id: 3
+    clipboard_status: 1
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(47)).fmt_for_mysql %>
+
+phils_jays:
+    user_id: 7
+    contact_id: 6
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+glennk_noaml:
+    user_id: 8
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+chrish_noaml:
+    user_id: 9
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+lpaige_noaml:
+    user_id: 10
+    contact_id: 3
+    clipboard_status: 1
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(49)).fmt_for_mysql %>
+
+sgrant_noaml:
+    user_id: 11
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+sherryk_noaml:
+    user_id: 12
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+samc_noaml:
+    user_id: 13
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+kurtf_noaml:
+    user_id: 14
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+lisaf_noaml:
+    user_id: 16
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+moniques_noaml:
+    user_id: 17
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+andied_noaml:
+    user_id: 18
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+topherc_noaml:
+    user_id: 19
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+joshw_noaml:
+    user_id: 20
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+joem_noaml:
+    user_id: 21
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+alvink_noaml:
+    user_id: 22
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+bartn_noaml:
+    user_id: 23
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+cyrill_noaml:
+    user_id: 24
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+danh_noaml:
+    user_id: 25
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
+
+ethanr_noaml:
+    user_id: 26
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(1000)).fmt_for_mysql %>
+
+fredp_noaml:
+    user_id: 27
+    contact_id: 3
+    clipboard_status: 0
+    friend_status: 1
+    contact_created_at: <%= (Time.now-(46)).fmt_for_mysql %>
