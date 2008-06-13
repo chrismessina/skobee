@@ -1,0 +1,502 @@
+--- 
+place_usage_stats_005: 
+  num_user_plans: "3"
+  hour: "21"
+  place_id: "2"
+  day: "5"
+  num_plans: "1"
+place_usage_stats_006: 
+  num_user_plans: "3"
+  hour: "22"
+  place_id: "2"
+  day: "5"
+  num_plans: "1"
+place_usage_stats_007: 
+  num_user_plans: "1"
+  hour: "18"
+  place_id: "2"
+  day: "6"
+  num_plans: "1"
+place_usage_stats_008: 
+  num_user_plans: "1"
+  hour: "19"
+  place_id: "2"
+  day: "6"
+  num_plans: "1"
+place_usage_stats_009: 
+  num_user_plans: "1"
+  hour: "20"
+  place_id: "2"
+  day: "6"
+  num_plans: "1"
+place_usage_stats_010: 
+  num_user_plans: "1"
+  hour: "21"
+  place_id: "2"
+  day: "6"
+  num_plans: "1"
+place_usage_stats_001: 
+  num_user_plans: "3"
+  hour: "12"
+  place_id: "2"
+  day: "0"
+  num_plans: "1"
+place_usage_stats_002: 
+  num_user_plans: "3"
+  hour: "13"
+  place_id: "2"
+  day: "0"
+  num_plans: "1"
+place_usage_stats_003: 
+  num_user_plans: "3"
+  hour: "19"
+  place_id: "2"
+  day: "5"
+  num_plans: "1"
+place_usage_stats_004: 
+  num_user_plans: "3"
+  hour: "20"
+  place_id: "2"
+  day: "5"
+  num_plans: "1"
+  
+schnitzelhaus_0:
+  num_user_plans: 70
+  hour: 20
+  place_id: 3
+  day: 0
+  num_plans: 70
+  
+schnitzelhaus_1:
+  num_user_plans: 29
+  hour: 20
+  place_id: 3
+  day: 1
+  num_plans: 17
+  
+schnitzelhaus_2:
+  num_user_plans: 35
+  hour: 20
+  place_id: 3
+  day: 2
+  num_plans: 23
+  
+schnitzelhaus_3:
+  num_user_plans: 17
+  hour: 20
+  place_id: 3
+  day: 3
+  num_plans: 15
+  
+schnitzelhaus_4:
+  num_user_plans: 25
+  hour: 20
+  place_id: 3
+  day: 4
+  num_plans: 20
+  
+schnitzelhaus_5:
+  num_user_plans: 80
+  hour: 20
+  place_id: 3
+  day: 5
+  num_plans: 80
+  
+schnitzelhaus_6:
+  num_user_plans: 99
+  hour: 20
+  place_id: 3
+  day: 6
+  num_plans: 99
+  
+sneaky_tiki_0:
+  num_user_plans: 71
+  hour: 20
+  place_id: 12
+  day: 0
+  num_plans: 71
+  
+sneaky_tiki_1:
+  num_user_plans: 29
+  hour: 20
+  place_id: 12
+  day: 1
+  num_plans: 17
+  
+sneaky_tiki_2:
+  num_user_plans: 35
+  hour: 20
+  place_id: 12
+  day: 2
+  num_plans: 23
+  
+sneaky_tiki_3:
+  num_user_plans: 29
+  hour: 20
+  place_id: 12
+  day: 3
+  num_plans: 27
+  
+sneaky_tiki_4:
+  num_user_plans: 25
+  hour: 20
+  place_id: 12
+  day: 4
+  num_plans: 20
+  
+sneaky_tiki_5:
+  num_user_plans: 80
+  hour: 20
+  place_id: 12
+  day: 5
+  num_plans: 80
+  
+sneaky_tiki_6:
+  num_user_plans: 70
+  hour: 20
+  place_id: 12
+  day: 6
+  num_plans: 70
+  
+julies_supper_club_0:
+  num_user_plans: 45
+  hour: 20
+  place_id: 38
+  day: 0
+  num_plans: 38
+  
+julies_supper_club_1:
+  num_user_plans: 29
+  hour: 20
+  place_id: 38
+  day: 1
+  num_plans: 17
+  
+julies_supper_club_2:
+  num_user_plans: 35
+  hour: 20
+  place_id: 38
+  day: 2
+  num_plans: 23
+  
+julies_supper_club_3:
+  num_user_plans: 29
+  hour: 20
+  place_id: 38
+  day: 3
+  num_plans: 27
+  
+julies_supper_club_4:
+  num_user_plans: 89
+  hour: 20
+  place_id: 38
+  day: 4
+  num_plans: 78
+  
+julies_supper_club_5:
+  num_user_plans: 80
+  hour: 20
+  place_id: 38
+  day: 5
+  num_plans: 80
+  
+julies_supper_club_6:
+  num_user_plans: 70
+  hour: 20
+  place_id: 38
+  day: 6
+  num_plans: 70
+  
+korso_0:
+  num_user_plans: 30
+  hour: 20
+  place_id: 10
+  day: 0
+  num_plans: 32
+  
+korso_1:
+  num_user_plans: 31
+  hour: 20
+  place_id: 10
+  day: 1
+  num_plans: 29
+  
+korso_2:
+  num_user_plans: 32
+  hour: 20
+  place_id: 10
+  day: 2
+  num_plans: 26
+  
+korso_3:
+  num_user_plans: 37
+  hour: 20
+  place_id: 10
+  day: 3
+  num_plans: 31
+  
+korso_4:
+  num_user_plans: 38
+  hour: 20
+  place_id: 10
+  day: 4
+  num_plans: 34
+  
+korso_5:
+  num_user_plans: 33
+  hour: 20
+  place_id: 10
+  day: 5
+  num_plans: 25
+  
+korso_6:
+  num_user_plans: 24
+  hour: 20
+  place_id: 10
+  day: 6
+  num_plans: 19
+  
+henrys_0:
+  num_user_plans: 30
+  hour: 20
+  place_id: 19
+  day: 0
+  num_plans: 32
+  
+henrys_1:
+  num_user_plans: 31
+  hour: 20
+  place_id: 19
+  day: 1
+  num_plans: 29
+  
+henrys_2:
+  num_user_plans: 32
+  hour: 20
+  place_id: 19
+  day: 2
+  num_plans: 26
+  
+henrys_3:
+  num_user_plans: 37
+  hour: 20
+  place_id: 19
+  day: 3
+  num_plans: 31
+  
+henrys_4:
+  num_user_plans: 38
+  hour: 20
+  place_id: 19
+  day: 4
+  num_plans: 34
+  
+henrys_5:
+  num_user_plans: 33
+  hour: 20
+  place_id: 19
+  day: 5
+  num_plans: 25
+  
+henrys_6:
+  num_user_plans: 38
+  hour: 20
+  place_id: 19
+  day: 6
+  num_plans: 35
+  
+fannys_0:
+  num_user_plans: 30
+  hour: 20
+  place_id: 21
+  day: 0
+  num_plans: 32
+  
+fannys_1:
+  num_user_plans: 38
+  hour: 20
+  place_id: 21
+  day: 1
+  num_plans: 36
+  
+fannys_2:
+  num_user_plans: 32
+  hour: 20
+  place_id: 21
+  day: 2
+  num_plans: 26
+  
+fannys_3:
+  num_user_plans: 37
+  hour: 20
+  place_id: 21
+  day: 3
+  num_plans: 31
+  
+fannys_4:
+  num_user_plans: 33
+  hour: 20
+  place_id: 21
+  day: 4
+  num_plans: 21
+  
+fannys_5:
+  num_user_plans: 33
+  hour: 20
+  place_id: 21
+  day: 5
+  num_plans: 25
+  
+fannys_6:
+  num_user_plans: 38
+  hour: 20
+  place_id: 21
+  day: 6
+  num_plans: 35
+  
+basil_thai_0:
+  num_user_plans: 30
+  hour: 20
+  place_id: 23
+  day: 0
+  num_plans: 32
+  
+basil_thai_1:
+  num_user_plans: 38
+  hour: 20
+  place_id: 23
+  day: 1
+  num_plans: 36
+  
+basil_thai_2:
+  num_user_plans: 32
+  hour: 20
+  place_id: 23
+  day: 2
+  num_plans: 26
+  
+basil_thai_3:
+  num_user_plans: 37
+  hour: 20
+  place_id: 23
+  day: 3
+  num_plans: 31
+  
+basil_thai_4:
+  num_user_plans: 33
+  hour: 20
+  place_id: 23
+  day: 4
+  num_plans: 21
+  
+basil_thai_5:
+  num_user_plans: 33
+  hour: 20
+  place_id: 23
+  day: 5
+  num_plans: 25
+  
+basil_thai_6:
+  num_user_plans: 38
+  hour: 20
+  place_id: 23
+  day: 6
+  num_plans: 35
+  
+triptych_0:
+  num_user_plans: 30
+  hour: 20
+  place_id: 26
+  day: 0
+  num_plans: 32
+  
+triptych_1:
+  num_user_plans: 38
+  hour: 20
+  place_id: 26
+  day: 1
+  num_plans: 36
+  
+triptych_2:
+  num_user_plans: 32
+  hour: 20
+  place_id: 26
+  day: 2
+  num_plans: 26
+  
+triptych_3:
+  num_user_plans: 37
+  hour: 20
+  place_id: 26
+  day: 3
+  num_plans: 31
+  
+triptych_4:
+  num_user_plans: 33
+  hour: 20
+  place_id: 26
+  day: 4
+  num_plans: 21
+  
+triptych_5:
+  num_user_plans: 33
+  hour: 20
+  place_id: 26
+  day: 5
+  num_plans: 25
+  
+triptych_6:
+  num_user_plans: 38
+  hour: 20
+  place_id: 26
+  day: 6
+  num_plans: 35
+  
+nihon_0:
+  num_user_plans: 30
+  hour: 20
+  place_id: 33
+  day: 0
+  num_plans: 32
+  
+nihon_1:
+  num_user_plans: 38
+  hour: 20
+  place_id: 33
+  day: 1
+  num_plans: 36
+  
+nihon_2:
+  num_user_plans: 32
+  hour: 20
+  place_id: 33
+  day: 2
+  num_plans: 26
+  
+nihon_3:
+  num_user_plans: 37
+  hour: 20
+  place_id: 33
+  day: 3
+  num_plans: 31
+  
+nihon_4:
+  num_user_plans: 33
+  hour: 20
+  place_id: 33
+  day: 4
+  num_plans: 21
+  
+nihon_5:
+  num_user_plans: 33
+  hour: 20
+  place_id: 33
+  day: 5
+  num_plans: 25
+  
+nihon_6:
+  num_user_plans: 38
+  hour: 20
+  place_id: 33
+  day: 6
+  num_plans: 35

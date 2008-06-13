@@ -1,0 +1,8 @@
+<%
+if @user.thumbnail
+-%>
+  <%= build_user_thumbnail_url(@user) %><br/>
+<%
+end
+-%>
+<%= file_field 'picture', 'file' %>

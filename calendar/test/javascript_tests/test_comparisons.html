@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Skobee Comparator Functional Test File</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+  <script src="../../public/javascripts/prototype140.js" type="text/javascript"></script>
+  <script src="../../public/javascripts/scriptaculous151.js?load=builder151,effects151,controls151" type="text/javascript"></script>
+  <script src="../../public/javascripts/base11.js" type="text/javascript"></script>
+  <script src="../../public/javascripts/json.js" type="text/javascript"></script>
+  <script src="../../public/javascripts/planners.js" type="text/javascript"></script>
+  <script src="../../public/javascripts/plans.js" type="text/javascript"></script>
+  <script src="../../public/javascripts/datepicker10.js" type="text/javascript"></script>
+  <script src="../../public/javascripts/skobee.js" type="text/javascript"></script>
+  <style type="text/css" media="screen">
+    #thelist li { background: green; margin:5px; padding: 30px; }
+    #thelist2 li { background: #ffb; margin:2px; padding: 2px; }
+  </style>
+</head>
+<body>
+<h1>Skobee Comparator Functional Test File</h1>
+<h2>Compare Dates</h2>
+
+
+<script type="text/javascript" language="javascript" charset="utf-8">
+// <![CDATA[
+/*
+function PlanDescriptor(name, start, fuz, objid, tp, dp, url, place, invitees, ds, ts) {
+  this.name = name;
+  this.start = start;
+  this.fuzzy_start = fuz;
+  this.object_id = objid;
+  this.timeperiod = tp;
+  this.dateperiod = dp;
+  this.plan_url = url;
+  this.place = place;
+  this.invitees = invitees;
+  this.date_s = ds;
+  this.time_s = ts;
+}
+*/
+
+//compare dates
+a = new PlanDescriptor('',new Date(2005,4,12,0,0,0,0));
+b = new PlanDescriptor('',new Date(2005,4,12,0,0,0,0));
+assert_equal(compareStart(a,b),0,"compareStart()   Comparing Equal Dates");
+
+a = new PlanDescriptor('',new Date(2006,4,12,0,0,0,0));
+b = new PlanDescriptor('',new Date(2005,4,12,0,0,0,0));
+assert_equal(compareStart(a,b),1,"compareStart()   Comparing Equal Dates");
+
+a = new PlanDescriptor('',new Date(2006,4,12,0,0,0,0));
+b = new PlanDescriptor('',new Date(2006,4,14,0,0,0,0));
+assert_equal(compareStart(a,b),-1,"compareStart()   Comparing Equal Dates");
+
+
+//compare names
+a = new PlanDescriptor('a',new Date(2005,4,12,0,0,0,0));
+b = new PlanDescriptor('a',new Date(2005,4,12,0,0,0,0));
+assert_equal(compareName(a,b),0,"compareName()   Comparing Equal Names");
+
+a = new PlanDescriptor('bsd',new Date(2005,4,12,0,0,0,0));
+b = new PlanDescriptor('asdf',new Date(2005,4,12,0,0,0,0));
+assert_equal(compareName(a,b),1,"compareName()   Comparing Names");
+
+a = new PlanDescriptor('bsd',new Date(2005,4,12,0,0,0,0));
+b = new PlanDescriptor('zebra',new Date(2005,4,12,0,0,0,0));
+assert_equal(compareName(a,b),-1,"compareName()   Comparing Names");
+
+//compare ids
+a = new PlanDescriptor('a',new Date(2005,4,12,0,0,0,0),null,454);
+b = new PlanDescriptor('a',new Date(2005,4,12,0,0,0,0),null,454);
+assert_equal(compareIDs(a,b),0,"compareIDs()   Comparing Equal IDs");
+
+a = new PlanDescriptor('bsd',new Date(2005,4,12,0,0,0,0),null,345);
+b = new PlanDescriptor('bsd',new Date(2005,4,12,0,0,0,0),null,34);
+assert_equal(compareIDs(a,b),1,"compareIDs()   Comparing IDs");
+
+a = new PlanDescriptor('bsd',new Date(2005,4,12,0,0,0,0),null,45);
+b = new PlanDescriptor('bsd',new Date(2005,4,12,0,0,0,0),null,495);
+assert_equal(compareIDs(a,b),-1,"compareIDs()   Comparing IDs");
+
+
+
+function assert_equal(v1,v2,str){
+  var passed = (v1==v2) ? 'passed' : '<b>failed</b>';
+  document.write('<p>Test : ' + str + ' '+ passed +'</p>');
+}
+// ]]>
+</script>
+
+</body>
+</html>

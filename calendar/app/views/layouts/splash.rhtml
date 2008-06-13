@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <!--  hostname: <%= HOSTNAME %> -->
+<title><%= @page_title || "Skobee" %></title>
+<%= stylesheet_link_tag "master.css?#{STATIC_VERSION_ID}" %>
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/stylesheets/ie.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/nonsense" href="/stylesheets/safari.css" />
+<link rel="SHORTCUT ICON" href="/images/favicon.ico" />
+
+<% #MGS- skobee.js is always includedl needs to be included before scriptaculous -%>
+<%= javascript_include_tag  JS_PROTOTYPE %>
+<% #MGS- include the javascripts set in the instance variable
+if @javascripts && !@javascripts.empty?
+  @javascripts.each do |js| -%>
+<%= javascript_include_tag "#{js}" %>
+<%
+  end
+else
+#MGS- if the static includes haven't been set, include these defaults -%>
+<%= javascript_include_tag JS_SCRIPTACULOUS_SKOBEE_DEFAULT %>
+<%= javascript_include_tag JS_DATEPICKER %>
+<%= javascript_include_tag JS_SKOBEE_GENERAL %>
+
+<%
+end -%>
+
+</head>
+<body onload="<%=@onload_handler%>">
+<div id="wrapper" class="com">
+  <div id="top_header">
+    <ul class="float-left">
+      <li><a href="http://www.skobee.com">Home</a>&nbsp;|&nbsp;</li>
+      <li><a href="http://blog.skobee.com">Blog</a>&nbsp;|&nbsp;</li>
+      <li><a href="http://forums.skobee.com:5001">Forums</a></li>
+    </ul>
+    <ul class="float-right">
+      <li><%= link_to('Sign Up', :controller => 'users', :action => 'signup') %>&nbsp;|&nbsp;</li>
+      <li><%= link_to('Log in', :action => 'login', :controller => 'users') %>&nbsp;|&nbsp;</li>
+      <li><%= link_to('Email HowTo', :action => 'emailhowto', :controller => 'splash') %></li>
+    </ul>
+  </div>
+  <div id="header">
+    <div class="log_in">
+      <%= link_to('Already a member?<br />Log in here.', :action => 'login', :controller => 'users') %>
+    </div>
+    <div id="logo">
+      <a href="http://www.skobee.com"><img src="/images/logo_large.gif" alt="skobee" /></a>
+    </div>
+  </div>
+  <%= @content_for_layout %>
+  <div id="footer">
+      <h4>
+      <%= link_to 'Terms of Service', :controller => 'splash', :action => 'terms_of_use' %>&nbsp;|
+      <%= link_to 'Privacy', :controller => 'splash', :action => 'privacy' %>&nbsp;|
+      <%= link_to 'About Us', :controller => 'splash', :action => 'about' %>&nbsp;|
+      <%= link_to 'Jobs', :controller => 'splash', :action => 'jobs' %>&nbsp;|
+      <%= link_to 'Contact Us', 'mailto:feedback@skobee.com' %>
+<%
+if logged_in? -%>
+         &nbsp;|<%= link_to 'Blog', 'http://blog.skobee.com' %>&nbsp;|
+         <%= link_to 'Forums', 'http://forums.skobee.com:5001' %>
+<%
+end -%>
+   </h4>
+  </div>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-248058-1";
+urchinTracker();
+</script>
+</body>
+</html>

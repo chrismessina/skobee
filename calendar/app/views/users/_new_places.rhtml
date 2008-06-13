@@ -1,0 +1,10 @@
+<%
+if !@recent_places.nil? && @recent_places.length > 0 -%>
+<div class="section grey">
+   <h3>My New Places</h3>
+   <dl class="common">
+   <%= render(:partial => "shared/place", :collection => @recent_places)%>
+   </dl>
+</div>
+<%
+end -%>

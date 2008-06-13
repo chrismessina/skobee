@@ -1,0 +1,91 @@
+contact_1_for_user_user_with_contacts:
+  user_id: 14
+  contact_id: 15
+  clipboard_status: <%= User::CLIPBOARD_STATUS_SELECTED %>
+
+contact_2_for_user_user_with_contacts:
+  user_id: 14
+  contact_id: 16
+  clipboard_status: <%= User::CLIPBOARD_STATUS_CHECKED %>
+
+usr_w_friend_friend_1:
+  user_id: 7
+  contact_id: 8
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+
+usr_w_friend_friend_2:
+  user_id: 7
+  contact_id: 9
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+
+usr_w_friend_fr_cal_friend_1:
+  user_id: 12
+  contact_id: 8
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+
+usr_w_friend_fr_cal_friend_2:
+  user_id: 12
+  contact_id: 9
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+
+usr_w_friend_private_cal_friend_1:
+  user_id: 13
+  contact_id: 8
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+  connections: 2
+
+usr_w_friend_private_cal_friend_2:
+  user_id: 13
+  contact_id: 9
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+  connections: 1
+
+contact_1_of_user_friend:
+  user_id: 15
+  contact_id: 14
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+
+existingbob_contact:
+  user_id: 2
+  contact_id: 1
+  clipboard_status: <%= User::CLIPBOARD_STATUS_NONE %>
+  connections: 1
+
+user_with_friends_bob_contact:
+  user_id: 7
+  contact_id: 2
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+  clipboard_status: <%= User::CLIPBOARD_STATUS_SELECTED %>
+  connections: 1
+
+bob_contact_user_with_friends:
+  user_id: 2
+  contact_id: 7
+  clipboard_status: <%= User::CLIPBOARD_STATUS_SELECTED %>
+  connections: 1
+
+existing_bob_contact_user_with_friends:
+  user_id: 2
+  contact_id: 9
+  clipboard_status: <%= User::CLIPBOARD_STATUS_SELECTED %>
+  friend_status: <%= User::FRIEND_STATUS_CONTACT %>
+  connections: 1
+
+user_with_friends_contact_with_contact_1_of_user:
+  user_id: 7
+  contact_id: 15
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+  connections: 1
+
+friend_2_of_user_contact:
+  user_id: 9
+  contact_id: 25
+  friend_status: <%= User::FRIEND_STATUS_FRIEND %>
+  connections: 0

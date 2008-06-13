@@ -1,0 +1,10 @@
+X-Gmail-Received: 0846fb328545c6a62ae25a1fed0a1581e88c8a7a
+Received: by 10.36.247.3 with HTTP; Mon, 23 Jan 2006 10:38:23 -0800 (PST)
+Message-ID: <43D55AB0.9030000@blackkettle.org>
+Date: Mon, 23 Jan 2006 10:38:23 -0800
+From: Bob <bob@test.com>
+To: planner <planner@skobee.com>
+Subject: Testing place suggestions- 2
+
+where: D4E484F04EBF4B41ABF39FC3416D97F3, search for abcde
+when: next week

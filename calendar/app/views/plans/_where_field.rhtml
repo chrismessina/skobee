@@ -1,0 +1,197 @@
+<%
+if @plan.place.nil?
+  where = ""
+elsif @plan.place.location.nil? || @plan.place.location == ''
+  where = "#{h @plan.place.name}"
+else
+  where = "#{h @plan.place.name} (#{h @plan.place.location})"
+end
+where_id = !@plan.place.nil? && !@plan.place.id.nil? ? @plan.place.id : ""
+
+#KS- create a blank plan in the flash if one wasn't present
+flash[:place] = Place.new if flash[:place].nil?
+-%>
+      <td class="where" id="where_control">
+         <input type="hidden" name="place_origin" id="place_origin"/>
+         <input type="hidden" name="place_id" id="place_id" value="<%= !@plan.nil? && !@plan.place.nil? ? @plan.place.id : '' %>"/>
+         <ul class="place_tabs" id="tab_container">
+            <li id="find_place_by_name_tab">
+               <a href="#" id="find_by_name_link">Find by Name</a>
+            </li>
+            <li id="find_place_by_location_tab">
+               <a href="#" id="find_by_address_link">Find by Address</a>
+            </li>
+            <li id="add_place_tab">
+               <a href="#" id="add_place_link">Add a Place</a>
+            </li>
+         </ul>
+
+         <div class="where_container float-left relative" id="find_place_by_name_div" style="">
+            <div id="search_by_name_search_panel" style="<%= where.blank? ? '' : 'display: none;' %>">
+               <input type="text" name="place_search" id="place_search" class="big_form" maxlength="255"/>
+<%
+#KS- do not change the layout of this div unless you first understand the javascript code in
+#the PlaceSearchByNameAutocompleter class in plans.js. the PlaceSearchByNameAutocompleter class
+#assumes a certain layout which it dumps autocomplete result data into.
+-%>
+               <div class="auto_complete hand place_list" id="place_list_auto_complete" style="display: none;">
+                  <div class="heading">Your Places</div>
+                  <div class="text"></div>
+                  <div class="heading">Searching Skobee...<div id="remote_loading_indicator" class="loading" style="display: none;"> loading...</div></div>
+                  <div class="text"></div>
+               </div>
+            </div>
+            <div id="search_by_name_result_panel" class="chosen_place" style="<%= where.blank? ? 'display: none;' : '' %> float: left;">
+               <div id="search_by_name_result" class="float-left">
+                  <div id="search_by_name_result_text" class="text"><%=h(where)-%></div>
+                  <div class="link">
+                     <a onclick="$('place_search').value = ''; flipSearchDisplay('search_by_name_result_panel', 'search_by_name_search_panel', 'place_search');" class="hand"><img src="/images/search_again.gif" alt="Search Again" width="76" height="16" /></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="where_container float-left advanced_search relative" id="find_place_by_location_div">
+            <div id="search_by_address_search_panel">
+               <h4>Name of Place</h4>
+               <input type="text" class="big_form" name="place_search_by_address_name" id="place_search_by_address_name" maxlength="255" onkeypress="return submitIfEnter(event);"/>
+               <div class="float-left">
+                  <h4>Address</h4>
+                  <input type="text" class="big_form size_0" name="place_search_by_address_location" id="place_search_by_address_location" value="<%= current_user.international? ? '' : current_user.zipcode %>" onkeypress="return submitIfEnter(event);"/>
+               </div>
+               <div class="float-left" style="padding-left: 10px;">
+                  <h4>Search Radius</h4>
+                  <select class="big_form size_0" name="max_distance" id="max_distance" onkeypress="return submitIfEnter(event);">
+                     <option value="1">1 mile</option>
+                     <option value="5">5 miles</option>
+                     <option value="15">15 miles</option>
+                     <option value="50">50 miles</option>
+                  </select>
+               </div>
+               <div class="search_place"><a href="#" id="search_by_address_button"><img src="/images/search_place.gif" alt="Search" width="76" height="16" /></a></div>
+               <div id="venue_results" style="" class="auto_complete hand"></div>
+            </div>
+            <div id="search_by_address_result_panel" class="chosen_place" style="display: none; float: left;">
+               <div id="search_by_address_result" class="float-left">
+                  <div id="search_by_address_result_text" class="text">
+                  </div>
+                  <div class="link">
+                     <a onclick="$('place_search').value = ''; flipSearchDisplay('search_by_address_result_panel','search_by_address_search_panel', 'place_search_by_address_name');" class="hand"><img src="/images/search_again.gif" alt="Search Again" width="76" height="16" /></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="where_container float-left" id="add_place_div">
+            <dl>
+               <dt>
+                  Name of Place
+               </dt>
+               <dd>
+                  <input type="text" class="big_form" name="place_name" id="place_name" value="<%= flash[:place].name %>"/>
+               </dd>
+               <dt>
+                  Address (e.g., 604 Mission St., San Francisco, CA 94111)
+               </dt>
+               <dd>
+                  <input type="text" class="big_form" name="place_location" maxlength="255" value="<%= flash[:place].location %>"/>
+               </dd>
+               <dt style="display: none;" id="phone_dt">
+                  Phone (e.g., 555-555-5555)
+               </dt>
+               <dd style="display: none;" id="phone_dd">
+                  <input type="text" class="big_form" name="place_phone" maxlength="15" value="<%= flash[:place].phone %>"/>
+               </dd>
+               <dt style="display: none;" id="url_dt">
+                  URL (e.g., http://www.skobee.com)
+               </dt>
+               <dd style="display: none;" id="url_dd">
+                  <input type="text" class="big_form" name="place_url" maxlength="255" value="<%= flash[:place].url %>"/>
+               </dd>
+            </dl>
+            <table cellpadding="0" cellspacing="0" width="100%" summary="make place public">
+               <tr>
+                  <td>
+                     <input name="request_public" id="request_public" type="checkbox"/>
+                  </td>
+                  <td>
+                     <label for="request_public">Make this place available to <strong>all</strong> users</label>
+                  </td>
+               </tr>
+            </table>
+         </div>
+
+         <h4 class="help float-left" style="display: none;" id="find_by_name_instructions">Enter the name of the place you'd like to attend.</h4>
+         <script type="text/javascript">
+            <%= generate_place_autocomplete_array(current_user.id, 'place_array') %>
+            new PlaceSearchByNameAutocompleter(
+               'place_search', 
+               'place_list_auto_complete', 
+               place_array,
+               '/plans/auto_complete_for_place_list',
+               {indicator: $('remote_loading_indicator')}
+            );
+         </script>
+         <script type="text/javascript">
+            var result_handler = 
+               new SearchByAddressPlaceResults(
+                  'venue_results', 
+                  1, 
+                  1, 
+                  $('place_search_by_address_name'), 
+                  $('place_search_by_address_location'), 
+                  $('max_distance'), 
+                  $('venue_results'), 
+                  $('search_by_address_button'), 
+                  $('place_id'), 
+                  8, 
+                  'search_by_address_search_panel',
+                  'search_by_address_result_panel',
+                  'item_', 
+                  '_value', 
+                  'pager_',
+                  'no_results',
+                  'paging_div'
+               );
+         </script>
+         <script type="text/javascript">
+            //KS- write out the value for the add new place place_origin setting as a javascript global
+            //so that it can be used in validatePlaceNameExists()
+            var ADD_PLACE_VALUE = <%= PlansController::PLACE_NEW_PLACE %>;
+         
+            function submitIfEnter(event) {
+               if (event.keyCode == Event.KEY_RETURN) {
+                  result_handler.searchButtonPressed();
+                  return false;
+               } else {
+                  return true;
+               }
+            }
+
+            //KS- use this to figure out if bad text has been entered in the
+            //where field somewhere
+            function whereFieldHasBogusPlace() {
+               var bogusPlace = false;
+
+               //KS- was there text in either the search by name or search by address name field?
+               if ($('place_search').value != '' || $('place_search_by_address_name').value != '') {
+
+                  //KS- is one of the search fields visible?
+                  if ((Element.visible($('search_by_address_search_panel')) && Element.visible($('find_place_by_location_div')))
+                     || (Element.visible($('search_by_name_search_panel')) && Element.visible($('find_place_by_name_div')))) {
+                     //KS- if there was text and one of the search fields is visible, we have a bogus place
+                     bogusPlace = true;
+                  }
+               }
+
+               return bogusPlace;
+            }
+            
+            //KS- create the where control javascript object to handle all of the tab selection, etc, etc
+            var where_control = 
+               new WhereControl(
+                  'where_control', 
+                  <%= flash[:active_tab].nil? ? PlansController::PLACE_FOUND_BY_NAME : flash[:active_tab] %>, 
+                  <%= flash[:place].public_status == Place::PUBLIC_STATUS_REQUESTED ? 'true' : 'false' %>);
+         </script>
+      </td>

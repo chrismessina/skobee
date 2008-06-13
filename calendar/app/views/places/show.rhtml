@@ -1,0 +1,107 @@
+<%
+place = @place
+@page_title = "Skobee - #{h(@place.name)}" -%>
+
+<div id="banner">
+   <h2 title="<%=h(@place.name)%>">
+      <%=h(truncate(@place.name, 50))%>
+<% if @show_edit
+-%>
+                    <br/><div class="">(<a style="" href="<%=url_for(:controller => 'places', :action => 'edit', :id => @place.id)%>">Update location info</a>)</div>
+<%
+end -%>
+  </h2>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to "Make Plans", { :controller => 'plans', :action => 'new', :place => @place.id } %>
+    </h3>
+  </div>
+</div>
+<div id="container">
+   <div id="content" class="hovered_sections place_discuss">
+   <%=render(:partial=>"/shared/flash")%>
+      <table cellpadding="0" cellspacing="0" width="100%">
+         <tr>
+            <td class="place place_alt">
+                  <h3><%
+if @show_loc
+               -%><strong><%=h(truncate(@place.name,50))%></strong>&nbsp;
+                  </h3>
+                  <address>
+                     <%=h(truncate(@place.location,50))%>
+                  </address>
+<%
+end
+if !@place.phone.blank? -%>
+                  <address>
+                     <%=h(@place.phone_formatted_for_display)%>
+                  </address>
+<%
+end
+if !@place.url.blank? -%>
+                  <address class="url">
+                     <a href="<%= @place.url %>" target="_blank"><%= truncate(@place.url, 40) %></a>
+                  </address>
+<%
+end
+#MGS- if the place doesn't map to a physical address, google won't be able to understand it, so don't display the
+# get directions form
+if place.location_is_physical_address? -%>
+               <%= start_form_tag({:action => "directions_from_loc", :controller => "users"}, { :method => "post", :target => "_blank", :name => "directions_form", :id => "directions_form" }) %>
+               <%= hidden_field_tag :directions_place_id, place.id %>
+                  <dl class="sidebar_form">
+                     <dt>
+                        Enter starting address:
+                     </dt>
+                     <dd>
+                        <input type="text" maxlength="255"  name="location" id="location" class="big_form"/>
+                     </dd>
+                     <dt class="button">
+                        <a href="#" onclick="getDirections();return false;" class=""><img src="/images/get_directions.gif" width="100" height="24" alt="Get Directions" /></a>
+                     </dt>
+                  </dl>
+               <%=end_form_tag%>
+<%
+end -%>
+            </td>
+            <td>
+<%
+if @show_map
+   @onload_handler = "#{@onload_handler}drawGoogleMap(#{place.lat},#{place.long},'map');" -%>
+               <%= google_maps_script -%>
+               <div class="map-container" id="map"></div>
+<%
+   if place.location_is_physical_address?
+      #MES- TODO: What if we have the geocode, but NOT the address?
+      # It seems like if we open maps.google.com with a geocode, it doesn't put in a marker, etc.?
+      # URLs for geocode maps look like http://maps.google.com/?sll=[LAT]%2C[LONG] -%>
+               <h4 class="view_larger"><a href="http://maps.google.com/maps?q=<%=CGI::escape place.location%>&amp;hl=en" target="_blank">View Larger Map/Directions</a></h4>
+<%
+   end -%>
+            </td>
+<%
+end -%>
+         </tr>
+      </table>
+      <h2 class="section_heading section_heading_border middle">
+        Who's Going?
+      </h2>
+<%
+if @recent_attendees.empty? -%>
+      <div class="no_results">
+         No attendees.
+      </div>
+<%
+else -%>
+      <ul class="picture_list picture_list_alt">
+         <%= render :partial => 'attendee', :collection => @recent_attendees %>
+      </ul>
+<%
+end -%>
+      <%= render(:partial => 'comments/comments', :object => @place.comments ) %>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'recent_plans' %>
+   <%= render_partial 'crowd' %>
+</div>

@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'skobee_aim'
+		'skobee_aim.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

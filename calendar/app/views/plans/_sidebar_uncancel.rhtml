@@ -1,0 +1,14 @@
+<%
+hvr = sidebar_hover_str(@sidebar_number)
+class_str, @sidebar_number = get_sidebar_class(@sidebar_number) -%>
+<div class="<%= class_str %>">
+   <h3>
+      Advanced Options
+   </h3>
+   <dl class="common">
+      <dt <%= hvr %> onclick="if (confirm('Are you sure that you want to reinstate this plan?\nWhen you reinstate a plan, all attendees will be re-invited to the plan.')) {cancelPlan(false); return false;}">
+          Reinstate this plan
+      </dt>
+      <dd></dd>
+   </dl>
+</div>

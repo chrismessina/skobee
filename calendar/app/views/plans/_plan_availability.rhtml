@@ -1,0 +1,31 @@
+<div id="banner" class="plan_header">
+   <%=get_plan_header(@plan)%>
+</div>
+<div id="container">
+   <div id="content">
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value" summary="plan">
+         <tr>
+            <td class="property">
+               What:
+            </td>
+            <td>
+               They have plans at this time, but the details are private.
+            </td>
+         </tr>
+         <tr>
+            <td class="property">
+               When:
+            </td>
+            <td>
+               <%=h(@plan.english_for_datetime(current_timezone))%>
+            </td>
+         </tr>
+      </table>
+   </div>
+</div>
+<div id="sidebar">
+<%
+@sidebar_number = 0 -%>
+   <%= render(:partial => "places/popular_this_week")%>
+</div>
+<span id="availability"></span>

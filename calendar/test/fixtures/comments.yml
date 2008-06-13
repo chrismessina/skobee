@@ -1,0 +1,45 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%
+now_str = Time.now_for_mysql
+%>
+first_comment:
+  id: 1
+  owner_id: 1
+  body: test
+  created_at: <%= now_str %>
+  updated_at: <%= now_str %>
+
+another_comment:
+  id: 2
+  owner_id: 2
+  body: test 2
+  created_at: <%= now_str %>
+  updated_at: <%= now_str %>
+
+user_comment_1:
+    id: 3
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+user_comment_2:
+    id: 4
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+user_comment_3:
+    id: 5
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+user_comment_4:
+    id: 6
+    owner_id: 4
+    body: scrubby rise
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>

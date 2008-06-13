@@ -1,0 +1,231 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+bob_email:
+  id: 1
+  user_id: 1
+  primary: 1
+  confirmed: 1
+  address: bob@test.com
+
+existingbob_email:
+  id: 2
+  user_id: 2
+  primary: 1
+  address: existingbob@test.com
+  confirmed: 1
+
+longbob_email:
+  id: 3
+  user_id: 3
+  primary: 1
+  address: longbob@test.com
+  confirmed: 1
+
+deletebob1_email:
+  id: 4
+  user_id: 4
+  primary: 1
+  address: deletebob1@test.com
+  confirmed: 1
+
+deletebob2_email:
+  id: 5
+  user_id: 5
+  primary: 1
+  address: deletebob2@test.com
+  confirmed: 1
+
+security_token_user_email:
+  id: 6
+  user_id: 6
+  primary: 1
+  address: security_token_user@test.com
+  confirmed: 1
+
+user_with_friends_email:
+  id: 7
+  user_id: 7
+  primary: 1
+  address: user_with_friends@test.com
+  confirmed: 1
+
+friend_1_of_user_email:
+  id: 8
+  user_id: 8
+  primary: 1
+  address: friend_1_of_user@test.com
+  confirmed: 1
+
+friend_2_of_user_email:
+  id: 9
+  user_id: 9
+  primary: 1
+  address: friend_2_of_user@test.com
+  confirmed: 1
+
+not_a_friend_email:
+  id: 10
+  user_id: 10
+  primary: 1
+  address: not_a_friend@test.com
+  confirmed: 1
+
+treat_as_administrator_email:
+  id: 11
+  user_id: 11
+  primary: 1
+  address: treat_as_administrator@test.com
+  confirmed: 1
+
+user_with_friends_and_friends_cal_email:
+  id: 12
+  user_id: 12
+  primary: 1
+  address: user_with_friends_and_friends_cal@test.com
+  confirmed: 1
+
+user_with_friends_and_private_cal_email:
+  id: 13
+  user_id: 13
+  primary: 1
+  address: user_with_friends_and_private_cal@test.com
+  confirmed: 1
+
+user_with_contacts_email:
+  id: 14
+  user_id: 14
+  primary: 1
+  address: user_with_contacts@test.com
+  confirmed: 1
+
+contact_1_of_user_email:
+  id: 15
+  user_id: 15
+  primary: 1
+  address: contact_1_of_user@test.com
+  confirmed: 1
+
+contact_2_of_user_email:
+  id: 16
+  user_id: 16
+  primary: 1
+  address: contact_2_of_user@test.com
+  confirmed: 1
+
+x_dummy_user_1_email:
+  id: 17
+  user_id: 17
+  primary: 1
+  address: x_dummy_user_1@test.com
+  confirmed: 1
+
+x_dummy_user_2_email:
+  id: 18
+  user_id: 18
+  primary: 1
+  address: x_dummy_user_2@test.com
+  confirmed: 1
+
+x_dummy_user_3_email:
+  id: 19
+  user_id: 19
+  primary: 1
+  address: x_dummy_user_3@test.com
+  confirmed: 1
+
+x_dummy_user_4_email:
+  id: 20
+  user_id: 20
+  primary: 1
+  address: x_dummy_user_4@test.com
+  confirmed: 1
+
+x_dummy_user_5_email:
+  id: 21
+  user_id: 21
+  primary: 1
+  address: x_dummy_user_5@test.com
+  confirmed: 1
+
+x_dummy_user_6_email:
+  id: 22
+  user_id: 22
+  primary: 1
+  address: x_dummy_user_6@test.com
+  confirmed: 1
+
+x_dummy_user_7_email:
+  id: 23
+  user_id: 23
+  primary: 1
+  address: x_dummy_user_7@test.com
+  confirmed: 1
+
+kavin620_at_hotmail_dot_com_email:
+  id: 24
+  user_id: 24
+  primary: 1
+  address: kavin620@hotmail.com
+  confirmed: 1
+
+bob_second_email:
+  id: 25
+  user_id: 1
+  primary: 0
+  address: blah@skobee.com
+  confirmed: 1
+
+existingbob_unconfirmed_email:
+  id: 26
+  user_id: 2
+  primary: 0
+  address: unconfirmed@skobee.com
+  confirmed: 0
+
+duplicate1_of_existingbob_unconfirmed:
+  id: 27
+  user_id: 3
+  primary: 0
+  address: unconfirmed@skobee.com
+  confirmed: 0
+
+duplicate2_of_existingbob_unconfirmed:
+  id: 28
+  user_id: 4
+  primary: 0
+  address: unconfirmed@skobee.com
+  confirmed: 0
+
+unregistered_user_email:
+  id: 29
+  user_id: 25
+  primary: 1
+  address: unregistered_user@unregistereduser.com
+  confirmed: 0
+
+unconfirmed_user_email:
+  id: 30
+  user_id: 26
+  primary: 1
+  address: unconfirmed_user@unconfirmeduser.com
+  confirmed: 0
+  
+bobs_unconfirmed_email_thats_a_duplicate_of_existingbobs_confirmed_non_primary:
+  id: 31
+  user_id: 1
+  primary: 0
+  confirmed: 0
+  address: existingbob2@test.com
+
+existingbob_email_confirmed_non_primary_woot:
+  id: 32
+  user_id: 2
+  primary: 0
+  address: existingbob2@test.com
+  confirmed: 1
+
+longbob_email_thats_an_unconfirmed_duplicate_of_the_one_above:
+  id: 33
+  user_id: 3
+  primary: 0
+  address: existingbob2@test.com
+  confirmed: 0

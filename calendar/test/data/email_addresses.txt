@@ -1,0 +1,7 @@
+random_email_address@goober.com
+another_email_address@booger.com
+bob@test.com
+s@sc.com
+s@s.uk
+s+1@sc.uk
+s+1@s.uk

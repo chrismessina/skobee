@@ -1,0 +1,72 @@
+<%
+@page_title = "Skobee - Feeds"
+@rss_feeds = {
+               "Skobee: #{h(Inflector.possessiveize(current_user.login))} plan changes" => url_for(:controller => 'feeds', :action => 'plan_changes', :id => current_user_id, :only_path => false),
+               "Skobee: #{h(Inflector.possessiveize(current_user.login))} friends plans" => url_for(:controller => 'feeds', :action => 'friends_plans', :id => current_user_id, :only_path => false),
+               "Skobee: All #{h(Inflector.possessiveize(current_user.login))} contacts plans" => url_for(:controller => 'feeds', :action => 'all_contacts_plans', :id => current_user_id, :only_path => false)
+             }
+-%>
+
+<div id="banner">
+  <div class="float-left">
+     <h2 id="user_heading">
+         Syndication
+     </h2>
+  </div>
+</div>
+
+<div id="container">
+   <div id="content" class="help_page">
+      <h2 class="help_page_heading">RSS</h2>
+      <h2>Secure RSS feeds</h2>
+      <p>Skobee RSS feeds syndicate information about your current plans and what your friends are up to. This lets you keep tabs on plans while you're not visiting Skobee.com.<br/><br/>
+      Because some of this information is sensitive, Skobee requires authentication to retrieve the information for these RSS feeds. Your feed reader will need to know your username and password to retrieve these feeds. There are a number of feed readers that support this type of security, but here are a few that we recommend:
+         <a href="http://www.onfolio.com/">Onfolio</a>,
+         <a href="http://www.newzcrawler.com/">NewzCrawler</a>,
+         <a href="http://www.newsgator.com/">NewsGator</a>,
+         <a href="http://www.feedreader.com/">Feedreader</a>,
+         <a href="http://ranchero.com/netnewswire/">NetNewsWire</a> (Mac only)
+      </p>
+
+      <h2>What's in a Skobee Feed?</h2>
+      <p>The following actions will create new feed items in Skobee feeds:<br/><br/>
+      &nbsp;&nbsp;&nbsp;-Someone suggests a new time/date<br/>
+      &nbsp;&nbsp;&nbsp;-Someone suggests a new place<br/>
+      &nbsp;&nbsp;&nbsp;-Someone makes a new comment<br/>
+      &nbsp;&nbsp;&nbsp;-Someone changes their RSVP status<br/><br/>
+      For example, you can subscribe to all of your friends' plans and you'll receive a new feed item every time a friend accepts a new plan or makes a comment on a plan.
+      </p>
+
+      <h2>Trouble with My Yahoo or Bloglines?</h2>
+      <p>Because Skobee feeds are secure, a login and password is required to view feed items. Most feed readers support this type of authentication, but My Yahoo and Bloglines do not. You may work around this problem by modifying your feed URLs to include your login and password, like this:<br/><br/>
+      http://<b>login</b>:<b>password</b>@www.skobee.com/feeds/plan_changes/<%=current_user_id%>
+      </p>
+
+      <h2 class="help_page_heading">ICal Feeds</h2>
+      <h2>Export Skobee plans to your favorite calendar</h2>
+      <p>Click the link labeled "Your Plans" under the Available ICal Feeds menu to the right. You may add this URL to your favorite calendar, such as Google Calendar, 30Boxes, or iCal. Any change made to your plans within Skobee will appear in your calendar.
+      <br/><br/>
+      The ICal feed is for your user only. <b>Do not share this URL with anyone else.</b>
+      </p>
+   </div>
+</div>
+<div id="sidebar">
+   <div class="section grey">
+   <h3>
+      Available Skobee RSS feeds
+   </h3>
+   <dl class="common help_nav">
+      <dt><%= link_to("Changes on your plans", :action => :plan_changes, :id => current_user_id) %></dt>
+      <dt><%= link_to("Your friends' plans", :action => :friends_plans, :id => current_user_id) %></dt>
+      <dt><%= link_to("All your contacts' plans", :action => :all_contacts_plans, :id => current_user_id) %></dt>
+   </dl>
+   </div>
+   <div class="section grey">
+   <h3>
+      Available Skobee ICal feeds
+   </h3>
+   <dl class="common help_nav">
+      <dt style="cursor: default">Your Plans: <a href="<%= url_for(:controller => 'ical', :action => 'publish', :id => current_user.planner.id, :user_id => current_user_id, :ikey => generate_ical_key(current_user, current_user.planner.id), :only_path => false, :protocol => "webcal://")%>">iCal</a>, <a href="<%= url_for(:controller => 'ical', :action => 'publish', :id => current_user.planner.id, :user_id => current_user_id, :ikey => generate_ical_key(current_user, current_user.planner.id), :only_path => false )%>">http</a></dt>
+   </dl>
+   </div>
+</div>

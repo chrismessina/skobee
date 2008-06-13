@@ -1,0 +1,42 @@
+X-Gmail-Received: 27f90d7310a430d1d95d65ae419724d6d00d6fa6
+Received: by 10.36.247.3 with HTTP; Wed, 28 Dec 2005 15:44:18 -0800 (PST)
+Message-ID: <5d0d22620512281544x1cc6bb7ct1cd0c1fd4ec18a7b@mail.gmail.com>
+Date: Wed, 28 Dec 2005 15:44:18 -0800
+From: Michael Smedberg <smedberg@gmail.com>
+To: smedberg@gmail.com
+Subject: Re: Gmail style replies
+In-Reply-To: <5d0d22620512281543p67175e56h84bfcaea4c0088a6@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3020_32229743.1135813458516"
+References: <5d0d22620512281543p67175e56h84bfcaea4c0088a6@mail.gmail.com>
+Delivered-To: smedberg@gmail.com
+
+------=_Part_3020_32229743.1135813458516
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+test
+when: next thursday
+
+On 12/28/05, Michael Smedberg <smedberg@gmail.com> wrote:
+>
+> where: Kubla Kahn's Pleasure Palace
+>
+
+------=_Part_3020_32229743.1135813458516
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+when: next thursday<br><br><div><span class=3D"gmail_quote">On 12/28/05, <b=
+ class=3D"gmail_sendername">Michael Smedberg</b> &lt;<a href=3D"mailto:smed=
+berg@gmail.com">smedberg@gmail.com</a>&gt; wrote:</span><blockquote class=
+=3D"gmail_quote" style=3D"border-left: 1px solid rgb(204, 204, 204); margin=
+: 0pt 0pt 0pt 0.8ex; padding-left: 1ex;">
+where: Kubla Kahn's Pleasure Palace<br>
+
+</blockquote></div><br>
+
+------=_Part_3020_32229743.1135813458516--

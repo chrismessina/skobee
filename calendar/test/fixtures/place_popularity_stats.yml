@@ -1,0 +1,46 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+place_popularity_stats_009: 
+  place_id: "4"
+  stat_date: <%= (Time.now + 3.days).fmt_for_mysql %>
+  rank: "3"
+  count: "31"
+place_popularity_stats_001: 
+  place_id: "4"
+  stat_date: <%= (Time.now).fmt_for_mysql %>
+  rank: "1"
+  count: "27"
+place_popularity_stats_002: 
+  place_id: "5"
+  stat_date: <%= (Time.now).fmt_for_mysql %>
+  rank: "2"
+  count: "19"
+place_popularity_stats_003: 
+  place_id: "6"
+  stat_date: <%= (Time.now).fmt_for_mysql %>
+  rank: "3"
+  count: "7"
+place_popularity_stats_004: 
+  place_id: "7"
+  stat_date: <%= (Time.now + 1.days).fmt_for_mysql %>
+  rank: "1"
+  count: "54"
+place_popularity_stats_005: 
+  place_id: "8"
+  stat_date: <%= (Time.now + 1.days).fmt_for_mysql %>
+  rank: "2"
+  count: "39"
+place_popularity_stats_006: 
+  place_id: "9"
+  stat_date: <%= (Time.now + 1.days).fmt_for_mysql %>
+  rank: "3"
+  count: "17"
+place_popularity_stats_007: 
+  place_id: "10"
+  stat_date: <%= (Time.now + 3.days).fmt_for_mysql %>
+  rank: "1"
+  count: "49"
+place_popularity_stats_008: 
+  place_id: "11"
+  stat_date: <%= (Time.now + 3.days).fmt_for_mysql %>
+  rank: "2"
+  count: "35"

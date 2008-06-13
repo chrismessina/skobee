@@ -1,0 +1,22 @@
+One of your plans is about to expire!<br/>
+<br/>
+Check out the full details or suggest a new date here:<br/>
+<a href='<%= h @plan_details_link %>'><%= h @plan_details_link %></a><br/><br/>
+
+<% if !@plan.name.nil? && !@plan.name.empty? %>
+<b>What:</b> <%= h @plan.name %><br/>
+<% end %>
+<% if !@plan.description.nil? && !@plan.description.empty? -%>
+<%= h @plan.description %><br/>
+<% end -%>
+<b>When:</b> <%= h @plan.english_for_datetime(@user.tz) %><br/>
+<% confirmed_array = @plan.attending_invitees_other_than(@user) -%>
+<% if confirmed_array.length > 0 %><b>Who's Confirmed:</b> <% confirmed_array.each_index {|index| user = confirmed_array[index] -%><%= h user.display_name %><% if index < confirmed_array.length - 1 -%>, <% end -%><% } -%><br/><% end %>
+<% invited_array = @plan.invitees(Plan::STATUS_INVITED, @user) -%>
+<% if invited_array.length > 0 %><b>Who's Invited:</b> <% invited_array.each_index {|index| user = invited_array[index] -%><%= h user.display_name %><% if index < invited_array.length - 1 -%>, <% end -%><% } -%><br/><% end %>
+<% if !@plan.place.nil? %>
+<b>Where:</b> <% if !@plan.place.name.nil? && !@plan.place.name.empty? %><%= h @plan.place.name %>, <% end -%><% if !@plan.place.location.nil? && !@plan.place.location.empty? -%><%= h @plan.place.location %> <% if !@gmaps_link.nil? -%>(<a href="<%= h @gmaps_link %>">view a map</a>)<% end -%><% end -%><br/>
+<% end -%>
+<br/>
+________________________________________________________________________________<br/>
+<i>Too many emails from Skobee? <a href="<%= h @change_notifications %>">Click here to change your notification settings</a></i>

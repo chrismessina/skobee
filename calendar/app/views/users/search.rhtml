@@ -1,0 +1,28 @@
+<%
+@page_title = "Skobee - Find People" -%>
+<div id="banner">
+   <h2>
+      Contact Search
+   </h2>
+</div>
+
+<div id="container">
+   <div id="content">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <h2 class="section_heading section_heading_border">Results</h2>
+      <%
+      if nil == @results || @results.empty? -%>
+         <div class="no_results"><strong>There were no results for "<%= h(@query) %>".</strong>Try another search or <%= link_to 'invite your friend to join Skobee.', {  :controller => 'users', :action => 'invite_new_user' }%></div>
+      <%
+      else -%>
+      <ul id="results-list" class="picture_list">
+         <%= render(:partial => "contacts", :collection => @results)%>
+      </ul>
+      <%
+      end -%>
+
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'find_contacts' %>
+</div>

@@ -1,0 +1,21 @@
+<%
+pln_info = dashboard_plan_tentative
+pln = pln_info.plan
+rejected = pln.rejected?
+-%>
+<div id="plan-list-<%= pln.id %>" class="plan" onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => pln, :cal_id => pln_info.owning_planner)%>'" onmouseover="rowHover(this.id, event, HOVER_TYPE_PLAN)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PLAN)">
+   <!-- <%= plan_template %> -->
+   <div class="plan_text float-left">
+      <h3><strong><%=h(pln.english_for_date(current_timezone))%>, <%=h(pln.english_for_time(current_timezone))%></strong></h3>
+      <%= get_plan_place_invitees(pln, "h4", "h4", false, true) -%>
+   </div>
+   <ul class="plan-edit float-right">
+      <li class="confirm" title="I'll Be There" onmouseover="tentativeHover(this, event)" onmouseout="tentativeHover(this, event)" onclick="window.location.href='<%=h(url_for({ :controller => 'planners', :action => 'accept_plan', :id => @planner, :pln_id => pln.id, :go_to => controller.action_name }))%>';Event.stop(event);">
+         &nbsp;
+      </li>
+      <li class="cancel<%='_hover' if rejected%>" title="I'm Out" <%if !rejected%>onmouseover="tentativeHover(this, event)" onmouseout="tentativeHover(this, event)" onclick="window.location.href='<%=url_for({ :controller => 'planners', :action => 'reject_plan', :id => @planner, :pln_id => pln.id })%>';Event.stop(event);"<%end%>>
+         &nbsp;
+      </li>
+   </ul>
+   <div id="hover_bar_plan-list-<%= pln.id %>" class="hover_bar"></div>
+</div>

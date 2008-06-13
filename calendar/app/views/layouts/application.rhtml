@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Language" content="en-us" />
+  <!--  hostname: <%= HOSTNAME %> -->
+<title><%= @page_title || "Skobee" %></title>
+<%= stylesheet_link_tag "master.css?#{STATIC_VERSION_ID}" %>
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="/stylesheets/ie.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/nonsense" href="/stylesheets/safari.css" />
+
+<link rel="SHORTCUT ICON" href="/images/favicon.ico" />
+
+<% #MGS- skobee.js is always includedl needs to be included before scriptaculous -%>
+<%= javascript_include_tag  JS_PROTOTYPE %>
+<% #MGS- include the javascripts set in the instance variable
+if @javascripts && !@javascripts.empty?
+  @javascripts.each do |js| -%>
+<%= javascript_include_tag "#{js}" %>
+<%
+  end
+else
+#MGS- if the static includes haven't been set, include these defaults -%>
+<%= javascript_include_tag JS_SCRIPTACULOUS_SKOBEE_DEFAULT %>
+<%= javascript_include_tag JS_DATEPICKER %>
+<%
+end -%>
+<% #MGS- skobee.js is always included; needs to be included after scriptaculous -%>
+<%= javascript_include_tag JS_SKOBEE_GENERAL %>
+
+<%
+#MGS- write out the alternate links for the RSS feeds on the page...if any exist
+if @rss_feeds && !@rss_feeds.empty?
+   @rss_feeds.each do |title, feed| -%>
+<link rel="alternate" type="application/rss+xml" title="<%= title -%>" href="<%= feed -%>" />
+<%
+   end
+end -%>
+</head>
+<body onload="<% flash[:yft].each{|y|%>yft('<%=y%>');<%} if !flash[:yft].nil? %><%=@onload_handler%>">
+<%
+#MGS- since the email splash pages use the application layout when a logged in
+# user views them, we need to add the 'com' style when rendering a splash action
+-%>
+<div id="wrapper" <% if 'splash' == controller.controller_name %>class="com"<% end %>>
+  <div id="top_header">
+    <ul class="float-left">
+      <li><%= link_to 'Home', :controller => 'planners', :action => 'dashboard' %>&nbsp;|&nbsp;</li>
+      <li><%=build_user_profile_link(current_user, 'Profile') %>&nbsp;|&nbsp;</li>
+      <li><%= link_to 'Settings', {  :controller => 'users', :action => 'settings' }%></li>
+      <%
+      #MGS - only allow logged in users to see this link
+      if logged_in? -%>
+      <li>&nbsp;|&nbsp;<%= link_to 'Invite someone to Skobee', {  :controller => 'users', :action => 'invite_new_user' }%></li>
+      <%
+      end -%>
+    </ul>
+    <ul class="float-right">
+<%
+if logged_in? -%>
+      <li>Logged in as <strong><%=h current_user.display_name %></strong>&nbsp;|&nbsp;</li>
+      <li><a href="/help">Help</a>&nbsp;|&nbsp;</li>
+      <li><%= link_to('Log out', :action => 'logout', :controller => 'users') %></li>
+<%
+elsif conditionally_logged_in? -%>
+      <li>Viewing as <strong><%=h current_user.display_name %></strong>&nbsp;|&nbsp;</li>
+      <li><a href="/help">Help</a>&nbsp;|&nbsp;</li>
+      <li><%= link_to('Log in', :action => 'login', :controller => 'users') %></li>
+<%
+else -%>
+      <li>Viewing as <strong>Guest</strong>&nbsp;|&nbsp;</li>
+      <li><a href="/help">Help</a>&nbsp;|&nbsp;</li>
+      <li><%= link_to('Log in', :action => 'login', :controller => 'users') %></li>
+<%
+end -%>
+    </ul>
+  </div>
+  <div id="header">
+    <div onclick="window.location='<%=url_for(:controller=>'planners', :action => 'dashboard')%>'" id="logo">
+      <%= link_to(image_tag("/images/logo.gif?#{STATIC_VERSION_ID}", :alt => 'skobee'), {:controller => 'planners', :action => 'dashboard'}, { } )%>
+    </div>
+    <ul>
+    <% if has_current_user? -%>
+      <li>
+        <h2 class="plans">
+         <%= link_to 'Plans', {   :controller => 'planners',
+             :action => 'schedule_details',
+             :id => current_user.planner } %>
+        </h2>
+      </li>
+      <li>
+        <h2 class="people">
+          <%= link_to 'People', {  :controller => 'users',
+              :action => 'contacts' }%>
+        </h2>
+      </li>
+      <li>
+        <h2 class="places">
+          <%= link_to 'Places', {  :controller => 'places',
+              :action => 'find_places' }%>
+        </h2>
+      </li>
+      <% else %>
+      <li>
+        <h2 class="plans">
+          <%= link_to 'Plans', {   :controller => 'users',
+             :action => 'login'}%>
+        </h2>
+      </li>
+      <li>
+        <h2 class="people">
+          <%= link_to 'People', {   :controller => 'users',
+             :action => 'login'}%>
+        </h2>
+      </li>
+      <li>
+        <h2 class="places">
+          <%= link_to 'Places', {   :controller => 'users',
+             :action => 'login'}%>
+        </h2>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <%= @content_for_layout %>
+  <div id="footer">
+      <h4>
+      <%= link_to 'Terms of Service', :controller => 'splash', :action => 'terms_of_use' %>&nbsp;|
+      <%= link_to 'Privacy', :controller => 'splash', :action => 'privacy' %>&nbsp;|
+      <%= link_to 'About Us', :controller => 'splash', :action => 'about' %>&nbsp;|
+      <%= link_to 'Jobs', :controller => 'splash', :action => 'jobs' %>&nbsp;|
+      <%= link_to 'Contact Us', 'mailto:feedback@skobee.com' %>
+<%
+if logged_in? -%>
+         |&nbsp;<%= link_to 'Blog', 'http://blog.skobee.com' %>&nbsp;|
+         <%= link_to 'Forums', 'http://forums.skobee.com:5001' %>
+<%
+end -%>
+   </h4>
+  </div>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-248058-1";
+urchinTracker();
+</script>
+</body>
+</html>

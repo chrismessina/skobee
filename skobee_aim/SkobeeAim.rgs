@@ -1,0 +1,27 @@
+HKCR
+{
+	skobee_aim.SkobeeAim.1 = s 'SkobeeAim Class'
+	{
+		CLSID = s '{6D733148-6A38-5F5A-3372-61494359384B}'
+	}
+	skobee_aim.SkobeeAim = s 'SkobeeAim Class'
+	{
+		CLSID = s '{6D733148-6A38-5F5A-3372-61494359384B}'
+		CurVer = s 'skobee_aim.SkobeeAim.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6D733148-6A38-5F5A-3372-61494359384B} = s 'SkobeeAim Class'
+		{
+			ProgID = s 'skobee_aim.SkobeeAim.1'
+			VersionIndependentProgID = s 'skobee_aim.SkobeeAim'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{BBD22123-B115-437D-A074-71A146FB4293}'
+		}
+	}
+}

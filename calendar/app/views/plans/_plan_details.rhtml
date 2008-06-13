@@ -1,0 +1,255 @@
+<%
+#MGS- if there are too many users on this plan, display the textual
+# invitee list view
+if PlansController::PLAN_THUMBNAIL_DISPLAY_LIMIT >= @plan.planners.delete_if{|cal| Plan::STATUS_NO_RELATION == cal.cal_pln_status.to_i}.length && !ie?
+   planners = get_sorted_planners(@plan)
+else
+   accepted_list, interested_list, rejected_list, invited_list, cancelled_list = get_invitee_lists(@plan, current_user)
+end
+-%>
+
+<div id="banner" class="plan_header">
+   <%=get_plan_header(@plan)%>
+</div>
+<div id="container">
+   <div id="content" class="hovered_sections">
+      <%=render(:partial=>"/shared/flash")%>
+         <div id="plan_what_row" class="property_value_row">
+            <h3 class="property">
+               What:
+            </h3>
+            <div id="plan_what" class="value">
+               <table cellpadding="0" cellspacing="0" class="details" summary="What">
+                  <tr>
+                     <td class="text">
+<%
+#MGS- to fix problem where people just enter spaces, strip the plan name
+#see bug #903
+if !@plan.name.nil? && "" != @plan.name.strip
+   display_name = @plan.name
+else
+   display_name = 'We\'ve got plans (no description).'
+end
+-%>
+                        <strong><%= h(display_name) %></strong>
+<%
+#MGS- display the description if there is one
+if !@plan.description.nil? && "" != @plan.description -%>
+                        <div class="description">
+                           <%= format_rich_text(@plan.description) %>
+                        </div>
+<%
+end -%>
+                     </td>
+                     <td class="edit_link">
+                        &nbsp;
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div id="plan_when_row" class="property_value_row">
+            <h3 class="property">
+               When:
+            </h3>
+            <div id="plan_when_div" class="value">
+               <table cellpadding="0" cellspacing="0" class="details" summary="When">
+                  <tr>
+                     <td class="text">
+                        <%=h(@plan.english_for_datetime(current_timezone))%>
+                     </td>
+                     <td class="edit_link">
+                        &nbsp;
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div id="plan_who_row" class="property_value_row">
+            <h3 class="property">
+               Who:
+            </h3>
+            <div id="plan_who_list" class="value">
+               <table cellpadding="0" cellspacing="0" class="details"  summary="Who">
+                  <tr>
+                     <td class="text">
+<%
+#MGS- write out the overlayed image stuff
+if PlansController::PLAN_THUMBNAIL_DISPLAY_LIMIT >= @plan.planners.length && !ie? -%>
+                        <ul id="plan_invitees" class="picture_list plan_thumbnail_list">
+                     <%
+                     planners.each do |cal|
+                        #MGS- we need this onclick because the overlayed image on the thumbnail makes the image unclickable -%>
+                        <li onclick="window.location.href='<%=url_for(:controller => 'user', :action => cal.owner.login ) %>'">
+
+                           <div id="invitee_pic_<%=cal.id%>" class="plan_picture_list">
+                              <div>
+                                 <%= build_user_thumbnail_link(cal.owner, cal.owner.display_name)%>
+                              </div>
+                           </div>
+<%
+  #MES- Don't show the overlays if the plan is cancelled
+  if !@cancelled -%>
+                           <div id="overlay_<%=cal.id%>" class="plan_picture_list_overlay plan_picture_list_<%= cal.cal_pln_status %>"></div>
+<%
+  end -%>
+                        </li>
+                     <%
+                     end -%>
+                        </ul>
+<%
+  if !@cancelled -%>
+<script type="text/javascript">
+function positionOverlay(){
+   var pictures = $A(document.getElementsByClassName('plan_picture_list', 'plan_invitees'));
+   pictures.each(
+      function(pic){
+         var width = Element.getDimensions(pic).width;
+         var nextSib = pic.nextSibling;
+         while (nextSib.nodeType != 1)
+            nextSib = nextSib.nextSibling;
+         nextSib.style.left = ((width/2)-24) + 'px';
+      }
+   );
+}
+<% @onload_handler = @onload_handler.nil? ? "positionOverlay();" : "positionOverlay();" + @onload_handler %>
+</script>
+<%
+  end #MES- "if !@cancelled"
+else -%>
+                        <ul class="invite_list">
+                           <%
+                           if !accepted_list.nil? && "" != accepted_list -%>
+                           <li class="accepted">
+                              <div>
+                                 <%= accepted_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !interested_list.nil? && "" != interested_list -%>
+                           <li class="interested">
+                              <div>
+                                 <%= interested_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !rejected_list.nil? && "" != rejected_list  -%>
+                           <li class="rejected">
+                              <div>
+                                 <%= rejected_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !invited_list.nil? && "" != invited_list -%>
+                           <li class="pending">
+                              <div>
+                                 <%= invited_list %>
+                              </div>
+                           </li>
+                           <%
+                           end
+                           if !cancelled_list.nil? && "" != cancelled_list -%>
+                           <li class="cancelled">
+                              <div id="cancelled">
+                                 <%= cancelled_list %>
+                              </div>
+                           </li>
+                           <%
+                           end -%>
+                        </ul>
+<%
+end -%>
+                     </td>
+                     <td class="edit_link">
+                        &nbsp;
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+         <div id="plan_where_row" class="property_value_row">
+            <h3 class="property">
+               Where:
+            </h3>
+            <div id="plan_where" class="value">
+               <table cellpadding="0" cellspacing="0" class="details"  summary="Where">
+                  <tr>
+                     <td class="text place">
+                     <%
+                     #MGS- for the details view, only show the place on a plan if there is one
+                     # or if the place is public; handle the private place below
+                     if !@plan.place.nil? && Place::PLACE_PUBLIC == @plan.place.public
+                     %>
+                        <h3><%= link_to h(truncate(@plan.place.name,35)), {:controller => 'places', :action => 'show', :id => @plan.place.id, :plan_id => @plan.id, :cal_id => params[:cal_id] } %></h3>
+                        <%
+                        if !@plan.place.location.nil? -%>
+                        <address>
+                           <%=h(@plan.place.location)%>
+                        </address>
+                        <%
+                        end
+                        if !@plan.place.phone.blank? -%>
+                        <address>
+                           <%=h(@plan.place.phone_formatted_for_display)%>
+                        </address>
+                        <%
+                        end
+
+                        if !@plan.place.url.nil? -%>
+                        <address class="url">
+                           <a href="<%= @plan.place.url %>" target="_blank"><%= truncate(@plan.place.url, 40) %></a>
+                        </address>
+                        <%
+                        end
+                     #MGS- if viewing the details view, user not on the invite list
+                     # if this place is private, show filler text (see bug #765)
+                     elsif !@plan.place.nil? && Place::PLACE_PRIVATE == @plan.place.public -%>
+                        <h3><%= PlansController::PRIVATE_PLACE_DISPLAY_TEXT %></h3>
+                     <%
+                     end -%>
+                     </td>
+                     <td class="edit_link">
+                        &nbsp;
+                     </td>
+                  </tr>
+               </table>
+            </div>
+         </div>
+      <div id="change-group">
+      <%= render(:partial => 'changes', :object => @plan.plan_changes.sort) %>
+      </div>
+   </div>
+</div>
+
+<div id="sidebar">
+<%
+#MGS- for the details view, only show the place map if there is a
+# place and the place is public
+@sidebar_number = 0
+
+#MGS- only show the status message if you're not on the plan;
+# the status message will tell you how to request an invite to the plan
+if PlansController::COMMENT_ACCESS_LEVEL_FULL == @comment_access
+  if !@cancelled -%>
+   <%= render(:partial => "plan_status")%>
+<%
+  end
+end
+
+if !@plan.place.nil? && Place::PLACE_PUBLIC == @plan.place.public -%>
+   <%= render(:partial => "sidebar_place_map", :locals => {:place => @plan.place })%>
+<%
+end -%>
+   <%= render(:partial => "places/popular_this_week")%>
+<%
+    #MES- Show the pictures view if there might be pictures
+    if @could_have_photos -%>
+   <%= render(:partial => "sidebar_flickr")%>
+<%
+    end -%>
+</div>
+
+<span id="all_details"></span>

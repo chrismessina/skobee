@@ -1,0 +1,35 @@
+X-Gmail-Received: 9c9340c9dd28f2d4d43439103aaba0e6f2db7ab5
+Delivered-To: kavin620@gmail.com
+Received: by 10.36.222.16 with SMTP id u16cs10517nzg;
+        Fri, 4 Nov 2005 09:45:06 -0800 (PST)
+Received: by 10.54.99.14 with SMTP id w14mr1857473wrb;
+        Fri, 04 Nov 2005 09:45:06 -0800 (PST)
+Return-Path: <kavin620@hotmail.com>
+Received: from hotmail.com (bay16-f3.bay16.hotmail.com [65.54.186.53])
+        by mx.gmail.com with ESMTP id 45si1342586wri.2005.11.04.09.45.05;
+        Fri, 04 Nov 2005 09:45:06 -0800 (PST)
+Received-SPF: pass (gmail.com: domain of kavin620@hotmail.com designates 65.54.186.53 as permitted sender)
+Received: from mail pickup service by hotmail.com with Microsoft SMTPSVC;
+	 Fri, 4 Nov 2005 09:45:01 -0800
+Message-ID: <BAY16-F324D9BE21305197A99BE780600@phx.gbl>
+Received: from 67.102.229.98 by by16fd.bay16.hotmail.msn.com with HTTP;
+	Fri, 04 Nov 2005 17:45:01 GMT
+X-Originating-IP: [67.102.229.98]
+X-Originating-Email: [kavin620@hotmail.com]
+X-Sender: kavin620@hotmail.com
+From: "Kavin Stewart" <kavin620@hotmail.com>
+To: kavin620@gmail.com, kavin.stewart@gmail.com
+Bcc: 
+Subject: a new event via skobee
+Date: Fri, 04 Nov 2005 09:45:01 -0800
+Mime-Version: 1.0
+Content-Type: text/plain; format=flowed
+X-OriginalArrivalTime: 04 Nov 2005 17:45:01.0274 (UTC) FILETIME=[7B145BA0:01C5E167]
+
+when: tomorrow night
+where: kavin's hut
+
+_________________________________________________________________
+Express yourself instantly with MSN Messenger! Download today - it's FREE! 
+http://messenger.msn.click-url.com/go/onm00200471ave/direct/01/
+

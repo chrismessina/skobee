@@ -1,0 +1,11 @@
+<%
+#MGS- dont display recently added me when empty
+if !@recently_added_me.empty? -%>
+<div class="section grey float-left">
+   <h3>Recently Added Me</h3>
+   <ul id="recently-added-list" class="picture_list">
+      <%= render(:partial => "new_friend", :collection => @recently_added_me)%>
+   </ul>
+</div>
+<%
+end -%>

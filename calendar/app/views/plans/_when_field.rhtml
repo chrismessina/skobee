@@ -1,0 +1,79 @@
+<%
+current_timeperiod = @plan.timeperiod
+current_dateperiod = @plan.dateperiod(current_timezone)
+custom_timeperiod = (Plan::TIME_DESCRIPTION_CUSTOM == current_timeperiod)
+custom_dateperiod = (Plan::DATE_DESCRIPTION_CUSTOM == current_dateperiod)
+custom_period = custom_timeperiod || custom_dateperiod
+
+date_descriptions = build_date_descriptions_collection(current_timezone)
+
+custom_date = false
+date_to_display = @plan.start_in_tz(current_timezone)
+#MGS-  if this is a custom dateperiod, then calculate the time to display
+if Plan::DATE_DESCRIPTION_CUSTOM == @plan.dateperiod(current_timezone)
+  custom_date = true
+
+  #MGS- look for the key in the descr array, if its there...the date isn't really a specific date
+  # its next Tuesday or something
+  key = "#{date_to_display.mon}/#{date_to_display.day}/#{date_to_display.year}"
+  if date_descriptions.flatten.include?(key)
+    current_dateperiod = key
+  end
+end
+
+if Plan::TIME_DESCRIPTION_CUSTOM == @plan.timeperiod
+  custom_time = true
+  hour = date_to_display.hour
+  min = sprintf('%02d', date_to_display.min)
+  pm = (11 < hour)
+  hour -= 12 if hour > 12
+  hour = 12 if hour == 0
+else
+  custom_time = false
+end
+
+#MES- TODO: Move the date and time string formatting into helper functions
+#MES-Figure out what the start date for this plan is- what month, day, year
+date_to_display = @plan.start ? @plan.start_in_tz(current_timezone) : current_timezone.now
+month = Time::RFC2822_MONTH_NAME[date_to_display.mon - 1]
+day = date_to_display.mday.to_s
+#puts "this is day " + day
+year = date_to_display.year.to_s -%>
+<td id="plan_when">
+  <table cellpadding="0" cellspacing="0" width="100%" summary="plan when editor">
+    <tr>
+      <td class="left">
+        <script type="text/javascript">var current_time = <%= current_timezone.now.to_date.to_javascript_string %>;</script>
+        <%= select_field_tag 'dateperiod', current_dateperiod, date_descriptions, { :onchange => "displayTimeFields('date-div', this.options[this.selectedIndex]); return false;", :class => 'big_form'  } %>
+      </td>
+      <td>
+         <%= select_field_tag 'timeperiod', current_timeperiod, build_time_descriptions_collection(current_timezone), { :onchange => "displayTimeFields('time-div', this.options[this.selectedIndex]); return false;", :class => 'big_form' } %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div style="<%= (current_dateperiod ==0 || current_timeperiod ==0) ? "" : "display: none" %>" id="date-div" class="relative">
+          <input id="hiddendate" name="hiddendate" value="" type="hidden"/>
+          <input id="date_month" onkeypress="clearFuzzyDate()" name="date_month" value="<%= custom_date ? "#{date_to_display.mon}" : ""%>" size="2" maxlength="2" class="date_day" type="text"/>
+          <input id="date_day" onkeypress="clearFuzzyDate()" name="date_day" value="<%= custom_date ? "#{date_to_display.day}" : ""%>" size="2" maxlength="2" class="date_month"/>
+          <input id="date_year" onkeypress="clearFuzzyDate()" name="date_year" value="<%= custom_date ? "#{date_to_display.year}" : ""%>" size="10" maxlength="4" class="date_year"/>
+          <a id="hiddendate_link" href="#" onclick="DatePicker.toggleDatePicker('hiddendate','date');clearFuzzyDate();" class="demo_link"><img src="/images/planner_16.gif" alt="Pick Date"/></a>
+          <h4>MM, DD, YYYY</h4>
+          <div style="z-index: 50;" id="hiddendate_planner" class="date_picker"></div>
+          <div style="display: none;" class="" id="date-container"></div>
+        </div>
+      </td>
+      <td>
+        <div style="<%= (current_dateperiod ==0 || current_timeperiod ==0) ? "" : "display: none" %>" id="time-div">
+          <%= text_field_tag 'plan_hour', hour, :onkeypress => 'clearFuzzyTime()', :size=>"2", :maxlength=>"2", :class=> "hour_minute"%> :
+          <%= text_field_tag 'plan_min', min, :onkeypress => 'clearFuzzyTime()', :size=>"2", :maxlength=>"2", :class=> "hour_minute" %>
+          <select name="plan_meridian" id="plan_meridian" class="big_form">
+            <option value="AM"<%= (!pm.nil? && !pm) ? ' selected="selected"' : '' %>>AM</option>
+            <option value="PM"<%= (!pm.nil? && pm) ? ' selected="selected"' : '' %>>PM</option>
+          </select>
+          <h4>HH, MM, MM</h4>
+        </div>
+      </td>
+    </tr>
+  </table>
+</td>

@@ -1,0 +1,18 @@
+<%= @uncancelling_user.display_name %> reinstated this plan.<br><br>
+
+<% if !@plan.name.nil? && !@plan.name.empty? %>
+What: <%= @plan.name %><br/>
+<% end -%>
+<% if !@plan.description.nil? && !@plan.description.empty? -%>
+<%= @plan.description %><br/>
+<% end -%>
+When: <%= @plan.english_for_datetime(@user.tz) %><br/>
+<% if !@plan.place.nil? %>
+Where: <% if !@plan.place.name.nil? && !@plan.place.name.empty? %><%= @plan.place.name %>, <% end -%><% if !@plan.place.location.nil? && !@plan.place.location.empty? -%><%= @plan.place.location %> <% if !@gmaps_link.nil? -%>(<%= @gmaps_link %>)<% end -%><% end -%><br/><br/>
+<% end -%>
+
+The full details can be seen here:<br/>
+<%= @plan_details_link %><br/><br/>
+
+________________________________________________________________________________<br/>
+<i>Too many emails from Skobee? <a href="<%= h @change_notifications %>">Click here to change your notification settings</a></i>

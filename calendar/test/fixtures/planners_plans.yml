@@ -1,0 +1,388 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+blah:
+  planner_id: 7
+  plan_id: 1
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 7
+
+first_planner_plan:
+  planner_id: 2
+  plan_id: 2
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 16
+  user_id_cache: 2
+
+longbob_planner_plan_another_plan:
+  planner_id: 3
+  plan_id: 2
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 16
+  user_id_cache: 3
+
+longbob_planner_plan:
+  planner_id: 3
+  plan_id: 3
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 3
+
+longbob_attends_first_plan:
+  planner_id: 3
+  plan_id: 1
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 3
+
+longbob_invited_uwf_pcp_plan:
+  planner_id: 3
+  plan_id: 7
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 2
+  user_id_cache: 3
+
+longbob_is_attending_solid_plan_in_expiry_window:
+  planner_id: 3
+  plan_id: 24
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 3
+
+user_with_friends_cal_plan:
+  planner_id: 7
+  plan_id: 4
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 7
+
+friend_1_of_user_plan:
+  planner_id: 8
+  plan_id: 4
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 8
+
+contact_1_of_user_cal_plan:
+  planner_id: 15
+  plan_id: 5
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 15
+
+contact_2_of_user_cal_plan:
+  planner_id: 16
+  plan_id: 6
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 16
+
+user_with_friends_and_private_cal_plan:
+  planner_id: 13
+  plan_id: 7
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PRIVATE %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 2
+  user_id_cache: 13
+
+user_with_friends_and_private_cal_plan_friend_1:
+  planner_id: 8
+  plan_id: 7
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 2
+  user_id_cache: 8
+
+user_with_friends_and_private_cal_plan_friend_2:
+  planner_id: 9
+  plan_id: 7
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 2
+  user_id_cache: 9
+
+existingbob_attends_bobs_place_plan:
+  planner_id: 2
+  plan_id: 8
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 18
+  user_id_cache: 2
+
+existingbob_attends_a_random_plan:
+  planner_id: 2
+  plan_id: 1
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 2
+
+existingbob_attends_solid_plan_in_expiry_window:
+  planner_id: 2
+  plan_id: 24
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 2
+
+user_w_friends_out_of_solid_plan_in_expiry_window:
+  planner_id: 7
+  plan_id: 24
+  cal_pln_status: <%= Plan::STATUS_REJECTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 7
+
+future_plan_1_for_user_w_friends:
+  planner_id: 7
+  plan_id: 10
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 7
+
+future_plan_1_for_friend_1:
+  planner_id: 8
+  plan_id: 10
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 8
+
+future_plan_2_for_user_w_friends:
+  planner_id: 7
+  plan_id: 11
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 2
+  user_id_cache: 7
+
+test_plan_for_existingbob:
+  planner_id: 2
+  plan_id: 12
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 5
+  user_id_cache: 2
+
+user_with_contacts_goes_to_plan_for_place_stats:
+  planner_id: 14
+  plan_id: 13
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 14
+
+user_with_contacts_invited_to_solid_plan_in_expiry_window:
+  planner_id: 14
+  plan_id: 24
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 14
+
+contact_1_of_user_goes_to_plan_for_place_stats:
+  planner_id: 15
+  plan_id: 13
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 15
+
+contact_2_of_user_goes_to_plan_for_place_stats:
+  planner_id: 16
+  plan_id: 13
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 1
+  user_id_cache: 16
+
+user_with_contacts_goes_to_second_plan_for_place_stats:
+  planner_id: 14
+  plan_id: 14
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  ownership: <%= Plan::OWNERSHIP_OWNER %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 3
+  user_id_cache: 14
+
+contact_1_of_user_goes_to_second_plan_for_place_stats:
+  planner_id: 15
+  plan_id: 14
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 3
+  user_id_cache: 15
+
+contact_2_of_user_goes_to_second_plan_for_place_stats:
+  planner_id: 16
+  plan_id: 14
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 3
+  user_id_cache: 16
+
+future_plan_for_existing_bob_invitee2:
+  planner_id: 12
+  plan_id: 15
+  cal_pln_status: <%= Plan::STATUS_REJECTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_FRIENDS %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 3
+  user_id_cache: 12
+
+future_plan_for_existing_bob_invitee3:
+  planner_id: 13
+  plan_id: 15
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PRIVATE %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 3
+  user_id_cache: 13
+
+future_plan_for_existing_bob_invitee4:
+  planner_id: 14
+  plan_id: 15
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 3
+  user_id_cache: 14
+
+future_plan_for_existing_bob_invitee5:
+  planner_id: 15
+  plan_id: 15
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  place_id_cache: 3
+  user_id_cache: 15
+
+past_plan_for_contact_1_of_user:
+  planner_id: 15
+  plan_id: 16
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 15
+
+rejected_plan_for_contact_1_of_user:
+  planner_id: 15
+  plan_id: 17
+  cal_pln_status: <%= Plan::STATUS_REJECTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 15
+
+plan_just_for_user_with_friends:
+  planner_id: 7
+  plan_id: 18
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 14
+
+plan_just_for_user_with_frineds_and_friends_cal:
+  planner_id: 12
+  plan_id: 19
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_FRIENDS %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 12
+
+planner_past_plan_1:
+  planner_id: 10
+  plan_id: 20
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 10
+
+plan_today_all_day:
+  planner_id: 10
+  plan_id: 21
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 10
+
+plan_yesterday_but_barely:
+  planner_id: 10
+  plan_id: 22
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 10
+
+plan_today_but_barely:
+  planner_id: 10
+  plan_id: 23
+  cal_pln_status: <%= Plan::STATUS_ACCEPTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 10
+
+unregistered_user_invited_to_solid_plan_in_expiry_window:
+  planner_id: 25
+  plan_id: 24
+  cal_pln_status: <%= Plan::STATUS_INVITED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 25
+
+unregistered_user_im_out_first_plan:
+  planner_id: 25
+  plan_id: 1
+  cal_pln_status: <%= Plan::STATUS_REJECTED %>
+  planner_visibility_cache: <%= SkobeeConstants::PRIVACY_LEVEL_PUBLIC %>
+  plan_security_cache: <%= Plan::SECURITY_LEVEL_PUBLIC %>
+  user_id_cache: 25

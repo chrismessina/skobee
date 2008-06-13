@@ -1,0 +1,28 @@
+<div id="banner">
+   <h2>
+      Disable all Skobee notifications
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings settings_wide notifications">
+      <%= render(:partial=>"/shared/flash") %>
+<%
+if 0 == @user.get_att_value(UserAttribute::ATT_REMIND_BY_EMAIL) -%>
+      <p class="settings_header">You will no longer receive emails from Skobee.</p>
+<%
+else -%>
+      <h2 class="settings_header">Are you sure you want to disable Skobee emails?</h2>
+      <p class="settings_header">Click the button below to stop receiving emails from Skobee:</p>
+         <form action=""disable_all_notifications?#{@request.env['QUERY_STRING']}" method="post">
+            <input type="hidden" name="disable" value="on"/>
+            <div class="buttons">
+                <div class="primary">
+                    <input type="image" name="save" src="/images/disable_notifications.gif" alt="save" onclick="document.forms[0].submit();"/>
+                </div>
+            </div>
+        </form>
+<%
+end -%>
+   </div>
+</div>

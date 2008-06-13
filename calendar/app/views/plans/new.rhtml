@@ -1,0 +1,50 @@
+<%
+@page_title = "Skobee - Make a Plan" -%>
+
+<script type="text/javascript">
+   var savePressed = false;
+</script>
+
+
+<%= start_form_tag({ :action => 'create'}, { :name=> 'plan_form', :method => 'post', :onsubmit => "if (!savePressed){ return false; }" } ) -%>
+<div id="banner">
+  <h2 id="user_heading">
+     Make a New Plan
+  </h2>
+
+  <div class="banner_right_link">
+    <h3 class="email_help">
+      <%= link_to "Create plans just by sending<br/>an email. Check it out!", :controller => 'splash', :action => 'emailhowto' %>
+    </h3>
+  </div>
+</div>
+<div id="container">
+   <div id="content">
+   <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :plan })%>
+   <%= render_partial 'form' %>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'regulars' %>
+   <%= render_partial 'popular_this_week' %>
+   <%= render_partial 'sidebar_creation_advanced_ctls' %>
+</div>
+<%= end_form_tag %>
+
+
+<script type="text/javascript">
+var current_time = <%= current_timezone.now.to_date.to_javascript_string %>;
+function submitPlan() {
+   //KS- if text has been typed but we haven't selected a place, display an error
+   if (whereFieldHasBogusPlace()) {
+      stringIntoFlash("We were unable to find the place you entered. If you'd like to add this place, simply select the 'add a place' tab.");
+      return false;
+   }
+
+   if (!validateDates()) {
+      return false;
+   } else {
+      document.plan_form.submit();
+   }
+}
+</script>

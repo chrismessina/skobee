@@ -1,0 +1,16 @@
+<dt onmouseover="dlHover(this, event, 'place')" onmouseout="dlHover(this, event)" onclick="setPlaceInWhereControl(<%= swappable_place.id %>, <%= PlansController::PLACE_FOUND_BY_NAME %>, '<%= swappable_place.name.gsub(/[']/, '\\\\\'') %>'); return false;">
+    <span>
+  <%= link_to "", {:controller => "plans", :action => "update", :id => @plan.id, :new_place_id => swappable_place.id, :place_autocompleted => 1} %>
+  <%= swappable_place.name %>
+    </span>
+</dt>
+<dd onmouseover="dlHover(this, event, 'place')" onmouseout="dlHover(this, event)" onclick="setPlaceInWhereControl(<%= swappable_place.id %>, <%= PlansController::PLACE_FOUND_BY_NAME %>, '<%= swappable_place.name.gsub(/[']/, '\\\\\'') %>'); return false;">
+   <%
+   if !swappable_place.address.nil? && !swappable_place.city.nil? -%>
+      <%=h(swappable_place.address)%>, <%=h(swappable_place.city)%>
+   <%
+   else -%>
+      <%=h(swappable_place.location)%>
+   <%
+   end -%>
+</dd>

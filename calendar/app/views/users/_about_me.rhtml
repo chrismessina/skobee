@@ -1,0 +1,43 @@
+<%
+if @user.has_about_me_info?(current_user)
+%>
+<div class="section grey grey_middle">
+   <h3>About Me</h3>
+   <dl class="common">
+      <% if @user.ok_to_show_att?(UserAttribute::ATT_REAL_NAME_SECURITY_GROUP, current_user) %>
+      <dt class="default">Name</dt>
+      <dd><%= @user.real_name %></dd>
+      <% end -%>
+      <% if @user.ok_to_show_att?(UserAttribute::ATT_EMAIL_SECURITY_GROUP, current_user) %>
+      <dt class="default">Email</dt>
+      <dd><%= @user.email_formatted_for_display %></dd>
+      <% end -%>
+      <% if @user.ok_to_show_att?(UserAttribute::ATT_GENDER_SECURITY_GROUP, current_user) %>
+      <dt class="default">Gender</dt>
+      <dd><%= @user.get_att_value(UserAttribute::ATT_GENDER).to_i == UserAttribute::GENDER_MALE ? 'male' : 'female' %></dd>
+      <% end -%>
+      <% if @user.ok_to_show_att?(UserAttribute::ATT_RELATIONSHIP_STATUS_SECURITY_GROUP, current_user) %>
+      <dt class="default">Are They Single?</dt>
+      <dd><%= @user.get_att_value(UserAttribute::ATT_RELATIONSHIP_STATUS).to_i == UserAttribute::RELATIONSHIP_TYPE_SINGLE ? 'yes' : 'no' %></dd>
+      <% end -%>
+      <% if @user.ok_to_show_att?(UserAttribute::ATT_BIRTHDAY_AGE_SECURITY_GROUP, current_user) %>
+      <dt class="default">Age</dt>
+      <dd><%= @user.age %></dd>
+      <% end -%>
+      <% if @user.ok_to_show_att?(UserAttribute::ATT_DESCRIPTION_SECURITY_GROUP, current_user) %>
+      <dt class="default">Description</dt>
+      <dd><%= h(@user.description) %></dd>
+      <% end -%>
+      <dd>&nbsp;</dd>
+   </dl>
+</div>
+<%
+elsif  current_user == @user -%>
+   <div class="section grey">
+      <h3>About Me</h3>
+      <dl class="common">
+      <dd>Edit your profile to include a brief description and some other info about yourself.</dd>
+      </dl>
+   </div>
+<%
+end -%>

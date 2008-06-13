@@ -1,0 +1,214 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<%
+
+#MES- Set up a map of day name (e.g. 'Mon') to offset from the beginning
+# of the week (e.g. 1.)
+day_map = {'Sun' => -1, 'Mon' => 0, 'Tue' => 1, 'Wed' => 2, 'Thu' => 3, 'Fri' => 4, 'Sat' => 5}
+LUNCH_DURATION = Plan::TIME_DESC_TO_TIME_MAP[Plan::TIME_DESCRIPTION_LUNCH][2]
+AFTERNOON_DURATION = Plan::TIME_DESC_TO_TIME_MAP[Plan::TIME_DESCRIPTION_AFTERNOON][2]
+DINNER_DURATION = Plan::TIME_DESC_TO_TIME_MAP[Plan::TIME_DESCRIPTION_DINNER][2]
+EVENING_DURATION = Plan::TIME_DESC_TO_TIME_MAP[Plan::TIME_DESCRIPTION_EVENING][2]
+
+
+today_evening_local = Time.fuzzy_datetime_for_fixture(0, Plan::TIME_DESCRIPTION_EVENING)
+TODAY_EVENING_LOCAL = today_evening_local.fmt_for_mysql()
+TODAY_EVENING = today_evening_local.getutc.fmt_for_mysql()
+
+tomorrow_lunch_local = Time.fuzzy_datetime_for_fixture(1, Plan::TIME_DESCRIPTION_LUNCH)
+TOMORROW_LUNCH_LOCAL = Time.fuzzy_datetime_for_fixture(1, Plan::TIME_DESCRIPTION_LUNCH).fmt_for_mysql()
+TOMORROW_LUNCH = tomorrow_lunch_local.getutc.fmt_for_mysql()
+
+tomorrow_dinner_local = Time.fuzzy_datetime_for_fixture(1, Plan::TIME_DESCRIPTION_DINNER)
+TOMORROW_DINNER_LOCAL = tomorrow_dinner_local.fmt_for_mysql()
+TOMORROW_DINNER = tomorrow_dinner_local.getutc.fmt_for_mysql()
+
+yesterday_dinner_local = Time.fuzzy_datetime_for_fixture(-1, Plan::TIME_DESCRIPTION_DINNER)
+YESTERDAY_DINNER_LOCAL = yesterday_dinner_local.fmt_for_mysql()
+YESTERDAY_DINNER = yesterday_dinner_local.getutc.fmt_for_mysql()
+
+NEXT_WEEK_LUNCH = Time.fuzzy_datetime_for_fixture(Time.offset_next_week(), Plan::TIME_DESCRIPTION_LUNCH).getutc.fmt_for_mysql()
+NEXT_WEEK_LUNCH_END = Time.fuzzy_datetime_for_fixture(Time.offset_next_week() + 6, Plan::TIME_DESCRIPTION_LUNCH).getutc.fmt_for_mysql()
+
+next_thur_dinner_local = Time.fuzzy_datetime_for_fixture(Time.offset_next_week() + day_map['Thu'], Plan::TIME_DESCRIPTION_DINNER)
+NEXT_THUR_DINNER_LOCAL = next_thur_dinner_local.fmt_for_mysql()
+NEXT_THUR_DINNER = next_thur_dinner_local.getutc.fmt_for_mysql()
+
+WEEKEND_OFFSET_START = Time.offset_this_week() + day_map['Sat']
+THIS_WEEKEND_AFTERNOON = Time.fuzzy_datetime_for_fixture(WEEKEND_OFFSET_START, Plan::TIME_DESCRIPTION_AFTERNOON).getutc.fmt_for_mysql()
+THIS_WEEKEND_AFTERNOON_END = Time.fuzzy_datetime_for_fixture(WEEKEND_OFFSET_START + 1, Plan::TIME_DESCRIPTION_AFTERNOON).getutc.fmt_for_mysql()
+
+second_day_dinner = Time.fuzzy_datetime_for_fixture(2, Plan::TIME_DESCRIPTION_DINNER)
+SECOND_DAY_DINNER_LOCAL = second_day_dinner.fmt_for_mysql()
+SECOND_DAY_DINNER = second_day_dinner.getutc.fmt_for_mysql()
+
+now_str = Time.now_for_mysql
+%>
+
+michaels_plan:
+    id: 1
+    name: a plan for Smeddy
+    place_id: 1
+    start: <%= TOMORROW_DINNER %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_DINNER %>
+    duration: <%= DINNER_DURATION %>
+    fuzzy_start: <%= TOMORROW_DINNER %>
+    local_start: <%= TOMORROW_DINNER_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+marks_plan:
+    id: 2
+    name: a plan for Mark
+    place_id: 1
+    start: <%= NEXT_WEEK_LUNCH %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_LUNCH %>
+    duration: <%= LUNCH_DURATION %>
+    fuzzy_start: <%= NEXT_WEEK_LUNCH_END %>
+    local_start:
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+noaml_plan:
+    id: 3
+    name: Drinks
+    place_id: 1
+    start: <%= TODAY_EVENING %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_EVENING %>
+    duration: <%= EVENING_DURATION %>
+    fuzzy_start: <%= TODAY_EVENING %>
+    local_start: <%= TODAY_EVENING_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+marks_solo_plan:
+    id: 4
+    name: A plan for Mark where he is the owner and no one's invited
+    place_id: 2
+    start: <%= YESTERDAY_DINNER %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_DINNER %>
+    duration: <%= DINNER_DURATION %>
+    fuzzy_start: <%= YESTERDAY_DINNER %>
+    local_start: <%= YESTERDAY_DINNER_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+noaml_laurenp_dinner:
+    id: 5
+    name: Anniversary dinner
+    place_id: 38
+    start: <%= NEXT_THUR_DINNER %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_DINNER %>
+    duration: <%= DINNER_DURATION %>
+    fuzzy_start: <%= NEXT_THUR_DINNER %>
+    local_start: <%= NEXT_THUR_DINNER_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+noaml_phils_glennk_drinks:
+    id: 6
+    name: Drinks
+    place_id: 12
+    start: <%= TODAY_EVENING %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_EVENING %>
+    duration: <%= EVENING_DURATION %>
+    fuzzy_start: <%= TODAY_EVENING %>
+    local_start: <%= TODAY_EVENING_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+noaml_jays_phils_biking:
+    id: 7
+    name: Monster bike ride
+    place_id: 1
+    start: <%= THIS_WEEKEND_AFTERNOON %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_AFTERNOON %>
+    duration: <%= AFTERNOON_DURATION %>
+    fuzzy_start: <%= THIS_WEEKEND_AFTERNOON_END %>
+    local_start:
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+reunion_lunch:
+    id: 8
+    name: Plumtree reunion
+    place_id:
+    start: <%= TOMORROW_LUNCH %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_LUNCH %>
+    duration: <%= LUNCH_DURATION %>
+    fuzzy_start: <%= TOMORROW_LUNCH %>
+    local_start: <%= TOMORROW_LUNCH_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+jay_and_glenn_dinner:
+    id: 9
+    name:
+    place_id:
+    start: <%= SECOND_DAY_DINNER %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_DINNER %>
+    duration: <%= DINNER_DURATION %>
+    fuzzy_start: <%= SECOND_DAY_DINNER %>
+    local_start: <%= SECOND_DAY_DINNER_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+jay_and_phil_lunch:
+    id: 10
+    name: How's the job going?
+    place_id:
+    start: <%= NEXT_WEEK_LUNCH %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_LUNCH %>
+    duration: <%= LUNCH_DURATION %>
+    fuzzy_start: <%= NEXT_WEEK_LUNCH_END %>
+    local_start:
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+glenn_lunch_at_panchos:
+    id: 11
+    name:
+    place_id: 2
+    start: <%= NEXT_WEEK_LUNCH %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_LUNCH %>
+    duration: <%= LUNCH_DURATION %>
+    fuzzy_start: <%= NEXT_WEEK_LUNCH_END %>
+    local_start:
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+glenn_dinner_at_schnitzelhaus:
+    id: 12
+    name:
+    place_id: 3
+    start: <%= SECOND_DAY_DINNER %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_DINNER %>
+    duration: <%= DINNER_DURATION %>
+    fuzzy_start: <%= SECOND_DAY_DINNER %>
+    local_start: <%= SECOND_DAY_DINNER_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+
+noaml_plan_2:
+    id: 13
+    name: Dine about town!
+    place_id: 12
+    start: <%= YESTERDAY_DINNER %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_DINNER %>
+    duration: <%= DINNER_DURATION %>
+    fuzzy_start: <%= YESTERDAY_DINNER %>
+    local_start: <%= YESTERDAY_DINNER_LOCAL %>
+    created_at: <%= now_str %>
+    updated_at: <%= now_str %>
+    
+kavins_plan_for_five_hours_from_now:
+    id: 14
+    name: do something
+    place_id: 1
+    start: <%= (Time.now + 5.hours).fmt_for_mysql %>
+    timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+    duration: <%= DINNER_DURATION %>
+    fuzzy_start: <%= (Time.now + 5.hours).fmt_for_mysql %>
+    local_start: <%= (Time.now + 5.hours).fmt_for_mysql %>
+    created_at: <%= (Time.now - 2.weeks).fmt_for_mysql %>
+    updated_at: <%= (Time.now - 2.weeks).fmt_for_mysql %>

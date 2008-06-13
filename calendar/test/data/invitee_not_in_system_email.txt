@@ -1,0 +1,18 @@
+X-Gmail-Received: 8d428278e55521e84acec297253eca2f9d2f8bd2
+Received: by 10.36.222.56 with HTTP; Fri, 23 Dec 2005 11:52:10 -0800 (PST)
+Message-ID: <f4bfb000512231152r760bbb78qdf2338727c5741d2@mail.gmail.com>
+Date: Fri, 23 Dec 2005 11:52:10 -0800
+From: Existing Bob <existingbob@test.com>
+To: Bob <bob@test.com>, joe schmoe <kavin620@yahoo.com>
+Subject: farkitration
+Cc: planner@skobee.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+Delivered-To: kavin620@gmail.com
+
+When: dinner next week
+Where: my rickety hut
+
+mmmm tasty tasty!

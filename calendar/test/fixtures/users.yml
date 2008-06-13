@@ -1,0 +1,260 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+bob:
+  id: 1
+  login: bob
+  real_name: "bob roberts_'.-_'.\""
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+  lat: 31.631524
+  long: -118.56477
+  lat_max: 50.0
+  lat_min: 20.0
+  long_max: -100.0
+  long_min: -150.0
+
+existingbob:
+  id: 2
+  login: existingbob
+  real_name: existingbob
+  salted_password: 99d6b680d4bfa81cbd383ffa0390bb03323a0b9a # atest
+  salt: fc76daa7bc4e4b7833375cf9deca38beee4c5581
+  time_zone: US/Pacific
+#MES- This area does NOT include the San Diego restaurants
+  lat: 31.631524
+  long: -118.56477
+  lat_max: 32.131524
+  lat_min: 31.131524
+  long_max: -118.064770
+  long_min: -119.064770
+  generation_num: 2
+  description: a duuuude
+
+longbob:
+  id: 3
+  login: longbob
+  real_name: longbob
+  salted_password: c841391e1d29100a4920de7a8fbb4b0fd180c6c0 # alongtest
+  salt: c068e3671780f16898c0a8295ae8d82cc59713e2
+  time_zone: US/Pacific
+  lat_max: 50.0
+  lat_min: 20.0
+  long_max: -100.0
+  long_min: -150.0
+
+deletebob1:
+  id: 4
+  login: deletebob1
+  real_name: deletebob1
+  salted_password: c841391e1d29100a4920de7a8fbb4b0fd180c6c0 # alongtest
+  salt: c068e3671780f16898c0a8295ae8d82cc59713e2
+  time_zone: US/Pacific
+  lat: 37.0
+  long: -122.0
+  lat_max: 39.0
+  lat_min: 35.0
+  long_max: -120.0
+  long_min: -124.0
+
+deletebob2:
+  id: 5
+  login: deletebob2
+  real_name: deletebob2
+  salted_password: c841391e1d29100a4920de7a8fbb4b0fd180c6c0 # alongtest
+  salt: c068e3671780f16898c0a8295ae8d82cc59713e2
+  time_zone: US/Pacific
+  lat: 47.6
+  long: -122.5
+  lat_max: 48.0
+  lat_min: 47.0
+  long_max: -122.0
+  long_min: -123.0
+
+security_token_user:
+  id: 6
+  login: security_token_user
+  real_name: security_token_user
+  salted_password: 99d6b680d4bfa81cbd383ffa0390bb03323a0b9a # atest
+  salt: fc76daa7bc4e4b7833375cf9deca38beee4c5581
+  time_zone: US/Pacific
+  user_type: 1
+
+#This user has friends, and has a public planner with one plan
+#The friends are friend_1_of_user and friend_2_of_user
+user_with_friends:
+  id: 7
+  login: user_with_friends
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+friend_1_of_user:
+  id: 8
+  login: friend_1_of_user
+  real_name: friend_1_of_user
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+friend_2_of_user:
+  id: 9
+  login: friend_2_of_user
+  real_name: friend_2_of_user
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+not_a_friend:
+  id: 10
+  login: not_a_friend
+  real_name: not_a_friend
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+treat_as_administrator:
+  id: 11
+  login: treat_as_administrator
+  real_name: treat_as_administrator
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+#This user has friends, and has a "friends only" planner.
+#The friends are friend_1_of_user and friend_2_of_user.
+user_with_friends_and_friends_cal:
+  id: 12
+  login: user_with_friends_and_friends_cal
+  real_name: user_with_friends_and_friends_cal
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+  lat_max: 50.0
+  lat_min: 20.0
+  long_max: -100.0
+  long_min: -150.0
+
+#This user has friends, and has a "private" planner.
+#The friends are friend_1_of_user and friend_2_of_user.
+user_with_friends_and_private_cal:
+  id: 13
+  login: user_with_friends_and_private_cal
+  real_name: user_with_friends_and_private_cal
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+#This user has contacts
+#The contacts are contact_1_of_user and contact_2_of_user
+user_with_contacts:
+  id: 14
+  login: user_with_contacts
+  real_name: user_with_contacts
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+contact_1_of_user:
+  id: 15
+  login: contact_1_of_user
+  real_name: 98BC6156A06A40ec8720B9CA2296678D
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+contact_2_of_user:
+  id: 16
+  login: contact_2_of_user
+  real_name: BA2DD36F9FC7457b974ECC0F02358EB7
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+x_dummy_user_1:
+  id: 17
+  login: x_dummy_user_1
+  real_name: x_dummy_user_1
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+x_dummy_user_2:
+  id: 18
+  login: x_dummy_user_2
+  real_name: x_dummy_user_2
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+x_dummy_user_3:
+  id: 19
+  login: x_dummy_user_3
+  real_name: x_dummy_user_3
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+x_dummy_user_4:
+  id: 20
+  login: x_dummy_user_4
+  real_name: x_dummy_user_4
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+x_dummy_user_5:
+  id: 21
+  login: x_dummy_user_5
+  real_name: x_dummy_user_5
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+x_dummy_user_6:
+  id: 22
+  login: x_dummy_user_6
+  real_name: x_dummy_user_6
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+
+x_dummy_user_7:
+  id: 23
+  login: x_dummy_user_7
+  real_name: x_dummy_user_7
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+  lat: 37.791840
+  long: -122.421069
+  lat_max: 37.792
+  lat_min: 37.790
+  long_max: -122.420
+  long_min: -122.422
+
+kavin620_at_hotmail_dot_com:
+  id: 24
+  login: kavin620_at_hotmail_dot_com
+  real_name: kavin
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific
+  lat_max: 50.0
+  lat_min: 20.0
+  long_max: -100.0
+  long_min: -150.0
+
+unregistered_user:
+  id: 25
+  login: blah_at_blah
+  real_name: blah
+  time_zone: US/Pacific
+
+unconfirmed_user:
+  id: 26
+  login: unconfirmed_user
+  real_name: blah
+  salted_password: ef94c16f6c124a4e84cc215c164767bfa25f6e92 # atest
+  salt: 7f8b036f9b647d46d22abdbfc8113f44a88f9889
+  time_zone: US/Pacific

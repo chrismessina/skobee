@@ -1,0 +1,80 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%
+dt = Date.today
+today_str = "#{dt.year}-#{dt.mon}-#{dt.mday}"
+dt = dt + 1
+tomorrow_str = "#{dt.year}-#{dt.mon}-#{dt.mday}"
+dt = dt + 2
+three_days_str = "#{dt.year}-#{dt.mon}-#{dt.mday}"
+%>
+stat_1:
+  stat_date: <%= today_str %>
+  rank: 1
+  count: 27
+  place_id: 2
+  lat: "40.7714000000000000000000000000000"
+  long: "-73.9537000000000000000000000000000"
+  
+stat_2:
+  stat_date: <%= today_str %>
+  rank: 2
+  count: 19
+  place_id: 10
+  lat: "37.7712"
+  long: "-122.409"
+  
+stat_3:
+  stat_date: <%= today_str %>
+  rank: 3
+  count: 7
+  place_id: 19
+  lat: "37.7724"
+  long: "-122.407"
+  
+stat_4:
+  stat_date: <%= tomorrow_str %>
+  rank: 1
+  count: 54
+  place_id: 21
+  lat: "37.7724"
+  long: "-122.407"
+  
+stat_5:
+  stat_date: <%= tomorrow_str %>
+  rank: 2
+  count: 39
+  place_id: 10
+  lat: "37.7712"
+  long: "-122.409"
+  
+stat_6:
+  stat_date: <%= tomorrow_str %>
+  rank: 3
+  count: 17
+  place_id: 23
+  lat: "37.7755"
+  long: "-122.409"
+  
+stat_7:
+  stat_date: <%= three_days_str %>
+  rank: 1
+  count: 49
+  place_id: 10
+  lat: "37.7712"
+  long: "-122.409"
+  
+stat_8:
+  stat_date: <%= three_days_str %>
+  rank: 2
+  count: 35
+  place_id: 26
+  lat: "37.7757"
+  long: "-122.409"
+  
+stat_9:
+  stat_date: <%= three_days_str %>
+  rank: 3
+  count: 31
+  place_id: 33
+  lat: "37.7688"
+  long: "-122.415"

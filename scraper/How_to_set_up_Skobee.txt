@@ -1,0 +1,286 @@
+Install Subversion:
+	Download "svn-1.2.3-setup.exe" from http://subversion.tigris.org/files/documents/15/25364/svn-1.2.3-setup.exe
+	Run the installer
+	Use all defaults
+
+Get the Skobee source code:
+	Create a directory to hold source code (I chose c:\code\skobee)
+	Open a command window and navigate to the directory you created
+	Type "svn checkout --username [YOUR LOGIN] --password [YOUR PASSWORD] https://skobee.com/svn/scooby" and hit return
+	
+Read the latest version of this document, which is stored with the source code
+	This file is located at [source directory]\scooby\Trunk\calendar\How_to_set_up_Skobee.txt
+
+Install Ruby 1.8.2-14:
+	Download and run the one click installer from http://rubyforge.org/frs/?group_id=167 (ruby182-14.exe)
+	Accept all default options
+
+Update Gems (a system for distributing Ruby projects):
+	Open a command window
+	Type "gem install rubygems-update" and hit return (this may take some time)
+	Update ruby gems by typing "update_rubygems" and hitting return
+	Type "gem install -y -v 0.14.3 rails" and hit return
+	Follow the instructions to install iconv at http://wiki.rubyonrails.com/rails/pages/iconv:
+		Download http://www.dave.burt.id.au/ruby/iconv.zip
+		Extract the zip files to a folder
+		Open a command window and navigate to the folder into which you extracted the ZIP
+		Type "ruby setup.rb"
+		Press "y" when prompted for confirmation
+	Type "gem install -y -v 1.0.2 db_structure" and hit return
+	Type "gem install -v 0.1.0 tzinfo" and hit return
+	Type "gem install -v 1.4.1 watir" and hit return; only install if you want to run watir tests (windows required)
+		Open a command window and type "regsvr32 <ruby_home>\lib\ruby\gems\1.8\gems\watir-1.4.1\watir\AutoItX3.dll" 
+			where <ruby_home> is the root directory of your ruby install (ie c:\ruby)
+
+Install MySQL
+	Download the "Windows Essentials" 5.0.16 installer from http://dev.mysql.com/downloads/mysql/5.0.html
+	Run the installer and choose the "typical" option
+	Skip signing up for MySQL.com
+	Launch the configuration wizard from the installer
+	Choose the standard configuration
+	Install as a windows service, and launch MySQL Server automatically
+	IMPORTANT: UNCHECK the Modify Security Settings checkbox
+	OPTIONAL: Download and install MySQL Front from http://www.mysqlfront.de/
+
+Create the DBs:
+	Open a command window and navigate to [source directory]\scooby\Trunk\calendar
+	Type "rake create_db" and press return
+	NOTE: For Matias, we had to manually create a database called "planner" before this worked- not clear why
+
+Run some tests:
+	Open a command window and navigate to [source directory]\scooby\Trunk\calendar
+	Type "rake test_units" and press return
+	Type "rake test_functional" and press return
+	Type "rake run_watir_tests" and press return --only works on windows
+	
+Load some default data:
+	Open a command window and navigate to [source directory]\scooby\Trunk\calendar
+	Type "rake load_development_fixtures" and press return
+	
+Try out the web UI:
+	Open a command window and navigate to [source directory]\scooby\Trunk\calendar
+	Type "ruby script/server" and press return
+	Open a browser and navigate to http://localhost:3000/user/login
+	Log in using username "michaels" and password "welcome"
+	Navigate to http://localhost:3000/planners/schedule_details/1 to see your schedule details
+	
+OPTIONAL STEPS:
+	Install Tortise SVN (a Windows namespace extension that acts as a Subversion client) from http://tortoisesvn.tigris.org/download.html
+	Install the Eclipse IDE from http://www.eclipse.org/downloads/index.php
+	Install the RDT Ruby plug-in for Eclipse:
+		Open Eclipse
+		Choose the Help\Software Updates\Find and Install... menu item
+		Select "Search for new features to install" and choose Next
+		Click on "New Remote Site"
+		Enter "http://rubyeclipse.sourceforge.net/nightlyBuild/updateSite/" as the URL
+		Enter "Ruby Development Tools" as the name
+		Click finish and install the package
+	Install RMagick, which is used to make thumbnail images of user uploaded pictures:
+		Download and unzip the RMagick package from http://rubyforge.org/frs/download.php/2239/RMagick-1.7.0-IM-6.1.5-gem.zip
+		Follow the installation instructions in README.html:
+			Open a command window in the directory to which you unzipped the package
+			Type 'gem install RMagick-win32-1.7.0-mswin32.gem' and press return
+			Type 'ruby postinstall.rb' and press return
+
+			
+			
+			
+Notes for Linux:
+	Instructions on installing Ruby, etc., are available at http://wiki.rubyonrails.com/rails/pages/Ruby+and+Rails+on+Red+Hat+Enterprise+Linux
+	iconv is already installed on RedHat, no need to install it manually
+	Uninstall mysql:
+		su -
+		rpm -e mysql-devel
+		rpm -e perl-DBD-MySQL
+		rpm -e mysql
+	Install mysql:
+		su -
+		Download Linux x86 RPM RHEL Client programs from http://dev.mysql.com/downloads/mysql/5.0.html
+			Ex: 'wget http://dev.mysql.com/get/Downloads/MySQL-5.0/MySQL-client-standard-5.0.16-0.rhel4.i386.rpm/from/http://mysql.mirrors.pair.com/'
+		Download Linux x86 RPM RHEL Shared programs from http://dev.mysql.com/downloads/mysql/5.0.html
+			Ex: 'wget http://dev.mysql.com/get/Downloads/MySQL-5.0/MySQL-shared-standard-5.0.16-0.rhel4.i386.rpm/from/http://mirror.services.wisc.edu/mysql/'
+		Download Linux x86 RPM RHEL Server from http://dev.mysql.com/downloads/mysql/5.0.html
+			Ex: 'wget http://dev.mysql.com/get/Downloads/MySQL-5.0/MySQL-server-standard-5.0.16-0.rhel4.i386.rpm/from/http://mirror.trouble-free.net/mysql_mirror/'
+		rpm -ivh MySQL-client-standard-5.0.16-0.rhel4.i386.rpm
+		rpm -ivh MySQL-server-standard-5.0.16-0.rhel4.i386.rpm
+		
+		Start with /usr/bin/mysqld_safe &
+		Stop with /usr/share/mysql/mysql.server stop OR mysqladmin shutdown
+		
+		
+		SELINUX SEEMS TO CAUSE MYSQL STARTUP TO FAIL! DON'T TURN IT BACK ON?!
+		setenforce 1 (turn on selinux)
+	
+		/usr/bin/mysql_explain_log is interesting
+		
+	Create database:
+		mysql -u root
+		create database planner;
+		create database planner_test;
+	
+	Edit database.yml:
+		Set host to 'localhost.localdomain'
+		
+	Turn off the firewall for port 3000
+		run 'lokkit', customize, add 3000 as another port
+		
+	RMagick:
+		NOTE: These instructions include installing the JPEG handling library, but there are many
+			other optional libraries (e.g. tiff, etc.)  We may want to install them as well.  The
+			readme for ImageMagick lists their locations.
+		Install the JPEG processing library (see http://www.graphicsmagick.org/www/README.html):
+			Download ftp://ftp.uu.net/graphics/jpeg/jpegsrc.v6b.tar.gz
+			gzip -d jpegsrc.v6b.tar.gz
+			tar -x -f jpegsrc.v6b.tar
+			configure
+			make
+			make install 
+		Install ImageMagick from source according to http://www.imagemagick.org/script/install-source.php:
+			get source from ftp://ftp.imagemagick.org/pub/ImageMagick/
+			gunzip -c ImageMagick.tar.gz | tar xvf -
+			cd ImageMagick-6.?.?
+			CPPFLAGS=-I[path to jpeg stuff]
+			export CPPFLAGS
+			LDFLAGS=-L[path to jpeg stuff]
+			export LDFLAGS
+			./configure
+			make
+			make install
+			Confirm with: /usr/local/bin/convert logo: logo.gif
+		Install RMagick:
+			Download rmagick-1.9.3.gem from http://rubyforge.org/frs/?group_id=12&release_id=3150
+			gem install rmagick-19.3.gem
+		
+		
+		
+		
+Lighttpd for Linux:
+
+From http://trac.lighttpd.net/trac/wiki/TutorialInstallation:
+
+cd /downloads
+wget http://www.lighttpd.net/download/lighttpd-1.4.8.tar.gz
+cd ../code/lighttpd
+tar -xvzf ../../downloads/lighttpd-1.4.8.tar.gz
+su -
+cd .../lighttpd/lighttpd-1.4.8
+yum install pcre-devel
+yum install zlib-devel
+.configure
+make
+make install
+
+From http://trac.lighttpd.net/trac/wiki/TutorialInstallation:
+
+mkdir lighttpd 
+mkdir var 
+mkdir var/run 
+mkdir var/log 
+touch var/log/lighttpd.error.log 
+touch var/log/lighttpd.access.log
+cp /home/skobee/code/lighttpd/lighttpd-1.4.8/doc/lighttpd.conf ~/lighttpd/lighttpd.conf
+
+Edit the config file (from http://www.zedshaw.com/projects/scgi_rails/lighttpd.html):
+	vi ~/lighttpd/lighttpd.conf
+	Turn on mod_rewrite, mod_redirect, mod_access, mod_compress, mod_accesslog
+	add mod_scgi
+	Set server.error-handler-404 to /dispatch.scgi
+	Set server.document-root to "/home/skobee/code/skobee/scooby/Trunk/calendar/public/"
+	Set accesslog.filename to "/home/skobee/var/log/lighttpd.access.log"
+	Set server.errorlog to "/home/skobee/var/log/lighttpd.error.log"
+	Set server.pid-file to "/home/skobee/var/run/lighttpd.pid"
+	Set server.bind to "192.168.1.116"
+	Add:
+		scgi.server = ( "dispatch.scgi" =>
+		        (
+		        "server1" =>
+		                ( "host" => "127.0.0.1",
+		                "port" => 9999,
+		                "check-local" => "disable"),
+		        "server2" =>
+		                ( "host" => "127.0.0.1",
+		                "port" => 10000,
+		                "check-local" => "disable")
+		        )
+		)
+		scgi.debug=3
+NOTE: CHANGE scgi.debug TO 0 FOR PRODUCTION!
+	Set server.port to 3001
+	url.rewrite = ( "^/$" => "index.html", "^([^.]+)$" => "$1.html" )	
+	
+Turn off the firewall for port 3001
+	run 'lokkit', customize, add 3001 as another port
+
+Start lighttpd by typing:
+	/usr/local/sbin/lighttpd -f ~/lighttpd/lighttpd.conf
+	
+Create test document at
+	~/www/pages/test.html
+	
+Navigate to test page at http://192.168.1.116:3001/test.html
+
+
+Set up the SCGI to Rails binding, as described at http://www.zedshaw.com/projects/scgi_rails/howto.html:
+
+cd ~/downloads
+wget http://www.zedshaw.com/downloads/scgi_rails/scgi_rails-0.4.3.gem
+su
+gem install highline
+gem install scgi_rails-0.4.3.gem
+exit
+cd ~/code/skobee/scooby/Trunk/calendar/
+scgi_cluster config -c 2
+[check out the contents of config/scgi-cluster.yaml, etc. in VI or whatever]
+scgi_cluster start
+
+To shut down lighttpd:
+cat ~/var/run/lighttpd.pid
+kill [PID]
+
+To shut down scgi:
+cd ~/code/skobee/scooby/Trunk/calendar
+scgi_cluster stop	[OR scgi_cluster restart]
+Restart an individual process like this:
+	scgi_ctrl -c config/scgi-0.yaml restart -f
+
+Proxying Apache through to Lighttpd (Apache on port 80 and running as root, Lighttpd as set up above):
+	Edit /etc/httpd/conf/httpd/conf to be simple and ONLY proxy:
+		ServerTokens OS
+		ServerRoot "/etc/httpd"
+		PidFile run/httpd.pid
+		Timeout 120
+		KeepAlive Off
+		MaxKeepAliveRequests 100
+		KeepAliveTimeout 15
+		Listen 80
+		
+		LoadModule log_config_module modules/mod_log_config.so
+		LoadModule proxy_module modules/mod_proxy.so
+		LoadModule proxy_http_module modules/mod_proxy_http.so
+		
+		Include conf.d/*.conf
+		
+		User apache
+		Group apache
+		
+		UseCanonicalName Off
+		HostnameLookups Off
+		
+		ErrorLog logs/error_log
+		LogLevel warn
+		LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" combined
+		LogFormat "%h %l %u %t \"%r\" %>s %b" common
+		LogFormat "%{Referer}i -> %U" referer
+		LogFormat "%{User-agent}i" agent
+		CustomLog logs/access_log combined
+		
+		<VirtualHost *:80>
+		        ServerName 192.168.1.116
+		        ServerAlias www.skobee.com
+		        ProxyPreserveHost on
+		        ProxyPass / http://192.168.1.116:3001/
+		        ProxyPassReverse / http://192.168.1.116:3001/
+		</VirtualHost>
+
+	Start with httpd -f /etc/httpd/conf/httpd.conf
+	Stop with httpd -f /etc/httpd/conf/httpd.conf -k stop

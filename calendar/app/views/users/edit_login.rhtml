@@ -1,0 +1,45 @@
+<%
+@page_title = "Skobee - Edit Login" -%>
+<div id="banner">
+   <h2>
+      Login ID
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <%= form_tag({:action => @controller.action_name}) %>
+      <h2 class="settings_header">Choose a new Login ID</h2>
+      <p class="settings_header">Changing your Skobee login may make it difficult for users to find you or recognize you on current plans. Once you change your Login ID, your old Login ID will become available and other Skobee users may claim it.
+      </p>
+      
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value edit_profile" summary="edit password">
+         <tr>
+            <th>
+               <label>
+                  Login ID:
+               </label>
+            </th>
+            <td>
+               <%= text_field :user, "login", {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th>
+            </th>
+            <td>
+               <div class="buttons">
+                  <div class="primary">
+                     <%= link_to(image_tag('/images/button_cancel.gif', :alt => 'Cancel'), {:controller => 'users', :action => 'settings'}, { :class => 'cancel'} )%>
+                  </div>
+                  <div class="secondary">
+                     <input type="image" onclick="document.forms[0].submit(); return false;" name="save" src="/images/button_save.gif" alt="Save"/>
+                  </div>
+               </div>
+            </td>
+         </tr>
+      </table>
+      <%= end_form_tag %>
+   </div>
+</div>

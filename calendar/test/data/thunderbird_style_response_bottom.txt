@@ -1,0 +1,61 @@
+X-Gmail-Received: b38345e4e5b69fd19438e903b5c32a61f24e848b
+Delivered-To: smedberg@gmail.com
+Received: by 10.36.247.3 with SMTP id u3cs4813nzh;
+        Wed, 28 Dec 2005 16:55:29 -0800 (PST)
+Received: by 10.54.157.19 with SMTP id f19mr4456382wre;
+        Wed, 28 Dec 2005 16:55:29 -0800 (PST)
+Return-Path: <michaels@skobee.com>
+Received: from burnaby.textdrive.com (burnaby.textdrive.com [207.7.108.243])
+        by mx.gmail.com with ESMTP id 6si9525759wrl.2005.12.28.16.55.29;
+        Wed, 28 Dec 2005 16:55:29 -0800 (PST)
+Received-SPF: neutral (gmail.com: 207.7.108.243 is neither permitted nor denied by best guess record for domain of michaels@skobee.com)
+Received: from [192.168.1.103] (bridalveil.istep.com [67.102.229.98])
+	by burnaby.textdrive.com (Postfix) with ESMTP id 454F1A756F
+	for <smedberg@gmail.com>; Thu, 29 Dec 2005 00:54:57 +0000 (GMT)
+Message-ID: <43B333FE.9070409@skobee.com>
+Date: Wed, 28 Dec 2005 16:55:26 -0800
+From: Michael Smedberg <michaels@skobee.com>
+User-Agent: Mozilla Thunderbird 1.0.7 (Windows/20050923)
+X-Accept-Language: en-us, en
+MIME-Version: 1.0
+To: Michael Smedberg <smedberg@gmail.com>
+Subject: Re: test of replies
+References: <5d0d22620512281647j28655a2bv7dc856ad7fc07815@mail.gmail.com>
+In-Reply-To: <5d0d22620512281647j28655a2bv7dc856ad7fc07815@mail.gmail.com>
+Content-Type: multipart/alternative;
+ boundary="------------000703090501050107080209"
+
+This is a multi-part message in MIME format.
+--------------000703090501050107080209
+Content-Type: text/plain; charset=ISO-8859-1; format=flowed
+Content-Transfer-Encoding: 7bit
+
+Michael Smedberg wrote:
+
+> where: Kubla Kahn's Pleasure Palace 
+
+test
+when: next thursday
+
+--------------000703090501050107080209
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
+</head>
+<body bgcolor="#ffffff" text="#000000">
+Michael Smedberg wrote:
+<blockquote
+ cite="mid5d0d22620512281647j28655a2bv7dc856ad7fc07815@mail.gmail.com"
+ type="cite"><span class="q"><font face="Times New Roman" size="3"><span
+ style="font-size: 12pt;">where: Kubla Kahn's Pleasure Palace</span></font></span>
+</blockquote>
+test<br>
+when: next thursday<br>
+</body>
+</html>
+
+--------------000703090501050107080209--

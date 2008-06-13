@@ -1,0 +1,33 @@
+<form action="login" method="post" name="login_form">
+<table border="0" cellpadding="0" cellspacing="0" class="property_value" summary="login form">
+   <tr>
+      <th><label for="login">Email or Login ID</label></th>
+      <td>
+         <input id="login" maxlength="80" tabindex="1" name="user[login]" type="text" value="<%= @login %>" class="big_form"/>
+      </td>
+   </tr>
+   <tr>
+      <th class="top" align="right">
+         <label for="password">Password</label>
+         <span class="description"><%= link_to 'Forgot It?', :action => 'forgot_password' %></span>
+
+      </th>
+      <td>
+         <input id="password" maxlength="40" tabindex="2" name="user[password]" type="password" class="big_form"/>
+      </td>
+   </tr>
+   <tr>
+      <th>&nbsp;</th>
+      <td class="remember">
+         <input tabindex="3" id="remember_me" name="user[remember_me]" type="checkbox" value="1" />
+         <label for="remember_me">Remember me</label>
+      </td>
+   </tr>
+   <tr class="">
+      <th></th>
+      <td class="left">
+         <input type="image" tabindex="4" onclick="login_form.submit();" name="login" src="/images/login.gif" alt="Log In"/>
+      </td>
+   </tr>
+</table>
+</form>

@@ -1,0 +1,8 @@
+This is your pingback.<br><br>
+
+Mailman has received <%= h @num_received %> emails, and was able to successfully process <%= h @num_successfully_processed %> of them.<br><br>
+
+<% if !@original_body.nil? -%>
+<%= h @original_body -%>
+<%
+end -%>

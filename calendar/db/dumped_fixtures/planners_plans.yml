@@ -1,0 +1,581 @@
+--- 
+planners_plans_055: 
+  place_id_cache: "48"
+  planner_id: "10"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "10"
+  reminder_state: 
+  plan_id: "7"'
+  plan_security_cache: 0
+planners_plans_044: 
+  place_id_cache: "42"
+  planner_id: "6"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "16"
+  plan_security_cache: 0
+planners_plans_033: 
+  place_id_cache: "53"
+  planner_id: "4"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "4"
+  reminder_state: 
+  plan_id: "18"
+  plan_security_cache: 0
+planners_plans_022: 
+  place_id_cache: "51"
+  planner_id: "3"
+  ownership: "0"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "3"
+  reminder_state: 
+  plan_id: "2"
+  plan_security_cache: 0
+planners_plans_011: 
+  place_id_cache: "46"
+  planner_id: "2"
+  ownership: "0"
+  cal_pln_status: "2"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "1"
+  plan_security_cache: 0
+planners_plans_056: 
+  place_id_cache: "48"
+  planner_id: "12"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "12"
+  reminder_state: 
+  plan_id: "7"
+  plan_security_cache: 0
+planners_plans_045: 
+  place_id_cache: "53"
+  planner_id: "6"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "18"
+  plan_security_cache: 0
+planners_plans_034: 
+  place_id_cache: "19"
+  planner_id: "4"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "4"
+  reminder_state: 
+  plan_id: "19"
+  plan_security_cache: 0
+planners_plans_023: 
+  place_id_cache: "1"
+  planner_id: "3"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "3"
+  reminder_state: 
+  plan_id: "3"
+  plan_security_cache: 0
+planners_plans_012: 
+  place_id_cache: "51"
+  planner_id: "2"
+  ownership: "1"
+  cal_pln_status: "4"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "2"
+  plan_security_cache: 0
+planners_plans_001: 
+  place_id_cache: "46"
+  planner_id: "1"
+  ownership: "1"
+  cal_pln_status: "4"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "1"
+  plan_security_cache: 0
+planners_plans_057: 
+  place_id_cache: "25"
+  planner_id: "12"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "12"
+  reminder_state: 
+  plan_id: "9"
+  plan_security_cache: 0
+planners_plans_046: 
+  place_id_cache: "19"
+  planner_id: "6"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "19"
+  plan_security_cache: 0
+planners_plans_035: 
+  place_id_cache: "46"
+  planner_id: "5"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "5"
+  reminder_state: 
+  plan_id: "1"
+  plan_security_cache: 0
+planners_plans_024: 
+  place_id_cache: 
+  planner_id: "3"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "3"
+  reminder_state: 
+  plan_id: "5"
+  plan_security_cache: 0
+planners_plans_013: 
+  place_id_cache: "1"
+  planner_id: "2"
+  ownership: "0"
+  cal_pln_status: "4"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "3"
+  plan_security_cache: 0
+planners_plans_002: 
+  place_id_cache: "51"
+  planner_id: "1"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "2"
+  plan_security_cache: 0
+planners_plans_058: 
+  place_id_cache: "23"
+  planner_id: "12"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "12"
+  reminder_state: 
+  plan_id: "10"
+  plan_security_cache: 0
+planners_plans_047: 
+  place_id_cache: "18"
+  planner_id: "7"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "7"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_036: 
+  place_id_cache: "51"
+  planner_id: "5"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "5"
+  reminder_state: 
+  plan_id: "2"
+  plan_security_cache: 0
+planners_plans_025: 
+  place_id_cache: "45"
+  planner_id: "3"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "3"
+  reminder_state: 
+  plan_id: "6"
+  plan_security_cache: 0
+planners_plans_014: 
+  place_id_cache: "2"
+  planner_id: "2"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "4"
+  plan_security_cache: 0
+planners_plans_003: 
+  place_id_cache: "1"
+  planner_id: "1"
+  ownership: "0"
+  cal_pln_status: "4"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "3"
+  plan_security_cache: 0
+planners_plans_048: 
+  place_id_cache: "45"
+  planner_id: "8"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "8"
+  reminder_state: 
+  plan_id: "6"
+  plan_security_cache: 0
+planners_plans_037: 
+  place_id_cache: "48"
+  planner_id: "5"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "5"
+  reminder_state: 
+  plan_id: "7"
+  plan_security_cache: 0
+planners_plans_026: 
+  place_id_cache: "48"
+  planner_id: "3"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "3"
+  reminder_state: 
+  plan_id: "7"
+  plan_security_cache: 0
+planners_plans_015: 
+  place_id_cache: "18"
+  planner_id: "2"
+  ownership: "0"
+  cal_pln_status: "2"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_004: 
+  place_id_cache: 
+  planner_id: "1"
+  ownership: "0"
+  cal_pln_status: "2"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "5"
+  plan_security_cache: 0
+planners_plans_050: 
+  place_id_cache: "48"
+  planner_id: "9"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "9"
+  reminder_state: 
+  plan_id: "7"
+  plan_security_cache: 0
+planners_plans_049: 
+  place_id_cache: "18"
+  planner_id: "8"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "8"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_038: 
+  place_id_cache: "48"
+  planner_id: "6"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "7"
+  plan_security_cache: 0
+planners_plans_027: 
+  place_id_cache: "18"
+  planner_id: "3"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "3"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_016: 
+  place_id_cache: "31"
+  planner_id: "2"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "11"
+  plan_security_cache: 0
+planners_plans_005: 
+  place_id_cache: "48"
+  planner_id: "1"
+  ownership: "0"
+  cal_pln_status: "2"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "7"
+  plan_security_cache: 0
+planners_plans_051: 
+  place_id_cache: "18"
+  planner_id: "9"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "9"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_040: 
+  place_id_cache: "23"
+  planner_id: "6"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "12"
+  plan_security_cache: 0
+planners_plans_039: 
+  place_id_cache: "18"
+  planner_id: "6"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_028: 
+  place_id_cache: "46"
+  planner_id: "4"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "4"
+  reminder_state: 
+  plan_id: "1"
+  plan_security_cache: 0
+planners_plans_017: 
+  place_id_cache: "2"
+  planner_id: "2"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "15"
+  plan_security_cache: 0
+planners_plans_006: 
+  place_id_cache: "18"
+  planner_id: "1"
+  ownership: "0"
+  cal_pln_status: "2"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_052: 
+  place_id_cache: "53"
+  planner_id: "9"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "9"
+  reminder_state: 
+  plan_id: "18"
+  plan_security_cache: 0
+planners_plans_041: 
+  place_id_cache: "46"
+  planner_id: "6"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "13"
+  plan_security_cache: 0
+planners_plans_030: 
+  place_id_cache: "45"
+  planner_id: "4"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "4"
+  reminder_state: 
+  plan_id: "6"
+  plan_security_cache: 0
+planners_plans_029: 
+  place_id_cache: "51"
+  planner_id: "4"
+  ownership: "0"
+  cal_pln_status: "4"
+  planner_visibility_cache: "0"
+  user_id_cache: "4"
+  reminder_state: 
+  plan_id: "2"
+  plan_security_cache: 0
+planners_plans_018: 
+  place_id_cache: "53"
+  planner_id: "2"
+  ownership: "1"
+  cal_pln_status: "3"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "17"
+  plan_security_cache: 0
+planners_plans_007: 
+  place_id_cache: "25"
+  planner_id: "1"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "9"
+  plan_security_cache: 0
+planners_plans_053: 
+  place_id_cache: "19"
+  planner_id: "9"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "9"
+  reminder_state: 
+  plan_id: "19"
+  plan_security_cache: 0
+planners_plans_042: 
+  place_id_cache: "33"
+  planner_id: "6"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "14"
+  plan_security_cache: 0
+planners_plans_031: 
+  place_id_cache: "48"
+  planner_id: "4"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "4"
+  reminder_state: 
+  plan_id: "7"
+  plan_security_cache: 0
+planners_plans_020: 
+  place_id_cache: "19"
+  planner_id: "2"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "19"
+  plan_security_cache: 0
+planners_plans_019: 
+  place_id_cache: "53"
+  planner_id: "2"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "3"
+  user_id_cache: "2"
+  reminder_state: 
+  plan_id: "18"
+  plan_security_cache: 0
+planners_plans_008: 
+  place_id_cache: "23"
+  planner_id: "1"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "10"
+  plan_security_cache: 0
+planners_plans_054: 
+  place_id_cache: "45"
+  planner_id: "10"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "10"
+  reminder_state: 
+  plan_id: "6"
+  plan_security_cache: 0
+planners_plans_043: 
+  place_id_cache: "2"
+  planner_id: "6"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "6"
+  reminder_state: 
+  plan_id: "15"
+  plan_security_cache: 0
+planners_plans_032: 
+  place_id_cache: "18"
+  planner_id: "4"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "0"
+  user_id_cache: "4"
+  reminder_state: 
+  plan_id: "8"
+  plan_security_cache: 0
+planners_plans_021: 
+  place_id_cache: "46"
+  planner_id: "3"
+  ownership: "0"
+  cal_pln_status: "2"
+  planner_visibility_cache: "0"
+  user_id_cache: "3"
+  reminder_state: 
+  plan_id: "1"
+  plan_security_cache: 0
+planners_plans_010: 
+  place_id_cache: "2"
+  planner_id: "1"
+  ownership: "0"
+  cal_pln_status: "1"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "15"
+  plan_security_cache: 0
+planners_plans_009: 
+  place_id_cache: "31"
+  planner_id: "1"
+  ownership: "1"
+  cal_pln_status: "2"
+  planner_visibility_cache: "4"
+  user_id_cache: "1"
+  reminder_state: 
+  plan_id: "11"
+  plan_security_cache: 0

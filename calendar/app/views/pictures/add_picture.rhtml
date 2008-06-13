@@ -1,0 +1,63 @@
+<%
+@page_title = "Skobee - Change Your Picture" -%>
+<div id="banner">
+   <h2>
+      Your Picture
+   </h2>
+</div>
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings settings_wide">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :picture })%>
+      <%= form_tag({:action => :add_picture}, {:multipart => true}) %>
+      <input type="hidden" name="action_type" id="action_type"/>
+      <h2 class="settings_header settings_header_alt">Add a picture to your account</h2>
+      <div class="float-left">
+         <div class="picture_instructions">
+            <h3>One of your pictures will be used as your buddy icon on the site</h3>
+            <%
+            if @user.thumbnail
+            -%>
+              <%= build_user_thumbnail_url(@user) %>
+              <h3>Here's a preview of what your buddy icon will look like</h3>
+            <%
+            end
+            -%>
+         </div>
+         <ol class="picture_upload">
+            <li>
+               <%= file_field 'picture', 'file' %>
+               <h4>Find a great picture of yourself.</h4>
+            </li>
+            <li>
+               <input type="image" onclick="$('action_type').value='edit'; document.forms[0].submit(); return false;" name="delete" src="/images/uploadpicture_blue.gif" alt="Upload Picture"/>
+            </li>
+            <li>
+               <%= link_to(image_tag('/images/finished_orange.gif', :alt => 'Finished'), {:controller => 'users', :action => 'settings'}, { } )%>
+            </li>
+         </ol>
+      </div>
+
+      <%= end_form_tag %>
+   </div>
+   <%= form_tag({:action => 'delete'}) %>
+      <input type="hidden" name="id" id="id"/>
+   <%= end_form_tag %>
+   <div class="float-left" style="padding 0px; width 1000px">
+      <ul class="medium_pic_list">
+        <%
+        @mediums.each { |medium_image| %>
+         <li>
+              <%= build_thumbnail_url(medium_image, {:style => 'float: left;'}) %>
+              <% if @user.primary?(medium_image) -%>
+                 Your buddy icon
+              <% else -%>
+                 <%= link_to 'Set as buddy icon', :controller => 'pictures', :action => 'make_primary', :id => medium_image.id %>
+              <% end -%>
+              <%= link_to 'Delete photo', {}, {:onclick => "$('id').value = #{medium_image.id}; forms[1].submit(); return false;"} %>
+         </li>
+        <%
+        } %>
+      </ul>
+   </div>
+</div>
+

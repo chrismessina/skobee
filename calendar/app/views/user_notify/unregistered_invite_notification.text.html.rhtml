@@ -1,0 +1,28 @@
+Your friends are using Skobee to make plans and you're invited!<br/><br/>
+
+Sign up for an account to join the fun:<br/>
+<a href="<%= h @register_link -%>"><%= h @register_link -%></a><br/><br/>
+
+Or check out the full plan details here:<br/>
+<a href='<%= h @plan_details_link -%>'><%= h @plan_details_link -%></a><br/><br/>
+
+<% if !@plan.name.nil? && !@plan.name.empty? -%>
+<b>What:</b> <%= h @plan.name -%><br/>
+<% end -%>
+<% if !@plan.description.nil? && !@plan.description.empty? -%>
+<%= h @plan.description %><br/>
+<% end -%>
+<b>When:</b> <%= h @plan.english_for_datetime(@user.tz) -%><br/>
+<% confirmed_array = @plan.attending_invitees_other_than(@user) -%>
+<% if confirmed_array.length > 0 -%><b>Who's Confirmed:</b> <% confirmed_array.each_index {|index| user = confirmed_array[index] -%><%= h user.display_name -%><% if index < confirmed_array.length - 1 -%>, <% end -%><% } -%><br/><% end -%>
+<% invited_array = @plan.invitees(Plan::STATUS_INVITED, @user) -%>
+<% if invited_array.length > 0 -%><b>Who's Invited:</b> <% invited_array.each_index {|index| user = invited_array[index] -%><%= h user.display_name -%><% if index < invited_array.length - 1 -%>, <% end -%><% } -%><br/><% end -%>
+<% if !@plan.place.nil? -%>
+<b>Where:</b> <% if !@plan.place.name.nil? && !@plan.place.name.empty? -%><%= h @plan.place.name -%><% end -%><% if !@plan.place.location.nil? && !@plan.place.location.empty? -%>, <%= h @plan.place.location -%> <% if !@gmaps_link.nil? -%><a href="<%= h @gmaps_link -%>">(view a map)</a><% end -%><% end -%><br/>
+<% end -%>
+<br/>
+You can also set your RSVP status by replying to this email. Simply reply and include the phrase "<b>RSVP: I'll Be There</b>" or "<b>RSVP: I'm Out</b>" on a single line in the email body.<br/>
+<br/>
+You can also suggest a new time, date, or location all without ever leaving your email client. <a href="<%= h @email_howto_link -%>">Click here to learn how.</a><br/><br/>
+________________________________________________________________________________<br/>
+<i>If you would like to stop receiving emails from Skobee, <a href="<%= h @disable_notifications_link -%>">please click here</a></i>

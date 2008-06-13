@@ -1,0 +1,25 @@
+<div class="section grey grey_middle">
+   <h3 class="float-left">Plans, they are a changin' </h3>
+   <%= link_to(image_tag('/images/rss2.gif', :alt => 'RSS', :class => 'float-right rss'),:controller => 'feeds') -%>
+   <%
+   if @plan_changes.empty? -%>
+      <br style="clear:left;" />
+      <div class="error">
+         No changes have been made to any of your upcoming plans.
+         If anyone
+         <ul>
+            <li class="place">suggests a new place,</li>
+            <li class="time">suggests a new time/date,</li>
+            <li class="comments">adds a comment,</li>
+            <li class="confirm">or RSVPs</li>
+         </ul>
+         for an upcoming plan, you'll see it here.
+      </div>
+   <%
+   else -%>
+   <div id="change-list">
+      <%= render(:partial=>"change", :collection=> @plan_changes)%>
+   </div>
+   <%
+   end -%>
+</div>

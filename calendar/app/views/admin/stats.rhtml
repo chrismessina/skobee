@@ -1,0 +1,67 @@
+<div id="banner">
+  <h2 id="user_heading">
+     Statistics
+  </h2>
+</div>
+
+<div id="container" class="no_sidebar settings_container">
+    <table cellpadding="0" cellspacing="0" border="1" class="statistics" summary="statistics">
+        <tr><td>sessions</td><td><%= @num_sessions %></td></tr>
+        <tr><td>users</td><td><%= @num_users %></td></tr>
+        <tr><td>registered users</td><td><%= @num_registered_users %></td></tr>
+        <tr><td>users added by existing members</td><td><%= @num_users_added_by_existing_members %></td></tr>
+        <tr><td>avg plans per user</td><td><%= @avg_plans_per_user %></td></tr>
+        <tr><td>avg contacts per user</td><td><%= @avg_contacts_per_user %></td></tr>
+        <tr><td>avg checked contacts per user</td><td><%= @avg_checked_contacts_per_user %></td></tr>
+        <tr><td>num users not notified on plan mod</td><td><%= @num_users_not_notified_on_plan_mod %></td></tr>
+        <tr><td>num users not notified on invite</td><td><%= @num_users_not_notified_on_invite %></td></tr>
+        <tr><td>plans</td><td><%= @num_plans %></td></tr>
+        <tr><td>plans at public places</td><td><%= @num_plans_in_public_places %></td></tr>
+        <tr><td>fuzzy plans</td><td><%= @num_fuzzy_plans %></td></tr>
+        <tr><td>plans not fuzzy</td><td><%= @num_not_fuzzy_plans %></td></tr>
+        <tr><td>num plans in private places</td><td><%= @num_plans_in_private_places %></td></tr>
+        <tr><td>avg users per plan</td><td><%= @avg_users_per_plan %></td></tr>
+        <tr><td>num plans with 1 or 2 users</td><td><%= @num_plans_with_1_or_2_users %></td></tr>
+        <tr><td>num plans with 3 users</td><td><%= @num_plans_with_3_users %></td></tr>
+        <tr><td>num plans with 4 users</td><td><%= @num_plans_with_4_users %></td></tr>
+        <tr><td>num plans with 5 users</td><td><%= @num_plans_with_5_users %></td></tr>
+        <tr><td>num plans with 6 users</td><td><%= @num_plans_with_6_users %></td></tr>
+        <tr><td>num plans with 7 to 10 users</td><td><%= @num_plans_with_7_to_10_users %></td></tr>
+        <tr><td>num plans with 11 to 20 users</td><td><%= @num_plans_with_11_to_20_users %></td></tr>
+        <tr><td>num plans with more than 20 users</td><td><%= @num_plans_with_more_than_20_users %></td></tr>
+        <tr><td>num all day plans</td><td><%= @num_all_day_plans %></td></tr>
+        <tr><td>num eve plans</td><td><%= @num_eve_plans %></td></tr>
+        <tr><td>num dinner afternoon plans</td><td><%= @num_dinner_afternoon_plans %></td></tr>
+        <tr><td>num lunch bfst plans</td><td><%= @num_lunch_bfst_plans %></td></tr>
+        <tr><td>num morning plans</td><td><%= @num_morning_plans %></td></tr>
+        <tr><td>num other time plans</td><td><%= @num_other_time_plans %></td></tr>
+        
+        <tr><td>users under 15</td><td><%= @users_0_to_14 %></td></tr>
+        <tr><td>users 15 to 18</td><td><%= @users_15_to_18 %></td></tr>
+        <tr><td>users 19 to 22</td><td><%= @users_19_to_22 %></td></tr>
+        <tr><td>users 23 to 27</td><td><%= @users_23_to_27 %></td></tr>
+        <tr><td>users 28 to 35</td><td><%= @users_28_to_35 %></td></tr>
+        <tr><td>users 36 to 49</td><td><%= @users_36_to_49 %></td></tr>
+        <tr><td>users 50 to 64</td><td><%= @users_50_to_64 %></td></tr>
+        <tr><td>users over 64</td><td><%= @users_65_to_200 %></td></tr>
+        <tr><td>users with no age</td><td><%= @users_no_age %></td></tr>
+        
+        <tr><td>male users</td><td><%= @male_users %></td></tr>
+        <tr><td>female users</td><td><%= @female_users %></td></tr>
+        <tr><td>users with unknown gender</td><td><%= @gender_unknown_users %></td></tr>
+        <tr><td>users with unset gender</td><td><%= @no_gender_users %></td></tr>
+        
+        <tr><td>single users</td><td><%= @single_users %></td></tr>
+        <tr><td>taken users</td><td><%= @taken_users %></td></tr>
+        <tr><td>relationship unknown users</td><td><%= @relationship_unknown_users %></td></tr>
+        <tr><td>relationship no data users</td><td><%= @relationship_no_data_users %></td></tr>
+        
+<%
+@zip_1_data.each do | row | %>
+        <tr><td>users with zip like <%= row['zip_1'] %>XXXX</td><td><%= row['CT'] %></td></tr>
+<%
+end -%>
+        <tr><td>intl users</td><td><%= @intl_users %></td></tr>
+        <tr><td>no zip users</td><td><%= @no_zip_users %></td></tr>
+    </table>
+</div>

@@ -1,0 +1,32 @@
+<%
+@page_title = "Skobee - Plan Details" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        Invite friends to dinner, drinks, <br/>
+        a movie, or anything you feel like doing
+     </h2>
+  </div>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Sign Up Now", {:controller => 'users', :action => 'signup'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+</div>
+<div id="container" class="tour">
+   <div id="content">
+      <%=image_tag('/images/tour_plan_details.gif', :alt => 'Create Plan')%>
+      <h3>
+         <%= link_to("Next: What are your friends up to?", {:action => 'tour_planner'}) %>
+      </h3>
+   </div>
+</div>
+<div id="sidebar" class="sidebar_tour">
+   <ol>
+      <li><span>Anyone invited can suggest a new time or place and the group can decide which details work best.</span></li>
+      <li><span>We put in maps because they're all the rage.  Err...at least they used to be.</span></li>
+      <li><span>Discuss the details with your friends and easily propose new ideas or suggestions.</span></li>
+      <li><span>Switching back between suggestions is easy. We keep track of every suggestion and make it easy for you to figure out the details without managing giant email threads. </span></li>
+   </ol>
+   <h3 class="note"> <%= link_to("You can update existing plans via email too. Give it a try, just sign up and cc: plans@skobee.com.", {:action => 'emailhowto'}) %></h3>
+</div>

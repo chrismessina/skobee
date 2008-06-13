@@ -1,0 +1,481 @@
+michaels:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-03 14:00:15
+  delete_after:
+  security_token:
+  id: "1"
+  description:
+  user_type: "0"
+  deleted: "0"
+  image_id: 19
+  medium_image_id: 21
+  thumbnail_id: 20
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Michael Smedberg
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: michaels
+  created_at: 2005-12-17 01:16:59
+  lat_max: 38.6982
+  lat_min: 36.959
+  long_max: -121.222
+  long_min: -123.224
+
+marks:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-03 14:16:05
+  delete_after:
+  security_token:
+  id: "2"
+  description:
+  user_type: "0"
+  deleted: "0"
+  image_id: 4
+  medium_image_id: 6
+  thumbnail_id: 5
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Mark Schaaf
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: marks
+  created_at: 2005-12-17 01:16:59
+  lat_max: 38.6982
+  lat_min: 36.959
+  long_max: -121.222
+  long_min: -123.224
+
+noaml:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "3"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  image_id: 7
+  medium_image_id: 9
+  thumbnail_id: 8
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Noam Lovinsky
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: noaml
+  created_at: 2005-12-17 01:16:59
+  lat_max: 38.6982
+  lat_min: 36.959
+  long_max: -121.222
+  long_min: -123.224
+
+matiasc:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "4"
+  description:
+  user_type: "0"
+  deleted: "0"
+  image_id: 10
+  medium_image_id: 12
+  thumbnail_id: 11
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Matias Cudich
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: matiasc
+  created_at: 2005-12-17 01:16:59
+  lat_max: 38.6982
+  lat_min: 36.959
+  long_max: -121.222
+  long_min: -123.224
+
+kavins:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "5"
+  description:
+  user_type: "0"
+  deleted: "0"
+  image_id: 13
+  medium_image_id: 15
+  thumbnail_id: 14
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Kavin Stewart
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: kavins
+  created_at: 2005-12-17 01:16:59
+  lat_max: 38.6982
+  lat_min: 36.959
+  long_max: -121.222
+  long_min: -123.224
+
+jays:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-03 14:04:15
+  delete_after:
+  security_token:
+  id: "6"
+  description:
+  user_type: "0"
+  deleted: "0"
+  image_id: 16
+  medium_image_id: 18
+  thumbnail_id: 17
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Jay Simons
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: jays
+  created_at: 2005-12-17 01:16:59
+
+phils:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "7"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Phil Soffer
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: phsoffer
+  created_at: 2005-12-17 01:16:59
+
+glennk:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "8"
+  description:
+  user_type: "0"
+  deleted: "0"
+  image_id: 22
+  medium_image_id: 24
+  thumbnail_id: 23
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Glenn Kelman
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: glennk
+  created_at: 2005-12-17 01:16:59
+
+
+laurenp:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "10"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Lauren Paige
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: lpaige
+  created_at: 2005-12-17 01:16:59
+
+scottg:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "11"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Scott Grant
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: sgrant
+  created_at: 2005-12-17 01:16:59
+
+sherryk:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "12"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Sherry Koyama
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: sherryk
+  created_at: 2005-12-17 01:16:59
+
+samc:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "13"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Samantha Cooper
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: samc
+  created_at: 2005-12-17 01:16:59
+
+kurtf:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "14"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Kurt Frieden
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: kurtf
+  created_at: 2005-12-17 01:16:59
+
+chrish:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "9"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Chris Hughes
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: chrish
+  created_at: 2005-12-17 01:16:59
+
+lisaf:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "16"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Lisa Frieden
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: lisaf
+  created_at: 2005-12-17 01:16:59
+
+moniques:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "17"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Monique Simons
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: moniques
+  created_at: 2005-12-17 01:16:59
+
+andied:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "18"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Andie Drerup
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: andied
+  created_at: 2005-12-17 01:16:59
+
+topherc:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at:
+  delete_after:
+  security_token:
+  id: "19"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Topher Clark
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: topherc
+  created_at: 2005-12-17 01:16:59
+
+joshw:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "20"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Josh Williams
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: joshw
+  created_at: 2005-12-17 01:16:59
+
+joem:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "21"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Joe McVeigh
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: joem
+  created_at: 2005-12-17 01:16:59
+
+amandac:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "22"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Amanda Kraft
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: amandak
+  created_at: 2005-12-17 01:16:59
+
+bartn:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "23"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Bart Nijinsky
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: bartn
+  created_at: 2005-12-17 01:16:59
+
+cyrill:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "24"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Cyril Lamen
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: cyrill
+  created_at: 2005-12-17 01:16:59
+
+danh:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "25"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Daniel Horowitz
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: danh
+  created_at: 2005-12-17 01:16:59
+
+ethanr:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "26"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Ethan Roush
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: ethanr
+  created_at: 2005-12-17 01:16:59
+
+francinep:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-17 01:16:59
+  delete_after:
+  security_token:
+  id: "27"
+  description: ''
+  user_type: "0"
+  deleted: "0"
+  image_id: 25
+  medium_image_id: 26
+  thumbnail_id: 27
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Francine Penderton
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: francinep
+  created_at: 2005-12-17 01:16:59
+
+admin:
+  salt: 3f1479e1c2bcaaf074f9f76f93149a3b9bcb374a
+  updated_at: 2005-12-03 14:00:15
+  delete_after:
+  security_token:
+  id: "28"
+  description:
+  user_type: "0"
+  deleted: "0"
+  token_expiry:
+  time_zone: US/Pacific
+  real_name: Administrator
+  salted_password: 160c976f8913201b00f0d378ce80e2a1acb60a37
+  login: admin
+  user_type: 1
+  created_at: 2005-12-17 01:16:59
+  lat_max: 38.6982
+  lat_min: 36.959
+  long_max: -121.222
+  long_min: -123.224

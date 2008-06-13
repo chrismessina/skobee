@@ -1,0 +1,70 @@
+<%= h(error_messages_for('plan')) %>
+<table cellpadding="0" cellspacing="0" width="100%" class="property_value new_plan" summary="new plan form">
+<!-- Wot -->
+   <tr>
+      <th>
+         What: <br/>
+         <%
+         #MGS- only display the Say more link, if the description is empty...this could be when coming back from a
+         # validation error in the form
+         if !not_empty_or_nil(@plan.description) -%>
+         <h4 class="help">(<a href="#" onclick="Element.show('desc');Element.remove(this.parentNode);return false;">more</a>)</h4>
+         <%
+         end -%>
+      </th>
+      <td id="plan_what">
+         <input type="text" name="plan[name]" id="plan_name" maxlength="255" class="big_form" value="<%= @plan.name if not_empty_or_nil(@plan.name)%>"/>
+         <h4 class="help">e.g., Dinner with friends, Ladies night out, Chess Match, etc.</h4>
+      </td>
+   </tr>
+   <tr id="desc" style="<%="display:none" if !not_empty_or_nil(@plan.description)%>">
+      <th class="no_border">
+         More:
+      </th>
+      <td id="plan_desc" class="no_border">
+         <textarea class="big_form" name="plan[description]" id="plan_description" rows="<%= firefox? ? "2" : "3"%>" cols="40" onkeyup="expandTextArea(this)"><%= @plan.description if not_empty_or_nil(@plan.description)%></textarea>
+         <div class="primary comment_html_help">
+            <%= comment_help_link%>
+         </div>
+      </td>
+   </tr>
+<!-- When -->
+   <tr>
+      <th>
+         When:
+      </th>
+      <%= render(:partial => "when_field") %>
+   </tr>
+<!-- Who -->
+   <tr>
+      <th>
+         Who:
+      </th>
+      <td>
+         <div class="relative">
+            <textarea class="big_form" <%=@who_field_txt.nil? ? "" : ""%> name="plan_who" id="plan_who" rows="<%= firefox? ? "2" : "3"%>" cols="52" onkeyup="expandTextArea(this)"><%=@who_field_txt%></textarea>
+            <div class="auto_complete hand" id="plan_who_div"></div>
+            <h4 class="help">Enter email addresses, real names, or Skobee IDs.</h4>
+         </div>
+      </td>
+   </tr>
+<!-- Where -->
+   <tr>
+      <th>
+         Where:
+      </th>
+      <%=render(:partial=>"where_field")%>
+   </tr>
+</table>
+<div class="buttons">
+   <div class="primary">
+      <%= link_to(image_tag('/images/button_cancel.gif', :alt => 'Cancel'), {:action => 'cancel_and_redirect'})%>
+   </div>
+   <div class="secondary">
+      <%= link_to(image_tag('/images/button_save.gif', :alt => 'Save'), {}, { :onclick => "savePressed = true; if (validatePlaceNameExists()) { submitPlan(); } return false; "})%>
+   </div>
+</div>
+<script type="text/javascript" language="javascript" charset="utf-8">
+<%= generate_user_autocomplete_arrays(current_user_id, 'search_array') %>
+new Autocompleter.Skobee('plan_who','plan_who_div', search_array, { tokens: new Array(',','\n'), fullSearch: false, partialSearch: true, partialChars: 1, frequency: 0.001}, ', ');
+</script>

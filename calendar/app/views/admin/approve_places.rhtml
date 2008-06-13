@@ -1,0 +1,47 @@
+<%= render(:partial=>"/shared/flash")%>
+<h1>Places requested for public status:</h1>
+  <%= start_form_tag :action => 'do_approve_places', :id => 'approve_or_reject' %>
+    <table cellpadding="0" cellspacing="0" width="100%" summary="find places" border=1>
+      <tr>
+        <th></th>
+        <th>id</th>
+        <th>name</th>
+        <th>user_id</th>
+        <th>public</th>
+        <th>location</th>
+        <th>address</th>
+        <th>city</th>
+        <th>state</th>
+        <th>zip</th>
+        <th>phone</th>
+        <th>url</th>
+      </tr>
+    
+    
+    <% for places in @places %>
+      <tr>
+        <td><%= check_box_tag("place_#{places.id}", value = '1', checked = false) %></td>
+        <td><%=h places.id %></td>
+        <td><%= link_to places.name, :action => 'edit_place', :id => places %></td>
+        <td><%=h places.user_id %></td>
+        <td><%=h places.public %></td>
+        <td><%=h places.location %></td>
+        <td><%=h places.address %></td>
+        <td><%=h places.city %></td>
+        <td><%=h places.state %></td>
+        <td><%=h places.zip %></td>
+        <td><%=h places.phone %></td>
+        <td><% if places.url %><a href="<%= places.url %>" target='_new'><%= places.url %></a><% end %></td>
+      </tr>
+    <% end %>
+    </table>
+    
+    
+      <input type="submit" value="Approve" onclick="this.form.action='/admin/do_approve_places'" /><br>
+      <input type="submit" value="Reject" onclick="this.form.action='/admin/do_reject_places'" />
+      
+      
+<%= end_form_tag %>
+
+<%= link_to 'Previous page', { :page => @places_pages.current.previous } if @places_pages.current.previous %>
+<%= link_to 'Next page', { :page => @places_pages.current.next } if @places_pages.current.next %>

@@ -1,0 +1,9 @@
+; skobee_aim.def : Declares the module parameters.
+
+LIBRARY      "skobee_aim.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

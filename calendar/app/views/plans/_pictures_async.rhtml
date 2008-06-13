@@ -1,0 +1,41 @@
+<%
+#MES- Are there any photos to show?
+if !@photo_info.empty? -%>
+<table border="0" cellspacing="2" width="100%">
+<%
+	#MES- We'll put two pictures in each row of the table, so every OTHER
+	#	picture should have a <tr> or a </tr>
+	odd_pict = true
+	@photo_info.each do | pinfo |
+	  if odd_pict -%>
+  <tr>
+<%
+      end -%>
+  <td align="center" width="25%"><a href='<%= pinfo[1]%>' target='_flickr'><img src='<%= pinfo[0] %>' /></a></td>
+<%
+	  if !odd_pict -%>
+  </tr>
+<%
+      end
+      odd_pict = !(odd_pict)
+	end
+	#MES- Close out the row if we ended on 'odd' (meaning the NEXT is 'even')
+	if !odd_pict -%>
+  </tr>
+<%
+    end -%>
+</table>
+<%
+else
+  #MES- No photos, show a "no photos" message-%>
+  <div id="pictures">
+    <dl class="sidebar_form">
+       <dt>
+          No photos found
+       </dt>
+       <dd>
+       </dd>
+     </dl>
+  </div>
+<%
+end -%>

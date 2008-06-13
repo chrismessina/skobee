@@ -1,0 +1,102 @@
+<%
+@page_title = "Skobee - Find Places" -%>
+<div id="banner">
+   <h2>Search Results</h2>
+</div>
+<%= form_tag({ :action => 'search' }, { :name => 'search_form', :method => 'get' })%>
+<div id="container">
+   <div id="content" class="hovered_sections search_results">
+      <%=render(:partial=>"/shared/flash")%>
+
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value" summary="find places">
+         <tr>
+            <td class="what">
+               <input type="text" name="fulltext" class="big_form" value="<%= h(@fulltext) %>"/>
+               <h4 class="help">What</h4>
+            </td>
+            <td>
+               <div class="place_where_location">
+                  <input type="text" name="location" id="location" class="big_form" maxlength="255" value="<%= h(@location) %>"/>
+                  <h4 class="help">Where</h4>
+               </div>
+               <div class="middle_text">
+                  within
+               </div>
+               <div class="place_where_distance">
+                  <input type="text" name="max_distance" class="big_form" value="<%= @max_distance %>" maxlength="2"/>
+                  <h4 class="help">Miles</h4>
+               </div>
+            </td>
+            <td>
+               <input type="image" onclick="search_form.submit();" name="submit" src="/images/searchbutton_orange_small.gif" alt="Search"/>
+            </td>
+         </tr>
+      </table>
+      <h2 class="section_heading section_heading_border">Results</h2>
+      <div class="pagination">
+         <% #MGS- hide the pagination if no results are returned
+         if @count > 0 -%>
+           <div class="float-left"><%= @params[:page].to_i * @results_per_page - @results_per_page + 1 %> to <%= [@params[:page].to_i * @results_per_page, @count].min %> of <%= @count %></div>
+         <%
+         end -%>
+
+         <div class="float-right">
+            <%= link_to(h('< Previous'), {:page => @place_pages.current.previous, 'fulltext' => params[:fulltext],
+                    'days' => params[:days],
+                    'timeperiod' => params[:timeperiod],
+                    'location' => params[:location],
+                    'max_distance' => params[:max_distance]}) + " | " if @place_pages.current.previous  %>
+            <%= pagination_links(@place_pages,
+                  {:params=>{
+                    'fulltext' => params[:fulltext],
+                    'days' => params[:days],
+                    'timeperiod' => params[:timeperiod],
+                    'location' => params[:location],
+                    'max_distance' => params[:max_distance] }}) %>
+            <%= " | " + link_to(h('Next >'), {:page => @place_pages.current.next, 'fulltext' => params[:fulltext],
+                    'days' => params[:days],
+                    'timeperiod' => params[:timeperiod],
+                    'location' => params[:location],
+                    'max_distance' => params[:max_distance]}) if @place_pages.current.next  %>
+         </div>
+      </div>
+
+      <%
+      for place in @search_results -%>
+      <div id="result_<%= place.id %>" class="plan" onclick="window.location.href='<%=url_for(:controller => 'places', :action => 'show', :id => place.id)%>'" onmouseover="rowHover(this.id, event)" onmouseout="rowHover(this.id, event)">
+         <div class="plan_text float-left">
+            <h3><%= h(place.name) %></h3>
+            <h4><%=h(place.location) %></h4>
+         </div>
+         <%
+         if !place.nil? -%>
+         <div id="change_<%= place.id %>" class="make_plans">
+            <%= link_to "Make Plans Here", { :controller => 'plans', :action => 'new', :place => place.id }, {:class => ''}  %>
+         </div>
+         <%
+         end -%>
+         <div id="hover_bar_result_<%= place.id %>" class="hover_bar"></div>
+      </div>
+      <%
+      end -%>
+
+   <%if @count == 0%>
+      <div class="no_results">
+         No results returned.
+      </div>
+   <%end%>
+      <div class="missing_place">
+         Can't find what you're looking for?
+         <%= link_to(image_tag('/images/addplace_orange.gif', :alt => 'add a place'), {:controller => 'places', :action => 'new'} )%>
+      </div>
+
+   </div>
+</div>
+
+<div id="sidebar">
+   <%= render_partial 'filter_by_popularity' %>
+</div>
+<%
+#MC: this is so the onchange for the filter submits the form including the filters
+%>
+<%= end_form_tag %>

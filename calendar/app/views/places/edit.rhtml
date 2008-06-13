@@ -1,0 +1,15 @@
+<%
+@page_title = "Skobee - Edit Place" -%>
+<div id="banner">
+   <h2>Edit location information</h2>
+</div>
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :place })%>
+<%= start_form_tag :action => 'edit' %>
+      <h2 class="settings_header">Update this place</h2>
+      <p class="settings_header">In order to display a map at the correct location, please include both city and ZIP code as part of the address below.</p>
+<%= render_partial 'form' %>
+      <%= end_form_tag %>
+   </div>
+</div>

@@ -1,0 +1,10 @@
+<%
+if !@popular_places.nil? && @popular_places.length > 0 -%>
+<div class="section grey grey_middle">
+   <h3>My Popular Places</h3>
+   <dl class="common">
+   <%= render(:partial => "shared/place", :collection => @popular_places)%>
+   </dl>
+</div>
+<%
+end -%>

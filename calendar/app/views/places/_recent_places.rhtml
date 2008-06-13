@@ -1,0 +1,13 @@
+<%
+#MGS- don't display recent places if empty
+if !@recent_places.nil? && @recent_places.length > 0 -%>
+<div class="section grey grey_middle">
+   <h3>
+      My Recent Places
+   </h3>
+   <dl class="common">
+      <%= render :partial => 'shared/place', :collection => @recent_places %>
+   </dl>
+</div>
+<%
+end -%>

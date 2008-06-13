@@ -1,0 +1,19 @@
+<div class="section grey">
+   <h3>
+      Crowd This Week
+   </h3>
+   <table cellpadding="0" cellspacing="0" border="0" class="crowd" summary="crowd this week">
+   <%
+   0.upto(6) do | day_index |
+      #MES- Bump up the day_index- we want Monday to be the first day (not Sunday)
+      day_index = (day_index + 1) % 7
+      day_name = Date::ABBR_DAYNAMES[day_index] + ':'
+      width = @digested_stats[day_index] -%>
+      <tr>
+         <td nowrap="nowrap"><%= h(day_name) %></td>
+         <td><div class="histogram" style="width: <%= width %>px"></div></td>
+      </tr>
+   <%
+   end -%>
+   </table>
+</div>

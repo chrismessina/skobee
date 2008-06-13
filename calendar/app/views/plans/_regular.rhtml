@@ -1,0 +1,3 @@
+<li id="regular_<%=h(regular.id)%>" onmouseover="genericHover(this.id, true, 'blue');" onmouseout="genericHover(this.id, false, 'blue');" onclick="addToWhoField('plan_who','<%=h(regular.full_name)%>', '<%=h(regular.login)%>', <%= firefox? ? "true" : "false" %>);return false;">
+    <div><%=h(regular.full_name)%></div>
+</li>

@@ -1,0 +1,258 @@
+<%
+cal = current_user.planner
+if @plan.planners.include?(cal)
+   stat = @plan.planners.find(cal.id).cal_pln_status.to_i
+else
+   stat = nil
+end
+class_str, @sidebar_number = get_sidebar_class(@sidebar_number)
+-%>
+<div class="<%= class_str %>" id='sidebar_status'>
+<%
+if stat.nil? -%>
+   <h3>
+      Not Invited Yet?
+   </h3>
+   <div id="offset_div" class="error">
+      Seems like you know someone on this plan.
+      <a id="head-loginout" href="#">Add a comment requesting an invite!</a>
+   </div>
+
+<div id="bubble_wrap">
+   <div id="request_invite_bubble" style="display:none;">
+      <div class="top"></div>
+      <div class="bottom">
+         <form action="" name="request_invite_form"  id="request_invite_form" method="post">
+            <input type="hidden" name="plan_id" value="<%= @plan.id %>" />
+            <table border="0" cellpadding="0" cellspacing="0" summary="request invite bubble table">
+               <tbody>
+                  <tr><td><div style="background: url(/images/comment_red.gif) no-repeat;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add a comment to request an invite:</div></td></tr>
+                  <tr><td><textarea name="change_tb" id="request_invite_text" class="big_form" rows="3" cols="40"></textarea></td></tr>
+                  <tr>
+                     <td>
+                        <div class="buttons">
+                           <div class="secondary">
+                              <input type="image" id="popup_cancel" name="cancel" src="/images/nothanks_bubble.gif" alt="cancel"/>
+                           </div>
+                           <div class="primary">
+                              <input type="image" id="popup_save" name="save" src="/images/save_bubble.gif" alt="save"/>
+                           </div>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </form>
+      </div>
+   </div>
+</div>
+<script type="text/javascript">
+var CommentBubble = {
+   initialize : function() {
+      Event.observe('head-loginout', 'click', CommentBubble.click);
+      Event.observe('request_invite_form', 'submit', function(e){ CommentBubble.submit(e) });
+   },
+   submit : function(ev) {
+      new Ajax.Updater('change-group', '/plans/add_change_ajax',
+                        {method: 'post',
+                        asynchronous:true,
+                        parameters: Form.serialize(document.forms['request_invite_form']),
+                        evalScripts:true,
+                        onFailure:handleFail,
+                        onComplete: function(request){changeCallback(request);}
+                        });
+      CommentBubble.hide(ev);
+      Event.stop(ev);
+   },
+   click : function(ev) {
+<%
+#MGS- the user needs to be fully logged in to have a working bubble
+if !logged_in? -%>
+      redirect_to_login();
+      return;
+<%
+end -%>
+      Element.visible('request_invite_bubble') ? CommentBubble.hide(ev) : CommentBubble.show();
+      Event.stop(ev);
+      return false;
+   },
+   show : function() {
+      Event.observe('popup_cancel', 'click', function(e){CommentBubble.hide(e)});
+      var bubble = $('request_invite_bubble');
+      bubble.style.left = ((Position.cumulativeOffset($('offset_div'))[0]) - 240) + 'px';
+      Element.show(bubble);
+      $('request_invite_text').focus();
+   },
+   hide : function(e) {
+      Element.hide('request_invite_bubble');
+      Field.clear('request_invite_text');
+      if (null != e) { Event.stop(e); }
+   }
+};
+Event.observe(window, 'load', CommentBubble.initialize);
+</script>
+
+<%
+else -%>
+   <h3>
+      Your Status
+   </h3>
+   <ul id="in_out_list" class="status_list in_out_list">
+      <%
+      if Plan::STATUS_INVITED == stat %>
+      <li id="pending">
+         <div class="pending status_selected">I Haven't Responded</div>
+      </li>
+      <%
+      end -%>
+      <li id="im-in" title="I'll Be There" onmouseover="statusHover(this, event);" onmouseout="statusHover(this, event);">
+         <div id="im-in-offset" class="in <%= Plan::STATUS_ACCEPTED == stat ? 'status_selected' : '' %>">I'll Be There</div>
+      </li>
+      <li id="im-interested" title="I'm Interested" onmouseover="statusHover(this, event);" onmouseout="statusHover(this, event);">
+         <div id="im-interested-offset" class="interested <%= Plan::STATUS_INTERESTED == stat ? 'status_selected' : '' %>">I'm Interested</div>
+      </li>
+      <li id="im-out" title="I'm Out" onmouseover="statusHover(this, event);" onmouseout="statusHover(this, event);">
+         <div id="im-out-offset" class="out <%= Plan::STATUSES_REJECTED.member?(stat) ? 'status_selected' : '' %>">I'm Out</div>
+      </li>
+   </ul>
+
+<div id="bubble_wrap">
+   <div id="rsvp_bubble" style="display:none;">
+      <div class="top"></div>
+      <div class="bottom">
+         <form action="" name="rsvp_form"  id="rsvp_form" method="post">
+            <input type="hidden" name="pln_id" value="<%= @plan.id %>" />
+            <input type="hidden" name="id" value="<%= cal.id %>" />
+            <table border="0" cellpadding="0" cellspacing="0" summary="rsvp bubble table">
+               <tbody>
+                  <tr><td style="font-size:13px; font-weight:bold" id="bubble_title"></td></tr>
+                  <tr><td>&nbsp;</td></tr>
+                  <tr><td><div style="background: url(/images/comment_red.gif) no-repeat;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Leave a comment</div></td></tr>
+                  <tr><td><textarea name="rsvp_comment" id="rsvp_text" class="big_form" rows="3" cols="40"></textarea></td></tr>
+                  <tr><td id="bubble_footer"></td></tr>
+                  <tr>
+                     <td>
+                        <div class="buttons">
+                           <div class="secondary">
+                              <input type="image" id="popup_cancel" name="cancel" src="/images/nothanks_bubble.gif" alt="cancel"/>
+                           </div>
+                           <div class="primary">
+                              <input type="image" id="popup_save" name="save" src="/images/save_bubble.gif" alt="save"/>
+                           </div>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </form>
+      </div>
+   </div>
+</div>
+
+<script type="text/javascript">
+<!--
+var bubble_open;
+var RSVP_ACCEPTED = 1;
+var RSVP_INTERESTED = 2;
+var RSVP_REJECTED = 3;
+var SUBMIT_COMMENT = 1;
+var CANCEL_COMMENT = 0;
+var RSVPBubble = {
+   bubble_type : 0,
+   previous_status_div : 0,
+   initialize : function() {
+      Event.observe('im-in', 'click', function(e){ RSVPBubble.click(RSVP_ACCEPTED) });
+      Event.observe('im-interested', 'click', function(e){ RSVPBubble.click(RSVP_INTERESTED) });
+      Event.observe('im-out', 'click', function(e){ RSVPBubble.click(RSVP_REJECTED) });
+   },
+   submit : function(action) {
+      switch (RSVPBubble.bubble_type) {
+         case RSVP_ACCEPTED:
+            document.forms['rsvp_form'].action = '/planners/accept_plan';
+            break;
+         case RSVP_INTERESTED:
+            document.forms['rsvp_form'].action = '/planners/express_interest_in_plan';
+            break;
+         case RSVP_REJECTED:
+            document.forms['rsvp_form'].action = '/planners/reject_plan';
+            break;
+      }
+
+      if (CANCEL_COMMENT == action) {
+         Field.clear('rsvp_text');
+      }
+      document.forms['rsvp_form'].submit;
+   },
+   click : function(type) {
+<%
+#MGS- the user needs to be logged in to have a working bubble.  Conditional login is supported.
+if !has_current_user? -%>
+      redirect_to_login();
+      return;
+<%
+end -%>
+      if (Element.visible('rsvp_bubble')) { return; }
+      editor_open = true;
+      bubble_open = true;
+      //MGS- set the type of this bubble
+      RSVPBubble.bubble_type = type;
+      //MGS- close any open edits
+      closeAllEdits();
+      if (RSVP_REJECTED == type) {
+         $('bubble_title').innerHTML = "Can't make it?";
+         $('bubble_footer').innerHTML = '<div style="background: url(/images/edit_time_red.gif) no-repeat;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="openWhen();RSVPBubble.hide();">Or try suggesting a new time/date.<\/a><\/div>';
+      } else {
+         $('bubble_title').innerHTML = "Wanna say something?";
+         $('bubble_footer').innerHTML = '';
+      }
+      Element.visible('rsvp_bubble') ? RSVPBubble.hide(ev) : RSVPBubble.show();
+      return false;
+   },
+   show : function() {
+      Event.observe('popup_cancel', 'click', function(e){RSVPBubble.submit(CANCEL_COMMENT)});
+      Event.observe('popup_save', 'click', function(e){RSVPBubble.submit(SUBMIT_COMMENT)});
+      var bubble = $('rsvp_bubble');
+      var offset_div;
+      switch (RSVPBubble.bubble_type) {
+         case RSVP_ACCEPTED:
+            offset_div = $('im-in-offset');
+            break;
+         case RSVP_INTERESTED:
+            offset_div = $('im-interested-offset');
+            break;
+         case RSVP_REJECTED:
+            offset_div = $('im-out-offset');
+            break;
+      }
+      //MGS- clear all of the exisiting styles in the im in/im out list
+      var selected_status = document.getElementsByClassName('status_selected','in_out_list');
+      previous_status_div = selected_status[0].id;
+      Element.removeClassName(selected_status[0], 'status_selected');
+      Element.addClassName(offset_div,'status_selected');
+
+      bubble.style.top = ((Position.cumulativeOffset(offset_div)[1]) + 10) + 'px';
+      bubble.style.left = ((Position.cumulativeOffset(offset_div)[0]) - 270) + 'px';
+      Element.show(bubble);
+      $('rsvp_text').focus();
+   },
+   hide : function(e) {
+      //MGS- handle the cancel; remove the selected style
+      var selected_status = document.getElementsByClassName('status_selected','in_out_list');
+      Element.removeClassName(selected_status[0], 'status_selected');
+      //and remove the hover
+      var hovered_elements = document.getElementsByClassName('hover_status','in_out_list');
+      Element.removeClassName(hovered_elements[0], 'hover_status');
+      Element.addClassName(previous_status_div, 'status_selected');
+      bubble_open = false;
+      Element.hide('rsvp_bubble');
+      Field.clear('rsvp_text');
+      if (null != e) { Event.stop(e); }
+   }
+};
+Event.observe(window, 'load', RSVPBubble.initialize);
+//-->
+</script>
+
+<%
+end -%>
+</div>

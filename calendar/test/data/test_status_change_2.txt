@@ -1,0 +1,41 @@
+X-Gmail-Received: f0e540e430f30aa284b21754bc99bc3d91465cab
+Received: by 10.35.91.18 with HTTP; Tue, 11 Apr 2006 11:20:14 -0700 (PDT)
+Message-ID: <5d0d22620604111120o7be33bb9q476caabb46c356a5@mail.gmail.com>
+Date: Tue, 11 Apr 2006 11:20:14 -0700
+From: "existingbob" <existingbob@test.com>
+To: "bob" <bob@test.com>
+Subject: Re: Test status change
+In-Reply-To: <5d0d22620604111119n589358b1peef6fd148a0c4e8@mail.gmail.com>
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_12289_29584776.1144779614108"
+References: <5d0d22620604111119n589358b1peef6fd148a0c4e8@mail.gmail.com>
+Delivered-To: bob@test.com
+
+------=_Part_12289_29584776.1144779614108
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+rsvp: i'm in
+
+On 4/11/06, bob <bob@test.com> wrote:
+>
+> when: tomorrow
+>
+
+------=_Part_12289_29584776.1144779614108
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+rsvp: i'm in<br><br><div><span class=3D"gmail_quote">On 4/11/06, <b class=
+=3D"gmail_sendername">Michael Smedberg</b> &lt;<a href=3D"mailto:smedberg@g=
+mail.com">smedberg@gmail.com</a>&gt; wrote:</span><blockquote class=3D"gmai=
+l_quote" style=3D"border-left: 1px solid rgb(204, 204, 204); margin: 0pt 0p=
+t 0pt 0.8ex; padding-left: 1ex;">
+<div style=3D"direction: ltr;">when: tomorrow<br>
+
+</div></blockquote></div><br>
+
+------=_Part_12289_29584776.1144779614108--

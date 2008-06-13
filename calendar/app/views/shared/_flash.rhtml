@@ -1,0 +1,36 @@
+<%
+#MGS- the flash partial can optionally display validation messages for a model.
+# The model containing the error collection should be passed in as a local to this partial.
+# If no :display_errors_for local is passed into this partial, error_messages_for is not called.
+
+#MGS- check if local was passed
+display_errors_for = nil unless defined? :display_errors_for
+
+model_errors = false
+if !display_errors_for.nil?
+   #MGS- check for errors on model
+   object = instance_variable_get("@#{display_errors_for}")
+   model_errors = true if !object.nil? && !object.errors.empty?
+end
+
+if !@flash[:notice].nil? -%>
+<div id="flash-notice-container" class="flash">
+   <div id="flash-notice">
+      <%= @flash[:notice] -%>
+   </div>
+</div>
+<%
+end
+
+if !@flash[:error].nil? || model_errors 
+    #MES- If we have BOTH an error AND model errors, separate them with a break
+    spacer = ''
+    spacer = '<br/><br/>' if !@flash[:error].nil? && model_errors -%>
+<div id="flash-error-container" class="flash">
+   <div id="flash-error">
+      <%= @flash[:error] -%><%= spacer -%>
+      <%= error_messages_for(display_errors_for) if model_errors -%>
+   </div>
+</div>
+<%
+end -%>

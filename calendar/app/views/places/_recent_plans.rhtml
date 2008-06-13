@@ -1,0 +1,21 @@
+<div class="section grey grey_middle">
+   <h3>
+      Recent Plans
+   </h3>
+    <%
+    if @recent_plans.empty? -%>
+    <div class="error">
+        No plans are planned at this place.
+    </div>
+    <%
+    else
+    -%>
+   <dl class="common">
+        <%= render :partial => 'recent_plan',  :collection => @recent_plans %>
+   </dl>
+      <%
+      end -%>
+</div>
+
+
+

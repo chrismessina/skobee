@@ -1,0 +1,14 @@
+<%
+#MGS- don't display popular this week if there's nothing to display
+# shouldnt happen, but what the hell..
+if !@popular_this_week.empty? -%>
+<div class="section grey" id='sidebar_pop'>
+   <h3>
+      Popular This Week
+   </h3>
+   <dl class="common popular_this_week">
+      <%= render :partial => 'swappable_place', :collection => @popular_this_week %>
+   </dl>
+</div>
+<%
+end -%>

@@ -1,0 +1,27 @@
+<%
+pln_info = schedule_details_plan_owner
+pln = pln_info.plan
+-%>
+<div id="plan-list-<%= pln.id %>" class="plan plan_border" onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => pln, :cal_id => pln_info.owning_planner)%>'" onmouseover="rowHover(this.id, event, HOVER_TYPE_PLAN)" onmouseout="rowHover(this.id, event, HOVER_TYPE_PLAN)" <%= "style=\"background-color:#fafad2\"" if pln.is_expiring?(current_timezone) %>>
+   <!-- <%= plan_template %> -->
+   <div class="plan_text float-left">
+      <h3><%=h(pln.english_for_date(current_timezone))%>, <%=h(pln.english_for_time(current_timezone))%><%= " - <span class=\"invitee\">Plan is expiring</span>" unless !pln.is_expiring?(current_timezone)%> <%= get_planned_days_ago(pln) -%></h3>
+      <%= get_plan_place_invitees(pln, "h4", "h4") -%>
+   </div>
+   <div id="hover_bar_plan-list-<%= pln.id %>" class="hover_bar"></div>
+   <%= link_to "", {:controller => 'plans', :action => 'show', :id => pln, :cal_id => pln_info.owning_planner}, {:id=> "plan-list-#{pln.id}-location"}%>
+   <%
+   show_postpone = pln.is_expiring?(current_timezone) && pln.can_edit?(@user.planner)
+   if show_postpone -%>
+   <%= link_to "Postpone", {:controller => 'plans', :action => 'postpone_plan', :id => pln}, {:class => 'postpone'} %>
+   <%
+   end -%>
+   <%
+   #MES- If there are unviewed comments, show some text saying so.
+   #    Since this appears in exactly the same place as the Postpone
+   #    link, we don't show this if we're showing postpone.
+   if !show_postpone && (0 != pln_info.num_unviewed_items) -%>
+   <span class='unviewed_changes'><%= pluralize(pln_info.num_unviewed_items, 'new comment') %></span>
+   <%
+   end -%>
+</div>

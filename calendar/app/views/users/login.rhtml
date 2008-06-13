@@ -1,0 +1,28 @@
+<%
+@page_title = "Skobee - Login"
+@onload_handler.nil? ? @onload_handler = "document.forms[0].login.focus();" : @onload_handler += "document.forms[0].login.focus();" -%>
+<div id="banner">
+   <h2 class="two_lines">
+      Woo Hoo! A little more Web and <br /> then it's time to paint the town red.
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings_medium login">
+      <%=render(:partial=>"/shared/flash")%>
+<%
+if @unregistered_login -%>
+      <h2 class="settings_header settings_header_noborder">
+        <a href="<%= url_for :controller => 'users', :action => 'register', :id => @unregistered_id %>">
+          User <%= @unregistered_login %> is not currently registered.  Click here to register.
+        </a>
+      </h2>
+      <p class="settings_header settings_header_empty">&nbsp;</p>
+      <h2 class="settings_header settings_header_noborder">
+        OR
+      </h2>
+<%
+end -%>
+      <%=render(:partial=>"/users/login_form")%>
+   </div>
+</div>

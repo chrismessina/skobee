@@ -1,0 +1,76 @@
+<%
+commenter = comment_change.owner
+if commenter == current_user
+  comment_owner = true
+else
+  comment_owner = false
+end
+
+#MGS- build args for ajax depending on if on plan or place
+comment_id = comment_change.id
+comment_type = comment_change.change_type
+#MGS- collection of styles that this partial could display
+comment_styles = { PlanChange::CHANGE_TYPE_COMMENT => 'comment_change',
+                   PlanChange::CHANGE_TYPE_RSVP => 'comment_change',
+                   PlanChange::CHANGE_TYPE_TIME_COMMENT => 'time_change',
+                   PlanChange::CHANGE_TYPE_PLACE_COMMENT => 'place_change' }
+-%>
+
+<div class="comment <%= comment_styles[comment_type] -%> float-fix">
+   <div class="picture">
+      <%= build_user_thumbnail_link(commenter) %>
+   </div>
+   <div id="change<%=comment_id%>" class="body">
+      <h3><%= build_user_profile_link(commenter) %> says...</h3>
+      <p id="comment_body<%=comment_id%>"><%=format_rich_text(comment_change.comment)%></p>
+      <h4 id="comment_footer<%=comment_id%>" class="footer">Created <%=h(time_ago_in_words(comment_change.updated_at))%> ago
+<%
+#MGS- user should always be able to edit/delete comment, if they are the owner
+if comment_owner -%>
+              | <%= anchor_or_login(link_to_function("Edit", "if(editor_open){return false;};editor_open=true;editChange('#{comment_id}')", :id => "edit-change-#{comment_id}"), 'Edit')%>
+              | <%= anchor_or_login(link_to_remote( "Delete",
+                                     :update => "change-group",
+                                     :confirm => "Are you sure that you want to delete this comment?",
+                                     :url => { :action => :delete_change_ajax, :change_id => comment_id, :plan_id => @plan.id  } ), 'Delete') %>
+<%
+else -%>
+              | <%= anchor_or_login(link_to_function("Inappropriate", "commentFeedback('#{comment_id}','#{@plan.id}','#{controller.controller_name}', '#{request.request_uri}')", :id => "inappropriate-change-#{comment_id}"), 'Inappropriate')%>
+<%
+end -%>
+      </h4>
+   </div>
+</div>
+<%
+#MGS- user should always be able to edit/delete comment, if they are the owner
+if comment_owner -%>
+<div class="change-form mini_editor float-left float-fix" id="changeedit<%=comment_id%>" style="display: none;">
+   <form action="" name="change-edit-form<%=comment_id%>" method="post" onsubmit="">
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="new plan form">
+         <tr>
+            <td class="property_wide">
+               Comment:
+            </td>
+            <td>
+               <textarea name="change_edit_tb<%=comment_id%>" id="change_edit_tb<%=comment_id%>" class="big_form" rows="3" cols="40" onkeyup="expandTextArea(this)"><%=h(comment_change.comment)%></textarea><br/>
+               <div class="comment_html_help"><%= comment_help_link %></div>
+            </td>
+         </tr>
+      </table>
+      <input type="hidden" name="change_id" value="<%=comment_id%>" />
+      <input type="hidden" name="plan_id" value="<%= @plan.id %>" />
+      <div class="buttons">
+         <div class="secondary">
+            <input type="image" onclick="editor_open=false;cancelEditChange('<%=comment_id%>');return false;" name="cancel" src="/images/button_cancel.gif" alt="Cancel"/>
+         </div>
+         <div class="primary">
+            <input type="image" name="save" src="/images/button_save.gif" alt="Save" onclick="editor_open=false;new Ajax.Updater('change-group', '/plans/edit_change_ajax',
+                                                                                             {method: 'post', asynchronous:true, evalScripts:true,
+                                                                                             parameters:Form.serialize(document.forms['change-edit-form<%= comment_id.to_s %>']),
+                                                                                             onFailure:handleFail,
+                                                                                             onComplete: function(request){changeCallback(request);}});return false;"/>
+         </div>
+      </div>
+   </form>
+</div>
+<%
+end -%>

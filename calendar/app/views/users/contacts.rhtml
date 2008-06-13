@@ -1,0 +1,80 @@
+<%
+@page_title = "Skobee - Your Contacts"
+@rss_feeds = {
+   "Skobee: #{h(Inflector.possessiveize(current_user.login))} friends plans" => url_for(:controller => 'feeds', :action => 'friends_plans', :id => current_user_id, :only_path => false),
+   "Skobee: All #{h(Inflector.possessiveize(current_user.login))} contacts plans" => url_for(:controller => 'feeds', :action => 'all_contacts_plans', :id => current_user_id, :only_path => false)
+   }
+-%>
+<div id="banner">
+   <h2>
+      Who Do You Know?
+   </h2>
+</div>
+
+<div id="container">
+   <div id="content">
+      <%=render(:partial=>"/shared/flash")%>
+
+      <%
+      if @friends.empty? && @friend_contacts.empty?  -%>
+      <div class="empty_contacts">
+         <h3>Search for people and add them as a friend or a contact. <br/>
+             The more people you add, the better your experience:</h3>
+         <ul>
+            <li>
+               Discover new places to go and things to do from what your friends are doing
+            </li>
+         </ul>
+         <ul>
+            <li>
+               Display people's upcoming plans and check out what everyone is up to
+            </li>
+         </ul>
+         <ul>
+            <li>
+               Easily add people to plans
+            </li>
+         </ul>
+         <ul>
+            <li>
+               And lots more...
+            </li>
+         </ul>
+      </div>
+      <%
+      else
+         if !@friends.empty? -%>
+            <div class="section_heading_border section_heading_border_rss float-left">
+               <h2 class="section_heading section_heading_rss float-left">Friends</h2>
+               <%= link_to(image_tag('/images/rss2.gif', :alt => 'RSS', :class => 'float-right rss'),:controller => 'feeds') -%>
+            </div>
+            <ul id="friends-list" class="picture_list">
+               <%= render(:partial => "contacts", :collection => @friends)%>
+            </ul>
+         <%
+         end -%>
+
+         <%
+         if !@friend_contacts.empty? -%>
+            <div class="section_heading_border section_heading_border_rss float-left middle">
+               <h2 class="section_heading section_heading_rss float-left">Contacts</h2>
+               <%= link_to(image_tag('/images/rss2.gif', :alt => 'RSS', :class => 'float-right rss'),:controller => 'feeds') -%>
+            </div>
+
+            <ul class="picture_list">
+               <%= render(:partial => "contacts", :collection => @friend_contacts)%>
+            </ul>
+         <%
+         end -%>
+      <%
+      end -%>
+
+      <h2 class="section_heading middle float-left past_rejected">
+         <%= link_to "...or find out who knows you.", { :controller => 'users', :action => 'contacts_inverse' }, {:class => 'inverse'} -%>
+      </h2>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'find_contacts' %>
+   <%= render_partial 'recently_added_me' %>
+</div>

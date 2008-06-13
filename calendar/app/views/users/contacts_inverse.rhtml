@@ -1,0 +1,31 @@
+<%
+@page_title = "Skobee - Who Knows You?" -%>
+<div id="banner">
+   <h2>
+      Who Knows You?
+   </h2>
+</div>
+
+<div id="container">
+   <div id="content">
+   <%=render(:partial=>"/shared/flash")%>
+   <h2 class="section_heading section_heading_border">Marked you as a Contact</h2>
+   <%
+   if @combined_contacts.empty? -%>
+      <div>No one has set you as a contact.</div>
+   <%
+   else -%>
+   <ul class="picture_list">
+      <%= render(:partial => "contacts", :collection => @combined_contacts)%>
+   </ul>
+   <%
+   end -%>
+   <h2 class="section_heading middle float-left past_rejected">
+      <%= link_to "...back to your contacts.", { :controller => 'users', :action => 'contacts' }, {:class => 'inverse'} -%>
+   </h2>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'find_contacts' %>
+   <%= render_partial 'recently_added_me' %>
+</div>

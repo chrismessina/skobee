@@ -1,0 +1,58 @@
+<%
+@page_title = "Skobee - Your Plans" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 id="user_heading">
+        <%=@user_header%>
+     </h2>
+  </div>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Make Plans", {:controller => 'plans',
+      :action => 'new',
+      :planner_id => @planner}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+
+</div>
+<div id="container">
+   <div id="content" class="hovered_sections">
+      <%=render(:partial=>"/shared/flash")%>
+<%
+#MGS- if all of the plan infos are empty, then we should display the help text
+if (@fuzzy_plan_infos.empty? && @solid_plan_infos.empty?) -%>
+      <div class="empty_planner">
+         <h3>Yipes! You have no upcoming plans.</h3>
+         <ul>
+            <li>
+               <img src="/images/plans.gif" alt="make plans" />
+               <%= link_to "<u>Make plans</u> and invite some friends to hang out",
+                           {:controller => 'plans', :action => 'new'} %>
+            </li>
+         </ul>
+         <h3>or</h3>
+         <ul>
+            <li>
+               <img src="/images/people_dashboard.gif" alt="make plans" />
+               <%= link_to "<u>Add new contacts</u> and check out what they're up to",
+                           {:controller => 'users', :action => 'contacts'} %>
+            </li>
+         </ul>
+      </div>
+<%
+end -%>
+      <%= render(:partial => 'schedule_details_groupings') %>
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'contacts' %>
+   <%= render_partial 'friends_places' %>
+</div>
+
+<% #MGS- this partial initalizes javascript that is needed for plan editing; currently used in schedule details and plan details -%>
+<script type="text/javascript">
+<!--
+var CONTACT_CLIPBOARD_LIMIT = <%=PlannersController::CONTACT_CLIPBOARD_LIMIT -%>;
+var HEADER_USERNAME_LIMIT = <%=PlannersController::HEADER_USERNAME_LIMIT -%>;
+//-->
+</script>

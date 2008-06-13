@@ -1,0 +1,56 @@
+<%
+@page_title = "Skobee - Invite a Friend" -%>
+<div id="banner">
+   <h2>
+      Invite friends to join Skobee
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar">
+   <div id="content" class="settings_medium">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+
+      <div class="help">
+         <strong><%= @user.display_name %></strong> is already using Skobee, but hasn't signed up. Fill out the form below and we'll send a registration link.
+      </div>
+      <br/>
+
+      <%= start_form_tag :action => 'invite' %>
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value" summary="new plan form">
+         <tr>
+            <td class="property">
+               From:
+            </td>
+            <td>
+               <%= h(current_user.full_name)%> <%=h("<#{current_user.email}>")%>
+            </td>
+         </tr>
+         <tr>
+            <td class="property">
+               Subject:
+            </td>
+            <td>
+               <%=h(current_user.full_name)%> wants you to join Skobee!
+               <%= hidden_field_tag 'invite_subject', "#{h(current_user.full_name)} wants you to join Skobee!" %>
+            </td>
+         </tr>
+         <tr>
+            <td class="property">
+               Body:
+            </td>
+            <td>
+               <textarea class="big_form" name="invite_body" id="invite_body" rows="8" cols="40" onkeyup="expandTextArea(this)">Skobee is a fun way to make plans and invite your friends out to drinks, dinner, or anything you like to do. You can also catch up on what all of your friends are doing and find out where everyone in your city is going.</textarea>
+            </td>
+         </tr>
+         <tr>
+            <td class="property">
+            </td>
+            <td>
+               <%= submit_tag "Invite" %>
+            </td>
+         </tr>
+      </table>
+      <%= end_form_tag %>
+
+   </div>
+</div>

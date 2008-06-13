@@ -1,0 +1,173 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%
+time_str = (Time.now-(45)).fmt_for_mysql
+%>
+first_place:
+  id: 1
+  name: 2F21F2C994EE48908B4704550961E7A7, search
+  public: 1
+  location: 4209 Howe st., 94611
+  lat: 37.7578
+  long: -122.409
+  normalized_name: 2f21f2c994ee48908b4704550961e7a7 search
+
+another_place:
+  id: 2
+  name: E37B08B1454846E8A1895F5C6E03F22F, search
+  location: West 42nd & Broadway, New York, NY
+  address: ""
+  city: ""
+  state: ""
+  zip: ""
+  normalized_name: e37b08b1454846e8a1895f5c6e03f22f search
+  public: 1
+
+place_owned_by_bob:
+  id: 3
+  name: D4E484F04EBF4B41ABF39FC3416D97F3, search for abcde
+  location: undecipherable
+  user_id: 1
+  normalized_name: d4e484f04ebf4b41abf39fc3416d97f3 search for abcde
+  public: 1
+  created_at: <%= time_str %>
+  updated_at: <%= time_str %>
+
+place_to_search_for:
+  id: 4
+  name: I am a really good place to search for, and abcde
+  location: 1639 Polk St., San Francisco, CA
+  lat: 37.791840
+  long: -122.421069
+  normalized_name: i am a really good place to search for and abcde
+  public: 1
+
+superfluous_place:
+  id: 5
+  name: Next to another place
+  location: 1641 Polk St., San Francisco, CA
+  lat: 37.791840
+  long: -122.421069
+  normalized_name: next to another place
+  user_id: 20
+  public: 1
+
+place_for_location_search:
+  id: 6
+  name: Hana Zen
+  location: 115 Cyril Magnin St, San Francisco, CA, 94102
+  address: 115 Cyril Magnin St
+  city: San Francisco
+  state: CA
+  zip: 94102
+  lat: 37.7578
+  long: -122.409
+  geocoded: 1
+  normalized_name: hana zen
+  public: 1
+
+san_diego_restaurant1:
+  id: 7
+  name: China Bistro Chinese Restaurant
+  location:  1330 E Valley Parkway, Escondido, CA
+  lat: 33.131524
+  long: -117.064770
+  geocoded: 1
+  normalized_name: china bistro chinese restaurant
+  public: 1
+
+san_diego_restaurant2:
+  id: 8
+  name: Bamboo House Chinese Rstrnt
+  location: 320 N Midway Dr, Escondido, CA
+  lat: 33.136666
+  long: -117.051279
+  geocoded: 1
+  normalized_name: bamboo house chinese rstrnt
+  public: 1
+
+san_diego_restaurant3:
+  id: 9
+  name: China Cafe
+  location: 2236 Carmel Valley Rd, Del Mar, CA
+  lat: 33.136666
+  long: -117.051279
+  geocoded: 1
+  normalized_name: china cafe
+  public: 1
+
+san_diego_restaurant_outside_10_mile_radius:
+  id: 10
+  name: China Cafe
+  location: 10330 Friars Rd, San Diego, CA
+  lat: 32.790401
+  long: -117.100907
+  geocoded: 1
+  normalized_name: china cafe
+  public: 1
+
+seattle_restaurant1:
+  id: 11
+  name: Pho So
+  location: 1207 S Jackson St
+  lat: 47.599220
+  long: -122.317148
+  geocoded: 1
+  normalized_name: pho so 1
+  public: 1
+
+seattle_restaurant_outside_1_mile_radius:
+  id: 12
+  name: Magic Dragon Chinese Eatery
+  location:   420 Broadway E, Seattle, WA
+  lat: 47.622338
+  long: -122.320765
+  geocoded: 1
+  normalized_name: magic dragon chinese eatery
+
+seattle_restaurant_owned_by_x_dummy_user_4:
+  id: 13
+  name: James's restaurant
+  location: 1207 S Jackson St
+  lat: 47.599220
+  long: -122.317148
+  user_id: 20
+  geocoded: 1
+  normalized_name: jamess restaurant
+
+nil_public_venue:
+  id: 14
+  name: blah
+
+public_venue:
+  id: 15
+  name: blah2
+  public: 1
+
+private_vlue:
+  id: 16
+  name: blah3
+  public: 0
+  user_id: 1
+
+requested_public_place:
+  id: 17
+  user_id: 12
+  name: requested public place
+  location: 500 Sansome San Francisco, CA
+  public: 0
+  public_status: 1
+
+place_owned_by_user_with_friends_and_friends_cal:
+  id: 18
+  name: place owned by user with friends and friends cal
+  location: 123 Main St. Anytown, USA 10101
+  user_id: 12
+  normalized_name: d4e484f04ebf4b41abf39fc3416d97f3 search for abcde
+  public: 0
+  created_at: <%= time_str %>
+  updated_at: <%= time_str %>
+
+private_venue_with_no_owner:
+  id: 19
+  name: private_venue_with_no_owner
+  public: 0

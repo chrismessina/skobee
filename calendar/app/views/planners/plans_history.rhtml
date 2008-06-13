@@ -1,0 +1,73 @@
+<%
+@page_title = "Skobee - Past & Rejected Plans" -%>
+<div id="banner">
+  <h2 id="user_heading">Plans History</h2>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Upcoming Plans", {:controller => 'planners', :action => 'schedule_details'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+</div>
+<div id="container">
+   <div id="content" class="hovered_sections">
+      <%=render(:partial=>"/shared/flash")%>
+
+      <h2 class="section_heading section_heading_border">Rejected Plans</h2>
+      <%
+      #MGS- if all of the plan infos are empty, then we should display the help text
+      if !@rejected_plan_infos.empty? -%>
+      <%
+      for pln_info in @rejected_plan_infos
+         #MGS- TODO we probably want to give this its own tentative view
+         plan_template = 'dashboard_plan_tentative'
+         #MGS- use a single template as specified in the controller for displaying each plan info -%>
+         <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info, :plan_template => plan_template} %>
+      <%
+      end -%>
+      <%
+      else -%>
+      <div class="help">You don't have any rejected plans.</div>
+      <%
+      end -%>
+
+      <h2 class="section_heading section_heading_border middle">Past Plans</h2>
+      <%
+      #MGS- if all of the plan infos are empty, then we should display the help text
+      if !@past_plan_infos.empty? -%>
+      <%
+      for pln_info in @past_plan_infos
+         #MGS- always show this owner view for past plans
+         plan_template = 'plans_history_plan_owner'
+         #MGS- use a single template as specified in the controller for displaying each plan info -%>
+         <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info, :plan_template => plan_template} %>
+      <%
+      end -%>
+      <%
+      else -%>
+      <div class="help">You don't have any past plans.</div>
+      <%
+      end -%>
+      
+      <h2 class="section_heading section_heading_border middle">Canceled Plans</h2>
+      <%
+      #MGS- if all of the plan infos are empty, then we should display the help text
+      if !@cancelled_plan_infos.empty? -%>
+      <%
+      for pln_info in @cancelled_plan_infos
+         #MGS- always show this owner view for cancelled plans
+         plan_template = 'plans_history_plan_owner'
+         #MGS- use a single template as specified in the controller for displaying each plan info -%>
+         <%= render :partial => plan_template, :locals => { plan_template.to_sym => pln_info, :plan_template => plan_template} %>
+      <%
+      end -%>
+      <%
+      else -%>
+      <div class="help">You don't have any canceled plans.</div>
+      <%
+      end -%>
+
+   </div>
+</div>
+<div id="sidebar">
+   <%= render_partial 'plans_history_sidebar'%>
+</div>

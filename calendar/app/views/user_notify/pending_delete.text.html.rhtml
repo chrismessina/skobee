@@ -1,0 +1,5 @@
+Dear <%= h @name %>,<br>
+<br>
+At your request, <a href='<%= h @url %>'><%= h @app_name %></a> has marked your account for deletion. If it was not at your request, then you should be aware that someone has access to your account and requested this change.<br>
+<br>
+Click <a href='<%= h @url%>'>here</a> to restore your deleted account. If you click on this link within the next <%= h @days %> days, your account will not be deleted. Otherwise, simply ignore this email and your account will be permanently deleted.<br>

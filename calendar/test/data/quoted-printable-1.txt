@@ -1,0 +1,45 @@
+X-Original-To: plans@skobee.com
+Received: from xproxy.gmail.com (xproxy.gmail.com [66.249.82.194])
+	by alpha.skobee.com (Postfix) with ESMTP id B592C7EC427
+	for <plans@skobee.com>; Mon,  6 Mar 2006 17:36:02 -0800 (PST)
+Received: by xproxy.gmail.com with SMTP id t15so903708wxc
+        for <plans@skobee.com>; Mon, 06 Mar 2006 17:36:02 -0800 (PST)
+DomainKey-Signature: a=rsa-sha1; q=dns; c=nofws;
+        s=beta; d=gmail.com;
+        h=received:message-id:date:from:to:subject:cc:mime-version:content-type;
+        b=FjJQFzVve1vLNspi4GGr/+Wxv/vPUuD7NL4vLd6pQihODNLEVuQhTnfcRNLhJBnZE0WE3TDDL7nNU10b9oaMdpimdku8rAl0jNyYLQnYyArtP5D4h91ze2Tp+x7Xg9lR5Wx56/FTIUxSeFO076/MYG9npiXEpNOV7UBI9rczpD0=
+Received: by 10.70.96.18 with SMTP id t18mr356505wxb;
+        Mon, 06 Mar 2006 17:36:02 -0800 (PST)
+Received: by 10.70.75.1 with HTTP; Mon, 6 Mar 2006 17:36:02 -0800 (PST)
+Message-ID: <9d5b5a080603061736s2653809bx23766583c8eeccab@mail.gmail.com>
+Date: Mon, 6 Mar 2006 17:36:02 -0800
+From: "Noam Lovinsky" <nlovinsky@gmail.com>
+To: nlovinsky@yahoo.com
+Subject: Get together for a screen cast
+Cc: plans@skobee.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3465_32160057.1141695362243"
+
+------=_Part_3465_32160057.1141695362243
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+Hey let's get together
+
+when: lunch next week
+where: coupa cafe
+
+let me know,
+noam
+
+------=_Part_3465_32160057.1141695362243
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+Hey let's get together<br><br>when: lunch next week<br>where: coupa cafe<br=
+><br>let me know,<br>noam<br>
+
+------=_Part_3465_32160057.1141695362243--

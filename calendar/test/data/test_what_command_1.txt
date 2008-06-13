@@ -1,0 +1,27 @@
+X-Gmail-Received: 40cf16cdc54b6010b3af989f2a2d7d8f9c43ba94
+Received: by 10.35.91.18 with HTTP; Thu, 13 Apr 2006 13:58:05 -0700 (PDT)
+Message-ID: <5d0d22620604131358k62f2e1f9g59a0bad880c5937a@mail.gmail.com>
+Date: Thu, 13 Apr 2006 13:58:05 -0700
+From: "Kavin Stewart" <kavin620@hotmail.com>
+To: "Kavin Stewart" <kavin620@hotmail.com>
+Subject: what from the subject
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_5013_3485988.1144961885804"
+Delivered-To: smedberg@gmail.com
+
+------=_Part_5013_3485988.1144961885804
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+what: what from the body
+
+------=_Part_5013_3485988.1144961885804
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+Content-Disposition: inline
+
+what: what from the body<br>
+
+------=_Part_5013_3485988.1144961885804--

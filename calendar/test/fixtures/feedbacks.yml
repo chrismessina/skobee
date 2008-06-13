@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+<%
+now_str = Time.now_for_mysql
+50.times do | index | %>
+feedback<%= index %>:
+  id: <%= index + 1 %> <%# MES- The "+1" should NOT be necessary here, but if I don't put it in, I get really weird "duplicate key" errors.  I don't think it's a type conversion thing, because "+ 0" and "- 1" don't help. %>
+  url: http://a.bogus.url/<%= index %>
+  user_id: 1
+  feedback_type: <%= index % 4 %>
+  body: Some stuff, number <%= index %>
+  stage: <%= index % 2 %>
+  owner: Unassigned
+  created_at: <%= now_str %>
+  updated_at: <%= now_str %>
+<%
+end %>

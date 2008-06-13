@@ -1,0 +1,30 @@
+<%
+@page_title = "Skobee - Planning can be fun" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        Keeping track of your social <br/>
+        life is supposed to be fun right?
+     </h2>
+  </div>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Sign Up Now", {:controller => 'users', :action => 'signup'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+</div>
+<div id="container" class="tour">
+   <div id="content">
+      <%=image_tag('/images/tour_dashboard.gif', :alt => 'Create Plan')%>
+      <h3>
+         <%= link_to("Is there more? Of course!<br /> Just sign up and let us show you.", {:controller => 'users', :action => 'signup'}) %>
+      </h3>
+   </div>
+</div>
+<div id="sidebar" class="sidebar_tour">
+   <ol>
+      <li><span>View all of your new invites, upcoming plans, and friends' plans all in one place.</span></li>
+      <li><span>Keep track of all the new changes, suggestions, and comments made about your plans.</span></li>
+      <li><span>Explore what everyone in Skobee has got going on.</span></li>
+   </ol>
+</div>

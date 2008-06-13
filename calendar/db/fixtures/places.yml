@@ -1,0 +1,1001 @@
+---
+marin_headlands:
+  city:
+  name: Marin Headlands
+  updated_at: 2005-12-16 01:06:24
+  normalized_name: marin headlands
+  zip:
+  public: 0
+  url:
+  id: 1
+  geocoded: 0
+  phone:
+  meta_info:
+  user_id: 6
+  lat:
+  address:
+  created_at: 2005-12-15 21:46:56
+  long:
+  state:
+  location:
+places_044:
+  city: San Francisco
+  name: Gourmet Bay Cafe
+  updated_at: 2005-12-16 01:06:24
+  normalized_name: gourmet bay cafe
+  zip: 94103-4820
+  public: "1"
+  id: "45"
+  geocoded: "1"
+  phone: "4152551245"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7684"
+  address: "101 Utah St # a"
+  created_at: 2005-12-15 21:46:56
+  long: "-122.407"
+  state: CA
+  location: "101 Utah St # A, San Francisco, CA, 94103"
+places_033:
+  city: San Francisco
+  name: "Rocco's Cafe"
+  updated_at: 2005-12-16 01:06:13
+  normalized_name: roccos cafe
+  zip: 94103-3931
+  public: "1"
+  id: "34"
+  geocoded: "1"
+  phone: "4155540522"
+  meta_info: restaurant
+  user_id:
+  lat: "37.776"
+  address: 1131 Folsom St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.409"
+  state: CA
+  location: "1131 Folsom St, San Francisco, CA, 94103"
+places_022:
+  city: San Francisco
+  name: Basil Thai Restaurant
+  updated_at: 2005-12-16 01:06:02
+  normalized_name: basil thai restaurant
+  zip: 94103-3930
+  public: "1"
+  id: "23"
+  geocoded: "1"
+  phone: "4155528999"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7755"
+  address: 1175 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.409"
+  state: CA
+  location: "1175 Folsom St, San Francisco, CA, 94103"
+places_011:
+  city: San Francisco
+  name: Sneaky Tiki
+  updated_at: 2005-12-16 01:05:51
+  normalized_name: sneaky tiki
+  zip: 94103-3721
+  public: "1"
+  id: "12"
+  geocoded: "1"
+  phone: "4157018454"
+  meta_info: restaurant
+  user_id:
+  url: http://www.sfstation.com/business.php?blId=8670
+  lat: "37.7712"
+  address: 1582 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.415"
+  state: CA
+  location: "1582 Folsom St, San Francisco, CA, 94103"
+places_045:
+  city: San Francisco
+  name: Zaoh Restaurant
+  updated_at: 2005-12-16 01:06:25
+  normalized_name: zaoh restaurant
+  zip: 94103-2543
+  public: "1"
+  id: "46"
+  geocoded: "1"
+  phone: "4154313930"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7733"
+  address: 1555 Mission St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.418"
+  state: CA
+  location: "1555 Mission St, San Francisco, CA, 94103"
+places_034:
+  city: San Francisco
+  name: "Rocco's Catering"
+  updated_at: 2005-12-16 01:06:14
+  normalized_name: roccos catering
+  zip: 94103-3931
+  public: "1"
+  id: "35"
+  geocoded: "1"
+  phone: "4155540522"
+  meta_info: restaurant
+  user_id:
+  lat: "37.776"
+  address: 1131 Folsom St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.409"
+  state: CA
+  location: "1131 Folsom, San Francisco, CA, 94103"
+places_023:
+  city: San Francisco
+  name: Don Quiques Restaurant
+  updated_at: 2005-12-16 01:06:03
+  normalized_name: don quiques restaurant
+  zip: 94103-2528
+  public: "1"
+  id: "24"
+  geocoded: "1"
+  phone: "4154310133"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7724"
+  address: 1550 Howard St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.417"
+  state: CA
+  location: "1550 Howard St, San Francisco, CA, 94103"
+places_012:
+  city: San Francisco
+  name: Greater Sf. Land & Improvement
+  updated_at: 2005-12-16 01:05:52
+  normalized_name: greater sf land  improvement
+  zip: 94103-3747
+  public: "1"
+  id: "13"
+  geocoded: "1"
+  phone: "4156266653"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7711"
+  address: 1586 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.415"
+  state: CA
+  location: "1586 Folsom St, San Francisco, CA, 94103"
+places_046:
+  city: San Francisco
+  name: Shanghai China Restaurant
+  updated_at: 2005-12-16 01:06:26
+  normalized_name: shanghai china restaurant
+  zip: 94103-2543
+  public: "1"
+  id: "47"
+  geocoded: "1"
+  phone: "4156218188"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7733"
+  address: 1559 Mission St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.418"
+  state: CA
+  location: "1559 Mission St, San Francisco, CA, 94103"
+places_035:
+  city: San Francisco
+  name: "Intl. Cafe, Img."
+  updated_at: 2005-12-16 01:06:15
+  normalized_name: intl cafe img
+  zip: 94103-4228
+  public: "1"
+  id: "36"
+  geocoded: "1"
+  phone: "4152529875"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7677"
+  address: 1830 Harrison St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.414"
+  state: CA
+  location: "1830 Harrison St, San Francisco, CA, 94103"
+places_024:
+  city: San Francisco
+  name: La Vita E Bella
+  updated_at: 2005-12-16 01:06:04
+  normalized_name: la vita e bella
+  zip: 94103-4831
+  public: "1"
+  id: "25"
+  geocoded: "1"
+  phone: "4158633500"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7701"
+  address: 1000 Brannan St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.407"
+  state: CA
+  location: "1000 Brannan St, San Francisco, CA, 94103"
+places_013:
+  city: San Francisco
+  name: "Manora's Thai Cuisine"
+  updated_at: 2005-12-16 01:05:53
+  normalized_name: manoras thai cuisine
+  zip: 94103-3723
+  public: "1"
+  id: "14"
+  geocoded: "1"
+  phone: "4158616224"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7709"
+  address: 1600 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.415"
+  state: CA
+  location: "1600 Folsom St, San Francisco, CA, 94103"
+places_002:
+  city: San Francisco
+  name: Schnitzelhaus
+  updated_at: 2005-12-16 01:05:42
+  normalized_name: schnitzelhaus
+  zip: 94103-3807
+  public: "1"
+  id: "3"
+  geocoded: "1"
+  phone: "4158644038"
+  meta_info: restaurant
+  user_id:
+  url: http://www.inetours.com/Pages/Dining_Archive/Schnitzelhaus.html
+  lat: "37.7738"
+  address: 294 9th St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.412"
+  state: CA
+  location: "294 9th St, San Francisco, CA, 94103"
+places_047:
+  city: San Francisco
+  name: New Home Menu Restaurant
+  updated_at: 2005-12-16 01:06:27
+  normalized_name: new home menu restaurant
+  zip: 94103-2543
+  public: "1"
+  id: "48"
+  geocoded: "1"
+  phone: "4158613173"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7732"
+  address: 1565 Mission St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.418"
+  state: CA
+  location: "1565 Mission St, San Francisco, CA, 94103"
+places_036:
+  city: San Francisco
+  name: Brain Wash Cafe
+  updated_at: 2005-12-16 01:06:16
+  normalized_name: brain wash cafe
+  zip: 94103-3928
+  public: "1"
+  id: "37"
+  geocoded: "1"
+  phone: "4152554866"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7763"
+  address: 1122 Folsom St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.409"
+  state: CA
+  location: "1122 Folsom St, San Francisco, CA, 94103"
+places_025:
+  city: San Francisco
+  name: Triptych Restaurant
+  updated_at: 2005-12-16 01:06:05
+  normalized_name: triptych restaurant
+  zip: 94103-3930
+  public: "1"
+  id: "26"
+  geocoded: "1"
+  phone: "4157030557"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7757"
+  address: 1155 Folsom St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.409"
+  state: CA
+  location: "1155 Folsom St, San Francisco, CA, 94103"
+places_014:
+  city: San Francisco
+  name: "Don Ramon's Mexican Restaurant"
+  updated_at: 2005-12-16 01:05:54
+  normalized_name: don ramons mexican restaurant
+  zip: 94103-3715
+  public: "1"
+  id: "15"
+  geocoded: "1"
+  phone: "4158642700"
+  meta_info: restaurant
+  user_id:
+  lat: "37.773"
+  address: 225 11th St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.415"
+  state: CA
+  location: "225 11th St, San Francisco, CA, 94103"
+places_003:
+  city: San Francisco
+  name: Garage Cafe
+  updated_at: 2005-12-16 01:05:43
+  normalized_name: garage cafe
+  zip: 94103-4314
+  public: "1"
+  id: "4"
+  geocoded: "1"
+  phone: "4158610888"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7715"
+  address: 320 11th St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.414"
+  state: CA
+  location: "320 11th St, San Francisco, CA, 94103"
+places_048:
+  city: San Francisco
+  name: Center Cafe
+  updated_at: 2005-12-16 01:06:28
+  normalized_name: center cafe
+  zip: 94103-2461
+  public: "1"
+  id: "49"
+  geocoded: "1"
+  phone: "4157018888"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7696"
+  address: 205 13th St
+  created_at: 2005-12-15 21:47:07
+  long: "-122.418"
+  state: CA
+  location: "205 13th St, San Francisco, CA, 94103"
+places_037:
+  city: San Francisco
+  name: "Julie's Supper Club"
+  updated_at: 2005-12-16 01:06:17
+  normalized_name: julies supper club
+  zip: 94103-3931
+  public: "1"
+  id: "38"
+  geocoded: "1"
+  phone: "4158610707"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7761"
+  address: 1123 Folsom St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.408"
+  state: CA
+  location: "1123 Folsom, San Francisco, CA, 94103"
+places_026:
+  city: San Francisco
+  name: Left Coast Catering
+  updated_at: 2005-12-16 01:06:06
+  normalized_name: left coast catering
+  zip: 94103-4938
+  public: "1"
+  id: "27"
+  geocoded: "1"
+  phone: "4159340600"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7701"
+  address: 999 Brannan St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.407"
+  state: CA
+  location: "999 Brannan St, San Francisco, CA, 94103"
+places_015:
+  city: San Francisco
+  name: Asia Sf.
+  updated_at: 2005-12-16 01:05:55
+  normalized_name: asia sf
+  zip: 94103-3806
+  public: "1"
+  id: "16"
+  geocoded: "1"
+  phone: "4152552742"
+  meta_info: restaurant
+  user_id:
+  lat: "37.775"
+  address: 201 9th St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.413"
+  state: CA
+  location: "201 9th, San Francisco, CA, 94101"
+places_004:
+  city: San Francisco
+  name: Loft 11
+  updated_at: 2005-12-16 01:05:44
+  normalized_name: loft 11
+  zip: 94103-4314
+  public: "1"
+  id: "5"
+  geocoded: "1"
+  phone: "4157018111"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7717"
+  address: 316 11th St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.414"
+  state: CA
+  location: "316 11th, San Francisco, CA, 94101"
+places_050:
+  city: San Francisco
+  name: "Pancho's Salsa Bar & Grill"
+  updated_at: 2005-12-16 01:22:44
+  normalized_name: panchos salsa bar  grill
+  zip: 94109-3614
+  public: "1"
+  id: "2"
+  geocoded: "1"
+  phone: "4154742280"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7919"
+  address: 1639 Polk St
+  created_at: 2005-12-15 21:52:16
+  long: "-122.421"
+  state: CA
+  location: "1639 Polk St, San Francisco, CA, 94109"
+places_049:
+  city: San Francisco
+  name: Center Cafe Catering
+  updated_at: 2005-12-16 01:06:29
+  normalized_name: center cafe catering
+  zip: 94103-2461
+  public: "1"
+  id: "50"
+  geocoded: "1"
+  phone: "4157018008"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7696"
+  address: 205 13th St
+  created_at: 2005-12-15 21:47:07
+  long: "-122.418"
+  state: CA
+  location: "205 13th St, San Francisco, CA, 94103"
+places_038:
+  city: San Francisco
+  name: Buzz 9
+  updated_at: 2005-12-16 01:06:18
+  normalized_name: buzz 9
+  zip: 94103-2715
+  public: "1"
+  id: "39"
+  geocoded: "1"
+  phone: "4152558783"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7771"
+  address: 139 8th St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.413"
+  state: CA
+  location: "139 8th, San Francisco, CA, 94101"
+places_027:
+  city: San Francisco
+  name: Tamal
+  updated_at: 2005-12-16 01:06:07
+  normalized_name: tamal
+  zip: 94103-2524
+  public: "1"
+  id: "28"
+  geocoded: "1"
+  phone: "4158642446"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7717"
+  address: 1599 Howard St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.417"
+  state: CA
+  location: "1599 Howard St, San Francisco, CA, 94103"
+places_016:
+  city: San Francisco
+  name: Burger King
+  updated_at: 2005-12-16 01:05:56
+  normalized_name: burger king
+  zip: 94103-2712
+  public: "1"
+  id: "17"
+  geocoded: "1"
+  phone: "4154871375"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7752"
+  address: 1298 Howard St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.413"
+  state: CA
+  location: "1298 Howard St, San Francisco, CA, 94103"
+places_005:
+  city: San Francisco
+  name: The Public LLC
+  updated_at: 2005-12-16 01:05:45
+  normalized_name: the public llc
+  zip: 94103-3734
+  public: "1"
+  id: "6"
+  geocoded: "1"
+  phone: "4155523065"
+  meta_info: restaurant
+  user_id:
+  lat: "37.772"
+  address: 1489 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.414"
+  state: CA
+  location: "1489 Folsom St, San Francisco, CA, 94103"
+places_040:
+  city: San Francisco
+  name: "Anna's Teriyaki"
+  updated_at: 2005-12-16 01:06:20
+  normalized_name: annas teriyaki
+  zip: 94103-1401
+  public: "1"
+  id: "41"
+  geocoded: "1"
+  phone: "4158643780"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7765"
+  address: 83 9th St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.415"
+  state: CA
+  location: "83 9th St, San Francisco, CA, 94103"
+places_039:
+  city: San Francisco
+  name: Gallardos Mex. Food
+  updated_at: 2005-12-16 01:06:19
+  normalized_name: gallardos mex food
+  zip: 94103-4223
+  public: "1"
+  id: "40"
+  geocoded: "1"
+  phone: "4154369387"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7683"
+  address: 1807 Folsom St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.415"
+  state: CA
+  location: "1807 Folsom St, San Francisco, CA, 94103"
+places_028:
+  city: San Francisco
+  name: Caffe Soma
+  updated_at: 2005-12-16 01:06:08
+  normalized_name: caffe soma
+  zip: 94103-2526
+  public: "1"
+  id: "29"
+  geocoded: "1"
+  phone: "4158615012"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7715"
+  address: 1601 Howard St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.417"
+  state: CA
+  location: "1601 Howard St, San Francisco, CA, 94103"
+places_017:
+  city: San Francisco
+  name: Restaurants On The Run
+  updated_at: 2005-12-16 01:05:57
+  normalized_name: restaurants on the run
+  zip: 94103-4401
+  public: "1"
+  id: "18"
+  geocoded: "1"
+  phone: "4158642986"
+  meta_info: restaurant
+  user_id:
+  lat: "37.775"
+  address: 301 8th St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.41"
+  state: CA
+  location: "301 8th, San Francisco, CA, 94101"
+places_006:
+  city: San Francisco
+  name: Appam
+  updated_at: 2005-12-16 01:05:46
+  normalized_name: appam
+  zip: 94103-3816
+  public: "1"
+  id: "7"
+  geocoded: "1"
+  phone: "4156262798"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7742"
+  address: 1261 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.411"
+  state: CA
+  location: "1261 Folsom St, San Francisco, CA, 94103"
+places_041:
+  city: San Francisco
+  name: Event Beverage Inc.
+  updated_at: 2005-12-16 01:06:21
+  normalized_name: event beverage inc
+  zip: 94103-4928
+  public: "1"
+  id: "42"
+  geocoded: "1"
+  phone: "4155930464"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7717"
+  address: 888 Brannan St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.405"
+  state: CA
+  location: "888 Brannan St, San Francisco, CA, 94103"
+places_030:
+  city: San Francisco
+  name: Lost Ladle Cafe
+  updated_at: 2005-12-16 01:06:10
+  normalized_name: lost ladle cafe
+  zip: 94103-4832
+  public: "1"
+  id: "31"
+  geocoded: "1"
+  phone: "4156212087"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7675"
+  address: 1550 Bryant St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.411"
+  state: CA
+  location: "1550 Bryant St, San Francisco, CA, 94103"
+places_029:
+  city: San Francisco
+  name: Soma Caffe
+  updated_at: 2005-12-16 01:06:09
+  normalized_name: soma caffe
+  zip: 94103-2526
+  public: "1"
+  id: "30"
+  geocoded: "1"
+  phone: "4158615012"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7715"
+  address: 1601 Howard St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.417"
+  state: CA
+  location: "1601 Howard St, San Francisco, CA, 94103"
+places_018:
+  city: San Francisco
+  name: "Henry's Hunan Restaurant"
+  updated_at: 2005-12-16 01:05:58
+  normalized_name: henrys hunan restaurant
+  zip: 94103-4413
+  public: "1"
+  id: "19"
+  geocoded: "1"
+  phone: "4158615808"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7724"
+  address: 1016 Bryant St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.407"
+  state: CA
+  location: "1016 Bryant St, San Francisco, CA, 94103"
+places_007:
+  city: San Francisco
+  name: India Garden Restaurant
+  updated_at: 2005-12-16 01:05:47
+  normalized_name: india garden restaurant
+  zip: 94103-3816
+  public: "1"
+  id: "8"
+  geocoded: "1"
+  phone: "4156262929"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7742"
+  address: 1261 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.411"
+  state: CA
+  location: "1261 Folsom St, San Francisco, CA, 94103"
+places_042:
+  city: San Francisco
+  name: Coffee Mine
+  updated_at: 2005-12-16 01:06:22
+  normalized_name: coffee mine
+  zip: 94103-1401
+  public: "1"
+  id: "43"
+  geocoded: "1"
+  phone: "4152529795"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7766"
+  address: 79 9th St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.415"
+  state: CA
+  location: "79 9th St, San Francisco, CA, 94103"
+places_031:
+  city: San Francisco
+  name: King Diner
+  updated_at: 2005-12-16 01:06:11
+  normalized_name: king diner
+  zip: 94103-2609
+  public: "1"
+  id: "32"
+  geocoded: "1"
+  phone: "4155522707"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7755"
+  address: 1390 Mission St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.416"
+  state: CA
+  location: "1390 Mission St, San Francisco, CA, 94103"
+places_020:
+  city: San Francisco
+  name: "Fanny's Restaurant"
+  updated_at: 2005-12-16 01:06:00
+  normalized_name: fannys restaurant
+  zip: 94103-4413
+  public: "1"
+  id: "21"
+  geocoded: "1"
+  phone: "4156261543"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7724"
+  address: 1010 Bryant St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.407"
+  state: CA
+  location: "1010 Bryant St, San Francisco, CA, 94103"
+places_019:
+  city: San Francisco
+  name: Hunan Restaurant
+  updated_at: 2005-12-16 01:05:59
+  normalized_name: hunan restaurant
+  zip: 94103-4413
+  public: "1"
+  id: "20"
+  geocoded: "1"
+  phone: "4158615808"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7724"
+  address: 1016 Bryant St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.407"
+  state: CA
+  location: "1016 Bryant St, San Francisco, CA, 94103"
+places_008:
+  city: San Francisco
+  name: Sushi Groove South
+  updated_at: 2005-12-16 01:05:48
+  normalized_name: sushi groove south
+  zip: 94103-3721
+  public: "1"
+  id: "9"
+  geocoded: "1"
+  phone: "4155031950"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7718"
+  address: 1516 Folsom St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.414"
+  state: CA
+  location: "1516 Folsom St, San Francisco, CA, 94103"
+places_043:
+  city: San Francisco
+  name: "Ted's Sports Bar & Grill"
+  updated_at: 2005-12-16 01:06:23
+  normalized_name: teds sports bar  grill
+  zip: 94199-0001
+  public: "1"
+  id: "44"
+  geocoded: "1"
+  phone: "4156266299"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7755"
+  address: 398 7th St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.406"
+  state: CA
+  location: "398 7th, San Francisco, CA, 94199"
+places_032:
+  city: San Francisco
+  name: Nihon
+  updated_at: 2005-12-16 01:06:12
+  normalized_name: nihon
+  zip: 94103-3711
+  public: "1"
+  id: "33"
+  geocoded: "1"
+  phone: "4155524400"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7688"
+  address: 1779 Folsom St
+  created_at: 2005-12-15 21:46:56
+  long: "-122.415"
+  state: CA
+  location: "1779 Folsom St, San Francisco, CA, 94103"
+places_021:
+  city: San Francisco
+  name: Just Thai
+  updated_at: 2005-12-16 01:06:01
+  normalized_name: just thai
+  zip: 94103-2525
+  public: "1"
+  id: "22"
+  geocoded: "1"
+  phone: "4154313113"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7728"
+  address: 1532 Howard St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.416"
+  state: CA
+  location: "1532 Howard St, San Francisco, CA, 94103"
+places_010:
+  city: San Francisco
+  name: AK Subs.
+  updated_at: 2005-12-16 01:05:50
+  normalized_name: ak subs
+  zip: "94101"
+  public: "1"
+  id: "11"
+  geocoded: "1"
+  phone: "4152419600"
+  meta_info: restaurant
+  user_id:
+  lat: "37.775"
+  address:
+  created_at: 2005-12-15 21:46:46
+  long: "-122.418"
+  state: CA
+  location: "397 1-2 8th, San Francisco, CA, 94101"
+places_009:
+  city: San Francisco
+  name: Korso
+  updated_at: 2005-12-16 01:05:49
+  normalized_name: korso
+  zip: 94103-4305
+  public: "1"
+  id: "10"
+  geocoded: "1"
+  phone: "4156214242"
+  meta_info: restaurant
+  user_id:
+  lat: "37.7712"
+  address: 1114 Bryant St
+  created_at: 2005-12-15 21:46:46
+  long: "-122.409"
+  state: CA
+  location: "1114 Bryant St, San Francisco, CA, 94103"
+
+nyc_1:
+  id: 51
+  city: New York
+  state: NY
+  zip: 10019
+  address: 1701 Broadway
+  name: Bar 54
+  normalized_name: bar 54
+  public: 1
+  geocoded: 1
+  phone: 2122470720
+  lat: "40.7638000000000064000000000000000"
+  long: "-73.9828000000000000000000000000000"
+  location: 1701 Broadway, New York, NY, 10019
+
+nyc_2:
+  id: 52
+  city: New York
+  state: NY
+  zip: 10003
+  address: 349 E 14th St
+  name: O'Hanolon's Bar
+  normalized_name: ohanolons bar
+  public: 1
+  geocoded: 1
+  phone: 2124735542
+  lat: "40.7320000000000000000000000000000"
+  long: "-73.9837000000000000000000000000000"
+  location: 349 E 14th St, New York, NY, 10003
+
+nyc_3:
+  id: 53
+  city: New York
+  state: NY
+  zip: 10022
+  address: 309 E 60th St
+  name: Bridge Bar
+  normalized_name: bridge bar
+  public: 1
+  geocoded: 1
+  phone: 2122239104
+  lat: "40.7613000000000000000000000000000"
+  long: "-73.9635000000000000000000000000000"
+  location: 309 E 60th St, New York, NY, 10022
+
+nyc_4:
+  id: 54
+  city: New York
+  state: NY
+  zip: 10021
+  address: 1487 1st Ave
+  url: http://vudulounge.com/
+  name: Vudu Lounge
+  normalized_name: vudu lounge
+  public: 1
+  geocoded: 1
+  phone: 2129979510
+  lat: "40.7714000000000000000000000000000"
+  long: "-73.9537000000000000000000000000000"
+  location: 1487 1st Ave, New York, NY, 10021
+
+requested_public_place_1:
+  id: 55
+  city: Memphis
+  state: TN
+  zip: 38139
+  address: 6160 Park Ave
+  url: http://scrubadacus.com/
+  name: Requested Public Place 1
+  normalized_name: requested public place 1
+  user_id: 2
+  public: 0
+  public_status: 1
+  geocoded: 1
+  phone: 9015265261
+  lat: "40.7714000000000000000000000000000"
+  long: "-73.9537000000000000000000000000000"
+  location: 6160 Park Ave, Memphis, TN, 38139
+
+requested_public_place_2:
+  id: 56
+  city: Memphis
+  state: TN
+  zip: 38139
+  address: 6161 Poplar Ave
+  url: http://google.com/
+  name: Requested Public Place 2
+  normalized_name: requested public place 1
+  user_id: 2
+  public: 0
+  public_status: 1
+  geocoded: 1
+  phone: 9015265261
+  lat: "40.7714000000000000000000000000000"
+  long: "-73.9537000000000000000000000000000"
+  location: 6161 Poplar Ave, Germantown, TN, 38139

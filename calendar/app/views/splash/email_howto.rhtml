@@ -1,0 +1,88 @@
+<%
+@page_title = "Skobee - It works via email" -%>
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        Include plan tags in your email to  <br/>
+        create and update plans in Skobee.
+     </h2>
+  </div>
+<%
+#MGS- don't display the signup button if you're logged in
+if !logged_in? -%>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Sign Up Now", {:controller => 'users', :action => 'signup'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+<%
+end -%>
+</div>
+<div id="container" class="tour">
+  <table cellpadding="0" cellspacing="0" class="email_howto" summary="new plan form">
+      <tr>
+         <th>
+            What:
+         </th>
+         <td>
+            <h4 class="help">This tag sets the name of the event. If you don't use it, we'll just use the email subject.</h4>
+         </td>
+      </tr>
+      <tr>
+         <th>
+            When:
+         </th>
+         <td>
+            <h4 class="help">Include "when: &lt;time&gt; &lt;date&gt;" or "when: &lt;date&gt; &lt;time&gt;" in your email.</h4>
+            <table cellpadding="0" cellspacing="0" width="100%" class="normal">
+               <tr>
+                  <td nowrap="nowrap">
+                     &lt;date&gt; phrases:
+                  </td>
+                  <td>  today, tomorrow, this weekend, next weekend, this week, next week,<br/>
+                        some day in the future, monday - sunday, mon - sun, mm/dd/yyyy,<br />
+                        mm/dd/yy, mm/dd, mm-dd-yyyy, mm-dd-yy, mm-dd, plus many many more...
+                  </td>
+               </tr>
+               <tr>
+                  <td nowrap="nowrap">
+                     &lt;time&gt; phrases:
+                  </td>
+                  <td>
+                     all day, evening, dinner, afternoon, lunch, morning, breakfast, eve, night,<br />
+                     hh:mm am, h:mm am, hh am, h am, plus many many more...
+                  </td>
+               </tr>
+            </table>
+         </td>
+      </tr>
+      <tr>
+         <th>
+            Where:
+         </th>
+         <td>
+            <h4 class="help">Include "where: &lt;name of place you want to attend&gt;" in your email and we'll try to find it.</h4>
+         </td>
+      </tr>
+      <tr>
+         <th>
+            Address:
+         </th>
+         <td>
+            <h4 class="help">Include "address: &lt;address, city, zip&gt;" if you don't think we'll find the place you're looking for.</h4>
+         </td>
+      </tr>
+      <tr>
+         <th>
+            RSVP:
+         </th>
+         <td>
+            <h4 class="help">Include "RSVP: I'll Be There", "RSVP: I'm Interested" or "RSVP: I'm Out" in your response to set your RSVP status for the plan.</h4>
+         </td>
+      </tr>
+   </table>
+   <h3 class="next">
+      Give it a try. Just sign up and send an email to:<br/>
+      <a href="mailto:plans@skobee.com"><u>plans@skobee.com</u></a>
+   </h3>
+</div>

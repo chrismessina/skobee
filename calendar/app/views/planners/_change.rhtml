@@ -1,0 +1,84 @@
+<%
+commenter = change.owner
+change_type = change.change_type
+plan_name = change.plan.name
+login_name = commenter.login
+
+#MGS- need to truncate the combo of login + plan name so we combine them here and truncate
+first_row_text = login_name
+first_row_text << " - #{plan_name}" unless plan_name.blank?
+first_row_text = truncate(first_row_text,38)
+
+if PlanChange::CHANGE_TYPE_COMMENT == change_type -%>
+
+<div id="change<%=change_counter%>" class="container" onmouseover="Element.addClassName(this,'hover');" onmouseout="Element.removeClassName(this,'hover');" onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => change.plan.id, :cal_id => current_user.planner.id )%>'">
+   <div class="comment comment_change">
+      <h4 class="title"><%= h(first_row_text) -%></h4>
+      <p title="<%=h(change.comment)%>"><%=truncate(h(change.comment),45)%>&nbsp;</p>
+   </div>
+</div>
+
+<%
+elsif change.is_place_related? -%>
+<div id="change<%=change_counter%>" class="container"  onmouseover="Element.addClassName(this,'hover');" onmouseout="Element.removeClassName(this,'hover');"  onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => change.plan.id, :cal_id => current_user.planner.id )%>'">
+   <div class="comment place_change">
+      <h4 class="title"><%= h(first_row_text) -%></h4>
+   <%
+   #MGS- if there is a comment on this change, then just display the comment
+   if !change.comment.blank? -%>
+      <p title="<%=h(change.comment)%>"><%=truncate(h(change.comment),45)%></p>
+   <%
+   #MGS- if there is no comment on this change and it is a place change....display the change
+   elsif PlanChange::CHANGE_TYPE_PLACE == change_type
+      final_place = change.final_place -%>
+      <h4 class="change">suggested: <%= h(truncate(final_place.nil? ? '[place not found]' : final_place.name,32))%></h4>
+   <%
+   #MGS- fix a spacing issue
+   else -%>
+      <p>&nbsp;</p>
+   <%
+   end -%>
+   </div>
+</div>
+
+<%
+elsif change.is_time_related? -%>
+
+<div id="change<%=change_counter%>" class="container"  onmouseover="Element.addClassName(this,'hover');" onmouseout="Element.removeClassName(this,'hover');"  onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => change.plan.id, :cal_id => current_user.planner.id )%>'">
+   <div class="comment time_change">
+      <h4 class="title"><%= h(first_row_text) -%></h4>
+   <%
+   #MGS- if there is a comment on this change, then just display the comment
+   if !change.comment.blank? -%>
+         <p title="<%=h(change.comment)%>"><%=truncate(h(change.comment),45)%></p>
+   <%
+   #MGS- if there is no comment on this change and it is a time change....display the change
+   elsif PlanChange::CHANGE_TYPE_TIME == change_type
+      final_start, final_timeperiod, final_fuzzy_start, final_duration = change.final_time -%>
+      <h4 class="change">suggested: <%=h(truncate(Plan::english_for_specified_datetime(current_timezone, final_start, final_timeperiod, final_fuzzy_start, final_duration),32))%></h4>
+   <%
+   #MGS- fix a spacing issue
+   else -%>
+      <p>&nbsp;</p>
+   <%
+   end -%>
+   </div>
+</div>
+
+<%
+elsif PlanChange::CHANGE_TYPE_RSVP == change_type
+   status = change.final_rsvp_status_name
+   #MGS- if the status name is blank, its a status we don't want to show, skip to the next change
+   if !status.blank?
+      message = "Responded \"#{status}\" #{h(time_ago_in_words(change.created_at))} ago" -%>
+
+<div id="change<%=change_counter%>" class="container" onmouseover="Element.addClassName(this,'hover');" onmouseout="Element.removeClassName(this,'hover');" onclick="window.location.href='<%=url_for(:controller => 'plans', :action => 'show', :id => change.plan.id, :cal_id => current_user.planner.id )%>'">
+   <div class="comment confirm_change">
+      <h4 class="title"><%= h(first_row_text) -%></h4>
+      <p title="<%=h(message)%>"><%=truncate(h(message),50)%>&nbsp;</p>
+   </div>
+</div>
+
+<%
+   end
+end -%>

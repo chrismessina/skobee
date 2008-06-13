@@ -1,0 +1,3 @@
+rails
+salted_login_generator
+localization_generator (this requires iconv, see http://wiki.rubyonrails.com/rails/show/iconv)

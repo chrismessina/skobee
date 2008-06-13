@@ -1,0 +1,75 @@
+<%
+commenter = comment.owner
+if commenter == current_user
+  comment_owner = true
+else
+  comment_owner = false
+end
+
+#MGS- build args for ajax depending on if on plan or place
+comment_id = comment.id
+-%>
+
+<div class="comment comment_change float-fix">
+   <div class="picture">
+      <%= build_user_thumbnail_link(commenter) %>
+   </div>
+   <div id="comment<%=comment.id%>" class="body">
+      <h3><%= build_user_profile_link(commenter) %> says...</h3>
+      <p id="comment_body<%=comment_id%>"><%= format_rich_text(comment.body)%></p>
+      <h4 id="comment_footer<%=comment_id%>" class="footer">Created <%=h(time_ago_in_words(comment.created_at))%> ago
+<%
+#MGS- only the owner can edit
+if comment_owner -%>
+              | <%= link_to_function "Edit", "editComment('#{comment.id}')", :id => "edit-comment-#{comment.id}"%>
+<%
+end
+
+#MGS- but potentially others can delete; call the controller callback
+if controller.delete_comment?(comment) -%>
+
+              | <%= link_to_remote( "Delete",
+                                     :update => 'change-list',
+                                     :confirm => "Are you sure that you want to delete this comment?",
+                                     :url => { :controller => controller.controller_name, :action => :delete_comment_ajax, :comment_id => comment.id, controller.parent_of_comment_form_item.to_sym => controller.parent_of_comment_id  } ) %>
+<%
+else -%>
+              | <%= link_to_function "Inappropriate", "commentFeedback('#{comment.id}','#{}','#{controller.controller_name}', '#{request.request_uri}')", :id => "inappropriate-comment-#{comment.id}"%>
+<%
+end -%>
+      </h4>
+   </div>
+</div>
+<%
+if comment_owner -%>
+<div class="change-form mini_editor float-left float-fix" id="commentedit<%=comment.id%>" style="display: none;">
+   <form action="" name="comment-edit-form<%=comment.id%>" method="post" onsubmit="">
+      <input type="hidden" name="comment_id" value="<%=comment.id%>" />
+      <input type="hidden" name="<%= controller.parent_of_comment_form_item %>" value="<%= controller.parent_of_comment_id %>" />
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="new plan form">
+         <tr>
+            <td class="property_wide">
+               Comment:
+            </td>
+            <td>
+               <textarea name="comment_edit_tb<%=comment.id%>" id="comment_edit_tb<%=comment.id%>" class="big_form" rows="3" cols="40" onkeyup="expandTextArea(this)"><%=h(comment.body)%></textarea><br/>
+               <div class="comment_html_help"><%= comment_help_link %></div>
+            </td>
+         </tr>
+      </table>
+      <div class="buttons">
+         <div class="secondary">
+            <input type="image" onclick="cancelEditComment('<%=comment.id%>');return false;" name="cancel" src="/images/button_cancel.gif" alt="cancel"/>
+         </div>
+         <div class="primary">
+            <input type="image" name="save" src="/images/button_save.gif" alt="save" onclick="new Ajax.Updater('change-list', '/<%= controller.controller_name %>/edit_comment_ajax',
+                                                                           {method: 'post', asynchronous:true, evalScripts:true,
+                                                                           parameters:Form.serialize(document.forms['comment-edit-form<%= comment.id.to_s %>']),
+                                                                           onFailure:handleFail,
+                                                                           onComplete: function(request){commentCallback(request);}});return false;"/>
+         </div>
+      </div>
+   </form>
+</div>
+<%
+end -%>

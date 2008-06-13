@@ -1,0 +1,90 @@
+<%
+@page_title = "Skobee - Privacy" -%>
+
+<div id="banner">
+   <h2>
+      Privacy Settings
+   </h2>
+</div>
+
+<div id="container" class="no_sidebar profile">
+   <div id="content" class="settings">
+      <%= render(:partial=>"/shared/flash", :locals => { :display_errors_for => :user })%>
+      <%= form_tag :action => @controller.action_name %>
+      <h2 class="settings_header settings_header_alt">Who should see info about you or your plans?</h2>
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value" summary="find places">
+         <tr>
+            <th><label>My Plans:</label></th>
+            <td>
+               <%= select_field('my_plans_privacy', 'value', @my_plans_privacy_options, {:class => 'big_form'})%>
+            </td>
+         </tr>
+         <tr>
+            <th><label>My Real Name:</label></th>
+            <td>
+               <%= select_field_user_security_att @user, UserAttribute::ATT_REAL_NAME_SECURITY_GROUP, @real_name_privacy_options, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th><label>My Email:</label></th>
+            <td>
+               <%= select_field_user_security_att @user, UserAttribute::ATT_EMAIL_SECURITY_GROUP, @any_friends_default_options, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th><label>My Age:</label></th>
+            <td>
+               <%= select_field_user_security_att @user, UserAttribute::ATT_BIRTHDAY_AGE_SECURITY_GROUP, @all_skobee_default_options, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th nowrap="nowrap"><label>My Relationship Status:</label></th>
+            <td>
+               <%= select_field_user_security_att @user, UserAttribute::ATT_RELATIONSHIP_STATUS_SECURITY_GROUP, @all_skobee_default_options, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th><label>My Description:</label></th>
+            <td>
+               <%= select_field_user_security_att @user, UserAttribute::ATT_DESCRIPTION_SECURITY_GROUP, @all_skobee_default_options, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <th><label>My Gender:</label></th>
+            <td>
+               <%= select_field_user_security_att @user, UserAttribute::ATT_GENDER_SECURITY_GROUP, @all_skobee_default_options, {:class => 'big_form'} %>
+            </td>
+         </tr>
+         <tr>
+            <td colspan="2">
+               <div class="buttons">
+                  <div class="primary">
+                     <a href="#" onclick="restorePrivacyDefaults(); return false;"><img src="/images/restoredefaults_blue.gif" alt="Restore" /></a>
+                  </div>
+                  <div class="secondary">
+                     <%= link_to(image_tag('/images/button_cancel.gif', :alt => 'Cancel'), {:controller => 'users', :action => 'settings'}, { :class => 'cancel'} )%>
+                  </div>
+                  <div class="primary">
+                     <input type="image" onclick="document.forms[0].submit(); return false;" name="save" src="/images/button_save.gif" alt="Save"/>
+                  </div>
+               </div>
+            </td>
+         </tr>
+      </table>
+      <%= end_form_tag %>
+   </div>
+</div>
+
+<script type="text/javascript">
+   function restorePrivacyDefaults() {
+      $('my_plans_privacy_value').value = <%= UserAttribute::DEFAULT_PLANNER_VISIBILITY_TYPE %>;
+      $('security_atts_<%= UserAttribute::ATT_REAL_NAME_SECURITY_GROUP %>').value = <%= UserAttribute::DEFAULT_REAL_NAME_SECURITY %>;
+      $('security_atts_<%= UserAttribute::ATT_EMAIL_SECURITY_GROUP %>').value = <%= UserAttribute::DEFAULT_EMAIL_SECURITY %>;
+      $('security_atts_<%= UserAttribute::ATT_BIRTHDAY_AGE_SECURITY_GROUP %>').value = <%= UserAttribute::DEFAULT_BIRTHDAY_AGE_SECURITY %>;
+      $('security_atts_<%= UserAttribute::ATT_RELATIONSHIP_STATUS_SECURITY_GROUP %>').value = <%= UserAttribute::DEFAULT_RELATIONSHIP_STATUS_SECURITY %>;
+      $('security_atts_<%= UserAttribute::ATT_DESCRIPTION_SECURITY_GROUP %>').value = <%= UserAttribute::DEFAULT_DESCRIPTION_SECURITY %>;
+      $('security_atts_<%= UserAttribute::ATT_GENDER_SECURITY_GROUP %>').value = <%= UserAttribute::DEFAULT_GENDER_SECURITY %>;
+   }
+</script>
+
+

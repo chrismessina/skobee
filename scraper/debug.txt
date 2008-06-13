@@ -1,0 +1,53 @@
+# Logfile created on Thu Dec 01 14:50:56 Pacific Standard Time 2005 by logger.rb/1.5.2.4
+D, [01-Dec-2005 14:50:56#3924] DEBUG -- : getting object - how is id what is user_password types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:50:56#3924] DEBUG -- : getting object - how is id what is login types = buttonsubmitimagereset value = 
+D, [01-Dec-2005 14:50:57#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:50:58#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:50:59#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:50:59#3924] DEBUG -- : getting object - how is id what is event_who types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:50:59#3924] DEBUG -- : getting object - how is id what is event_who types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:50:59#3924] DEBUG -- : getting object - how is id what is event_who types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:50:59#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:03#3924] DEBUG -- : getting object - how is id what is event_who types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:03#3924] DEBUG -- : getting object - how is id what is event_who types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:03#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:06#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:06#3924] DEBUG -- : getting object - how is id what is user_login types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:06#3924] DEBUG -- : getting object - how is id what is user_password types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:06#3924] DEBUG -- : getting object - how is id what is login types = buttonsubmitimagereset value = 
+D, [01-Dec-2005 14:51:07#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:08#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:08#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : getting object - how is id what is login types = buttonsubmitimagereset value = 
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : getting object - how is id what is user_login types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : getting object - how is id what is user_password types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : getting object - how is id what is user_remember_me types = checkbox value = 
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : getting object - how is id what is user_login types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : getting object - how is id what is user_password types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:09#3924] DEBUG -- : getting object - how is id what is login types = buttonsubmitimagereset value = 
+D, [01-Dec-2005 14:51:10#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:11#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:13#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:13#3924] DEBUG -- : getting object - how is id what is contacts_list types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:13#3924] DEBUG -- : getting object - how is id what is contacts_list types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:13#3924] DEBUG -- : getting object - how is id what is contacts_list types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:13#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:17#3924] DEBUG -- : getting object - how is id what is contacts_list types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:17#3924] DEBUG -- : getting object - how is id what is contacts_list types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:17#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:19#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:19#3924] DEBUG -- : getting object - how is id what is user_login types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:20#3924] DEBUG -- : getting object - how is id what is user_password types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:20#3924] DEBUG -- : getting object - how is id what is login types = buttonsubmitimagereset value = 
+D, [01-Dec-2005 14:51:21#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:21#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:23#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:23#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:24#3924] DEBUG -- : getting object - how is id what is event_name types = buttonsubmitimagereset value = 
+D, [01-Dec-2005 14:51:24#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:26#3924] DEBUG -- : wait: readystate=4
+D, [01-Dec-2005 14:51:27#3924] DEBUG -- : getting object - how is id what is event_name types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:27#3924] DEBUG -- : getting object - how is id what is event_name types = textpasswordtextarea value = 
+D, [01-Dec-2005 14:51:27#3924] DEBUG -- : wait: readystate=4

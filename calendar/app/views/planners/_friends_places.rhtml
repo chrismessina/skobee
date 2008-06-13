@@ -1,0 +1,11 @@
+<%
+recent_places = Place.find_recent_friend_places(current_user)
+if !recent_places.empty? -%>
+<div class="section grey">
+   <h3>Friends' Places</h3>
+   <dl class="common">
+   <%= render :partial => '/shared/place', :collection => recent_places %>
+   </dl>
+</div>
+<%
+end -%>

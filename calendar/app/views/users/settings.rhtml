@@ -1,0 +1,55 @@
+<%
+@page_title = "Skobee - Account Settings" -%>
+<div id="banner">
+  <h2 id="user_heading">
+     Account Settings
+  </h2>
+</div>
+
+<div id="container" class="no_sidebar settings_container">
+
+      <%=render(:partial=>"/shared/flash")%>
+      <table cellpadding="0" cellspacing="0" class="settings" summary="settings">
+         <tr>
+            <td class="top">
+               <h2><%= link_to "Email Addresses", :action => "edit_email" %></h2>
+               <h3>Add email addresses to your account or choose a new primary email address where you want to receive notifications.</h3>
+            </td>
+            <td class="top">
+               <h2><%= link_to "Notifications from Skobee", :action => "edit_notifications" %></h2>
+               <h3>Receive notifications via email when people invite you to events or change plans. You may also change your default reminder settings.</h3>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <h2><%= link_to "Login ID", :action => "edit_login" %></h2>
+               <h3>Update your Login ID throughout Skobee, including on all of your plans.</h3>
+            </td>
+            <td>
+               <h2><%= link_to "Privacy", :action => "edit_privacy" %></h2>
+               <h3>Set who can see your confirmed plans control how much of your profile information is visible to other users.</h3>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <h2><%= link_to "Password", :action => "edit_password" %></h2>
+               <h3>Change and update your current password.</h3>
+            </td>
+            <td>
+               <h2><%= link_to "Your Pictures", :controller => 'pictures', :action => "add_picture" %></h2>
+               <h3>Upload pictures and share your smiling face with the world. Not the whole world, just the Skobee world.</h3>
+            </td>
+         </tr>
+         <tr>
+            <td>
+               <h2><%= link_to "Your Profile", :action => "edit_profile" %></h2>
+               <h3>Change your locale or add information to describe yourself to other Skobee members.</h3>
+            </td>
+            <td>
+               <h2><%= link_to "Syndication", :controller => 'feeds' %></h2>
+               <h3>Export your plans, your friends' plans, or other activity throughout Skobee to your favorite RSS reader or ICal enabled calendar. </h3>
+            </td>
+         </tr>
+      </table>
+
+</div>

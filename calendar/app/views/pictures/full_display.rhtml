@@ -1,0 +1,36 @@
+<%
+@page_title = "Skobee - #{@user.login}'s Photos" -%>
+<div id="banner">
+   <h2><%= h(Inflector.possessiveize(@user.login)) %> Photos</h2>
+   <div class="button">
+      <h3 class="action">
+         <%= link_to("Back to Profile", {:controller => 'planners', :action => 'show', :id => @user.planner }, { :class => "make-plans" } ) -%>
+      </h3>
+   </div>
+</div>
+<div id="container" class="picture_container">
+   <div id="content" class="hovered_sections search_results" style="text-align: center;">
+      <table>
+         <tr valign="middle" align="center"><%= build_thumbnail_url(@active_picture) %></tr>
+      </table>
+   </div>
+</div>
+
+<div id="sidebar">
+   <ul class="full_display_picture_list">
+      <%
+      @user.thumbnails.each{ |thumbnail| %>
+         <li>
+           <%
+            if thumbnail.original.id == @active_picture.id -%>
+               <%= link_to build_thumbnail_url(thumbnail, {:class => 'active_pic'}), {:action => 'full_display', :user_id => @user.id, :active_pic_id => thumbnail.original.id} %>
+          <%
+            else -%>
+               <%= link_to build_thumbnail_url(thumbnail), {:action => 'full_display', :user_id => @user.id, :active_pic_id => thumbnail.original.id} %>
+            <%
+            end -%>
+         </li>
+      <%
+      } %>
+   </ul>
+</div>

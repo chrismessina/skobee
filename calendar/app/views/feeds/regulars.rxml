@@ -1,0 +1,38 @@
+xml.instruct!
+#MGS- add a reference to the xsl stylesheet to display the feed more cleanly to a browser
+xml.instruct! "xml-stylesheet", :type => "text/xsl", :href => "/rss.xsl", :media => "screen"
+#MGS- only supporting RSS 2.0 for now
+xml.rss "version" => "2.0" do
+  xml.channel do
+
+    xml.title         @feed_title
+    xml.description   @feed_description
+  	params_for_url = params.dup
+    #MGS- so this rxml template can be used by multiple actions, build the url dynamically here
+    params_for_url[:only_path] = false
+    #MES- Set the ID to the current login, so all URLs we present are based on login
+  	params_for_url[:id] = @current_user.login
+    xml.link          url_for( params_for_url )
+    xml.ttl           60
+
+
+    @regulars.each do |regular|
+      xml.item do
+      	xml.link url_for(:controller => 'user', :action => regular.login, :only_path => false)
+      	if regular.ok_to_show_att?(UserAttribute::ATT_REAL_NAME_SECURITY_GROUP, nil)
+      		xml.title regular.real_name
+      	else
+      		xml.title regular.login
+      	end
+
+        #MGS- set the guid to the unique uri
+        xml.guid    regular.guid, :isPermaLink => false
+
+        #MGS- set the published time of the plan; this can just be the original created date of the plan
+        # needs to fit rfc2822 spec
+        # MGS- TODO maybe we want to do something fancy later?
+        xml.pubDate regular.created_at.rfc2822
+      end
+    end
+  end
+end

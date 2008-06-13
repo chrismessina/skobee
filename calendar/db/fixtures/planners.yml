@@ -1,0 +1,204 @@
+--- 
+planners_021: 
+  name: default
+  updated_at: 
+  id: "21"
+  visibility_type: "0"
+  user_id: "21"
+  created_at: 
+planners_020: 
+  name: default
+  updated_at: 
+  id: "20"
+  visibility_type: "0"
+  user_id: "20"
+  created_at: 
+planners_019: 
+  name: default
+  updated_at: 
+  id: "19"
+  visibility_type: "0"
+  user_id: "19"
+  created_at: 
+planners_018: 
+  name: default
+  updated_at: 
+  id: "18"
+  visibility_type: "0"
+  user_id: "18"
+  created_at: 
+planners_017: 
+  name: default
+  updated_at: 
+  id: "17"
+  visibility_type: "0"
+  user_id: "17"
+  created_at: 
+planners_016: 
+  name: default
+  updated_at: 
+  id: "16"
+  visibility_type: "0"
+  user_id: "16"
+  created_at: 
+planners_015: 
+  name: default
+  updated_at: 
+  id: "15"
+  visibility_type: "0"
+  user_id: "15"
+  created_at: 
+planners_004: 
+  name: default
+  updated_at: 
+  id: "4"
+  visibility_type: "0"
+  user_id: "4"
+  created_at: 
+planners_005: 
+  name: default
+  updated_at: 
+  id: "5"
+  visibility_type: "0"
+  user_id: "5"
+  created_at: 
+planners_006: 
+  name: default
+  updated_at: 
+  id: "6"
+  visibility_type: "0"
+  user_id: "6"
+  created_at: 
+planners_007: 
+  name: default
+  updated_at: 
+  id: "7"
+  visibility_type: "0"
+  user_id: "7"
+  created_at: 
+planners_008: 
+  name: default
+  updated_at: 
+  id: "8"
+  visibility_type: "0"
+  user_id: "8"
+  created_at: 
+planners_009: 
+  name: default
+  updated_at: 
+  id: "9"
+  visibility_type: "0"
+  user_id: "9"
+  created_at: 
+planners_010: 
+  name: default
+  updated_at: 
+  id: "10"
+  visibility_type: "0"
+  user_id: "10"
+  created_at: 
+planners_011: 
+  name: default
+  updated_at: 
+  id: "11"
+  visibility_type: "0"
+  user_id: "11"
+  created_at: 
+planners_012: 
+  name: default
+  updated_at: 
+  id: "12"
+  visibility_type: "0"
+  user_id: "12"
+  created_at: 
+planners_001: 
+  name: default
+  updated_at: 
+  id: "1"
+  visibility_type: "4"
+  user_id: "1"
+  created_at: 
+planners_013: 
+  name: default
+  updated_at: 
+  id: "13"
+  visibility_type: "0"
+  user_id: "13"
+  created_at: 
+planners_002: 
+  name: default
+  updated_at: 
+  id: "2"
+  visibility_type: "3"
+  user_id: "2"
+  created_at: 
+planners_014: 
+  name: default
+  updated_at: 
+  id: "14"
+  visibility_type: "0"
+  user_id: "14"
+  created_at: 
+planners_003: 
+  name: default
+  updated_at: 
+  id: "3"
+  visibility_type: "0"
+  user_id: "3"
+  created_at: 
+  
+
+planner_22: 
+  name: default
+  updated_at: 
+  id: 22
+  visibility_type: 0
+  user_id: 22
+  created_at: 
+  
+planner_23: 
+  name: default
+  updated_at: 
+  id: 23
+  visibility_type: 0
+  user_id: 23
+  
+planner_24: 
+  name: default
+  updated_at: 
+  id: 24
+  visibility_type: 0
+  user_id: 24
+  created_at: 
+  
+planner_25: 
+  name: default
+  updated_at: 
+  id: 25
+  visibility_type: 0
+  user_id: 25
+  created_at: 
+  
+planner_26: 
+  name: default
+  updated_at: 
+  id: 26
+  visibility_type: 0
+  user_id: 26
+  created_at:
+  
+planner_27: 
+  name: default
+  updated_at: 
+  id: 27
+  visibility_type: 0
+  user_id: 27
+  created_at:  
+  
+admin: 
+  name: default
+  updated_at: 
+  id: 28
+  visibility_type: 0
+  user_id: 28
+  created_at:  

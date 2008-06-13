@@ -1,0 +1,324 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+<%
+
+if !defined? NOW
+  NOW = Time.now
+end
+
+if !defined? TEST_TIMEZONE
+  TEST_TIMEZONE = TZInfo::Timezone.get('America/Tijuana')
+end
+
+
+def day_bef_yesterday(offset = 0, year = nil)
+  fmt_time(-2, offset, year)
+end
+
+def yesterday(offset = 0, year = nil)
+  fmt_time(-1, offset, year)
+end
+
+def today(offset = 0, year = nil)
+  fmt_time(0, offset, year)
+end
+
+def tomorrow(offset = 0, year = nil)
+  fmt_time(1, offset, year)
+end
+
+def fmt_time(day_offset, min_offset, year)
+  tm = TEST_TIMEZONE.local_to_utc(NOW)
+  if year.nil?
+    (tm+(day_offset*60*60*24+min_offset)).fmt_for_mysql
+  else
+    "#{year}-#{(tm+(day_offset*60*60*24+min_offset)).strftime('%m-%d %H:%M:%S')}"
+  end
+end
+
+now_str = Time.now_for_mysql
+one_week_ago_str = (Time.now - 1.week).fmt_for_mysql
+
+%>
+first_plan:
+  id: 1
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 0
+  fuzzy_start: <%= (Time.now + 3.hours).getgm.fmt_for_mysql %>
+  place_id: 1
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+another_plan:
+  id: 2
+  name: AD58AB606C484e87A3583D11A75FCF01
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= yesterday %>
+  place_id: 1
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+longbob_plan:
+  id: 3
+  name: 88D657E43CE549c48629EB777FC168A5
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= (Time.now + 3.hours).getgm.fmt_for_mysql %>
+  place_id: 1
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+user_with_friends_plan:
+  id: 4
+  name: 906F8C8B3AFB43ae9DCCE2A5E5FB6964
+  start: <%= yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= today %>
+  place_id: 1
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+contact_1_of_user_plan:
+  id: 5
+  name: AFE8C82B87344cbcA4F968B1FCEE0B95
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow %>
+  place_id: 1
+  description: "this is the plan description of AFE8C82B87344cbcA4F968B1FCEE0B95"
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+contact_2_of_user_plan:
+  id: 6
+  name: 0E4956D04D084f82802F5FDE4B0237AB
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= yesterday %>
+  place_id: 1
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+user_with_friends_and_private_cal_plan:
+  id: 7
+  name: 450CCFDDDBCA49a9BF51D29A5F95E567
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= yesterday %>
+  place_id: 2
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_for_bob_place:
+  id: 8
+  name: plan_for_bob_place
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= (Time.now + 3.hours).getgm.fmt_for_mysql %>
+  place_id: 18
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+another_plan_for_bob_place:
+  id: 9
+  name: another_plan_for_bob_place
+  start: <%= day_bef_yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= yesterday %>
+  place_id: 3
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+future_plan_1:
+  id: 10
+  name: plan that occurs in the future
+  start: <%= yesterday(0, 2025) %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow(0, 2025) %>
+  place_id: 1
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+future_plan_2:
+  id: 11
+  name: Another plan that occurs in the future
+  start: <%= yesterday(0, 2025) %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow(0, 2025) %>
+  place_id: 2
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_for_existingbob:
+  id: 12
+  name: existing bob test plan
+  start: <%= yesterday(0, 2025) %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow(0, 2025) %>
+  place_id: 5
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_for_place_stats:
+  id: 13
+  name: plan for place stats
+  start: <%= Time.utc(NOW.year + 1, 6, 6, 13, 0, 0, 0).fmt_for_mysql %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 90
+  fuzzy_start: <%= Time.utc(NOW.year + 1, 6, 6, 13, 0, 0, 0).fmt_for_mysql %>
+  local_start: <%= TEST_TIMEZONE.utc_to_local(Time.utc(NOW.year + 1, 6, 6, 13, 0, 0, 0)).fmt_for_mysql %>
+  place_id: 1
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+second_plan_for_place_stats:
+  id: 14
+  name: second plan for place stats
+  start: <%= Time.utc(NOW.year + 1, 6, 6, 13, 0, 0, 0).fmt_for_mysql %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 90
+  fuzzy_start: <%= Time.utc(NOW.year + 1, 6, 6, 13, 0, 0, 0).fmt_for_mysql %>
+  local_start: <%= TEST_TIMEZONE.utc_to_local(Time.utc(NOW.year + 1, 6, 6, 13, 0, 0, 0)).fmt_for_mysql %>
+  place_id: 3
+  description: "description for second plan for place stats"
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+future_plan_for_existingbob:
+  id: 15
+  name: future plan for existingbob
+  start: <%= tomorrow %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow  %>
+  local_start: <%= tomorrow %>
+  place_id: 3
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+past_plan_for_contact_1_of_user:
+  id: 16
+  name: past_plan_for_contact_1_of_user
+  start: <%= tomorrow(0, 1999) %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow(0, 1999)  %>
+  local_start: <%= tomorrow(0, 1999) %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+rejected_plan_for_contact_1_of_user:
+  id: 17
+  name: past_plan_for_contact_1_of_user
+  start: <%= tomorrow %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow %>
+  local_start: <%= tomorrow %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_just_for_user_with_friends:
+  id: 18
+  name: plan_just_for_user_with_friends
+  start: <%= tomorrow %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  fuzzy_start: <%= tomorrow %>
+  local_start: <%= tomorrow %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_just_for_user_with_friends_and_friends_cal:
+  id: 19
+  name: plan_just_for_user_with_friends_and_friends_cal
+  start: <%= tomorrow %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 60
+  place_id: 18
+  fuzzy_start: <%= tomorrow %>
+  local_start: <%= tomorrow %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+planner_past_plan_1:
+  id: 20
+  name: planner_past_plan_1
+  start: <%= yesterday %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 120
+  fuzzy_start: <%= yesterday %>
+  local_start: <%= yesterday %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_today_all_day:
+  id: 21
+  name: plan_today_all_day
+  start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, 8, 0, 0, 0).fmt_for_mysql %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 1439
+  fuzzy_start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, 8, 0, 0, 0).fmt_for_mysql %>
+  local_start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, 0, 0, 0, 0).fmt_for_mysql %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_yesterday_but_barely:
+  id: 22
+  name: plan_yesterday_but_barely
+  start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, 7, 59, 0, 0).fmt_for_mysql %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 120
+  <%
+  #MGS- since our local time offset from UTC changes with DST, make sure we set the right hour
+  hr = NOW.dst? ? 6 : 7 %>
+  fuzzy_start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, hr, 59, 0, 0).fmt_for_mysql %>
+  local_start: <%= (Time.utc(NOW.year, NOW.mon, (NOW.day), 23, 59, 0, 0) - 1.days).fmt_for_mysql %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_today_but_barely:
+  id: 23
+  name: plan_today_but_barely
+  start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, 8, 0, 0, 0).fmt_for_mysql %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 120
+  fuzzy_start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, 8, 00, 0, 0).fmt_for_mysql %>
+  local_start: <%= Time.utc(NOW.year, NOW.mon, NOW.day, 0, 00, 0, 0).fmt_for_mysql %>
+  created_at: <%=one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+solid_plan_in_expiry_window:
+  id: 24
+  name: solid_plan_in_expiry_window
+  start: <%= (NOW + 5.hours).getgm.fmt_for_mysql %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 120
+  fuzzy_start: <%= (NOW + 5.hours).getgm.fmt_for_mysql %>
+  local_start: <%= (NOW + 5.hours).getgm.fmt_for_mysql %>
+  created_at: <%= one_week_ago_str %>
+  updated_at: <%= now_str %>
+
+plan_with_a_private_place:
+  id: 25
+  name: plan with a private place
+  place_id: 17
+  start: <%= (Time.now + 5.hours).fmt_for_mysql %>
+  timeperiod: <%= Plan::TIME_DESCRIPTION_CUSTOM %>
+  duration: 120
+  fuzzy_start: <%= (Time.now + 5.hours).fmt_for_mysql %>
+  local_start: <%= (Time.now + 5.hours).fmt_for_mysql %>
+  created_at: <%= (Time.now - 2.weeks).fmt_for_mysql %>
+  updated_at: <%= (Time.now - 2.weeks).fmt_for_mysql %>

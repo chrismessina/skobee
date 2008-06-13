@@ -1,0 +1,1 @@
+DELETE FROM plan_changes WHERE change_type = 1 AND final_value IS NULL;

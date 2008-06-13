@@ -1,0 +1,75 @@
+<div id="change-list">
+   <div id="plan_discuss_row" class="property_value_row discuss_row" onmouseover="rowHover(this.id, true, HOVER_TYPE_COMMENT);" onmouseout="rowHover(this.id, false, HOVER_TYPE_COMMENT);">
+      <h3 class="property property_comment">
+         <%= controller.comments_section_title %>
+      </h3>
+      <div class="value float-right">
+         <%
+         #MGS- check with the controller to see if it's cool to display add comment link
+         if controller.check_add_comment_access -%>
+         <div id="change-plan_discuss_row"><a href="#" id="add-comment" class="edit edit_discuss" onclick="openCommentCommon();return false;">Add Comment</a></div>
+         <%
+         end -%>
+      </div>
+      <div id="hover_bar_plan_discuss_row" class="hover_bar"></div>
+   </div>
+   <div id="comment-add" class="mini_editor float-left" style="display: none">
+   <form action="" name="comment-add-form"  id="comment-add-form" method="post" onsubmit="">
+      <input type="hidden" id="<%= controller.parent_of_comment_form_item %>" name="<%= controller.parent_of_comment_form_item %>" value="<%= controller.parent_of_comment_id %>" />
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value_mini" summary="new comment">
+         <tr>
+            <td class="property_wide">
+               Comment:
+            </td>
+            <td>
+               <textarea name="comment_tb" class="big_form" id="comment_tb" rows="3" cols="40"  onkeyup="expandTextArea(this)"></textarea><br/>
+               <div class="comment_html_help"><%= comment_help_link %></div>
+            </td>
+         </tr>
+      </table>
+      <div class="buttons">
+         <div class="primary">
+            <input type="image" onclick="cancelCommentCommon();return false;" name="cancel" src="/images/button_cancel.gif" alt="cancel"/>
+         </div>
+         <div class="secondary">
+            <input type="image" name="save" src="/images/button_save.gif" alt="save" onclick="saveCommentCommon('<%=controller.controller_name%>');return false;"/>
+         </div>
+      </div>
+   </form>
+   </div>
+
+   <div id="comment-list">
+<%
+if !comments.empty?
+   #MGS- now we have generic grouping code to limit the number of visible comments
+   # the limit is set by the controller; a more link is added to show all comments
+   # if there are comments hidden
+   for i in 0...comments.first(controller.comment_display_limit).length -%>
+      <%= render(:partial => 'comments/comment', :object => comments[i]) %>
+   <%
+   end
+   #MGS- check to see if there are hidden comments to display
+   if comments.length > controller.comment_display_limit -%>
+      <div id="more_comments" style="display:none"><div>
+      <%
+      for i in comments.first(controller.comment_display_limit).length...comments.length -%>
+         <%= render(:partial => 'comments/comment', :object => comments[i]) %>
+      <%
+      end -%>
+      </div></div>
+      <h2 class="section_heading float-left past_rejected">
+         <a id="more_comments_link" onclick="$('more_comments_link').innerHTML = (Element.visible('more_comments')) ? 'more...' : 'less...';Effect.toggle('more_comments', 'appear', {duration:0.5,afterFinish:function(){return;}});return false;" href="#">more...</a>
+      </h2>
+   <%
+   end
+else -%>
+      <div class="empty_planner">
+         <div class="comment comment_change float-fix">
+            <h3><%= h(controller.blank_comments_message) %></h3>
+         </div>
+      </div>
+<%
+end -%>
+   </div>
+</div>
+<br/>

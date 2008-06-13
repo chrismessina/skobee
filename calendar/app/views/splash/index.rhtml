@@ -1,0 +1,67 @@
+<%
+@page_title = "Welcome to Skobee - Make plans and hang out!" -%>
+
+<div id="banner">
+  <div class="float-left">
+     <h2 class="two_lines">
+        The best way to make<br/> <strong>everyday plans</strong>.
+     </h2>
+  </div>
+  <div class="button">
+    <h3 class="action">
+      <%= link_to("Sign Up Now", {:controller => 'users', :action => 'signup'}, {:class => 'make-plans'} ) %>
+    </h3>
+  </div>
+</div>
+<div id="container" class="no_sidebar">
+   <div id="content" class="splash">
+      <ul>
+         <li onmouseover="hoverSplash(this, event)" onmouseout="hoverSplash(this, event)">
+            <a href="<%=url_for(:controller => 'splash', :action => 'tour')%>">
+               <img src="/images/plans_splash.gif" alt="" />
+               <strong>
+                  Make <span class="red">plans</span> with people
+               </strong>
+               "Let's grab dinner sometime next week."<br />
+               "We're going hiking this weekend."
+            </a>
+         </li>
+         <li onmouseover="hoverSplash(this, event)" onmouseout="hoverSplash(this, event)">
+            <a href="<%=url_for(:controller => 'splash', :action => 'tour')%>">
+               <img src="/images/people_splash.gif" alt="" />
+               <strong>
+                  Check out what <span class="red">friends</span> are doing
+               </strong>
+               "What's everyone up to this weekend?"<br />
+               "Anyone free to hang out on Tuesday?"
+            </a>
+         </li>
+         <li onmouseover="hoverSplash(this, event)" onmouseout="hoverSplash(this, event)">
+            <a href="<%=url_for(:controller => 'splash', :action => 'tour')%>">
+               <img src="/images/places_splash.gif" alt="" />
+               <strong>
+                  Discover where <span class="red">everyone</span> is going
+               </strong>
+               "Which club is most popular tonight?"<br />
+               "Where do people go in my neighborhood?"
+            </a>
+         </li>
+         <li onmouseover="hoverSplash(this, event)" onmouseout="hoverSplash(this, event)">
+            <a href="<%=url_for(:controller => 'splash', :action => 'emailhowto')%>">
+               <img src="/images/email_splash.gif" alt="" />
+               <strong>
+                  It even works via <span class="red">email</span>
+               </strong>
+               <img src="/images/flash_icon.gif" alt="" />
+               Flash video: <b>create new plans via email.<br />
+               Simply CC plans@skobee.com.</b> (4:09, 6MB)
+
+            </a>
+         </li>
+      </ul>
+      <div class="take_tour">
+         <a href="tour"><img src="/images/take_tour.gif" alt="take a tour" /></a>
+      </div>
+   </div>
+</div>
+

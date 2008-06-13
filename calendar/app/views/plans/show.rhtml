@@ -1,0 +1,9 @@
+<%
+#MGS- handling the page title when the plan name is blank
+if not_empty_or_nil(@plan.name)
+   @page_title = "Skobee - #{h(@plan.name)}"
+else
+   @page_title = "Skobee - We've got plans (no description)"
+end
+-%>
+<%= render :partial => @subtemplate %>

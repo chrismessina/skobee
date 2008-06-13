@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+comment_1_place_1:
+    comment_id: 1
+    place_id: 1
+
+comment_2_place_2:
+    comment_id: 2
+    place_id: 2
+
+comment_3_place_1:
+    comment_id: 3
+    place_id: 1
+
+schnitzelhaus_1:
+    comment_id: 7
+    place_id: 3
+
+panchos_2:
+    comment_id: 8
+    place_id: 2
+
+sneaky_tiki_1:
+    comment_id: 9
+    place_id: 12
+
+sneaky_tiki_2:
+    comment_id: 10
+    place_id: 12
+
+sneaky_tiki_3:
+    comment_id: 11
+    place_id: 12

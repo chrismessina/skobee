@@ -1,0 +1,512 @@
+<%
+  #MES- db_structure handles datetimes, but not date or time
+  # We'll add our own thing.
+  case @db
+  when 'postgresql'
+    #MES- Change to correct datatypes when known
+    @date = 'date'
+    @time = 'time'
+    @fulltext = '???'
+    @ftindex_options = '???'
+  when 'sqlite'
+    #MES- Change to correct datatypes when known
+    @date = 'date'
+    @time = 'time'
+    @fulltext = '???'
+    @ftindex_options = '???'
+  when 'mysql'
+    @date = 'date'
+    @time = 'time'
+    @fulltext = 'FULLTEXT'
+    @ftindex_options = 'ENGINE=MYISAM DEFAULT CHARSET=utf8'
+    else
+      raise "Unknown db type #{db}"
+    end
+%>
+
+#
+# Table structure for table planners
+#
+
+CREATE TABLE `planners` (
+  `id` <%= @pk %>,
+  `name` varchar(255) default NULL,
+  `user_id` int(11) default NULL,
+  `visibility_type` int(11) default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+CREATE INDEX `plnrs_user_idx` ON `planners` (user_id);
+
+
+#
+# Table structure for table planners_plans
+# This table records which plans appear on which planners, and the
+# status (e.g. accepted, tentative, etc.)
+#
+
+CREATE TABLE `planners_plans` (
+  `planner_id` int(11) NOT NULL default '0',
+  `plan_id` int(11) NOT NULL default '0',
+  `cal_pln_status` int(11) default NULL,
+  `ownership` int(11) default '0',
+  `reminder_state` int(11) default NULL,
+  `planner_visibility_cache` int(11) default NULL,
+  `plan_security_cache` int(11) default NULL,
+  `place_id_cache` int(11) default NULL,
+  `user_id_cache` int(11) default NULL,
+  `viewed_at` <%= @datetime %> default NULL,
+  PRIMARY KEY  (`planner_id`,`plan_id`)
+) <%= @options %>;
+
+CREATE INDEX pp_place_vis_plan_idx ON planners_plans (place_id_cache, planner_visibility_cache, plan_security_cache, cal_pln_status, plan_id);
+CREATE INDEX pp_plan_planner_idx ON planners_plans (plan_id, planner_id);
+CREATE INDEX pp_usr_place_plnr_idx ON planners_plans (user_id_cache, place_id_cache, cal_pln_status);
+
+#
+# Table structure for table plan_changes
+# Change objects record changes to plans (e.g. when a user
+# changes the place.)  Many channges are revertable
+# (e.g. a user can roll back a change to a plan time), but some
+# are not (e.g when a change is NOT performed successfully, the attempt
+# may be recorded here, but rollback is not supported because the
+# change didn't actually take place)
+#
+
+CREATE TABLE `plan_changes` (
+  `id` <%= @pk %>,
+  `plan_id` int(11) NOT NULL default '0',
+  `change_type` int(11) NOT NULL default '0',
+  `owner_id` int(11) default NULL,
+  `initial_value` varchar(512) default NULL,
+  `final_value` varchar(512) default NULL,
+  `comment` varchar(4096) default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+CREATE INDEX pc_pln_idx ON plan_changes (plan_id);
+
+
+#
+# Table structure for table comments
+# Comments can be applied to other objects
+#
+
+CREATE TABLE `comments` (
+  `id` <%= @pk %>,
+  `owner_id` int(11) default NULL,
+  `body` varchar(4096) default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+
+#
+# Table structure for table plans
+#
+
+CREATE TABLE `plans` (
+  `id` <%= @pk %>,
+  `name` varchar(255) default NULL,
+  `place_id` int(11) default NULL,
+  `start` <%= @datetime %> default NULL,
+  `timeperiod` int(11) default 0,	/* MES- A constant from Plan::TIME_DESCRIPTION_* */
+  `duration` int(11) default NULL,          /* MES- The duration is recorded in minutes */
+  `fuzzy_start` <%= @datetime %> default NULL,    /* MES- Fuzzy start is the last possible time that the plan could start (expected to be equal to or later than 'start' */
+  `local_start` <%= @datetime %> default NULL,    /* MES- This is the start time of plan, in the timezone of the user that set the start time */
+  `description` varchar(4096) default NULL,
+  `security_level` int(11) default 0,
+  `lock_status` int(11) default 0,
+  `flickr_tags` varchar(1024) default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+CREATE TABLE `email_ids` (
+  `plan_id` int(11) NOT NULL,
+  `email_id` varchar(255) NOT NULL,
+  `canonical_subject` varchar(1024) default NULL,
+  PRIMARY KEY (`plan_id`, `email_id`)
+) <%= @options %>;
+
+CREATE INDEX `email_id_idx` ON `email_ids` (`email_id`);
+CREATE INDEX `email_subj_idx` ON `email_ids` (`canonical_subject` (32));
+
+
+#
+# Table structure for table feedback
+# A feedback is a piece of data entered by the user, such as
+# a comment that the address of a place is inaccurate, or that
+# a profile contains offensive material.
+#
+
+CREATE TABLE `feedbacks` (
+  `id` <%= @pk %>,
+  `url` varchar(1024) default NULL,
+  `user_id` int(11) default NULL,
+  `feedback_type` int(11) default NULL,
+  `body` varchar(1024) default NULL,
+  `stage` int(11) default NULL,
+  `owner` varchar(255) default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+
+#
+# Table structure for table pictures
+# Pictures are basically just files stored as BLOBs, but they also
+# include some metadata, such as the content type
+#
+
+CREATE TABLE `pictures` (
+  `id` <%= @pk %>,
+  `original_id` int(11),
+  `name` varchar(255) default NULL,
+  `extension` varchar(255) default NULL,
+  `content_type` varchar(255) default NULL,
+  `height` int(11),
+  `width` int(11),
+  `size_type` tinyint,
+  `data` mediumtext,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+
+#
+# Table structure for table pictures_users
+# This maps users to their pictures in a many-to-many mapping
+#
+
+CREATE TABLE `pictures_users` (
+  `user_id` int(11) NOT NULL,
+  `picture_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`, `picture_id`)
+) <%= @options %>;
+ALTER TABLE `pictures_users` ADD INDEX (`picture_id`, `user_id`);
+
+
+#
+# Table structure for table sessions
+#
+
+CREATE TABLE `sessions` (
+  `id` <%= @pk %>,
+  `sessid` varchar(255),
+  `data` text,
+  `updated_at` <%= @datetime %> default NULL,
+  index `session_index` (sessid)
+) <%= @options %>;
+
+
+#
+# Table structure for table user_atts
+# User attributes are relatively free-form pieces of data about a
+# user, such as home address or mobile phone number.
+#
+
+CREATE TABLE `user_atts` (
+  `id` <%= @pk %>,
+  `user_id` int(11) NOT NULL,
+  `att_id` int(11) NOT NULL,
+  `att_value` varchar(255) NOT NULL default '',
+  `group_id` int(11),
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+CREATE INDEX ua_user_idx ON user_atts (user_id);
+#MES- Make a unique index to assure that each user has unique attributes
+CREATE UNIQUE INDEX ua_unique_idx ON user_atts (user_id, att_id, group_id);
+
+#
+# Table structure for names of user_atts.
+#   This is used to create the user_atts_human_readable view so that it's
+#   possible to look at the atts and see which attribute is what without
+#   having to look up all the constants or do a join
+#   KS- commented out because rake does not like views. comment back in if we
+#   or they fix this
+#
+#CREATE TABLE `user_atts_names` (
+#  `att_id` int(11) NOT NULL,
+#  `att_name` varchar(255) NOT NULL
+#) <%= @options %>;
+#INSERT INTO `user_atts_names` VALUES(1, "work address");
+#INSERT INTO `user_atts_names` VALUES(2, "home address");
+#INSERT INTO `user_atts_names` VALUES(3, "mobile phone");
+#INSERT INTO `user_atts_names` VALUES(4, "birthday");
+#INSERT INTO `user_atts_names` VALUES(5, "aol screen name");
+#INSERT INTO `user_atts_names` VALUES(6, "yahoo screen name");
+#INSERT INTO `user_atts_names` VALUES(7, "msn screen name");
+#INSERT INTO `user_atts_names` VALUES(8, "icq screen name");
+#INSERT INTO `user_atts_names` VALUES(9, "google talk screen name");
+#INSERT INTO `user_atts_names` VALUES(10, "remind by email");
+#INSERT INTO `user_atts_names` VALUES(11, "remind by sms");
+#INSERT INTO `user_atts_names` VALUES(12, "invite notification option");
+#INSERT INTO `user_atts_names` VALUES(13, "plan modified notification option");
+#INSERT INTO `user_atts_names` VALUES(14, "confirmed plan reminder option");
+#INSERT INTO `user_atts_names` VALUES(15, "reminder minutes");
+#INSERT INTO `user_atts_names` VALUES(16, "added as friend notification option");
+#INSERT INTO `user_atts_names` VALUES(17, "security");
+
+#
+# View structure for human readable view of user atts.
+#   This is used as a human readable form of the user_atts table (it
+#   does a join with the user_atts_names table)
+#   KS- commented out because rake does not like views. comment back in if we
+#   or they fix this
+#
+#CREATE VIEW `user_atts_human_readable`
+#AS SELECT
+#   atts.id, atts.user_id, names.att_name, atts.att_value, atts.group_id, atts.created_at, atts.updated_at
+#FROM
+#   user_atts AS atts,
+#   user_atts_names AS names;
+
+
+
+
+#
+# Table structure for table user_contacts
+# Stores the relationships between users- which users have
+# had contact with which other users, and what the form of
+# their relationship is
+#
+
+CREATE TABLE `user_contacts` (
+  `user_id` int(11) NOT NULL default '0',
+  `contact_id` int(11) NOT NULL default '0',
+  `connections` int(11) default 0,
+  `friend_status` int(11) default 0,
+  `clipboard_status` int(11) default 0,
+  `style` varchar(255) default NULL,
+  `contact_created_at` <%= @datetime %> default NULL,
+  PRIMARY KEY  (`user_id`,`contact_id`)
+) <%= @options %>;
+
+CREATE INDEX uc_ctc_idx ON user_contacts (contact_id);
+
+
+#
+# Table structure for table users
+#
+
+CREATE TABLE `users` (
+  `id` <%= @pk %>,
+  `login` varchar(80) NOT NULL default '',
+  `salted_password` varchar(40) NOT NULL default '',
+  `real_name` varchar(160) default NULL,
+  `description` text default NULL,
+  `salt` varchar(40) NOT NULL default '',
+  `security_token` varchar(40) default NULL,
+  `token_expiry` <%= @datetime %> default NULL,
+  `deleted` int(11) default '0',
+  `delete_after` <%= @datetime %> default NULL,
+  `image_id` int(11),
+  `medium_image_id` int(11),
+  `thumbnail_id` int(11),
+  `time_zone` varchar(40) default NULL,
+  `user_type` int(11) default '0',
+  `lat` float default NULL,
+  `long` float default NULL,
+  `lat_max` float default NULL,
+  `lat_min` float default NULL,
+  `long_max` float default NULL,
+  `long_min` float default NULL,
+  `generation_num` int(11) default 0,
+  `invited_by` int(11) default 0,
+  `num_auths` int(11) default 0,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+
+CREATE INDEX `users_login_idx` ON `users` (login(15));
+
+#MES- We want to do fulltext type queries against user login and real_name, but
+# we don't want to set the type of the user table to ISAM.  To get around this,
+# we put the fulltext data into another table (users_fulltext), and we keep it
+# in sync with the users table through triggers.
+CREATE TABLE `users_fulltext` (
+  `user_id` int(11) default NULL,
+  `searchable` varchar(250) default NULL,
+  <%= @fulltext %> users_ft_searchable_idx (searchable)
+) <%= @ftindex_options %>;
+
+CREATE TRIGGER users_ft_ins_tr AFTER INSERT ON users FOR EACH ROW INSERT INTO users_fulltext SET user_id = NEW.id, searchable = CONCAT(NEW.login, ' ', IFNULL(NEW.real_name, ''));
+
+CREATE TRIGGER users_ft_upd_tr AFTER UPDATE ON users FOR EACH ROW UPDATE users_fulltext SET searchable = CONCAT(NEW.login, ' ', IFNULL(NEW.real_name, '')) WHERE user_id = NEW.id;
+
+CREATE TRIGGER users_ft_del_tr AFTER DELETE ON users FOR EACH ROW DELETE FROM users_fulltext WHERE user_id = OLD.id;
+
+
+#
+# Table structure for table emails
+#
+
+CREATE TABLE `emails` (
+  `id` <%= @pk %>,
+  `user_id` int(11) NOT NULL,
+  `address` varchar(60) NOT NULL default '',
+  `confirmed` tinyint default 0,
+  `primary` tinyint default 0
+) <%= @options %>;
+
+CREATE INDEX `emails_addr_idx` ON `emails` (address(15));
+CREATE INDEX `emails_user_idx` ON `emails` (user_id);
+
+
+#
+# Table structure for table places
+#
+
+CREATE TABLE `places` (
+  `id` <%= @pk %>,
+  `name` varchar(255) default NULL,
+  `user_id` int(11) default NULL,
+  `public` tinyint default 0,
+  `public_status` tinyint default 0,
+  `location` varchar(512) default NULL,
+  `address` varchar(512) default NULL,
+  `city` varchar(512) default NULL,
+  `state` varchar(512) default NULL,
+  `zip` varchar(10) default NULL,
+  `lat` float default NULL,
+  `long` float default NULL,
+  `geocoded` int default 0,
+  `url` varchar(512) default NULL,
+  `click_url` varchar(512) default NULL,
+  `yahoo_url` varchar(512) default NULL,
+  `yahoo_click_url` varchar(512) default NULL,
+  `yahoo_id` int(11) default NULL,
+  `phone` varchar(30) default NULL,
+  `normalized_name` varchar(255) default NULL,
+  `meta_info` varchar(255) default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>,
+  `average_rating` int default NULL,
+  `total_ratings` int default 0,
+  `total_reviews` int default 0,
+  `last_review_date` datetime default NULL,
+  <%= @fulltext %>(normalized_name)
+) <%= @ftindex_options %>;
+
+
+CREATE INDEX `place_yahoo_idx` ON `places` (`yahoo_id`);
+
+
+#
+# Table structure for table place_usage_stats
+# Records statistical information about utilization of places
+# This data is historical- it covers ALL plans made at venues
+# This data is also comprehensive- it contains all venues (that
+# have had events)
+#
+
+CREATE TABLE `place_usage_stats` (
+  `place_id` int(11) NOT NULL,
+  `day` int(11) NOT NULL,
+  `hour` int(11) NOT NULL,
+  `num_plans` int(11) NOT NULL default 0,     /* MES- The number of plans that occurred at this place on the indicated day, in the indicated hour */
+  `num_user_plans` int(11) NOT NULL default 0,    /* MES- The number of users that attended plans at this place on the indicatedd, in the indicated hour */
+  PRIMARY KEY  (`place_id`,`day`,`hour`)
+) <%= @options %>;
+
+CREATE INDEX `pus_daytime_idx` ON `place_usage_stats` (`day`, `hour`, `place_id`);
+CREATE INDEX `pus_time_idx` ON `place_usage_stats` (`hour`, `place_id`);
+
+
+#
+# Table structure for table place_popularity_stats
+# Records statistical information about utilization of places
+# This data is for the present- it is a snapshot of currently
+# hot places.
+# This data is NOT comprehensive- it only lists the most popular
+# venues.
+#
+
+CREATE TABLE `place_popularity_stats` (
+  `stat_date` <%= @date %> NOT NULL,
+  `rank` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
+  `place_id` int(11) NOT NULL,
+  `lat` float default NULL,
+  `long` float default NULL,
+  PRIMARY KEY  (`stat_date`,`rank`)
+) <%= @options %>;
+
+
+#
+# Table structure for table geocode_cache_entries
+#
+CREATE TABLE `geocode_cache_entries` (
+  `id` <%= @pk %>,
+  `location` varchar(512) default NULL,
+  `normalized_location` varchar(512) NULL,
+  `address` varchar(512) default NULL,
+  `city` varchar(512) default NULL,
+  `state` varchar(512) default NULL,
+  `zip` varchar(10) default NULL,
+  `lat` float default NULL,
+  `long` float default NULL,
+  `created_at` <%= @datetime %>,
+  `updated_at` <%= @datetime %>
+) <%= @options %>;
+CREATE INDEX `location_string_index` ON `geocode_cache_entries` (location(100));
+
+#
+# Table structure for table comments_places
+# Associates particular comments with particular places
+#
+
+CREATE TABLE `comments_places` (
+  `comment_id` int(11) NOT NULL default '0',
+  `place_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`comment_id`,`place_id`)
+) <%= @options %>;
+
+CREATE INDEX `cp_place_idx` ON `comments_places` (place_id, comment_id);
+
+#
+# Table structure for table comments_users
+# Associates particular comments with particular users
+#
+
+CREATE TABLE `comments_users` (
+  `comment_id` int(11) NOT NULL default '0',
+  `user_id` int(11) NOT NULL default '0',
+  PRIMARY KEY  (`comment_id`,`user_id`)
+) <%= @options %>;
+
+CREATE INDEX `cp_user_idx` ON `comments_users` (user_id, comment_id);
+
+#
+# Table structure for table zipcodes
+# This is basically a placeholder for the data we import from http://civicspacelabs.org/home/developers/download.
+# It gets filled with fixtures during testing and development, but for demos the
+# table is replaced by stuff in the sql script.
+#
+
+CREATE TABLE `zipcodes` (
+  `zip` int(5) NOT NULL PRIMARY KEY DEFAULT 0,
+  `city` varchar(30) NOT NULL,
+  `state` char(2) NOT NULL,
+  `latitude` decimal(10,6) NOT NULL DEFAULT 0.0,
+  `longitude` decimal(10,6) NOT NULL DEFAULT 0.0,
+  `timezone` tinyint(2) NOT NULL DEFAULT 0,
+  `dst` tinyint(1) NOT NULL DEFAULT 0
+) <%= @options %>;
+
+#
+# Table structure for table offsets_timezones
+# Associates particular timezone offsets and dst combos (zipcodes and dst in the
+# zipcodes table) with time_zone strings used elsewhere in the system.
+#
+
+CREATE TABLE `offsets_timezones` (
+  `offset` tinyint(2) NOT NULL DEFAULT '0',
+  `dst` tinyint(1) NOT NULL DEFAULT '0',
+  `time_zone` varchar(40) DEFAULT NULL
+) <%= @options %>;

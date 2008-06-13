@@ -1,0 +1,1130 @@
+--- 
+geocode_cache_entries_094: 
+  city: 
+  normalized_location: "604 Mission St, San Francisco, CA, 94105-3505"
+  updated_at: 2005-12-03 14:33:11
+  zip: 
+  id: "94"
+  lat: "37.788"
+  address: 
+  created_at: 2005-12-03 14:33:11
+  long: "-122.4"
+  state: 
+  location: "604 Mission St. San Francisco, CA 94105"
+geocode_cache_entries_073: 
+  city: 
+  normalized_location: "Saverton, MO"
+  updated_at: 2005-12-03 11:44:59
+  zip: 
+  id: "73"
+  lat: "39.6474"
+  address: 
+  created_at: 2005-12-03 11:44:59
+  long: "-91.2687"
+  state: 
+  location: "Saverton, MO"
+geocode_cache_entries_008: 
+  city: 
+  normalized_location: "817 Sutter St, San Francisco, CA, 94109-6168"
+  updated_at: 2005-12-03 11:44:25
+  zip: 
+  id: "8"
+  lat: "37.7884"
+  address: 
+  created_at: 2005-12-03 11:44:25
+  long: "-122.414"
+  state: 
+  location: "817 Sutter Street, San Francisco, CA, 94109"
+geocode_cache_entries_030: 
+  city: 
+  normalized_location: "1031 Irving St, San Francisco, CA, 94122-2215"
+  updated_at: 2005-12-03 11:44:36
+  zip: 
+  id: "30"
+  lat: "37.7638"
+  address: 
+  created_at: 2005-12-03 11:44:36
+  long: "-122.469"
+  state: 
+  location: "1031 Irving Street, San Francisco, CA, 94122"
+geocode_cache_entries_029: 
+  city: 
+  normalized_location: "1031 Irving St, San Francisco, CA, 94122-2215"
+  updated_at: 2005-12-03 11:44:36
+  zip: 
+  id: "29"
+  lat: "37.7638"
+  address: 
+  created_at: 2005-12-03 11:44:36
+  long: "-122.469"
+  state: 
+  location: "1031 Irving St, San Francisco, CA, 94122-2215"
+geocode_cache_entries_010: 
+  city: 
+  normalized_location: "1639 Polk St, San Francisco, CA, 94109-3614"
+  updated_at: 2005-12-03 11:44:26
+  zip: 
+  id: "10"
+  lat: "37.7919"
+  address: 
+  created_at: 2005-12-03 11:44:26
+  long: "-122.421"
+  state: 
+  location: "1639 Polk St., San Francisco, CA"
+geocode_cache_entries_009: 
+  city: 
+  normalized_location: "1639 Polk St, San Francisco, CA, 94109-3614"
+  updated_at: 2005-12-03 11:44:26
+  zip: 
+  id: "9"
+  lat: "37.7919"
+  address: 
+  created_at: 2005-12-03 11:44:26
+  long: "-122.421"
+  state: 
+  location: "1639 Polk St, San Francisco, CA, 94109-3614"
+geocode_cache_entries_031: 
+  city: 
+  normalized_location: "3286 22nd St, San Francisco, CA, 94110-3033"
+  updated_at: 2005-12-03 11:44:37
+  zip: 
+  id: "31"
+  lat: "37.7555"
+  address: 
+  created_at: 2005-12-03 11:44:37
+  long: "-122.421"
+  state: 
+  location: "3286 22nd St, San Francisco, CA, 94110-3033"
+geocode_cache_entries_052: 
+  city: 
+  normalized_location: "335 Powell St, San Francisco, CA, 94102-1804"
+  updated_at: 2005-12-03 11:44:47
+  zip: 
+  id: "52"
+  lat: "37.7877"
+  address: 
+  created_at: 2005-12-03 11:44:47
+  long: "-122.408"
+  state: 
+  location: "335 Powell Street, San Francisco, CA, 94102"
+geocode_cache_entries_074: 
+  city: 
+  normalized_location: "Saverton, MO"
+  updated_at: 2005-12-03 11:44:59
+  zip: 
+  id: "74"
+  lat: "39.6474"
+  address: 
+  created_at: 2005-12-03 11:44:59
+  long: "-91.2687"
+  state: 
+  location: 1743 9th Ave
+geocode_cache_entries_011: 
+  city: 
+  normalized_location: "1569 Haight St, San Francisco, CA, 94117-2912"
+  updated_at: 2005-12-03 11:44:27
+  zip: 
+  id: "11"
+  lat: "37.7697"
+  address: 
+  created_at: 2005-12-03 11:44:27
+  long: "-122.448"
+  state: 
+  location: "1569 Haight St, San Francisco, CA, 94117-2912"
+geocode_cache_entries_032: 
+  city: 
+  normalized_location: "3286 22nd St, San Francisco, CA, 94110-3033"
+  updated_at: 2005-12-03 11:44:37
+  zip: 
+  id: "32"
+  lat: "37.7555"
+  address: 
+  created_at: 2005-12-03 11:44:37
+  long: "-122.421"
+  state: 
+  location: "3286 22nd Street, San Francisco, CA, 94110"
+geocode_cache_entries_053: 
+  city: 
+  normalized_location: "830 Cortland Ave, San Francisco, CA, 94110-5631"
+  updated_at: 2005-12-03 11:44:48
+  zip: 
+  id: "53"
+  lat: "37.7388"
+  address: 
+  created_at: 2005-12-03 11:44:48
+  long: "-122.414"
+  state: 
+  location: "830 Cortland Ave, San Francisco, CA, 94110-5631"
+geocode_cache_entries_075: 
+  city: 
+  normalized_location: "940 Sutter St, San Francisco, CA, 94109-6025"
+  updated_at: 2005-12-03 11:45:00
+  zip: 
+  id: "75"
+  lat: "37.7885"
+  address: 
+  created_at: 2005-12-03 11:45:00
+  long: "-122.416"
+  state: 
+  location: "940 Sutter St, San Francisco, CA, 94109-6025"
+geocode_cache_entries_012: 
+  city: 
+  normalized_location: "1569 Haight St, San Francisco, CA, 94117-2912"
+  updated_at: 2005-12-03 11:44:27
+  zip: 
+  id: "12"
+  lat: "37.7697"
+  address: 
+  created_at: 2005-12-03 11:44:27
+  long: "-122.448"
+  state: 
+  location: "1569 Haight Street, San Francisco, CA, 94117"
+geocode_cache_entries_033: 
+  city: 
+  normalized_location: "839 Geary St, San Francisco, CA, 94109-7217"
+  updated_at: 2005-12-03 11:44:38
+  zip: 
+  id: "33"
+  lat: "37.7861"
+  address: 
+  created_at: 2005-12-03 11:44:38
+  long: "-122.417"
+  state: 
+  location: "839 Geary St, San Francisco, CA, 94109-7217"
+geocode_cache_entries_054: 
+  city: 
+  normalized_location: "830 Cortland Ave, San Francisco, CA, 94110-5631"
+  updated_at: 2005-12-03 11:44:48
+  zip: 
+  id: "54"
+  lat: "37.7388"
+  address: 
+  created_at: 2005-12-03 11:44:48
+  long: "-122.414"
+  state: 
+  location: "830 Cortland Aplace, San Francisco, CA, 94110"
+geocode_cache_entries_076: 
+  city: 
+  normalized_location: "940 Sutter St, San Francisco, CA, 94109-6025"
+  updated_at: 2005-12-03 11:45:00
+  zip: 
+  id: "76"
+  lat: "37.7885"
+  address: 
+  created_at: 2005-12-03 11:45:00
+  long: "-122.416"
+  state: 
+  location: "940 Sutter Street, San Francisco, CA, 94109"
+geocode_cache_entries_013: 
+  city: 
+  normalized_location: "214 Townsend St, San Francisco, CA, 94107-1722"
+  updated_at: 2005-12-03 11:44:28
+  zip: 
+  id: "13"
+  lat: "37.7787"
+  address: 
+  created_at: 2005-12-03 11:44:28
+  long: "-122.393"
+  state: 
+  location: "214 Townsend St, San Francisco, CA, 94107-1722"
+geocode_cache_entries_034: 
+  city: 
+  normalized_location: "839 Geary St, San Francisco, CA, 94109-7217"
+  updated_at: 2005-12-03 11:44:38
+  zip: 
+  id: "34"
+  lat: "37.7861"
+  address: 
+  created_at: 2005-12-03 11:44:38
+  long: "-122.417"
+  state: 
+  location: "839 Geary Street, San Francisco, CA, 94101"
+geocode_cache_entries_055: 
+  city: 
+  normalized_location: "2316 Polk St, San Francisco, CA, 94109-1822"
+  updated_at: 2005-12-03 11:44:49
+  zip: 
+  id: "55"
+  lat: "37.7981"
+  address: 
+  created_at: 2005-12-03 11:44:49
+  long: "-122.422"
+  state: 
+  location: "2316 Polk St, San Francisco, CA, 94109-1822"
+geocode_cache_entries_077: 
+  city: 
+  normalized_location: "2889 Mission St, San Francisco, CA, 94110-3907"
+  updated_at: 2005-12-03 11:45:01
+  zip: 
+  id: "77"
+  lat: "37.7509"
+  address: 
+  created_at: 2005-12-03 11:45:01
+  long: "-122.418"
+  state: 
+  location: "2889 Mission St, San Francisco, CA, 94110-3907"
+geocode_cache_entries_014: 
+  city: 
+  normalized_location: "214 Townsend St, San Francisco, CA, 94107-1722"
+  updated_at: 2005-12-03 11:44:28
+  zip: 
+  id: "14"
+  lat: "37.7787"
+  address: 
+  created_at: 2005-12-03 11:44:28
+  long: "-122.393"
+  state: 
+  location: "214 Townsend Street, San Francisco, CA, 94133"
+geocode_cache_entries_035: 
+  city: 
+  normalized_location: "0 Fort Mason Bldg a, San Francisco, CA, 94123-1327"
+  updated_at: 2005-12-03 11:44:39
+  zip: 
+  id: "35"
+  lat: "37.8043"
+  address: 
+  created_at: 2005-12-03 11:44:39
+  long: "-122.427"
+  state: 
+  location: "0 Fort Mason Bldg a, San Francisco, CA, 94123-1327"
+geocode_cache_entries_056: 
+  city: 
+  normalized_location: "2316 Polk St, San Francisco, CA, 94109-1822"
+  updated_at: 2005-12-03 11:44:49
+  zip: 
+  id: "56"
+  lat: "37.7981"
+  address: 
+  created_at: 2005-12-03 11:44:49
+  long: "-122.422"
+  state: 
+  location: "2316 Polk St., San Francisco, CA, 94109"
+geocode_cache_entries_080: 
+  city: 
+  normalized_location: "572 Ofarrell St, San Francisco, CA, 94102-1932"
+  updated_at: 2005-12-03 11:45:02
+  zip: 
+  id: "80"
+  lat: "37.7858"
+  address: 
+  created_at: 2005-12-03 11:45:02
+  long: "-122.414"
+  state: 
+  location: "572 Ofarrell St., San Francisco, CA, 94102"
+geocode_cache_entries_078: 
+  city: 
+  normalized_location: "2889 Mission St, San Francisco, CA, 94110-3907"
+  updated_at: 2005-12-03 11:45:01
+  zip: 
+  id: "78"
+  lat: "37.7509"
+  address: 
+  created_at: 2005-12-03 11:45:01
+  long: "-122.418"
+  state: 
+  location: "2889 Mission Street, San Francisco, CA, 94110"
+geocode_cache_entries_036: 
+  city: 
+  normalized_location: "0 Fort Mason Bldg a, San Francisco, CA, 94123-1327"
+  updated_at: 2005-12-03 11:44:39
+  zip: 
+  id: "36"
+  lat: "37.8043"
+  address: 
+  created_at: 2005-12-03 11:44:39
+  long: "-122.427"
+  state: 
+  location: "Fort Mason Building A, San Francisco, CA, 94123"
+geocode_cache_entries_057: 
+  city: 
+  normalized_location: "4 Valencia St, San Francisco, CA, 94103-1102"
+  updated_at: 2005-12-03 11:44:50
+  zip: 
+  id: "57"
+  lat: "37.7723"
+  address: 
+  created_at: 2005-12-03 11:44:50
+  long: "-122.423"
+  state: 
+  location: "4 Valencia St, San Francisco, CA, 94103-1102"
+geocode_cache_entries_015: 
+  city: 
+  normalized_location: "1100 Valencia St, San Francisco, CA, 94110-3027"
+  updated_at: 2005-12-03 11:44:29
+  zip: 
+  id: "15"
+  lat: "37.7551"
+  address: 
+  created_at: 2005-12-03 11:44:29
+  long: "-122.421"
+  state: 
+  location: "1100 Valencia St, San Francisco, CA, 94110-3027"
+geocode_cache_entries_081: 
+  city: 
+  normalized_location: "5800 Geary Blvd, San Francisco, CA, 94121-2005"
+  updated_at: 2005-12-03 11:45:03
+  zip: 
+  id: "81"
+  lat: "37.7804"
+  address: 
+  created_at: 2005-12-03 11:45:03
+  long: "-122.482"
+  state: 
+  location: "5800 Geary Blvd, San Francisco, CA, 94121-2005"
+geocode_cache_entries_079: 
+  city: 
+  normalized_location: "572 Ofarrell St, San Francisco, CA, 94102-1932"
+  updated_at: 2005-12-03 11:45:02
+  zip: 
+  id: "79"
+  lat: "37.7858"
+  address: 
+  created_at: 2005-12-03 11:45:02
+  long: "-122.414"
+  state: 
+  location: "572 Ofarrell St, San Francisco, CA, 94102-1932"
+geocode_cache_entries_058: 
+  city: 
+  normalized_location: "4 Valencia St, San Francisco, CA, 94103-1102"
+  updated_at: 2005-12-03 11:44:50
+  zip: 
+  id: "58"
+  lat: "37.7723"
+  address: 
+  created_at: 2005-12-03 11:44:50
+  long: "-122.423"
+  state: 
+  location: "4 Valencia Street, San Francisco, CA, 94103"
+geocode_cache_entries_016: 
+  city: 
+  normalized_location: "1100 Valencia St, San Francisco, CA, 94110-3027"
+  updated_at: 2005-12-03 11:44:29
+  zip: 
+  id: "16"
+  lat: "37.7551"
+  address: 
+  created_at: 2005-12-03 11:44:29
+  long: "-122.421"
+  state: 
+  location: "1100 Valencia Street, San Francisco, CA, 94110"
+geocode_cache_entries_037: 
+  city: 
+  normalized_location: "545 Haight St, San Francisco, CA, 94117-3406"
+  updated_at: 2005-12-03 11:44:40
+  zip: 
+  id: "37"
+  lat: "37.7719"
+  address: 
+  created_at: 2005-12-03 11:44:40
+  long: "-122.431"
+  state: 
+  location: "545 Haight St, San Francisco, CA, 94117-3406"
+geocode_cache_entries_060: 
+  city: 
+  normalized_location: "737 Diamond St, San Francisco, CA, 94114-3227"
+  updated_at: 2005-12-03 11:44:51
+  zip: 
+  id: "60"
+  lat: "37.7517"
+  address: 
+  created_at: 2005-12-03 11:44:51
+  long: "-122.436"
+  state: 
+  location: "737 Diamond Street, San Francisco, CA, 94114"
+geocode_cache_entries_082: 
+  city: 
+  normalized_location: "5800 Geary Blvd, San Francisco, CA, 94121-2005"
+  updated_at: 2005-12-03 11:45:03
+  zip: 
+  id: "82"
+  lat: "37.7804"
+  address: 
+  created_at: 2005-12-03 11:45:03
+  long: "-122.482"
+  state: 
+  location: "5800 Geary Blvd., San Francisco, CA, 94121"
+geocode_cache_entries_017: 
+  city: 
+  normalized_location: "San Francisco, CA"
+  updated_at: 2005-12-03 11:44:30
+  zip: 
+  id: "17"
+  lat: "37.7742"
+  address: 
+  created_at: 2005-12-03 11:44:30
+  long: "-122.417"
+  state: 
+  location: "San Francisco, CA"
+geocode_cache_entries_040: 
+  city: 
+  normalized_location: "726 Allston Way, Berkeley, CA, 94710-2230"
+  updated_at: 2005-12-03 11:44:41
+  zip: 
+  id: "40"
+  lat: "37.8647"
+  address: 
+  created_at: 2005-12-03 11:44:41
+  long: "-122.299"
+  state: 
+  location: "726 Allston Way, Berkeley, CA, 94710"
+geocode_cache_entries_038: 
+  city: 
+  normalized_location: "545 Haight St, San Francisco, CA, 94117-3406"
+  updated_at: 2005-12-03 11:44:40
+  zip: 
+  id: "38"
+  lat: "37.7719"
+  address: 
+  created_at: 2005-12-03 11:44:40
+  long: "-122.431"
+  state: 
+  location: "545 Haight Street, San Francisco, CA, 94117"
+geocode_cache_entries_061: 
+  city: 
+  normalized_location: "800 N Point St, San Francisco, CA, 94109-1228"
+  updated_at: 2005-12-03 11:44:52
+  zip: 
+  id: "61"
+  lat: "37.8058"
+  address: 
+  created_at: 2005-12-03 11:44:52
+  long: "-122.421"
+  state: 
+  location: "800 N Point St, San Francisco, CA, 94109-1228"
+geocode_cache_entries_059: 
+  city: 
+  normalized_location: "737 Diamond St, San Francisco, CA, 94114-3227"
+  updated_at: 2005-12-03 11:44:51
+  zip: 
+  id: "59"
+  lat: "37.7517"
+  address: 
+  created_at: 2005-12-03 11:44:51
+  long: "-122.436"
+  state: 
+  location: "737 Diamond St, San Francisco, CA, 94114-3227"
+geocode_cache_entries_083: 
+  city: 
+  normalized_location: "San Francisco, CA, 94122"
+  updated_at: 2005-12-03 11:45:04
+  zip: 
+  id: "83"
+  lat: "37.7611"
+  address: 
+  created_at: 2005-12-03 11:45:04
+  long: "-122.484"
+  state: 
+  location: "San Francisco, CA, 94122"
+geocode_cache_entries_018: 
+  city: 
+  normalized_location: "San Francisco, CA"
+  updated_at: 2005-12-03 11:44:30
+  zip: 
+  id: "18"
+  lat: "37.7742"
+  address: 
+  created_at: 2005-12-03 11:44:30
+  long: "-122.417"
+  state: 
+  location: "Embarcadero Center 2, San Francisco, CA"
+geocode_cache_entries_039: 
+  city: 
+  normalized_location: "726 Allston Way, Berkeley, CA, 94710-2230"
+  updated_at: 2005-12-03 11:44:41
+  zip: 
+  id: "39"
+  lat: "37.8647"
+  address: 
+  created_at: 2005-12-03 11:44:41
+  long: "-122.299"
+  state: 
+  location: "726 Allston Way, Berkeley, CA, 94710-2230"
+geocode_cache_entries_062: 
+  city: 
+  normalized_location: "800 N Point St, San Francisco, CA, 94109-1228"
+  updated_at: 2005-12-03 11:44:52
+  zip: 
+  id: "62"
+  lat: "37.8058"
+  address: 
+  created_at: 2005-12-03 11:44:52
+  long: "-122.421"
+  state: 
+  location: "800 N Point Street, San Francisco, CA, 94109"
+geocode_cache_entries_084: 
+  city: 
+  normalized_location: "San Francisco, CA, 94122"
+  updated_at: 2005-12-03 11:45:04
+  zip: 
+  id: "84"
+  lat: "37.7611"
+  address: 
+  created_at: 2005-12-03 11:45:04
+  long: "-122.484"
+  state: 
+  location: "San Francisco, 94122"
+geocode_cache_entries_020: 
+  city: 
+  normalized_location: "645 Bush St, San Francisco, CA, 94108-3508"
+  updated_at: 2005-12-03 11:44:31
+  zip: 
+  id: "20"
+  lat: "37.7901"
+  address: 
+  created_at: 2005-12-03 11:44:31
+  long: "-122.408"
+  state: 
+  location: "645 Bush Street, San Francisco, CA, 94108"
+geocode_cache_entries_019: 
+  city: 
+  normalized_location: "645 Bush St, San Francisco, CA, 94108-3508"
+  updated_at: 2005-12-03 11:44:31
+  zip: 
+  id: "19"
+  lat: "37.7901"
+  address: 
+  created_at: 2005-12-03 11:44:31
+  long: "-122.408"
+  state: 
+  location: "645 Bush St, San Francisco, CA, 94108-3508"
+geocode_cache_entries_041: 
+  city: 
+  normalized_location: "3166 Buchanan St, San Francisco, CA, 94123-3502"
+  updated_at: 2005-12-03 11:44:42
+  zip: 
+  id: "41"
+  lat: "37.7992"
+  address: 
+  created_at: 2005-12-03 11:44:42
+  long: "-122.432"
+  state: 
+  location: "3166 Buchanan St, San Francisco, CA, 94123-3502"
+geocode_cache_entries_021: 
+  city: 
+  normalized_location: "2777 Mission St, San Francisco, CA, 94110-3103"
+  updated_at: 2005-12-03 11:44:32
+  zip: 
+  id: "21"
+  lat: "37.7527"
+  address: 
+  created_at: 2005-12-03 11:44:32
+  long: "-122.418"
+  state: 
+  location: "2777 Mission St, San Francisco, CA, 94110-3103"
+geocode_cache_entries_042: 
+  city: 
+  normalized_location: "3166 Buchanan St, San Francisco, CA, 94123-3502"
+  updated_at: 2005-12-03 11:44:42
+  zip: 
+  id: "42"
+  lat: "37.7992"
+  address: 
+  created_at: 2005-12-03 11:44:42
+  long: "-122.432"
+  state: 
+  location: "3166 Buchanan Street, San Francisco, CA, 94123"
+geocode_cache_entries_063: 
+  city: 
+  normalized_location: "2406 Bryant St, San Francisco, CA, 94110-3416"
+  updated_at: 2005-12-03 11:44:53
+  zip: 
+  id: "63"
+  lat: "37.7558"
+  address: 
+  created_at: 2005-12-03 11:44:53
+  long: "-122.41"
+  state: 
+  location: "2406 Bryant St, San Francisco, CA, 94110-3416"
+geocode_cache_entries_085: 
+  city: 
+  normalized_location: "San Francisco, CA, 94101"
+  updated_at: 2005-12-03 11:45:05
+  zip: 
+  id: "85"
+  lat: "37.775"
+  address: 
+  created_at: 2005-12-03 11:45:05
+  long: "-122.418"
+  state: 
+  location: "San Francisco, CA, 94101"
+geocode_cache_entries_001: 
+  city: 
+  normalized_location: "199 Valencia St, San Francisco, CA, 94103-1117"
+  updated_at: 2005-12-03 11:44:22
+  zip: 
+  id: "1"
+  lat: "37.77"
+  address: 
+  created_at: 2005-12-03 11:44:22
+  long: "-122.422"
+  state: 
+  location: "199 Valencia St, San Francisco, CA, 94103-1117"
+geocode_cache_entries_022: 
+  city: 
+  normalized_location: "2777 Mission St, San Francisco, CA, 94110-3103"
+  updated_at: 2005-12-03 11:44:32
+  zip: 
+  id: "22"
+  lat: "37.7527"
+  address: 
+  created_at: 2005-12-03 11:44:32
+  long: "-122.418"
+  state: 
+  location: "2777 Mission Street, San Francisco, CA, 94110"
+geocode_cache_entries_043: 
+  city: 
+  normalized_location: "1230 Grant Ave, San Francisco, CA, 94133-3910"
+  updated_at: 2005-12-03 11:44:43
+  zip: 
+  id: "43"
+  lat: "37.7981"
+  address: 
+  created_at: 2005-12-03 11:44:43
+  long: "-122.407"
+  state: 
+  location: "1230 Grant Ave, San Francisco, CA, 94133-3910"
+geocode_cache_entries_064: 
+  city: 
+  normalized_location: "2406 Bryant St, San Francisco, CA, 94110-3416"
+  updated_at: 2005-12-03 11:44:53
+  zip: 
+  id: "64"
+  lat: "37.7558"
+  address: 
+  created_at: 2005-12-03 11:44:53
+  long: "-122.41"
+  state: 
+  location: "2406 Bryant Street, San Francisco, CA, 94110"
+geocode_cache_entries_086: 
+  city: 
+  normalized_location: "San Francisco, CA, 94101"
+  updated_at: 2005-12-03 11:45:05
+  zip: 
+  id: "86"
+  lat: "37.775"
+  address: 
+  created_at: 2005-12-03 11:45:05
+  long: "-122.418"
+  state: 
+  location: "This Restaurant has a really long freakin address don't you think, San
+    Francisco, CA, 94101"
+geocode_cache_entries_002: 
+  city: 
+  normalized_location: "199 Valencia St, San Francisco, CA, 94103-1117"
+  updated_at: 2005-12-03 11:44:22
+  zip: 
+  id: "2"
+  lat: "37.77"
+  address: 
+  created_at: 2005-12-03 11:44:22
+  long: "-122.422"
+  state: 
+  location: "199 Valencia Street, San Francisco, CA, 94103"
+geocode_cache_entries_023: 
+  city: 
+  normalized_location: "12 4th St, San Francisco, CA, 94103-3102"
+  updated_at: 2005-12-03 11:44:33
+  zip: 
+  id: "23"
+  lat: "37.7855"
+  address: 
+  created_at: 2005-12-03 11:44:33
+  long: "-122.406"
+  state: 
+  location: "12 4th St, San Francisco, CA, 94103-3102"
+geocode_cache_entries_044: 
+  city: 
+  normalized_location: "1230 Grant Ave, San Francisco, CA, 94133-3910"
+  updated_at: 2005-12-03 11:44:43
+  zip: 
+  id: "44"
+  lat: "37.7981"
+  address: 
+  created_at: 2005-12-03 11:44:43
+  long: "-122.407"
+  state: 
+  location: "1230 Grant Aplace, San Francisco, CA, 94133"
+geocode_cache_entries_065: 
+  city: 
+  normalized_location: "875 Geary St, San Francisco, CA, 94109-7217"
+  updated_at: 2005-12-03 11:44:55
+  zip: 
+  id: "65"
+  lat: "37.786"
+  address: 
+  created_at: 2005-12-03 11:44:55
+  long: "-122.418"
+  state: 
+  location: "875 Geary St, San Francisco, CA, 94109-7217"
+geocode_cache_entries_087: 
+  city: 
+  normalized_location: "1779 Folsom St, San Francisco, CA, 94103-3711"
+  updated_at: 2005-12-03 11:45:06
+  zip: 
+  id: "87"
+  lat: "37.7688"
+  address: 
+  created_at: 2005-12-03 11:45:06
+  long: "-122.415"
+  state: 
+  location: "1779 Folsom St, San Francisco, CA, 94103-3711"
+geocode_cache_entries_003: 
+  city: 
+  normalized_location: "2027 Chestnut St, San Francisco, CA, 94123-2701"
+  updated_at: 2005-12-03 11:44:23
+  zip: 
+  id: "3"
+  lat: "37.8006"
+  address: 
+  created_at: 2005-12-03 11:44:23
+  long: "-122.437"
+  state: 
+  location: "2027 Chestnut St, San Francisco, CA, 94123-2701"
+geocode_cache_entries_024: 
+  city: 
+  normalized_location: "12 4th St, San Francisco, CA, 94103-3102"
+  updated_at: 2005-12-03 11:44:33
+  zip: 
+  id: "24"
+  lat: "37.7855"
+  address: 
+  created_at: 2005-12-03 11:44:33
+  long: "-122.406"
+  state: 
+  location: "12 4th Street, San Francisco, CA, 94103"
+geocode_cache_entries_045: 
+  city: 
+  normalized_location: "1963 Sutter St, San Francisco, CA, 94115-3113"
+  updated_at: 2005-12-03 11:44:44
+  zip: 
+  id: "45"
+  lat: "37.786"
+  address: 
+  created_at: 2005-12-03 11:44:44
+  long: "-122.433"
+  state: 
+  location: "1963 Sutter St, San Francisco, CA, 94115-3113"
+geocode_cache_entries_066: 
+  city: 
+  normalized_location: "875 Geary St, San Francisco, CA, 94109-7217"
+  updated_at: 2005-12-03 11:44:55
+  zip: 
+  id: "66"
+  lat: "37.786"
+  address: 
+  created_at: 2005-12-03 11:44:55
+  long: "-122.418"
+  state: 
+  location: "875 Geary Street, San Francisco, CA, 94109"
+geocode_cache_entries_090: 
+  city: 
+  normalized_location: "3324 Steiner St, San Francisco, CA, 94123-2707"
+  updated_at: 2005-12-03 11:45:08
+  zip: 
+  id: "90"
+  lat: "37.7999"
+  address: 
+  created_at: 2005-12-03 11:45:08
+  long: "-122.438"
+  state: 
+  location: "3324 Steiner Street, San Francisco, CA, 94123"
+geocode_cache_entries_088: 
+  city: 
+  normalized_location: "1779 Folsom St, San Francisco, CA, 94103-3711"
+  updated_at: 2005-12-03 11:45:06
+  zip: 
+  id: "88"
+  lat: "37.7688"
+  address: 
+  created_at: 2005-12-03 11:45:06
+  long: "-122.415"
+  state: 
+  location: "1779 Folsom Street, San Francisco, CA, 94101"
+geocode_cache_entries_067: 
+  city: 
+  normalized_location: "560 Larkin St, San Francisco, CA, 94102-3326"
+  updated_at: 2005-12-03 11:44:56
+  zip: 
+  id: "67"
+  lat: "37.7829"
+  address: 
+  created_at: 2005-12-03 11:44:56
+  long: "-122.417"
+  state: 
+  location: "560 Larkin St, San Francisco, CA, 94102-3326"
+geocode_cache_entries_025: 
+  city: 
+  normalized_location: "1743 9th Ave, San Francisco, CA, 94122-4701"
+  updated_at: 2005-12-03 11:44:34
+  zip: 
+  id: "25"
+  lat: "37.7558"
+  address: 
+  created_at: 2005-12-03 11:44:34
+  long: "-122.466"
+  state: 
+  location: "1743 9th Ave, San Francisco, CA, 94122-4701"
+geocode_cache_entries_046: 
+  city: 
+  normalized_location: "1963 Sutter St, San Francisco, CA, 94115-3113"
+  updated_at: 2005-12-03 11:44:44
+  zip: 
+  id: "46"
+  lat: "37.786"
+  address: 
+  created_at: 2005-12-03 11:44:44
+  long: "-122.433"
+  state: 
+  location: "1963 Sutter Street, San Francisco, CA, 94115"
+geocode_cache_entries_004: 
+  city: 
+  normalized_location: "2027 Chestnut St, San Francisco, CA, 94123-2701"
+  updated_at: 2005-12-03 11:44:23
+  zip: 
+  id: "4"
+  lat: "37.8006"
+  address: 
+  created_at: 2005-12-03 11:44:23
+  long: "-122.437"
+  state: 
+  location: "2027 Chestnut Street, San Francisco, CA, 94123"
+geocode_cache_entries_091: 
+  city: 
+  normalized_location: "56 Gold St, San Francisco, CA, 94133-5103"
+  updated_at: 2005-12-03 11:45:09
+  zip: 
+  id: "91"
+  lat: "37.7969"
+  address: 
+  created_at: 2005-12-03 11:45:09
+  long: "-122.403"
+  state: 
+  location: "56 Gold St, San Francisco, CA, 94133-5103"
+geocode_cache_entries_089: 
+  city: 
+  normalized_location: "3324 Steiner St, San Francisco, CA, 94123-2707"
+  updated_at: 2005-12-03 11:45:08
+  zip: 
+  id: "89"
+  lat: "37.7999"
+  address: 
+  created_at: 2005-12-03 11:45:08
+  long: "-122.438"
+  state: 
+  location: "3324 Steiner St, San Francisco, CA, 94123-2707"
+geocode_cache_entries_070: 
+  city: 
+  normalized_location: "1901 Hyde St, San Francisco, CA, 94109-2014"
+  updated_at: 2005-12-03 11:44:57
+  zip: 
+  id: "70"
+  lat: "37.7984"
+  address: 
+  created_at: 2005-12-03 11:44:57
+  long: "-122.419"
+  state: 
+  location: "1901 Hyde Street, San Francisco, CA, 94109"
+geocode_cache_entries_068: 
+  city: 
+  normalized_location: "560 Larkin St, San Francisco, CA, 94102-3326"
+  updated_at: 2005-12-03 11:44:56
+  zip: 
+  id: "68"
+  lat: "37.7829"
+  address: 
+  created_at: 2005-12-03 11:44:56
+  long: "-122.417"
+  state: 
+  location: "560 Larkin Street, San Francisco, CA, 94102"
+geocode_cache_entries_047: 
+  city: 
+  normalized_location: "1700 Laguna St, San Francisco, CA, 94115-3216"
+  updated_at: 2005-12-03 11:44:45
+  zip: 
+  id: "47"
+  lat: "37.7869"
+  address: 
+  created_at: 2005-12-03 11:44:45
+  long: "-122.428"
+  state: 
+  location: "1700 Laguna St, San Francisco, CA, 94115-3216"
+geocode_cache_entries_005: 
+  city: 
+  normalized_location: "107 Caledonia St, Sausalito, CA, 94965-1956"
+  updated_at: 2005-12-03 11:44:24
+  zip: 
+  id: "5"
+  lat: "37.8586"
+  address: 
+  created_at: 2005-12-03 11:44:24
+  long: "-122.486"
+  state: 
+  location: "107 Caledonia St, Sausalito, CA, 94965-1956"
+geocode_cache_entries_026: 
+  city: 
+  normalized_location: "1743 9th Ave, San Francisco, CA, 94122-4701"
+  updated_at: 2005-12-03 11:44:34
+  zip: 
+  id: "26"
+  lat: "37.7558"
+  address: 
+  created_at: 2005-12-03 11:44:34
+  long: "-122.466"
+  state: 
+  location: "1743 9th Ave, San Francisco, CA, 94122"
+geocode_cache_entries_092: 
+  city: 
+  normalized_location: "56 Gold St, San Francisco, CA, 94133-5103"
+  updated_at: 2005-12-03 11:45:09
+  zip: 
+  id: "92"
+  lat: "37.7969"
+  address: 
+  created_at: 2005-12-03 11:45:09
+  long: "-122.403"
+  state: 
+  location: "56 Gold Street, San Francisco, CA, 94133"
+geocode_cache_entries_071: 
+  city: 
+  normalized_location: "82 14th St, San Francisco, CA, 94103-4230"
+  updated_at: 2005-12-03 11:44:58
+  zip: 
+  id: "71"
+  lat: "37.7687"
+  address: 
+  created_at: 2005-12-03 11:44:58
+  long: "-122.415"
+  state: 
+  location: "82 14th St, San Francisco, CA, 94103-4230"
+geocode_cache_entries_069: 
+  city: 
+  normalized_location: "1901 Hyde St, San Francisco, CA, 94109-2014"
+  updated_at: 2005-12-03 11:44:57
+  zip: 
+  id: "69"
+  lat: "37.7984"
+  address: 
+  created_at: 2005-12-03 11:44:57
+  long: "-122.419"
+  state: 
+  location: "1901 Hyde St, San Francisco, CA, 94109-2014"
+geocode_cache_entries_006: 
+  city: 
+  normalized_location: "107 Caledonia St, Sausalito, CA, 94965-1956"
+  updated_at: 2005-12-03 11:44:24
+  zip: 
+  id: "6"
+  lat: "37.8586"
+  address: 
+  created_at: 2005-12-03 11:44:24
+  long: "-122.486"
+  state: 
+  location: "107 Caledonia Street, Sausalito, CA, 94965"
+geocode_cache_entries_027: 
+  city: 
+  normalized_location: "373 Columbus Ave, San Francisco, CA, 94133-3907"
+  updated_at: 2005-12-03 11:44:35
+  zip: 
+  id: "27"
+  lat: "37.7984"
+  address: 
+  created_at: 2005-12-03 11:44:35
+  long: "-122.408"
+  state: 
+  location: "373 Columbus Ave, San Francisco, CA, 94133-3907"
+geocode_cache_entries_050: 
+  city: 
+  normalized_location: "45 Rose St, San Francisco, CA, 94102-5917"
+  updated_at: 2005-12-03 11:44:46
+  zip: 
+  id: "50"
+  lat: "37.7735"
+  address: 
+  created_at: 2005-12-03 11:44:46
+  long: "-122.422"
+  state: 
+  location: "45 Rose Street, San Francisco, CA, 94102"
+geocode_cache_entries_048: 
+  city: 
+  normalized_location: "1700 Laguna St, San Francisco, CA, 94115-3216"
+  updated_at: 2005-12-03 11:44:45
+  zip: 
+  id: "48"
+  lat: "37.7869"
+  address: 
+  created_at: 2005-12-03 11:44:45
+  long: "-122.428"
+  state: 
+  location: "1700 Laguna Street, San Francisco, CA, 94115"
+geocode_cache_entries_093: 
+  city: 
+  normalized_location: "604 Mission St, San Francisco, CA, 94105-3505"
+  updated_at: 2005-12-03 14:33:11
+  zip: 
+  id: "93"
+  lat: "37.788"
+  address: 
+  created_at: 2005-12-03 14:33:11
+  long: "-122.4"
+  state: 
+  location: "604 Mission St, San Francisco, CA, 94105-3505"
+geocode_cache_entries_072: 
+  city: 
+  normalized_location: "82 14th St, San Francisco, CA, 94103-4230"
+  updated_at: 2005-12-03 11:44:58
+  zip: 
+  id: "72"
+  lat: "37.7687"
+  address: 
+  created_at: 2005-12-03 11:44:58
+  long: "-122.415"
+  state: 
+  location: "82 14th Street, San Francisco, CA, 94103"
+geocode_cache_entries_007: 
+  city: 
+  normalized_location: "817 Sutter St, San Francisco, CA, 94109-6168"
+  updated_at: 2005-12-03 11:44:25
+  zip: 
+  id: "7"
+  lat: "37.7884"
+  address: 
+  created_at: 2005-12-03 11:44:25
+  long: "-122.414"
+  state: 
+  location: "817 Sutter St, San Francisco, CA, 94109-6168"
+geocode_cache_entries_028: 
+  city: 
+  normalized_location: "373 Columbus Ave, San Francisco, CA, 94133-3907"
+  updated_at: 2005-12-03 11:44:35
+  zip: 
+  id: "28"
+  lat: "37.7984"
+  address: 
+  created_at: 2005-12-03 11:44:35
+  long: "-122.408"
+  state: 
+  location: "373 Columbus Aplace, San Francisco, CA, 94133"
+geocode_cache_entries_051: 
+  city: 
+  normalized_location: "335 Powell St, San Francisco, CA, 94102-1804"
+  updated_at: 2005-12-03 11:44:47
+  zip: 
+  id: "51"
+  lat: "37.7877"
+  address: 
+  created_at: 2005-12-03 11:44:47
+  long: "-122.408"
+  state: 
+  location: "335 Powell St, San Francisco, CA, 94102-1804"
+geocode_cache_entries_049: 
+  city: 
+  normalized_location: "45 Rose St, San Francisco, CA, 94102-5917"
+  updated_at: 2005-12-03 11:44:46
+  zip: 
+  id: "49"
+  lat: "37.7735"
+  address: 
+  created_at: 2005-12-03 11:44:46
+  long: "-122.422"
+  state: 
+  location: "45 Rose St, San Francisco, CA, 94102-5917"

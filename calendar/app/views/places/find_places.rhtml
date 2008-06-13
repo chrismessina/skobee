@@ -1,0 +1,58 @@
+<%
+@page_title = "Skobee - Find Places" -%>
+<div id="banner">
+   <h2>Where is everyone going?</h2>
+</div>
+<div id="container">
+   <div id="content" class="find_places">
+      <%=render(:partial=>"/shared/flash")%>
+      <%= start_form_tag({ :action => 'search' }, { :name => 'search_form', :method => 'get'  })%>
+      <h3>Discover New Places</h3>
+      <h4 class="description">Find out where people go on Friday nights in your neighborhood!</h4>
+      <table cellpadding="0" cellspacing="0" width="100%" class="property_value" summary="find places">
+         <tr>
+            <th>
+               What:
+            </th>
+            <td>
+               <input type="text" name="fulltext" class="big_form" value="<%= h(@fulltext) %>"/>
+               <h4 class="help">e.g., Gary Danko, Michael Minna, Redwood Room, My House, etc.</h4>
+            </td>
+         </tr>
+         <tr>
+            <th>
+               Where:
+            </th>
+            <td>
+               <div class="place_where_location">
+                  <input type="text" name="location" id="location" class="big_form" maxlength="255" value="<%= h(@home_address) %>"/>
+                  <h4 class="help">e.g., 604 Mission St., San Francisco, CA 94111</h4>
+               </div>
+               <div class="middle_text">
+                  within
+               </div>
+               <div class="place_where_distance">
+                  <input type="text" name="max_distance" class="big_form" value="<%= @max_distance %>" maxlength="2"/>
+                  <h4 class="help">Miles</h4>
+               </div>
+            </td>
+         </tr>
+      </table>
+      <div class="buttons">
+         <input type="image" onclick="search_form.submit();" name="submit" src="/images/searchbutton_orange.gif" alt="Search"/>
+      </div>
+      <%= end_form_tag %>
+      <h3 class="middle_big float-left">Add New Places</h3>
+      <h4 class="description float-left">Can't find what you're looking for? Help us out and add new places.</h4>
+      <div class="buttons">
+         <div>
+            <a href="#" onclick="window.location.href='<%=url_for(:controller => 'places',  :action => 'new')%>'; return false" class=""><img src="/images/addplace_orange.gif" alt="Add Places" /></a>
+         </div>
+      </div>
+   </div>
+</div>
+
+<div id="sidebar">
+   <%= render_partial 'recent_places' %>
+   <%= render_partial 'popular_this_week' %>
+</div>
