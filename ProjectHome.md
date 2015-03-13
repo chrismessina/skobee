@@ -1,0 +1,1 @@
+This project holds the source code for Skobee.com, an online event collaboration tool.
